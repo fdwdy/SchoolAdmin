@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1145
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItAcademy.SchoolAdmin.DataAccess", "ItAcademy.SchoolAdmin.DataAccess\ItAcademy.SchoolAdmin.DataAccess.csproj", "{B0CB57A1-865B-4017-BAFF-1E8562578592}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItAcademy.SchoolAdmin.Web", "ItAcademy.SchoolAdmin.Web\ItAcademy.SchoolAdmin.Web.csproj", "{D82CC6AF-9630-4494-B046-C7A1F6B7265A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItAcademy.SchoolAdmin.Infrastructure", "ItAcademy.SchoolAdmin.Infrastructure\ItAcademy.SchoolAdmin.Infrastructure.csproj", "{C14F244B-421E-42F2-B1D3-F5C42B123F8D}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ItAcademy.SchoolAdmin.Database", "ItAcademy.SchoolAdmin.Database\ItAcademy.SchoolAdmin.Database.sqlproj", "{1035CD34-FC4C-403A-B149-5D170258FC70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,18 @@ Global
 		{C14F244B-421E-42F2-B1D3-F5C42B123F8D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C14F244B-421E-42F2-B1D3-F5C42B123F8D}.Release|x86.ActiveCfg = Release|Any CPU
 		{C14F244B-421E-42F2-B1D3-F5C42B123F8D}.Release|x86.Build.0 = Release|Any CPU
+		{1035CD34-FC4C-403A-B149-5D170258FC70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1035CD34-FC4C-403A-B149-5D170258FC70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1035CD34-FC4C-403A-B149-5D170258FC70}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1035CD34-FC4C-403A-B149-5D170258FC70}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1035CD34-FC4C-403A-B149-5D170258FC70}.Debug|x86.Build.0 = Debug|Any CPU
+		{1035CD34-FC4C-403A-B149-5D170258FC70}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{1035CD34-FC4C-403A-B149-5D170258FC70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1035CD34-FC4C-403A-B149-5D170258FC70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1035CD34-FC4C-403A-B149-5D170258FC70}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1035CD34-FC4C-403A-B149-5D170258FC70}.Release|x86.ActiveCfg = Release|Any CPU
+		{1035CD34-FC4C-403A-B149-5D170258FC70}.Release|x86.Build.0 = Release|Any CPU
+		{1035CD34-FC4C-403A-B149-5D170258FC70}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
