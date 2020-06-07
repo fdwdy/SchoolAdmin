@@ -3,7 +3,7 @@ using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
 
 namespace ItAcademy.SchoolAdmin.Web.Controllers
 {
-    public class HomeController : Controller
+    public partial class HomeController : Controller
     {
         private readonly IEmployeeService _empService;
 
@@ -12,7 +12,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             _empService = empService;
         }
 
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return View();
         }

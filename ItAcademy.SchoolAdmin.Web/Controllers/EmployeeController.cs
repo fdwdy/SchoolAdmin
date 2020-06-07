@@ -7,7 +7,7 @@ using ItAcademy.SchoolAdmin.BusinessLogic.Models;
 
 namespace ItAcademy.SchoolAdmin.Web.Controllers
 {
-    public class EmployeeController : Controller
+    public partial class EmployeeController : Controller
     {
         private readonly IEmployeeService _empService;
 
@@ -17,7 +17,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             IEnumerable<EmployeeDTO> emps = _empService.GetAll();
             ViewBag.Model = emps;
@@ -25,14 +25,14 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             Employee model = new Employee();
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult Create(Employee model)
+        public virtual ActionResult Create(Employee model)
         {
             try
             {
