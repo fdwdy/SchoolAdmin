@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
 using ItAcademy.SchoolAdmin.BusinessLogic.Mapping;
 using ItAcademy.SchoolAdmin.BusinessLogic.Models;
+using ItAcademy.SchoolAdmin.Web.Models;
 
 namespace ItAcademy.SchoolAdmin.Web.Controllers
 {
@@ -27,15 +28,16 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         [HttpGet]
         public virtual ActionResult Create()
         {
-            Employee model = new Employee();
+            CreateEmployeeViewModel model = new CreateEmployeeViewModel();
             return View(model);
         }
 
         [HttpPost]
-        public virtual ActionResult Create(Employee model)
+        public virtual ActionResult Create(CreateEmployeeViewModel model)
         {
             try
             {
+
                 if (ModelState.IsValid)
                 {
                     var result = _empService.Add(model);
