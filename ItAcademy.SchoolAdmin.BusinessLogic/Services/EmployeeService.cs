@@ -9,7 +9,7 @@
     using ItAcademy.SchoolAdmin.DataAccess.Models;
     using ItAcademy.SchoolAdmin.Infrastructure;
 
-    internal class EmployeeService : IEmployeeService
+    public class EmployeeService : IEmployeeService
     {
         private readonly IMapper _mapper;
 

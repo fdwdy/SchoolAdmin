@@ -33,7 +33,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         }
 
         [HttpPost]
-        public virtual ActionResult Create(CreateEmployeeViewModel model)
+        public virtual ActionResult Create(Employee model)
         {
             try
             {

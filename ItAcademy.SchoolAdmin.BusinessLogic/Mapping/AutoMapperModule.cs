@@ -1,20 +1,26 @@
-﻿using AutoMapper;
-using Ninject.Modules;
+﻿using Autofac;
+using AutoMapper;
+using System.Collections.Generic;
 
 namespace ItAcademy.SchoolAdmin.BusinessLogic.Mapping
 {
-    public class AutoMapperModule : NinjectModule
+    public class AutoMapperModule : Module
     {
-        public override void Load()
+        protected override void Load(ContainerBuilder builder)
         {
-            var config = new MapperConfiguration(c =>
-            {
-                c.AddProfile<AutoMapperProfile>();
-            });
+            builder.RegisterAssemblyTypes(typeof(AutoMapperModule).Assembly).As<Profile>();
 
-            var mapper = config.CreateMapper();
-            Bind<MapperConfiguration>().ToConstant(config).InSingletonScope();
-            Bind<IMapper>().ToConstant(mapper).InSingletonScope();
+            builder.Register(context => new MapperConfiguration(cfg =>
+            {
+                foreach (var profile in context.Resolve<IEnumerable<Profile>>())
+                {
+                    cfg.AddProfile(profile);
+                }
+            })).AsSelf().SingleInstance();
+
+            builder.Register(c => c.Resolve<MapperConfiguration>().CreateMapper(c.Resolve))
+                .As<IMapper>()
+                .InstancePerLifetimeScope();
         }
     }
 }
