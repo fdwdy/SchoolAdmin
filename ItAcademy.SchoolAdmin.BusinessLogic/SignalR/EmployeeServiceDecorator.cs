@@ -5,6 +5,7 @@ using ItAcademy.SchoolAdmin.BusinessLogic.Models;
 using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
 using ItAcademy.SchoolAdmin.Infrastructure;
 using Microsoft.AspNet.SignalR;
+using System;
 using System.Collections.Generic;
 
 namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
@@ -26,7 +27,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
             _uow.Db.OnChangesSaved += Db_OnChangesSaved;
         }
 
-        private void Db_OnChangesSaved(object sender, DataAccess.OnChangesSavedArgs e)
+        public void Db_OnChangesSaved(object sender, DataAccess.OnChangesSavedArgs e)
         {
             GlobalHost.ConnectionManager.GetHubContext<EmployeeHub>().Clients.All.Broadcast(e.Employees);
         }

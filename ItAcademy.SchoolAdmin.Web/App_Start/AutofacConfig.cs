@@ -20,11 +20,11 @@ namespace ItAcademy.SchoolAdmin.Web.App_Start
         {
             var builder = new ContainerBuilder();
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
-            builder.RegisterType<EmployeeService>().As<IEmployeeService>();
+            builder.RegisterType<EmployeeService>().As<IEmployeeService>().InstancePerHttpRequest();
             builder.RegisterDecorator<EmployeeServiceDecorator, IEmployeeService>();
-            builder.RegisterType<EmployeeDbRepository>().As<IRepository<EmployeeDb>>();
-            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
-            builder.RegisterType<SchoolContext>().AsSelf();
+            builder.RegisterType<EmployeeDbRepository>().As<IRepository<EmployeeDb>>().InstancePerHttpRequest();
+            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerHttpRequest();
+            builder.RegisterType<SchoolContext>().AsSelf().InstancePerHttpRequest();
             builder.AddAutoMapper(typeof(MvcApplication).Assembly);
             builder.RegisterModule(new AutoMapperModule());
 

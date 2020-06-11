@@ -18,7 +18,7 @@ namespace ItAcademy.SchoolAdmin.Web
         public void Configuration(IAppBuilder app)
         {
             //var config = new HttpConfiguration();
-            //app.MapSignalR();
+            app.MapSignalR();
             AutofacConfig.ConfigureContainer();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

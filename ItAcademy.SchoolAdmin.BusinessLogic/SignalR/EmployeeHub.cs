@@ -1,5 +1,6 @@
 ﻿using ItAcademy.SchoolAdmin.BusinessLogic.Models;
 using Microsoft.AspNet.SignalR;
+using Microsoft.AspNet.SignalR.Hubs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
 {
-    class EmployeeHub : Hub
+    [HubName("EmolyeeSignalRHub")]
+    public class EmployeeHub : Hub
     {
         public void Send(IEnumerable<Employee> emps)
         {

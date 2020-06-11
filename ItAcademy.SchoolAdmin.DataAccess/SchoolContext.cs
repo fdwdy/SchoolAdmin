@@ -8,9 +8,9 @@
 
     public class SchoolContext : DbContext
     {
-        public delegate void EventHandler(object sender, OnChangesSavedArgs e);
+        public delegate void SaveChangesEventHandler(object sender, OnChangesSavedArgs e);
 
-        public event EventHandler OnChangesSaved;
+        public event SaveChangesEventHandler OnChangesSaved;
 
         public SchoolContext()
             : base("SchoolAdmin")
@@ -28,9 +28,9 @@
         public override int SaveChanges()
         {
             var result = base.SaveChanges();
+
             OnChangesSaved?.Invoke(this, new OnChangesSavedArgs(this.Employees));
             return result;
         }
     }
-
 }

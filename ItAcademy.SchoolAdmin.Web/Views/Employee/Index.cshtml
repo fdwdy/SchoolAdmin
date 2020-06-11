@@ -5,7 +5,7 @@
 }
 
 <h2>All employees</h2>
-
+<div><span id="notification" style="color:red;font-size:15px;"></span></div>
 <p>
     @Html.ActionLink("Create New", MVC.Employee.ActionNames.Create)
 </p>
@@ -26,21 +26,44 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BirthDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+        </tr>
+    }
+
+@section scripts{
+    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    <!--Ссылка на автоматически сгенерированный скрипт хаба SignalR -->
+    <script src="~/signalr/hubs"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var employeeHub = $.connection.EmolyeeSignalRHub;
+
+            employeeHub.client.displayMessage = function (message) {
+
+                $('#notification').html(message);
+            };
+
+            $.connection.hub.start();
+
+        });
+    </script>
 }
 
 </table>
+
+<script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
