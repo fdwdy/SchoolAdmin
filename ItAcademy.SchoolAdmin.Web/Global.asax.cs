@@ -12,12 +12,13 @@ namespace ItAcademy.SchoolAdmin.Web
     {
         protected void Application_Start()
         {
-            AutofacConfig.ConfigureContainer();
-            AreaRegistration.RegisterAllAreas();
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
-            ValidationConfiguration();
+            //RouteTable.Routes.MapHubs();
+            //AutofacConfig.ConfigureContainer();
+            //AreaRegistration.RegisterAllAreas();
+            //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //ValidationConfiguration();
         }
 
         private void ValidationConfiguration()

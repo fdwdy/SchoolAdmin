@@ -1,11 +1,17 @@
 ﻿namespace ItAcademy.SchoolAdmin.DataAccess
 {
+    using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using ItAcademy.SchoolAdmin.DataAccess.EntitiesConfiguration;
     using ItAcademy.SchoolAdmin.DataAccess.Models;
 
     public class SchoolContext : DbContext
     {
+        public delegate void EventHandler(object sender, OnChangesSavedArgs e);
+
+        public event EventHandler OnChangesSaved;
+
         public SchoolContext()
             : base("SchoolAdmin")
         {
@@ -18,5 +24,13 @@
         {
             modelBuilder.Configurations.Add(new EmployeeConfiguration());
         }
+
+        public override int SaveChanges()
+        {
+            var result = base.SaveChanges();
+            OnChangesSaved?.Invoke(this, new OnChangesSavedArgs(this.Employees));
+            return result;
+        }
     }
+
 }
