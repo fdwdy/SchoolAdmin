@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
@@ -29,6 +30,55 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             IEnumerable<EmployeeDTO> emps = await _empService.GetAllAsync();
             return PartialView("_EmployeeData", emps);
+        }
+
+        public async Task<ActionResult> Delete(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            EmployeeDTO employeeDTO = await _empService.GetByIdAsync(id);
+            if (employeeDTO == null)
+            {
+                return HttpNotFound();
+            }
+            return View(employeeDTO);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<ActionResult> DeleteConfirmed(string id)
+        {
+            await _empService.RemoveByIdAsync(id);
+            return RedirectToAction("Index");
+        }
+
+        public async Task<ActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            EmployeeDTO employeeDTO = await _empService.GetByIdAsync(id);
+            if (employeeDTO == null)
+            {
+                return HttpNotFound();
+            }
+            return View(employeeDTO);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit([Bind(Include = "Id,FullName,BirthDate,Email,Phone")] EmployeeDTO employeeDTO)
+        {
+            if (ModelState.IsValid)
+            {
+                //db.Entry(employeeDTO).State = EntityState.Modified;
+                //await db.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(employeeDTO);
         }
 
         [HttpGet]

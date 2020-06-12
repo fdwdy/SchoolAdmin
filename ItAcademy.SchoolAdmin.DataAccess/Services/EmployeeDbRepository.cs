@@ -29,7 +29,7 @@
             _db.Employees.Add(_emp);
         }
 
-        public EmployeeDb GetEmployee(int id)
+        public EmployeeDb GetEmployee(string id)
         {
             return _db.Employees.Find(id);
         }
@@ -48,6 +48,12 @@
             }
         }
 
+        public async Task DeleteAsync(string id)
+        {
+            EmployeeDb emp = await _db.Employees.FindAsync(id);
+            _db.Employees.Remove(emp);
+        }
+
         public IEnumerable<EmployeeDb> GetAll()
         {
             return _db.Employees;
@@ -58,7 +64,7 @@
             return await _db.Employees.ToListAsync().ConfigureAwait(false);
         }
 
-        public async Task<EmployeeDb> GetByIdAsync(int id)
+        public async Task<EmployeeDb> GetByIdAsync(string id)
         {
             return await _db.Employees.FindAsync(id);
         }
@@ -73,10 +79,6 @@
             throw new NotImplementedException();
         }
 
-        public async Task<Result> DeleteAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
 
         public Result Save()
         {
@@ -109,5 +111,6 @@
                 return Result.Fail($"Cannot save employee. {e.Message}");
             }
         }
+
     }
 }

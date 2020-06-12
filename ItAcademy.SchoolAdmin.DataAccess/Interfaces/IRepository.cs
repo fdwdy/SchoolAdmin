@@ -9,7 +9,7 @@
     {
         IEnumerable<T> GetAll();
 
-        T GetEmployee(int id);
+        T GetEmployee(string id);
 
         void Create(T item);
 
@@ -19,11 +19,11 @@
 
         Task<IEnumerable<T>> GetAllAsync();
 
-        Task<T> GetByIdAsync(int id);
+        Task<T> GetByIdAsync(string id);
 
         Task<Result<T>> UpdateAsync(T item);
 
-        Task<Result> DeleteAsync(int id);
+        Task DeleteAsync(string id);
 
         Result Save();
     }

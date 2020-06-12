@@ -30,6 +30,11 @@
             return _uow.Employees.Save();
         }
 
+        public Task<Result<EmployeeDb>> AddAsync(EmployeeDb emp)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<EmployeeDTO> GetAll()
         {
             var employees = _uow.Employees.GetAll();
@@ -42,14 +47,16 @@
             return _mapper.Map<IEnumerable<EmployeeDb>, IEnumerable<EmployeeDTO>>(employees);
         }
 
-        public Task<Result<EmployeeDb>> AddAsync(EmployeeDb bookmark)
+        public async Task<EmployeeDTO> GetByIdAsync(string id)
         {
-            throw new System.NotImplementedException();
+            var employee = await _uow.Employees.GetByIdAsync(id);
+            return _mapper.Map<EmployeeDb, EmployeeDTO>(employee);
         }
 
-        public Task<Result<EmployeeDb>> RemoveByIdAsync(string id)
+        public async Task RemoveByIdAsync(string id)
         {
-            throw new System.NotImplementedException();
+            await _uow.Employees.DeleteAsync(id);
+            _uow.Employees.Save();
         }
 
         public Task<Result<EmployeeDb>> UpdateAsync(EmployeeDb course)

@@ -6,7 +6,6 @@ using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
 using ItAcademy.SchoolAdmin.DataAccess.Models;
 using ItAcademy.SchoolAdmin.Infrastructure;
 using Microsoft.AspNet.SignalR;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -40,6 +39,12 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
             return result;
         }
 
+        public Task<EmployeeDTO> GetByIdAsync(string id)
+        {
+            var result = _empService.GetByIdAsync(id);
+            return result;
+        }
+
         public IEnumerable<EmployeeDTO> GetAll()
         {
             return _empService.GetAll();
@@ -55,9 +60,9 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
             return _empService.AddAsync(emp);
         }
 
-        public Task<Result<EmployeeDb>> RemoveByIdAsync(string id)
+        public async Task RemoveByIdAsync(string id)
         {
-            return _empService.RemoveByIdAsync(id);
+            await _empService.RemoveByIdAsync(id);
         }
 
         public Task<Result<EmployeeDb>> UpdateAsync(EmployeeDb emp)

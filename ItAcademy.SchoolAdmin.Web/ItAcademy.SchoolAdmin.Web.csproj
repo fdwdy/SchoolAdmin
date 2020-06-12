@@ -186,6 +186,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EmployeeDTOesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="EmployeeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -260,6 +261,8 @@
     <Content Include="Views\Employee\Create.cshtml" />
     <None Include="T4MVC.tt.hooks.t4" />
     <Content Include="Views\Employee\_EmployeeData.cshtml" />
+    <Content Include="Views\Employee\Delete.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

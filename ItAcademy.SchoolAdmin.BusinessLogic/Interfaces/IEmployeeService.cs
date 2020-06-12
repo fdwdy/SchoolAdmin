@@ -14,11 +14,13 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Interfaces
 
         Task<IEnumerable<EmployeeDTO>> GetAllAsync();
 
+        Task<EmployeeDTO> GetByIdAsync(string id);
+
         Result Add(Employee emp);
 
         Task<Result<EmployeeDb>> AddAsync(EmployeeDb bookmark);
 
-        Task<Result<EmployeeDb>> RemoveByIdAsync(string id);
+        Task RemoveByIdAsync(string id);
 
         Task<Result<EmployeeDb>> UpdateAsync(EmployeeDb course);
 
