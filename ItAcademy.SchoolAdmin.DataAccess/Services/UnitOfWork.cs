@@ -29,6 +29,11 @@
             Db.SaveChanges();
         }
 
+        public async void SaveAsync()
+        {
+            await Db.SaveChangesAsync();
+        }
+
         public void Dispose()
         {
             Dispose(true);

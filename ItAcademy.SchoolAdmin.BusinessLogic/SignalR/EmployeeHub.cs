@@ -9,12 +9,11 @@ using System.Threading.Tasks;
 
 namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
 {
-    [HubName("EmolyeeSignalRHub")]
     public class EmployeeHub : Hub
     {
         public void Send(IEnumerable<Employee> emps)
         {
-            Clients.All.broadcastMessage(emps);
+
         }
     }
 }

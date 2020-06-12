@@ -1,6 +1,7 @@
 ﻿namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
 {
     using System.Collections.Generic;
+    using System.Threading.Tasks;
     using AutoMapper;
     using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
     using ItAcademy.SchoolAdmin.BusinessLogic.Mapping;
@@ -33,6 +34,27 @@
         {
             var employees = _uow.Employees.GetAll();
             return _mapper.Map<IEnumerable<EmployeeDb>, IEnumerable<EmployeeDTO>>(employees);
+        }
+
+        public async Task<IEnumerable<EmployeeDTO>> GetAllAsync()
+        {
+            var employees = await _uow.Employees.GetAllAsync();
+            return _mapper.Map<IEnumerable<EmployeeDb>, IEnumerable<EmployeeDTO>>(employees);
+        }
+
+        public Task<Result<EmployeeDb>> AddAsync(EmployeeDb bookmark)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<Result<EmployeeDb>> RemoveByIdAsync(string id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<Result<EmployeeDb>> UpdateAsync(EmployeeDb course)
+        {
+            throw new System.NotImplementedException();
         }
 
         public void Dispose()

@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Scripts.Render("~/bundles/jquery")
     @Styles.Render(Links.Bundles.Content.sitecontent)
 </head>
 <body>
@@ -29,6 +30,6 @@
 
     @Scripts.Render(Links.Bundles.Scripts.bootstrap)
     @RenderSection("scripts", required: false)
-    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    @*<script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>*@
 </body>
 </html>

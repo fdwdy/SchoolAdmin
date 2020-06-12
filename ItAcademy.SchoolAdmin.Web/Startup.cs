@@ -4,8 +4,10 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using FluentValidation.Mvc;
+using ItAcademy.SchoolAdmin.BusinessLogic.SignalR;
 using ItAcademy.SchoolAdmin.Web.App_Start;
 using ItAcademy.SchoolAdmin.Web.Validators;
+using Microsoft.AspNet.SignalR;
 using Microsoft.Owin;
 using Owin;
 
@@ -17,7 +19,6 @@ namespace ItAcademy.SchoolAdmin.Web
     {
         public void Configuration(IAppBuilder app)
         {
-            //var config = new HttpConfiguration();
             app.MapSignalR();
             AutofacConfig.ConfigureContainer();
             AreaRegistration.RegisterAllAreas();
@@ -26,7 +27,6 @@ namespace ItAcademy.SchoolAdmin.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             ValidationConfiguration();
             //app.UseAutofacMiddleware(new AutofacConfig());
-            // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=316888
         }
 
         private void ValidationConfiguration()

@@ -75,6 +75,9 @@ namespace Links
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
         public static readonly string bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap.min.js") ? Url("bootstrap.min.js") : Url("bootstrap.js");
         public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
+        public static readonly string EmployeeChange_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/EmployeeChange.min.js") ? Url("EmployeeChange.min.js") : Url("EmployeeChange.js");
+        public static readonly string jquery_signalR_2_4_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.signalR-2.4.1.min.js") ? Url("jquery.signalR-2.4.1.min.js") : Url("jquery.signalR-2.4.1.js");
+        public static readonly string jquery_signalR_2_4_1_min_js = Url("jquery.signalR-2.4.1.min.js");
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -103,6 +106,9 @@ namespace Links
             {
                 public static readonly string bootstrap_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/bootstrap.js"); 
                 public static readonly string bootstrap_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/bootstrap.min.js"); 
+                public static readonly string EmployeeChange_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/EmployeeChange.js"); 
+                public static readonly string jquery_signalR_2_4_1_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.signalR-2.4.1.js"); 
+                public static readonly string jquery_signalR_2_4_1_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.signalR-2.4.1.min.js"); 
             }
         }
         public static partial class Content 

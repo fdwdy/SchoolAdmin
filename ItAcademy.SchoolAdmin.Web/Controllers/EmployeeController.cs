@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
 using ItAcademy.SchoolAdmin.BusinessLogic.Mapping;
@@ -18,11 +19,16 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         }
 
         [HttpGet]
-        public virtual ActionResult Index()
+        public async virtual Task<ActionResult> Index()
         {
-            IEnumerable<EmployeeDTO> emps = _empService.GetAll();
-            ViewBag.Model = emps;
+            IEnumerable<EmployeeDTO> emps = await _empService.GetAllAsync();
             return View(emps);
+        }
+
+        public async Task<ActionResult> GetEmployeeData()
+        {
+            IEnumerable<EmployeeDTO> emps = await _empService.GetAllAsync();
+            return PartialView("_EmployeeData", emps);
         }
 
         [HttpGet]

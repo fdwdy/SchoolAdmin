@@ -14,6 +14,12 @@ namespace ItAcademy.SchoolAdmin.Web
             bundles.Add(new StyleBundle(Links.Bundles.Content.sitecontent).Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                        "~/Scripts/jquery-{version}.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                        "~/Scripts/jquery.validate*"));
         }
     }
 }

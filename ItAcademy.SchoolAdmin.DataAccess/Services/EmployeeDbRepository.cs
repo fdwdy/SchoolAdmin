@@ -6,6 +6,7 @@
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Validation;
     using System.Linq;
+    using System.Threading.Tasks;
     using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
     using ItAcademy.SchoolAdmin.DataAccess.Models;
     using ItAcademy.SchoolAdmin.Infrastructure;
@@ -28,6 +29,16 @@
             _db.Employees.Add(_emp);
         }
 
+        public EmployeeDb GetEmployee(int id)
+        {
+            return _db.Employees.Find(id);
+        }
+
+        public void Update(EmployeeDb emp)
+        {
+            _db.Entry(emp).State = EntityState.Modified;
+        }
+
         public void Delete(int id)
         {
             EmployeeDb emp = _db.Employees.Find(id);
@@ -37,14 +48,34 @@
             }
         }
 
-        public EmployeeDb GetEmployee(int id)
-        {
-            return _db.Employees.Find(id);
-        }
-
         public IEnumerable<EmployeeDb> GetAll()
         {
             return _db.Employees;
+        }
+
+        public async Task<IEnumerable<EmployeeDb>> GetAllAsync()
+        {
+            return await _db.Employees.ToListAsync().ConfigureAwait(false);
+        }
+
+        public async Task<EmployeeDb> GetByIdAsync(int id)
+        {
+            return await _db.Employees.FindAsync(id);
+        }
+
+        public Task<Result<EmployeeDb>> CreateAsync(EmployeeDb item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<Result<EmployeeDb>> UpdateAsync(EmployeeDb item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<Result> DeleteAsync(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public Result Save()
@@ -77,11 +108,6 @@
             {
                 return Result.Fail($"Cannot save employee. {e.Message}");
             }
-        }
-
-        public void Update(EmployeeDb emp)
-        {
-            _db.Entry(emp).State = EntityState.Modified;
         }
     }
 }

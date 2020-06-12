@@ -1,69 +1,43 @@
 ﻿@model IEnumerable<ItAcademy.SchoolAdmin.BusinessLogic.Mapping.EmployeeDTO>
 
-@{
-    ViewBag.Title = "Index";
-}
-
 <h2>All employees</h2>
-<div><span id="notification" style="color:red;font-size:15px;"></span></div>
-<p>
-    @Html.ActionLink("Create New", MVC.Employee.ActionNames.Create)
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FullName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BirthDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Phone)
-        </th>
-        <th></th>
-    </tr>
+<div id="dataModel"></div>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BirthDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-        </tr>
-    }
+<p>
+        @Html.ActionLink("Create New", MVC.Employee.ActionNames.Create)
+</p>
 
 @section scripts{
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
-    <!--Ссылка на автоматически сгенерированный скрипт хаба SignalR -->
     <script src="~/signalr/hubs"></script>
     <script type="text/javascript">
         $(function () {
 
-            var employeeHub = $.connection.EmolyeeSignalRHub;
+            var hb = $.connection.employeeHub;
 
-            employeeHub.client.displayMessage = function (message) {
-
-                $('#notification').html(message);
+            hb.client.broadcast = function (message) {
+                getAll();
             };
 
-            $.connection.hub.start();
+            $.connection.hub.start().done(function () {
+                getAll();
+            });  
 
         });
+
+        function getAll() {
+            var model = $('#dataModel');
+            console.log("GETALL");
+            $.ajax({
+                url: '/Employee/GetEmployeeData',
+                contentType: 'application/html ; charset:utf-8',
+                type: 'GET',
+                dataType: 'html',
+                success: function (result) { model.empty().append(result); }
+            });
+        }
     </script>
 }
 
 </table>
-
-<script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>

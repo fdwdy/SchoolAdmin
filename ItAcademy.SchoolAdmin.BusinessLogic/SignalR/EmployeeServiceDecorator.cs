@@ -3,10 +3,12 @@ using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
 using ItAcademy.SchoolAdmin.BusinessLogic.Mapping;
 using ItAcademy.SchoolAdmin.BusinessLogic.Models;
 using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
+using ItAcademy.SchoolAdmin.DataAccess.Models;
 using ItAcademy.SchoolAdmin.Infrastructure;
 using Microsoft.AspNet.SignalR;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
 {
@@ -29,7 +31,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
 
         public void Db_OnChangesSaved(object sender, DataAccess.OnChangesSavedArgs e)
         {
-            GlobalHost.ConnectionManager.GetHubContext<EmployeeHub>().Clients.All.Broadcast(e.Employees);
+            GlobalHost.ConnectionManager.GetHubContext<EmployeeHub>().Clients.All.broadcast(e.Employees);
         }
 
         public Result Add(Employee emp)
@@ -41,6 +43,26 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
         public IEnumerable<EmployeeDTO> GetAll()
         {
             return _empService.GetAll();
+        }
+
+        public Task<IEnumerable<EmployeeDTO>> GetAllAsync()
+        {
+            return _empService.GetAllAsync();
+        }
+
+        public Task<Result<EmployeeDb>> AddAsync(EmployeeDb emp)
+        {
+            return _empService.AddAsync(emp);
+        }
+
+        public Task<Result<EmployeeDb>> RemoveByIdAsync(string id)
+        {
+            return _empService.RemoveByIdAsync(id);
+        }
+
+        public Task<Result<EmployeeDb>> UpdateAsync(EmployeeDb emp)
+        {
+            return _empService.UpdateAsync(emp);
         }
 
         public void Dispose()
