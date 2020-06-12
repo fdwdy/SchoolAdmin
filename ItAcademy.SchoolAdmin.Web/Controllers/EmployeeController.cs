@@ -74,8 +74,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                //db.Entry(employeeDTO).State = EntityState.Modified;
-                //await db.SaveChangesAsync();
+                await _empService.UpdateAsync(employeeDTO);
                 return RedirectToAction("Index");
             }
             return View(employeeDTO);

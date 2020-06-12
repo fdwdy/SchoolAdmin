@@ -30,7 +30,7 @@
             return _uow.Employees.Save();
         }
 
-        public Task<Result<EmployeeDb>> AddAsync(EmployeeDb emp)
+        public Task<Result<EmployeeDb>> AddAsync(EmployeeDTO emp)
         {
             throw new System.NotImplementedException();
         }
@@ -59,9 +59,15 @@
             _uow.Employees.Save();
         }
 
-        public Task<Result<EmployeeDb>> UpdateAsync(EmployeeDb course)
+        public async Task UpdateAsync(EmployeeDTO emp)
         {
-            throw new System.NotImplementedException();
+            var employee = _mapper.Map<EmployeeDTO, EmployeeDb>(emp);
+            string[] names = emp.FullName.Split(' ');
+            employee.Name = names[0];
+            employee.Middlename = names[1];
+            employee.Surname = names[2];
+            await _uow.Employees.UpdateAsync(employee);
+            _uow.Employees.Save();
         }
 
         public void Dispose()

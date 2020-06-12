@@ -55,7 +55,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
             return _empService.GetAllAsync();
         }
 
-        public Task<Result<EmployeeDb>> AddAsync(EmployeeDb emp)
+        public Task<Result<EmployeeDb>> AddAsync(EmployeeDTO emp)
         {
             return _empService.AddAsync(emp);
         }
@@ -65,9 +65,9 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
             await _empService.RemoveByIdAsync(id);
         }
 
-        public Task<Result<EmployeeDb>> UpdateAsync(EmployeeDb emp)
+        public async Task UpdateAsync(EmployeeDTO emp)
         {
-            return _empService.UpdateAsync(emp);
+            await _empService.UpdateAsync(emp);
         }
 
         public void Dispose()

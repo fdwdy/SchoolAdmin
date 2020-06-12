@@ -21,7 +21,7 @@
 
         Task<T> GetByIdAsync(string id);
 
-        Task<Result<T>> UpdateAsync(T item);
+        Task UpdateAsync(T item);
 
         Task DeleteAsync(string id);
 

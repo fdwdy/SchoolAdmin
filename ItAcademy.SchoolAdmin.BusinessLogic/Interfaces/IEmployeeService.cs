@@ -18,11 +18,11 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Interfaces
 
         Result Add(Employee emp);
 
-        Task<Result<EmployeeDb>> AddAsync(EmployeeDb bookmark);
+        Task<Result<EmployeeDb>> AddAsync(EmployeeDTO emp);
 
         Task RemoveByIdAsync(string id);
 
-        Task<Result<EmployeeDb>> UpdateAsync(EmployeeDb course);
+        Task UpdateAsync(EmployeeDTO emp);
 
     }
 }

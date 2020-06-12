@@ -74,11 +74,11 @@
             throw new NotImplementedException();
         }
 
-        public async Task<Result<EmployeeDb>> UpdateAsync(EmployeeDb item)
+        public async Task UpdateAsync(EmployeeDb emp)
         {
-            throw new NotImplementedException();
+            _db.Employees.Attach(emp);
+            _db.Entry(emp).State = EntityState.Modified;
         }
-
 
         public Result Save()
         {
