@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using AutoMapper;
 using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
 using ItAcademy.SchoolAdmin.BusinessLogic.Mapping;
 using ItAcademy.SchoolAdmin.BusinessLogic.Models;
@@ -6,8 +8,6 @@ using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
 using ItAcademy.SchoolAdmin.DataAccess.Models;
 using ItAcademy.SchoolAdmin.Infrastructure;
 using Microsoft.AspNet.SignalR;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
 {

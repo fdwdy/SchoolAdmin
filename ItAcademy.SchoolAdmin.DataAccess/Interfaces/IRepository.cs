@@ -9,8 +9,6 @@
     {
         IEnumerable<T> GetAll();
 
-        T GetEmployee(string id);
-
         void Create(T item);
 
         void Update(T item);

@@ -12,6 +12,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             _empService = empService;
         }
 
+        [HttpGet]
         public virtual ActionResult Index()
         {
             return View();

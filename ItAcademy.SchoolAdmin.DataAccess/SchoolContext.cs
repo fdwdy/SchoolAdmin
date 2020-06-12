@@ -1,38 +1,34 @@
-﻿namespace ItAcademy.SchoolAdmin.DataAccess
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Data.Entity;
-    using ItAcademy.SchoolAdmin.DataAccess.EntitiesConfiguration;
-    using ItAcademy.SchoolAdmin.DataAccess.Models;
+﻿using System.Data.Entity;
+using ItAcademy.SchoolAdmin.DataAccess.EntitiesConfiguration;
+using ItAcademy.SchoolAdmin.DataAccess.Models;
 
+namespace ItAcademy.SchoolAdmin.DataAccess
+{
     public class SchoolContext : DbContext
     {
-        public delegate void SaveChangesEventHandler(object sender, OnChangesSavedArgs e);
-
-        public event SaveChangesEventHandler OnChangesSaved;
-
         public SchoolContext()
             : base("SchoolAdmin")
         {
             Database.SetInitializer<SchoolContext>(null);
         }
 
-        public virtual DbSet<EmployeeDb> Employees { get; set; }
+        public delegate void SaveChangesEventHandler(object sender, OnChangesSavedArgs e);
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Configurations.Add(new EmployeeConfiguration());
-        }
+        public event SaveChangesEventHandler OnChangesSaved;
+
+        public virtual DbSet<EmployeeDb> Employees { get; set; }
 
         public override int SaveChanges()
         {
             var result = base.SaveChanges();
 
-            OnChangesSaved?.Invoke(this, new OnChangesSavedArgs(this.Employees));
+            OnChangesSaved?.Invoke(this, new OnChangesSavedArgs(Employees));
             return result;
         }
 
-        //object placeHolderVariable;
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new EmployeeConfiguration());
+        }
     }
 }

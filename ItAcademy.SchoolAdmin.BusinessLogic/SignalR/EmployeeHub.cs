@@ -1,11 +1,6 @@
-﻿using ItAcademy.SchoolAdmin.BusinessLogic.Models;
+﻿using System.Collections.Generic;
+using ItAcademy.SchoolAdmin.BusinessLogic.Models;
 using Microsoft.AspNet.SignalR;
-using Microsoft.AspNet.SignalR.Hubs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
 {
@@ -13,7 +8,6 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
     {
         public void Send(IEnumerable<Employee> emps)
         {
-
         }
     }
 }

@@ -30,15 +30,15 @@
             return _uow.Employees.Save();
         }
 
-        public Task<Result<EmployeeDb>> AddAsync(EmployeeDTO emp)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public IEnumerable<EmployeeDTO> GetAll()
         {
             var employees = _uow.Employees.GetAll();
             return _mapper.Map<IEnumerable<EmployeeDb>, IEnumerable<EmployeeDTO>>(employees);
+        }
+
+        public Task<Result<EmployeeDb>> AddAsync(EmployeeDTO emp)
+        {
+            throw new System.NotImplementedException();
         }
 
         public async Task<IEnumerable<EmployeeDTO>> GetAllAsync()

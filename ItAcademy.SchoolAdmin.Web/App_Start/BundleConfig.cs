@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace ItAcademy.SchoolAdmin.Web
 {
@@ -8,17 +7,17 @@ namespace ItAcademy.SchoolAdmin.Web
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle(Links.Bundles.Scripts.bootstrap).Include(
+            bundles.Add(new ScriptBundle(Links.Bundles.Scripts.Bootstrap).Include(
                       "~/Scripts/bootstrap.js"));
 
-            bundles.Add(new StyleBundle(Links.Bundles.Content.sitecontent).Include(
+            bundles.Add(new StyleBundle(Links.Bundles.Content.Sitecontent).Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+            bundles.Add(new ScriptBundle(Links.Bundles.Scripts.JQuery).Include(
                         "~/Scripts/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+            bundles.Add(new ScriptBundle(Links.Bundles.Scripts.JQueryValidation).Include(
                         "~/Scripts/jquery.validate*"));
         }
     }

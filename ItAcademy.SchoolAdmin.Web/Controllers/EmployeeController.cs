@@ -26,58 +26,11 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             return View(emps);
         }
 
-        public async Task<ActionResult> GetEmployeeData()
+        [HttpGet]
+        public virtual async Task<ActionResult> GetEmployeeData()
         {
             IEnumerable<EmployeeDTO> emps = await _empService.GetAllAsync();
             return PartialView("_EmployeeData", emps);
-        }
-
-        public async Task<ActionResult> Delete(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            EmployeeDTO employeeDTO = await _empService.GetByIdAsync(id);
-            if (employeeDTO == null)
-            {
-                return HttpNotFound();
-            }
-            return View(employeeDTO);
-        }
-
-        [HttpPost, ActionName("Delete")]
-        public async Task<ActionResult> DeleteConfirmed(string id)
-        {
-            await _empService.RemoveByIdAsync(id);
-            return RedirectToAction("Index");
-        }
-
-        public async Task<ActionResult> Edit(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            EmployeeDTO employeeDTO = await _empService.GetByIdAsync(id);
-            if (employeeDTO == null)
-            {
-                return HttpNotFound();
-            }
-            return View(employeeDTO);
-        }
-
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,FullName,BirthDate,Email,Phone")] EmployeeDTO employeeDTO)
-        {
-            if (ModelState.IsValid)
-            {
-                await _empService.UpdateAsync(employeeDTO);
-                return RedirectToAction("Index");
-            }
-            return View(employeeDTO);
         }
 
         [HttpGet]
@@ -92,7 +45,6 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             try
             {
-
                 if (ModelState.IsValid)
                 {
                     var result = _empService.Add(model);
@@ -111,6 +63,61 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
                 TempData["ErrorMessage"] = ex.Message;
                 return View();
             }
+        }
+
+        [HttpGet]
+        public virtual async Task<ActionResult> Delete(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            EmployeeDTO employeeDTO = await _empService.GetByIdAsync(id);
+            if (employeeDTO == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(employeeDTO);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public virtual async Task<ActionResult> DeleteConfirmed(string id)
+        {
+            await _empService.RemoveByIdAsync(id);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public virtual async Task<ActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            EmployeeDTO employeeDTO = await _empService.GetByIdAsync(id);
+            if (employeeDTO == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(employeeDTO);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public virtual async Task<ActionResult> Edit([Bind(Include = "Id,FullName,BirthDate,Email,Phone")] EmployeeDTO employeeDTO)
+        {
+            if (ModelState.IsValid)
+            {
+                await _empService.UpdateAsync(employeeDTO);
+                return RedirectToAction("Index");
+            }
+
+            return View(employeeDTO);
         }
     }
 }

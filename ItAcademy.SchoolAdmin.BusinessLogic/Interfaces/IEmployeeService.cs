@@ -10,19 +10,18 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Interfaces
 {
     public interface IEmployeeService : IDisposable
     {
+        Result Add(Employee emp);
+
         IEnumerable<EmployeeDTO> GetAll();
+
+        Task<Result<EmployeeDb>> AddAsync(EmployeeDTO emp);
 
         Task<IEnumerable<EmployeeDTO>> GetAllAsync();
 
         Task<EmployeeDTO> GetByIdAsync(string id);
 
-        Result Add(Employee emp);
-
-        Task<Result<EmployeeDb>> AddAsync(EmployeeDTO emp);
-
         Task RemoveByIdAsync(string id);
 
         Task UpdateAsync(EmployeeDTO emp);
-
     }
 }
