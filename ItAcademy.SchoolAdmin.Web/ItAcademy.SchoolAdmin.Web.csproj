@@ -196,7 +196,12 @@
     <Compile Include="HomeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Mapping\AutoMapperWebModule.cs" />
+    <Compile Include="Mapping\AutoMapperWebProfile.cs" />
     <Compile Include="Models\CreateEmployeeViewModel.cs" />
+    <Compile Include="Models\EmployeeEditModel.cs" />
+    <Compile Include="Models\EmployeeListModel.cs" />
+    <Compile Include="Models\EmployeeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>

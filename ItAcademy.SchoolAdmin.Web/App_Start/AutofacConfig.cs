@@ -10,6 +10,7 @@ using ItAcademy.SchoolAdmin.BusinessLogic.SignalR;
 using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
 using ItAcademy.SchoolAdmin.DataAccess.Models;
 using ItAcademy.SchoolAdmin.DataAccess.Services;
+using ItAcademy.SchoolAdmin.Web.Mapping;
 
 namespace ItAcademy.SchoolAdmin.Web.App_Start
 {
@@ -24,12 +25,13 @@ namespace ItAcademy.SchoolAdmin.Web.App_Start
             builder.RegisterDecorator<EmployeeServiceDecorator, IEmployeeService>();
             builder.RegisterType<EmployeeDbRepository>().As<IRepository<EmployeeDb>>().InstancePerHttpRequest();
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerHttpRequest();
+
             builder.AddAutoMapper(typeof(MvcApplication).Assembly);
-            builder.RegisterModule(new AutoMapperModule());
+            builder.RegisterModule(new AutoMapperBusinessModule());
+            builder.RegisterModule(new AutoMapperWebModule());
 
             var container = builder.Build();
             container.Resolve<MapperConfiguration>();
-
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
 
             return container;

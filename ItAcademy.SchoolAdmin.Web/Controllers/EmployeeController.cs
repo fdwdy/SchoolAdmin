@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using AutoMapper;
 using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
 using ItAcademy.SchoolAdmin.BusinessLogic.Mapping;
 using ItAcademy.SchoolAdmin.BusinessLogic.Models;
@@ -12,25 +13,29 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
 {
     public partial class EmployeeController : Controller
     {
+        private readonly IMapper _mapper;
         private readonly IEmployeeService _empService;
 
-        public EmployeeController(IEmployeeService empService)
+        public EmployeeController(IEmployeeService empService, IMapper mapper)
         {
             _empService = empService;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public async virtual Task<ActionResult> Index()
         {
-            IEnumerable<EmployeeDTO> emps = await _empService.GetAllAsync();
-            return View(emps);
+            IEnumerable<Employee> emps = await _empService.GetAllAsync();
+            IEnumerable<EmployeeListModel> models = _mapper.Map<IEnumerable<EmployeeListModel>>(emps);
+            return View(models);
         }
 
         [HttpGet]
         public virtual async Task<ActionResult> GetEmployeeData()
         {
-            IEnumerable<EmployeeDTO> emps = await _empService.GetAllAsync();
-            return PartialView("_EmployeeData", emps);
+            IEnumerable<Employee> emps = await _empService.GetAllAsync();
+            IEnumerable<EmployeeListModel> models = _mapper.Map<IEnumerable<EmployeeListModel>>(emps);
+            return PartialView("_EmployeeData", models);
         }
 
         [HttpGet]
@@ -73,13 +78,13 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            EmployeeDTO employeeDTO = await _empService.GetByIdAsync(id);
-            if (employeeDTO == null)
+            EmployeeViewModel employee = await GetEmployeeViewModelById(id);
+            if (employee == null)
             {
                 return HttpNotFound();
             }
 
-            return View(employeeDTO);
+            return View(employee);
         }
 
         [HttpPost]
@@ -98,26 +103,37 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            EmployeeDTO employeeDTO = await _empService.GetByIdAsync(id);
-            if (employeeDTO == null)
+            EmployeeEditModel employee = await GetEmployeeEditModelById(id);
+            if (employee == null)
             {
                 return HttpNotFound();
             }
 
-            return View(employeeDTO);
+            return View(employee);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual async Task<ActionResult> Edit([Bind(Include = "Id,FullName,BirthDate,Email,Phone")] EmployeeDTO employeeDTO)
+        public virtual async Task<ActionResult> Edit(EmployeeEditModel employee)
         {
             if (ModelState.IsValid)
             {
-                await _empService.UpdateAsync(employeeDTO);
+                var model = _mapper.Map<EmployeeEditModel, Employee>(employee);
+                await _empService.UpdateAsync(model);
                 return RedirectToAction("Index");
             }
 
-            return View(employeeDTO);
+            return View(employee);
+        }
+
+        public async Task<EmployeeViewModel> GetEmployeeViewModelById(string id)
+        {
+            return _mapper.Map<EmployeeViewModel>(await _empService.GetByIdAsync(id));
+        }
+
+        public async Task<EmployeeEditModel> GetEmployeeEditModelById(string id)
+        {
+            return _mapper.Map<EmployeeEditModel>(await _empService.GetByIdAsync(id));
         }
     }
 }

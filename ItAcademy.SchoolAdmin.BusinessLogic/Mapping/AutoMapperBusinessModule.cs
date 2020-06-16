@@ -4,11 +4,11 @@ using AutoMapper;
 
 namespace ItAcademy.SchoolAdmin.BusinessLogic.Mapping
 {
-    public class AutoMapperModule : Module
+    public class AutoMapperBusinessModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterAssemblyTypes(typeof(AutoMapperModule).Assembly).As<Profile>();
+            builder.RegisterAssemblyTypes(typeof(AutoMapperBusinessModule).Assembly).As<Profile>();
 
             builder.Register(context => new MapperConfiguration(cfg =>
             {

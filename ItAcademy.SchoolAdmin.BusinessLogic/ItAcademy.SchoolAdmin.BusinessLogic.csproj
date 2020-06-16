@@ -65,8 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IEmployeeService.cs" />
-    <Compile Include="Mapping\AutoMapperModule.cs" />
-    <Compile Include="Mapping\AutoMapperProfile.cs" />
+    <Compile Include="Mapping\AutoMapperBusinessModule.cs" />
+    <Compile Include="Mapping\AutoMapperBusinessProfile.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Mapping\EmployeeDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

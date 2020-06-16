@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ItAcademy.SchoolAdmin.BusinessLogic.Mapping.EmployeeDTO>
+﻿@model IEnumerable<ItAcademy.SchoolAdmin.Web.Models.EmployeeListModel>
 
 <h2>Index</h2>
 
@@ -24,24 +24,24 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BirthDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", MVC.Employee.ActionNames.Edit, new { id = item.Id }) |
-            @Html.ActionLink("Delete", MVC.Employee.ActionNames.Delete, new { id = item.Id })
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", MVC.Employee.ActionNames.Edit, new { id = item.Id }) |
+                @Html.ActionLink("Delete", MVC.Employee.ActionNames.Delete, new { id = item.Id })
+            </td>
+        </tr>
 
     }
 

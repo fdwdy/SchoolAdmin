@@ -144,7 +144,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         public class ActionParamsClass_Edit
         {
             public readonly string id = "id";
-            public readonly string employeeDTO = "employeeDTO";
+            public readonly string employee = "employee";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -257,14 +257,14 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         }
 
         [NonAction]
-        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, ItAcademy.SchoolAdmin.BusinessLogic.Mapping.EmployeeDTO employeeDTO);
+        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, ItAcademy.SchoolAdmin.Web.Models.EmployeeEditModel employee);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Edit(ItAcademy.SchoolAdmin.BusinessLogic.Mapping.EmployeeDTO employeeDTO)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Edit(ItAcademy.SchoolAdmin.Web.Models.EmployeeEditModel employee)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "employeeDTO", employeeDTO);
-            EditOverride(callInfo, employeeDTO);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "employee", employee);
+            EditOverride(callInfo, employee);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

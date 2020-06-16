@@ -39,7 +39,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
             return result;
         }
 
-        public Task<EmployeeDTO> GetByIdAsync(string id)
+        public Task<Employee> GetByIdAsync(string id)
         {
             var result = _empService.GetByIdAsync(id);
             return result;
@@ -50,7 +50,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
             return _empService.GetAll();
         }
 
-        public Task<IEnumerable<EmployeeDTO>> GetAllAsync()
+        public Task<IEnumerable<Employee>> GetAllAsync()
         {
             return _empService.GetAllAsync();
         }
@@ -65,7 +65,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
             await _empService.RemoveByIdAsync(id);
         }
 
-        public async Task UpdateAsync(EmployeeDTO emp)
+        public async Task UpdateAsync(Employee emp)
         {
             await _empService.UpdateAsync(emp);
         }

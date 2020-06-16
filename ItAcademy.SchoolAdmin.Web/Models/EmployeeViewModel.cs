@@ -1,9 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
 namespace ItAcademy.SchoolAdmin.Web.Models
 {
-    public class CreateEmployeeViewModel
+    public class EmployeeViewModel
     {
+        public string Id { get; set; }
+
         public string Name { get; set; }
 
         public string Surname { get; set; }
@@ -16,6 +21,6 @@ namespace ItAcademy.SchoolAdmin.Web.Models
 
         public string Phone { get; set; }
 
-        public string FullName { get => $"{Name} {Surname} {Middlename}".Replace("  ", " "); }
+        public string FullName { get => Name + ' ' + Surname + ' ' + Middlename; }
     }
 }

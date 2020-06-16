@@ -41,16 +41,16 @@
             throw new System.NotImplementedException();
         }
 
-        public async Task<IEnumerable<EmployeeDTO>> GetAllAsync()
+        public async Task<IEnumerable<Employee>> GetAllAsync()
         {
             var employees = await _uow.Employees.GetAllAsync();
-            return _mapper.Map<IEnumerable<EmployeeDb>, IEnumerable<EmployeeDTO>>(employees);
+            return _mapper.Map<IEnumerable<EmployeeDb>, IEnumerable<Employee>>(employees);
         }
 
-        public async Task<EmployeeDTO> GetByIdAsync(string id)
+        public async Task<Employee> GetByIdAsync(string id)
         {
             var employee = await _uow.Employees.GetByIdAsync(id);
-            return _mapper.Map<EmployeeDb, EmployeeDTO>(employee);
+            return _mapper.Map<EmployeeDb, Employee>(employee);
         }
 
         public async Task RemoveByIdAsync(string id)
@@ -59,13 +59,9 @@
             _uow.Employees.Save();
         }
 
-        public async Task UpdateAsync(EmployeeDTO emp)
+        public async Task UpdateAsync(Employee emp)
         {
-            var employee = _mapper.Map<EmployeeDTO, EmployeeDb>(emp);
-            string[] names = emp.FullName.Split(' ');
-            employee.Name = names[0];
-            employee.Middlename = names[1];
-            employee.Surname = names[2];
+            var employee = _mapper.Map<Employee, EmployeeDb>(emp);
             await _uow.Employees.UpdateAsync(employee);
             _uow.Employees.Save();
         }

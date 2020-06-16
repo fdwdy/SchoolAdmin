@@ -16,12 +16,12 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Interfaces
 
         Task<Result<EmployeeDb>> AddAsync(EmployeeDTO emp);
 
-        Task<IEnumerable<EmployeeDTO>> GetAllAsync();
+        Task<IEnumerable<Employee>> GetAllAsync();
 
-        Task<EmployeeDTO> GetByIdAsync(string id);
+        Task<Employee> GetByIdAsync(string id);
 
         Task RemoveByIdAsync(string id);
 
-        Task UpdateAsync(EmployeeDTO emp);
+        Task UpdateAsync(Employee emp);
     }
 }
