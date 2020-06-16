@@ -73,12 +73,14 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string NotFound = "NotFound";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string NotFound = "NotFound";
         }
 
 
@@ -93,8 +95,10 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             public class _ViewNamesClass
             {
                 public readonly string Index = "Index";
+                public readonly string NotFound = "NotFound";
             }
             public readonly string Index = "~/Views/Home/Index.cshtml";
+            public readonly string NotFound = "~/Views/Home/NotFound.cshtml";
         }
     }
 
@@ -111,6 +115,17 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void NotFoundOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult NotFound()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.NotFound);
+            NotFoundOverride(callInfo);
             return callInfo;
         }
 

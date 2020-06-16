@@ -17,5 +17,11 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public virtual ActionResult NotFound()
+        {
+            return View();
+        }
     }
 }
