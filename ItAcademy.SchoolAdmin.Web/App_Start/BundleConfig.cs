@@ -8,17 +8,17 @@ namespace ItAcademy.SchoolAdmin.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle(Links.Bundles.Scripts.Bootstrap).Include(
-                      "~/Scripts/bootstrap.js"));
+                      "~/Content/scripts/lib/bootstrap/bootstrap.js"));
 
             bundles.Add(new StyleBundle(Links.Bundles.Content.Sitecontent).Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/css/bootstrap/bootstrap.css",
+                      "~/Content/css/site.css"));
 
             bundles.Add(new ScriptBundle(Links.Bundles.Scripts.JQuery).Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Content/scripts/lib/jquery/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle(Links.Bundles.Scripts.JQueryValidation).Include(
-                        "~/Scripts/jquery.validate*"));
+                        "~/Content/scripts/lib/jquery-validation/jquery.validate*"));
         }
     }
 }

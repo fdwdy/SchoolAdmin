@@ -2,12 +2,17 @@
 <div id="dataModel"></div>
 
 <p>
-        @Html.ActionLink("Create New", MVC.Employee.ActionNames.Create)
+    @Html.ActionLink("Create New", MVC.Employee.ActionNames.Create)
 </p>
 
 @section scripts{
-    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    @*<script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
     <script src="~/signalr/hubs"></script>
-    <script type="text/javascript" src="~/Scripts/EmployeeUpdate.js"></script>
+    <script type="text/javascript" src="~/Scripts/EmployeeUpdate.js"></script>*@
+
+    <script src="~/Content/scripts/lib/jquery/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/scripts/lib/jquery-signalr/jquery.signalR-2.4.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script type="text/javascript" src="~/Content/scripts/js/EmployeeUpdate.js"></script>
 }
