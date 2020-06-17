@@ -223,6 +223,7 @@
     <Content Include="Content\css\bootstrap\bootstrap.min.css" />
     <Content Include="Content\css\Site.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\scripts\js\EmployeeSearch.js" />
     <Content Include="Content\scripts\js\EmployeeUpdate.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />

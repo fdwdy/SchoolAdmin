@@ -23,6 +23,8 @@
 
         Task DeleteAsync(string id);
 
+        Task<IEnumerable<T>> SearchAsync(string query);
+
         Result Save();
     }
 }

@@ -49,8 +49,6 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         [HttpPost]
         public virtual ActionResult Create(Employee model)
         {
-            //try
-            //{
                 if (ModelState.IsValid)
                 {
                     var result = _empService.Add(model);
@@ -63,12 +61,6 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
                 }
 
                 return View();
-            //}
-            //catch (Exception ex)
-            //{
-            //    TempData["ErrorMessage"] = ex.Message;
-            //    return View();
-            //}
         }
 
         [HttpGet]
@@ -125,6 +117,14 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             }
 
             return View(employee);
+        }
+
+        [HttpGet]
+        public virtual async Task<ActionResult> Search(string query)
+        {
+            IEnumerable<Employee> emps = await _empService.SearchAsync(query);
+            IEnumerable<EmployeeListModel> models = _mapper.Map<IEnumerable<EmployeeListModel>>(emps);
+            return PartialView("_EmployeeData", models);
         }
 
         public async Task<EmployeeViewModel> GetEmployeeViewModelById(string id)

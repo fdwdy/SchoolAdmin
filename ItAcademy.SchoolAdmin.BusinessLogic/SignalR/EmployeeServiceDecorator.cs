@@ -70,6 +70,11 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
             await _empService.UpdateAsync(emp);
         }
 
+        public async Task<IEnumerable<Employee>> SearchAsync(string query)
+        {
+            return await _empService.SearchAsync(query);
+        }
+
         public void Dispose()
         {
             Dispose(true);

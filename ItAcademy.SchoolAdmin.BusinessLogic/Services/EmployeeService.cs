@@ -66,6 +66,12 @@
             _uow.Employees.Save();
         }
 
+        public async Task<IEnumerable<Employee>> SearchAsync(string query)
+        {
+            var employees = await _uow.Employees.SearchAsync(query);
+            return _mapper.Map<IEnumerable<EmployeeDb>, IEnumerable<Employee>>(employees);
+        }
+
         public void Dispose()
         {
             Dispose(true);

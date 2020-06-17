@@ -70,6 +70,14 @@
             _db.Entry(emp).State = EntityState.Modified;
         }
 
+        public async Task<IEnumerable<EmployeeDb>> SearchAsync(string query)
+        {
+            return await _db.Employees.Where(x =>
+                x.Name.Contains(query) || x.Middlename.Contains(query) ||
+                x.Surname.Contains(query) || x.Email.Contains(query) ||
+                x.Phone.Contains(query)).ToListAsync();
+        }
+
         public Result Save()
         {
             try

@@ -13,8 +13,7 @@
 });
 
 function getAll() {
-    var model = $('#dataModel');
-    console.log("GETALL");
+    var model = $('#results');
     $.ajax({
         url: '/Employee/GetEmployeeData',
         contentType: 'application/html ; charset:utf-8',
