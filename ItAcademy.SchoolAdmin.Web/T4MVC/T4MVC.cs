@@ -29,6 +29,7 @@ public static partial class MVC
 {
     public static ItAcademy.SchoolAdmin.Web.Controllers.EmployeeController Employee = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_EmployeeController();
     public static ItAcademy.SchoolAdmin.Web.Controllers.HomeController Home = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_HomeController();
+    public static ItAcademy.SchoolAdmin.Web.Controllers.TestExceptionsController TestExceptions = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_TestExceptionsController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
@@ -69,78 +70,202 @@ internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.Action
 namespace Links
 {
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public static class Scripts {
-        public const string UrlPath = "~/Scripts";
-        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
-        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
-        public static readonly string bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap.min.js") ? Url("bootstrap.min.js") : Url("bootstrap.js");
-        public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
-        public static readonly string EmployeeUpdate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/EmployeeUpdate.min.js") ? Url("EmployeeUpdate.min.js") : Url("EmployeeUpdate.js");
-        public static readonly string jquery_3_3_1_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.3.1.intellisense.min.js") ? Url("jquery-3.3.1.intellisense.min.js") : Url("jquery-3.3.1.intellisense.js");
-        public static readonly string jquery_3_3_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.3.1.min.js") ? Url("jquery-3.3.1.min.js") : Url("jquery-3.3.1.js");
-        public static readonly string jquery_3_3_1_min_js = Url("jquery-3.3.1.min.js");
-        public static readonly string jquery_3_3_1_min_map = Url("jquery-3.3.1.min.map");
-        public static readonly string jquery_3_3_1_slim_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.3.1.slim.min.js") ? Url("jquery-3.3.1.slim.min.js") : Url("jquery-3.3.1.slim.js");
-        public static readonly string jquery_3_3_1_slim_min_js = Url("jquery-3.3.1.slim.min.js");
-        public static readonly string jquery_3_3_1_slim_min_map = Url("jquery-3.3.1.slim.min.map");
-        public static readonly string jquery_signalR_2_4_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.signalR-2.4.1.min.js") ? Url("jquery.signalR-2.4.1.min.js") : Url("jquery.signalR-2.4.1.js");
-        public static readonly string jquery_signalR_2_4_1_min_js = Url("jquery.signalR-2.4.1.min.js");
-        public static readonly string jquery_validate_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate-vsdoc.min.js") ? Url("jquery.validate-vsdoc.min.js") : Url("jquery.validate-vsdoc.js");
-        public static readonly string jquery_validate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate.min.js") ? Url("jquery.validate.min.js") : Url("jquery.validate.js");
-        public static readonly string jquery_validate_min_js = Url("jquery.validate.min.js");
-        public static readonly string jquery_validate_unobtrusive_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate.unobtrusive.min.js") ? Url("jquery.validate.unobtrusive.min.js") : Url("jquery.validate.unobtrusive.js");
-        public static readonly string jquery_validate_unobtrusive_min_js = Url("jquery.validate.unobtrusive.min.js");
-    }
-
-    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public static class Content {
         public const string UrlPath = "~/Content";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
-        public static readonly string bootstrap_theme_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-theme.min.css") ? Url("bootstrap-theme.min.css") : Url("bootstrap-theme.css");
-        public static readonly string bootstrap_theme_css_map = Url("bootstrap-theme.css.map");
-        public static readonly string bootstrap_theme_min_css = Url("bootstrap-theme.min.css");
-        public static readonly string bootstrap_theme_min_css_map = Url("bootstrap-theme.min.css.map");
-        public static readonly string bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap.min.css") ? Url("bootstrap.min.css") : Url("bootstrap.css");
-        public static readonly string bootstrap_css_map = Url("bootstrap.css.map");
-        public static readonly string bootstrap_min_css = Url("bootstrap.min.css");
-        public static readonly string bootstrap_min_css_map = Url("bootstrap.min.css.map");
-        public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class css {
+            public const string UrlPath = "~/Content/css";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class bootstrap {
+                public const string UrlPath = "~/Content/css/bootstrap";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string bootstrap_theme_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap-theme.min.css") ? Url("bootstrap-theme.min.css") : Url("bootstrap-theme.css");
+                public static readonly string bootstrap_theme_css_map = Url("bootstrap-theme.css.map");
+                public static readonly string bootstrap_theme_min_css = Url("bootstrap-theme.min.css");
+                public static readonly string bootstrap_theme_min_css_map = Url("bootstrap-theme.min.css.map");
+                public static readonly string bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap.min.css") ? Url("bootstrap.min.css") : Url("bootstrap.css");
+                public static readonly string bootstrap_css_map = Url("bootstrap.css.map");
+                public static readonly string bootstrap_min_css = Url("bootstrap.min.css");
+                public static readonly string bootstrap_min_css_map = Url("bootstrap.min.css.map");
+            }
+        
+            public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class fonts {
+            public const string UrlPath = "~/Content/fonts";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            public static readonly string glyphicons_halflings_regular_eot = Url("glyphicons-halflings-regular.eot");
+            public static readonly string glyphicons_halflings_regular_svg = Url("glyphicons-halflings-regular.svg");
+            public static readonly string glyphicons_halflings_regular_ttf = Url("glyphicons-halflings-regular.ttf");
+            public static readonly string glyphicons_halflings_regular_woff = Url("glyphicons-halflings-regular.woff");
+            public static readonly string glyphicons_halflings_regular_woff2 = Url("glyphicons-halflings-regular.woff2");
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class scripts {
+            public const string UrlPath = "~/Content/scripts";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class js {
+                public const string UrlPath = "~/Content/scripts/js";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string EmployeeSearch_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/EmployeeSearch.min.js") ? Url("EmployeeSearch.min.js") : Url("EmployeeSearch.js");
+                public static readonly string EmployeeUpdate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/EmployeeUpdate.min.js") ? Url("EmployeeUpdate.min.js") : Url("EmployeeUpdate.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class lib {
+                public const string UrlPath = "~/Content/scripts/lib";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class bootstrap {
+                    public const string UrlPath = "~/Content/scripts/lib/bootstrap";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap.min.js") ? Url("bootstrap.min.js") : Url("bootstrap.js");
+                    public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class jquery {
+                    public const string UrlPath = "~/Content/scripts/lib/jquery";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string jquery_3_3_1_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.3.1.intellisense.min.js") ? Url("jquery-3.3.1.intellisense.min.js") : Url("jquery-3.3.1.intellisense.js");
+                    public static readonly string jquery_3_3_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.3.1.min.js") ? Url("jquery-3.3.1.min.js") : Url("jquery-3.3.1.js");
+                    public static readonly string jquery_3_3_1_min_js = Url("jquery-3.3.1.min.js");
+                    public static readonly string jquery_3_3_1_min_map = Url("jquery-3.3.1.min.map");
+                    public static readonly string jquery_3_3_1_slim_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery-3.3.1.slim.min.js") ? Url("jquery-3.3.1.slim.min.js") : Url("jquery-3.3.1.slim.js");
+                    public static readonly string jquery_3_3_1_slim_min_js = Url("jquery-3.3.1.slim.min.js");
+                    public static readonly string jquery_3_3_1_slim_min_map = Url("jquery-3.3.1.slim.min.map");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class jquery_signalr {
+                    public const string UrlPath = "~/Content/scripts/lib/jquery-signalr";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string jquery_signalR_2_4_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.signalR-2.4.1.min.js") ? Url("jquery.signalR-2.4.1.min.js") : Url("jquery.signalR-2.4.1.js");
+                    public static readonly string jquery_signalR_2_4_1_min_js = Url("jquery.signalR-2.4.1.min.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class jquery_validation {
+                    public const string UrlPath = "~/Content/scripts/lib/jquery-validation";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string jquery_validate_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate-vsdoc.min.js") ? Url("jquery.validate-vsdoc.min.js") : Url("jquery.validate-vsdoc.js");
+                    public static readonly string jquery_validate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate.min.js") ? Url("jquery.validate.min.js") : Url("jquery.validate.js");
+                    public static readonly string jquery_validate_min_js = Url("jquery.validate.min.js");
+                    public static readonly string jquery_validate_unobtrusive_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.validate.unobtrusive.min.js") ? Url("jquery.validate.unobtrusive.min.js") : Url("jquery.validate.unobtrusive.js");
+                    public static readonly string jquery_validate_unobtrusive_min_js = Url("jquery.validate.unobtrusive.min.js");
+                }
+            
+            }
+        
+        }
+    
     }
 
     
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public static partial class Bundles
     {
-        public static partial class Scripts 
-        {
-            public static class Assets
-            {
-                public static readonly string bootstrap_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/bootstrap.js"); 
-                public static readonly string bootstrap_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/bootstrap.min.js"); 
-                public static readonly string EmployeeUpdate_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/EmployeeUpdate.js"); 
-                public static readonly string jquery_3_3_1_intellisense_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery-3.3.1.intellisense.js"); 
-                public static readonly string jquery_3_3_1_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery-3.3.1.js"); 
-                public static readonly string jquery_3_3_1_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery-3.3.1.min.js"); 
-                public static readonly string jquery_3_3_1_slim_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery-3.3.1.slim.js"); 
-                public static readonly string jquery_3_3_1_slim_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery-3.3.1.slim.min.js"); 
-                public static readonly string jquery_signalR_2_4_1_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.signalR-2.4.1.js"); 
-                public static readonly string jquery_signalR_2_4_1_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.signalR-2.4.1.min.js"); 
-                public static readonly string jquery_validate_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.validate.js"); 
-                public static readonly string jquery_validate_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.validate.min.js"); 
-                public static readonly string jquery_validate_unobtrusive_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.validate.unobtrusive.js"); 
-                public static readonly string jquery_validate_unobtrusive_min_js = T4MVCHelpers.ProcessAssetPath("~/Scripts/jquery.validate.unobtrusive.min.js"); 
-            }
-        }
         public static partial class Content 
         {
+            public static partial class css 
+            {
+                public static partial class bootstrap 
+                {
+                    public static class Assets
+                    {
+                        public static readonly string bootstrap_theme_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/bootstrap/bootstrap-theme.css");
+                        public static readonly string bootstrap_theme_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/bootstrap/bootstrap-theme.min.css");
+                        public static readonly string bootstrap_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/bootstrap/bootstrap.css");
+                        public static readonly string bootstrap_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/bootstrap/bootstrap.min.css");
+                    }
+                }
+                public static class Assets
+                {
+                    public static readonly string Site_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/Site.css");
+                }
+            }
+            public static partial class fonts 
+            {
+                public static class Assets
+                {
+                }
+            }
+            public static partial class scripts 
+            {
+                public static partial class js 
+                {
+                    public static class Assets
+                    {
+                        public static readonly string EmployeeSearch_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/js/EmployeeSearch.js"); 
+                        public static readonly string EmployeeUpdate_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/js/EmployeeUpdate.js"); 
+                    }
+                }
+                public static partial class lib 
+                {
+                    public static partial class bootstrap 
+                    {
+                        public static class Assets
+                        {
+                            public static readonly string bootstrap_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/lib/bootstrap/bootstrap.js"); 
+                            public static readonly string bootstrap_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/lib/bootstrap/bootstrap.min.js"); 
+                        }
+                    }
+                    public static partial class jquery 
+                    {
+                        public static class Assets
+                        {
+                            public static readonly string jquery_3_3_1_intellisense_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/lib/jquery/jquery-3.3.1.intellisense.js"); 
+                            public static readonly string jquery_3_3_1_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/lib/jquery/jquery-3.3.1.js"); 
+                            public static readonly string jquery_3_3_1_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/lib/jquery/jquery-3.3.1.min.js"); 
+                            public static readonly string jquery_3_3_1_slim_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/lib/jquery/jquery-3.3.1.slim.js"); 
+                            public static readonly string jquery_3_3_1_slim_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/lib/jquery/jquery-3.3.1.slim.min.js"); 
+                        }
+                    }
+                    public static partial class jquery_signalr 
+                    {
+                        public static class Assets
+                        {
+                            public static readonly string jquery_signalR_2_4_1_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/lib/jquery-signalr/jquery.signalR-2.4.1.js"); 
+                            public static readonly string jquery_signalR_2_4_1_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/lib/jquery-signalr/jquery.signalR-2.4.1.min.js"); 
+                        }
+                    }
+                    public static partial class jquery_validation 
+                    {
+                        public static class Assets
+                        {
+                            public static readonly string jquery_validate_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/lib/jquery-validation/jquery.validate.js"); 
+                            public static readonly string jquery_validate_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/lib/jquery-validation/jquery.validate.min.js"); 
+                            public static readonly string jquery_validate_unobtrusive_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/lib/jquery-validation/jquery.validate.unobtrusive.js"); 
+                            public static readonly string jquery_validate_unobtrusive_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/lib/jquery-validation/jquery.validate.unobtrusive.min.js"); 
+                        }
+                    }
+                    public static class Assets
+                    {
+                    }
+                }
+                public static class Assets
+                {
+                }
+            }
             public static class Assets
             {
-                public static readonly string bootstrap_theme_css = T4MVCHelpers.ProcessAssetPath("~/Content/bootstrap-theme.css");
-                public static readonly string bootstrap_theme_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/bootstrap-theme.min.css");
-                public static readonly string bootstrap_css = T4MVCHelpers.ProcessAssetPath("~/Content/bootstrap.css");
-                public static readonly string bootstrap_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/bootstrap.min.css");
-                public static readonly string Site_css = T4MVCHelpers.ProcessAssetPath("~/Content/Site.css");
             }
         }
     }

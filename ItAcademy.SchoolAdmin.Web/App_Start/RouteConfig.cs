@@ -1,12 +1,15 @@
-﻿using System.Web.Mvc;
+﻿using Owin;
+using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace ItAcademy.SchoolAdmin.Web
 {
     public class RouteConfig
     {
-        public static void RegisterRoutes(RouteCollection routes)
+        public static void RegisterRoutes(RouteCollection routes, IAppBuilder app)
         {
+            app.MapSignalR();
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(

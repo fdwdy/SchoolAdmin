@@ -15,11 +15,10 @@ namespace ItAcademy.SchoolAdmin.Web
     {
         public void Configuration(IAppBuilder app)
         {
-            app.MapSignalR();
             AutofacConfig.ConfigureContainer();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            RouteConfig.RegisterRoutes(RouteTable.Routes, app);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             ValidationConfiguration();
         }

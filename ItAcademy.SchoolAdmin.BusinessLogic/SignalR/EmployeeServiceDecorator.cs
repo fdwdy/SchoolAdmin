@@ -25,10 +25,10 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
         {
             _empService = empService;
             _uow = uow;
-            _uow.Db.OnChangesSaved += Db_OnChangesSaved;
+            _uow.Db.OnChangesSaved += OnChangesSaved;
         }
 
-        public void Db_OnChangesSaved(object sender, DataAccess.OnChangesSavedArgs e)
+        public void OnChangesSaved(object sender, DataAccess.OnChangesSavedArgs e)
         {
             GlobalHost.ConnectionManager.GetHubContext<EmployeeHub>().Clients.All.broadcast(e.Employees);
         }
