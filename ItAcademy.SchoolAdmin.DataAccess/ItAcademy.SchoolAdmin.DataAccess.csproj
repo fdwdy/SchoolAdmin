@@ -46,14 +46,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntitiesConfiguration\EmployeeConfiguration.cs" />
+    <Compile Include="EntitiesConfiguration\SubjectConfiguration.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Migrations\202006070738150_Init.cs" />
     <Compile Include="Migrations\202006070738150_Init.designer.cs">
       <DependentUpon>202006070738150_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006241743497_RenameEmployeeEntities.cs" />
+    <Compile Include="Migrations\202006241743497_RenameEmployeeEntities.designer.cs">
+      <DependentUpon>202006241743497_RenameEmployeeEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006241836208_AddSubjectEntity.cs" />
+    <Compile Include="Migrations\202006241836208_AddSubjectEntity.designer.cs">
+      <DependentUpon>202006241836208_AddSubjectEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EmployeeDb.cs" />
+    <Compile Include="Models\SubjectDb.cs" />
     <Compile Include="OnChangesSavedArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SchoolContext.cs" />
@@ -72,6 +82,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202006070738150_Init.resx">
       <DependentUpon>202006070738150_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006241743497_RenameEmployeeEntities.resx">
+      <DependentUpon>202006241743497_RenameEmployeeEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006241836208_AddSubjectEntity.resx">
+      <DependentUpon>202006241836208_AddSubjectEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

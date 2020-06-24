@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ItAcademy.SchoolAdmin.DataAccess.Models
 {
@@ -17,5 +18,7 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Models
         public string Email { get; set; }
 
         public string Phone { get; set; }
+
+        public ICollection<SubjectDb> Subjects { get; set; }
     }
 }

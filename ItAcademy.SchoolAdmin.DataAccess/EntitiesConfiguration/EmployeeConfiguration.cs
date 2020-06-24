@@ -7,25 +7,25 @@ namespace ItAcademy.SchoolAdmin.DataAccess.EntitiesConfiguration
     {
         public EmployeeConfiguration()
         {
-            ToTable("employee");
+            ToTable("Employees");
             HasKey(e => e.Id);
-            Property(e => e.Id).HasColumnName("id");
-            Property(e => e.Name).HasColumnName("name")
+            Property(e => e.Id).HasColumnName("ID");
+            Property(e => e.Name).HasColumnName("Name")
                 .IsRequired()
                 .HasMaxLength(255);
-            Property(e => e.Middlename).HasColumnName("middlename")
+            Property(e => e.Middlename).HasColumnName("Middlename")
                 .IsRequired()
                 .HasMaxLength(255);
-            Property(e => e.Surname).HasColumnName("surname")
+            Property(e => e.Surname).HasColumnName("Surname")
                 .IsRequired()
                 .HasMaxLength(255);
-            Property(e => e.Phone).HasColumnName("phone")
+            Property(e => e.Phone).HasColumnName("Phone")
                 .IsRequired()
                 .HasMaxLength(255);
-            Property(e => e.Email).HasColumnName("email")
+            Property(e => e.Email).HasColumnName("Email")
                 .IsRequired()
                 .HasMaxLength(255);
-            Property(e => e.BirthDate).HasColumnName("birth_date")
+            Property(e => e.BirthDate).HasColumnName("Birthdate")
                 .IsRequired();
         }
     }
