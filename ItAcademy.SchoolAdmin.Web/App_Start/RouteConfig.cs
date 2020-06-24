@@ -1,6 +1,6 @@
-﻿using Owin;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
+using Owin;
 
 namespace ItAcademy.SchoolAdmin.Web
 {

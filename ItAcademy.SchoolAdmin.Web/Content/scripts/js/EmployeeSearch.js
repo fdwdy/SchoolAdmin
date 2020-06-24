@@ -3,7 +3,7 @@
     handler = new SearchHandler();
 
     $('#search').on('focusin', function () {
-        handler.prevQuery = $(this).val();
+        $('#search').val('');
     });
 
     $('#search').on('input', function () {

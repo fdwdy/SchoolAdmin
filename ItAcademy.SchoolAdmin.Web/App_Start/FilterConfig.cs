@@ -1,6 +1,5 @@
-﻿using ItAcademy.SchoolAdmin.Web.Filters;
-using NLog;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using ItAcademy.SchoolAdmin.Web.Filters;
 
 namespace ItAcademy.SchoolAdmin.Web
 {
@@ -8,7 +7,6 @@ namespace ItAcademy.SchoolAdmin.Web
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            //filters.Add(new HandleErrorAttribute());
             filters.Add(new NLogExceptionHandlerAttribute());
         }
     }

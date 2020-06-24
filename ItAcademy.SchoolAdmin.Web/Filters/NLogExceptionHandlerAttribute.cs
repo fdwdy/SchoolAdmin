@@ -1,24 +1,20 @@
-﻿using NLog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
+using NLog;
 
 namespace ItAcademy.SchoolAdmin.Web.Filters
 {
     public class NLogExceptionHandlerAttribute : HandleErrorAttribute
     {
-        private static Logger logger = LogManager.GetCurrentClassLogger();
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         public override void OnException(ExceptionContext filterContext)
         {
-            logger.Error($"Exception info:", filterContext.Exception);
+            Logger.Error($"Exception info:", filterContext.Exception);
 
             if (filterContext.ExceptionHandled || !filterContext.HttpContext.IsCustomErrorEnabled)
             {
-                logger.Info($"Handled exception {filterContext.Exception.Message} in {filterContext.Controller}");
+                Logger.Info($"Handled exception {filterContext.Exception.Message} in {filterContext.Controller}");
                 return;
             }
 
@@ -32,12 +28,10 @@ namespace ItAcademy.SchoolAdmin.Web.Filters
                 filterContext.Result = new ViewResult() { ViewName = "Error" };
             }
 
-            logger.Info($"Unhandled exception {filterContext.Exception.Message} in {filterContext.Controller}");
+            Logger.Info($"Unhandled exception {filterContext.Exception.Message} in {filterContext.Controller}");
 
             filterContext.ExceptionHandled = true;
             filterContext.HttpContext.Response.Clear();
-
-            //base.OnException(filterContext);
         }
 
         private ActionResult GetErrorView(int statusCode)
