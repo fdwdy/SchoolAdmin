@@ -9,6 +9,8 @@
 
         IRepository<EmployeeDb> Employees { get; }
 
+        IRepository<SubjectDb> Subjects { get; }
+
         void Save();
     }
 }

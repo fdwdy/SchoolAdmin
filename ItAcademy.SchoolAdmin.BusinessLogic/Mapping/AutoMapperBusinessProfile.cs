@@ -11,6 +11,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Mapping
             CreateMap<EmployeeDb, EmployeeDTO>()
                 .ForMember("FullName", opt => opt.MapFrom(c => c.Name + ' ' + c.Middlename + ' ' + c.Surname)).ReverseMap();
             CreateMap<EmployeeDb, Employee>().ReverseMap();
+            CreateMap<SubjectDb, Subject>().ReverseMap();
         }
     }
 }

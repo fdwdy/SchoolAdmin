@@ -194,8 +194,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\TestExceptionsController.cs" />
     <Compile Include="Filters\NLogExceptionHandlerAttribute.cs" />
+    <Compile Include="Models\SubjectViewModel.cs" />
     <Compile Include="T4MVC\EmployeeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -226,6 +228,7 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Validators\EmployeeValidator.cs" />
+    <Compile Include="Validators\SubjectViewModelValidator.cs" />
     <Compile Include="Validators\ValidatorFactory.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -297,6 +300,8 @@
     <Content Include="Views\Home\NotFound.cshtml" />
     <Content Include="Views\Shared\Error500.cshtml" />
     <Content Include="Views\Shared\Error404.cshtml" />
+    <Content Include="Views\Subject\Index.cshtml" />
+    <Content Include="Views\Subject\CreateEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

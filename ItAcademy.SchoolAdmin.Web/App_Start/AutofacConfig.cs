@@ -22,10 +22,11 @@ namespace ItAcademy.SchoolAdmin.Web.App_Start
             builder.RegisterType<EmployeeHub>().AsSelf().InstancePerRequest();
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             builder.RegisterType<EmployeeService>().As<IEmployeeService>().InstancePerHttpRequest();
+            builder.RegisterType<SubjectService>().As<ISubjectService>().InstancePerHttpRequest();
             builder.RegisterDecorator<EmployeeServiceDecorator, IEmployeeService>();
             builder.RegisterType<EmployeeDbRepository>().As<IRepository<EmployeeDb>>().InstancePerHttpRequest();
+            builder.RegisterType<SubjectDbRepository>().As<IRepository<SubjectDb>>().InstancePerHttpRequest();
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerHttpRequest();
-
             builder.AddAutoMapper(typeof(MvcApplication).Assembly);
             builder.RegisterModule(new AutoMapperBusinessModule());
             builder.RegisterModule(new AutoMapperWebModule());

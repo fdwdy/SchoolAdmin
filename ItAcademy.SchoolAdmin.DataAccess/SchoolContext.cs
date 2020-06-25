@@ -18,6 +18,10 @@ namespace ItAcademy.SchoolAdmin.DataAccess
 
         public virtual DbSet<EmployeeDb> Employees { get; set; }
 
+        public virtual DbSet<SubjectDb> Subjects { get; set; }
+
+        public virtual DbSet<EmployeeSubjectDb> EmployeeSubjects { get; set; }
+
         public override int SaveChanges()
         {
             var result = base.SaveChanges();
@@ -29,6 +33,8 @@ namespace ItAcademy.SchoolAdmin.DataAccess
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new EmployeeConfiguration());
+            modelBuilder.Configurations.Add(new SubjectConfiguration());
+            modelBuilder.Configurations.Add(new EmployeeSubjectConfiguration());
         }
     }
 }

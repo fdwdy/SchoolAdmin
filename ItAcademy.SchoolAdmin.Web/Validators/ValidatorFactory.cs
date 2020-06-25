@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using FluentValidation;
 using ItAcademy.SchoolAdmin.BusinessLogic.Models;
+using ItAcademy.SchoolAdmin.Web.Models;
 
 namespace ItAcademy.SchoolAdmin.Web.Validators
 {
@@ -12,6 +13,7 @@ namespace ItAcademy.SchoolAdmin.Web.Validators
         static ValidatorFactory()
         {
             _validators.Add(typeof(IValidator<Employee>), new EmployeeValidator());
+            _validators.Add(typeof(IValidator<SubjectViewModel>), new SubjectViewModelValidator());
         }
 
         public override IValidator CreateInstance(Type validatorType)

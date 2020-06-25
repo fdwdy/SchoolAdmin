@@ -7,6 +7,7 @@
     public class UnitOfWork : IUnitOfWork
     {
         private EmployeeDbRepository _empRepository;
+        private SubjectDbRepository _sbjRepository;
 
         private bool _disposedValue = false;
 
@@ -23,6 +24,8 @@
         public SchoolContext Db { get; }
 
         public IRepository<EmployeeDb> Employees => _empRepository ?? (_empRepository = new EmployeeDbRepository(Db));
+
+        public IRepository<SubjectDb> Subjects => _sbjRepository ?? (_sbjRepository = new SubjectDbRepository(Db));
 
         public void Save()
         {

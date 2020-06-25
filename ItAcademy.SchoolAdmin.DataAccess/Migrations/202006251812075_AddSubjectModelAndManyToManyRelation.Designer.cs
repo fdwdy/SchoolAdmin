@@ -7,13 +7,13 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AddSubjectEntity : IMigrationMetadata
+    public sealed partial class AddSubjectModelAndManyToManyRelation : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddSubjectEntity));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddSubjectModelAndManyToManyRelation));
         
         string IMigrationMetadata.Id
         {
-            get { return "202006241836208_AddSubjectEntity"; }
+            get { return "202006251812075_AddSubjectModelAndManyToManyRelation"; }
         }
         
         string IMigrationMetadata.Source

@@ -14,6 +14,7 @@ namespace ItAcademy.SchoolAdmin.Web.Mapping
                 .ForMember(
                     elm => elm.FullName,
                     opt => opt.MapFrom(e => $"{e.Name} {e.Middlename} {e.Surname}".Replace("  ", " ")));
+            CreateMap<Subject, SubjectViewModel>().ReverseMap();
         }
     }
 }

@@ -19,6 +19,6 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Models
 
         public string Phone { get; set; }
 
-        public ICollection<SubjectDb> Subjects { get; set; }
+        public ICollection<EmployeeSubjectDb> EmployeeSubjects { get; set; }
     }
 }

@@ -16,6 +16,6 @@ namespace ItAcademy.SchoolAdmin.Web.Models
 
         public string Phone { get; set; }
 
-        public string FullName { get => $"{Name} {Surname} {Middlename}".Replace("  ", " "); }
+        public string FullName => $"{Name} {Surname} {Middlename}".Replace("  ", " ");
     }
 }

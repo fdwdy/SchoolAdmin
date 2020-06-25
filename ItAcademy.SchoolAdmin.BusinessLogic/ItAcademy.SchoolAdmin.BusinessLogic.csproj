@@ -65,12 +65,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IEmployeeService.cs" />
+    <Compile Include="Interfaces\ISubjectService.cs" />
     <Compile Include="Mapping\AutoMapperBusinessModule.cs" />
     <Compile Include="Mapping\AutoMapperBusinessProfile.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Mapping\EmployeeDTO.cs" />
+    <Compile Include="Models\Subject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\EmployeeService.cs" />
+    <Compile Include="Services\SubjectService.cs" />
     <Compile Include="SignalR\EmployeeHub.cs" />
     <Compile Include="SignalR\EmployeeServiceDecorator.cs" />
   </ItemGroup>
