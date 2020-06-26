@@ -9,6 +9,11 @@ namespace ItAcademy.SchoolAdmin.DataAccess.EntitiesConfiguration
         {
             ToTable("Employees");
             HasKey(e => e.Id);
+
+            // HasMany(e => e.Subjects).WithMany(s => s.Employees)
+            //    .Map(t => t.MapLeftKey("EmployeeId")
+            //    .MapRightKey("SubjectId")
+            //    .ToTable("EmployeeSubjects"));
             Property(e => e.Id).HasColumnName("ID");
             Property(e => e.Name).HasColumnName("Name")
                 .IsRequired()

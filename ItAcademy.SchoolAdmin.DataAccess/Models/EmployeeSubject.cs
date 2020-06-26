@@ -1,6 +1,6 @@
 ﻿namespace ItAcademy.SchoolAdmin.DataAccess.Models
 {
-    public class EmployeeSubjectDb
+    public class EmployeeSubject
     {
         public string EmployeeId { get; set; }
 

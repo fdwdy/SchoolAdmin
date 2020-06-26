@@ -302,6 +302,8 @@
     <Content Include="Views\Shared\Error404.cshtml" />
     <Content Include="Views\Subject\Index.cshtml" />
     <Content Include="Views\Subject\CreateEdit.cshtml" />
+    <Content Include="Views\Subject\Delete.cshtml" />
+    <Content Include="Views\Subject\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

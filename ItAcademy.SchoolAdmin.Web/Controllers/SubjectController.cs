@@ -29,13 +29,41 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         }
 
         [HttpGet]
-        public virtual ActionResult Create()
+        public async virtual Task<ActionResult> Create()
         {
             SubjectViewModel model = new SubjectViewModel();
             return View("CreateEdit", model);
         }
 
-        public async Task<ActionResult> Edit(string id)
+        [HttpGet]
+        public async virtual Task<ActionResult> Edit(string id)
+        {
+            var sbj = _mapper.Map<SubjectViewModel>(await _sbjService.GetByIdAsync(id));
+            return View("CreateEdit", sbj);
+        }
+
+        [HttpPost]
+        public async virtual Task<ActionResult> CreateEdit(Subject model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.Id == null)
+                {
+                    _sbjService.Add(model);
+                }
+                else
+                {
+                    await _sbjService.UpdateAsync(model);
+                }
+
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }
+
+        [HttpGet]
+        public virtual async Task<ActionResult> Delete(string id)
         {
             if (id == null)
             {
@@ -43,30 +71,26 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             }
 
             var sbj = _mapper.Map<SubjectViewModel>(await _sbjService.GetByIdAsync(id));
-
             if (sbj == null)
             {
                 return HttpNotFound();
             }
 
-            return View("CreateEdit", sbj);
+            return View(sbj);
         }
 
         [HttpPost]
-        public virtual ActionResult Create(Subject model)
+        [ActionName("Delete")]
+        public virtual async Task<ActionResult> DeleteConfirmed(string id)
         {
-            if (ModelState.IsValid)
-            {
-                var result = _sbjService.Add(model);
-                if (result.IsSuccess)
-                {
-                    return RedirectToAction("Index");
-                }
+            await _sbjService.RemoveByIdAsync(id);
+            return RedirectToAction("Index");
+        }
 
-                TempData["ErrorMessage"] = result.Message;
-            }
-
-            return View();
+        public virtual async Task<ActionResult> Details(string id)
+        {
+            var sbj = _mapper.Map<SubjectViewModel>(await _sbjService.GetByIdAsync(id));
+            return View(sbj);
         }
     }
 }

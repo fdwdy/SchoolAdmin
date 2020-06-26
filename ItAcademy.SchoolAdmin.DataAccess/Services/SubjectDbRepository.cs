@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Threading.Tasks;
 using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
 using ItAcademy.SchoolAdmin.DataAccess.Models;
@@ -21,6 +24,7 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
         public void Create(SubjectDb sbj)
         {
             _sbj = sbj;
+            _sbj.Id = Guid.NewGuid().ToString();
             _db.Subjects.Add(_sbj);
         }
 
@@ -51,7 +55,14 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
 
         public async Task<SubjectDb> GetByIdAsync(string id)
         {
-            return await _db.Subjects.FindAsync(id);
+            var sbj = await _db.Subjects
+                .Include(e => e.EmployeeSubjects.Select(c => c.Employee))
+                .Where(e => e.Id == id)
+                .FirstOrDefaultAsync();
+
+            return sbj;
+
+            // return await _db.Subjects.FindAsync(id);
         }
 
         public void Update(SubjectDb sbj)
@@ -73,7 +84,7 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
 
         public Task<IEnumerable<SubjectDb>> SearchAsync(string query)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

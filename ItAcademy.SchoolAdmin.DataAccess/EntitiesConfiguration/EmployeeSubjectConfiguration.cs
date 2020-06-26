@@ -3,7 +3,7 @@ using ItAcademy.SchoolAdmin.DataAccess.Models;
 
 namespace ItAcademy.SchoolAdmin.DataAccess.EntitiesConfiguration
 {
-    public class EmployeeSubjectConfiguration : EntityTypeConfiguration<EmployeeSubjectDb>
+    public class EmployeeSubjectConfiguration : EntityTypeConfiguration<EmployeeSubject>
     {
         public EmployeeSubjectConfiguration()
         {

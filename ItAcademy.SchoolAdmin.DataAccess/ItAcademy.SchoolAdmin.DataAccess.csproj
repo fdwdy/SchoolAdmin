@@ -54,17 +54,25 @@
     <Compile Include="Migrations\202006070738150_Init.designer.cs">
       <DependentUpon>202006070738150_Init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006241743497_RenameEmployeeEntities.cs" />
-    <Compile Include="Migrations\202006241743497_RenameEmployeeEntities.designer.cs">
-      <DependentUpon>202006241743497_RenameEmployeeEntities.cs</DependentUpon>
+    <Compile Include="Migrations\202006261627182_AddSubjects.cs" />
+    <Compile Include="Migrations\202006261627182_AddSubjects.designer.cs">
+      <DependentUpon>202006261627182_AddSubjects.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006251812075_AddSubjectModelAndManyToManyRelation.cs" />
-    <Compile Include="Migrations\202006251812075_AddSubjectModelAndManyToManyRelation.designer.cs">
-      <DependentUpon>202006251812075_AddSubjectModelAndManyToManyRelation.cs</DependentUpon>
+    <Compile Include="Migrations\202006261648133_EmployeeSubjectModel.cs" />
+    <Compile Include="Migrations\202006261648133_EmployeeSubjectModel.designer.cs">
+      <DependentUpon>202006261648133_EmployeeSubjectModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006261653023_EmployeeSubjectModelNameNotUnique.cs" />
+    <Compile Include="Migrations\202006261653023_EmployeeSubjectModelNameNotUnique.designer.cs">
+      <DependentUpon>202006261653023_EmployeeSubjectModelNameNotUnique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006261656164_EmployeeSubjectModelNameUnique.cs" />
+    <Compile Include="Migrations\202006261656164_EmployeeSubjectModelNameUnique.designer.cs">
+      <DependentUpon>202006261656164_EmployeeSubjectModelNameUnique.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EmployeeDb.cs" />
-    <Compile Include="Models\EmployeeSubjectDb.cs" />
+    <Compile Include="Models\EmployeeSubject.cs" />
     <Compile Include="Models\SubjectDb.cs" />
     <Compile Include="OnChangesSavedArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,11 +94,17 @@
     <EmbeddedResource Include="Migrations\202006070738150_Init.resx">
       <DependentUpon>202006070738150_Init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006241743497_RenameEmployeeEntities.resx">
-      <DependentUpon>202006241743497_RenameEmployeeEntities.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006261627182_AddSubjects.resx">
+      <DependentUpon>202006261627182_AddSubjects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006251812075_AddSubjectModelAndManyToManyRelation.resx">
-      <DependentUpon>202006251812075_AddSubjectModelAndManyToManyRelation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006261648133_EmployeeSubjectModel.resx">
+      <DependentUpon>202006261648133_EmployeeSubjectModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006261653023_EmployeeSubjectModelNameNotUnique.resx">
+      <DependentUpon>202006261653023_EmployeeSubjectModelNameNotUnique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006261656164_EmployeeSubjectModelNameUnique.resx">
+      <DependentUpon>202006261656164_EmployeeSubjectModelNameUnique.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

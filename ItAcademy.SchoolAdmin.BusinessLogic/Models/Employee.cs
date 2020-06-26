@@ -1,6 +1,7 @@
 ﻿namespace ItAcademy.SchoolAdmin.BusinessLogic.Models
 {
     using System;
+    using System.Collections.Generic;
 
     public class Employee
     {
@@ -17,5 +18,7 @@
         public string Email { get; set; }
 
         public string Phone { get; set; }
+
+        public ICollection<EmployeeSubject> EmployeeSubjects { get; set; }
     }
 }

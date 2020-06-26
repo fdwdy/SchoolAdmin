@@ -8,6 +8,6 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Models
 
         public string Name { get; set; }
 
-        public ICollection<EmployeeSubjectDb> EmployeeSubjects { get; set; }
+        public ICollection<EmployeeSubject> EmployeeSubjects { get; set; }
     }
 }
