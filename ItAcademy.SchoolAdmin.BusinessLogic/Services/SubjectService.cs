@@ -65,6 +65,34 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
             _uow.Subjects.Save();
         }
 
+        public async Task SetEmployee(string id, List<Employee> emps)
+        {
+            var subject = await _uow.Subjects.GetByIdAsync(id);
+            subject.EmployeeSubjects.Clear();
+            foreach (var emp in emps)
+            {
+                    subject.EmployeeSubjects.Add(new DataAccess.Models.EmployeeSubject
+                    {
+                        EmployeeId = emp.Id,
+                        SubjectId = subject.Id,
+                    });
+            }
+
+            _uow.Subjects.Update(subject);
+            _uow.Subjects.Save();
+        }
+
+        public async Task<bool> FindByName(string name)
+        {
+            return await _uow.Subjects.FindByName(name);
+        }
+
+        public async Task<IEnumerable<Subject>> SearchAsync(string query)
+        {
+            var subjects = await _uow.Subjects.SearchAsync(query);
+            return _mapper.Map<IEnumerable<SubjectDb>, IEnumerable<Subject>>(subjects);
+        }
+
         public void Dispose()
         {
             Dispose(true);

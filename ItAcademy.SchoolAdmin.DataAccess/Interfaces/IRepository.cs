@@ -26,5 +26,7 @@
         Task<IEnumerable<T>> SearchAsync(string query);
 
         Result Save();
+
+        Task<bool> FindByName(string name);
     }
 }

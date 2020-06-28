@@ -77,6 +77,8 @@
     <Compile Include="Services\SubjectService.cs" />
     <Compile Include="SignalR\EmployeeHub.cs" />
     <Compile Include="SignalR\EmployeeServiceDecorator.cs" />
+    <Compile Include="SignalR\SubjectHub.cs" />
+    <Compile Include="SignalR\SubjectServiceDecorator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ItAcademy.SchoolAdmin.DataAccess\ItAcademy.SchoolAdmin.DataAccess.csproj">

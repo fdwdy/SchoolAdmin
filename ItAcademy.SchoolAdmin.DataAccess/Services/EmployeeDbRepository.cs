@@ -1,16 +1,14 @@
-﻿namespace ItAcademy.SchoolAdmin.DataAccess.Services
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Data.Entity;
-    using System.Data.Entity.Infrastructure;
-    using System.Data.Entity.Validation;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
-    using ItAcademy.SchoolAdmin.DataAccess.Models;
-    using ItAcademy.SchoolAdmin.Infrastructure;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Threading.Tasks;
+using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
+using ItAcademy.SchoolAdmin.DataAccess.Models;
+using ItAcademy.SchoolAdmin.Infrastructure;
 
+namespace ItAcademy.SchoolAdmin.DataAccess.Services
+{
     public class EmployeeDbRepository : IRepository<EmployeeDb>
     {
         private SchoolContext _db;
@@ -80,34 +78,13 @@
 
         public Result Save()
         {
-            try
-            {
-                _db.SaveChanges();
-                return Result.Ok();
-            }
-            catch (DbUpdateConcurrencyException e)
-            {
-                return Result.Fail($"Cannot save employee. {"DbUpdateConcurrencyException"}");
-            }
-            catch (DbUpdateException e)
-            {
-                return Result.Fail($"Cannot save employee. {"DbUpdateException"}");
-            }
-            catch (DbEntityValidationException e)
-            {
-                var errorMessages = e.EntityValidationErrors
-                        .SelectMany(x => x.ValidationErrors)
-                        .Select(x => x.ErrorMessage);
+            _db.SaveChanges();
+            return Result.Ok();
+        }
 
-                var fullErrorMessage = string.Join("; ", errorMessages);
-
-                var exceptionMessage = string.Concat(" The validation errors are: ", fullErrorMessage);
-                return Result.Fail($"Cannot save employee.  {exceptionMessage}");
-            }
-            catch (Exception e)
-            {
-                return Result.Fail($"Cannot save employee. {e.Message}");
-            }
+        public Task<bool> FindByName(string name)
+        {
+            throw new NotImplementedException();
         }
     }
 }

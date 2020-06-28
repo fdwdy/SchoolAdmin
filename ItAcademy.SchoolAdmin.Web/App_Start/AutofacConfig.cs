@@ -21,12 +21,12 @@ namespace ItAcademy.SchoolAdmin.Web.App_Start
             var builder = new ContainerBuilder();
             builder.RegisterType<EmployeeHub>().AsSelf().InstancePerRequest();
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
-            builder.RegisterType<EmployeeService>().As<IEmployeeService>().InstancePerHttpRequest();
-            builder.RegisterType<SubjectService>().As<ISubjectService>().InstancePerHttpRequest();
+            builder.RegisterType<EmployeeService>().As<IEmployeeService>().InstancePerRequest();
+            builder.RegisterType<SubjectService>().As<ISubjectService>().InstancePerRequest();
             builder.RegisterDecorator<EmployeeServiceDecorator, IEmployeeService>();
-            builder.RegisterType<EmployeeDbRepository>().As<IRepository<EmployeeDb>>().InstancePerHttpRequest();
-            builder.RegisterType<SubjectDbRepository>().As<IRepository<SubjectDb>>().InstancePerHttpRequest();
-            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerHttpRequest();
+            builder.RegisterType<EmployeeDbRepository>().As<IRepository<EmployeeDb>>().InstancePerRequest();
+            builder.RegisterType<SubjectDbRepository>().As<IRepository<SubjectDb>>().InstancePerRequest();
+            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
             builder.AddAutoMapper(typeof(MvcApplication).Assembly);
             builder.RegisterModule(new AutoMapperBusinessModule());
             builder.RegisterModule(new AutoMapperWebModule());

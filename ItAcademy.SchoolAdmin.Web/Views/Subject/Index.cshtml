@@ -1,34 +1,18 @@
-﻿@model IEnumerable<ItAcademy.SchoolAdmin.Web.Models.SubjectViewModel>
+﻿<h2>All employees</h2>
 
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+<input type="text" name="name" id="search" />
+<input type="button" value="Поиск" id="submit" />
 
-<h2>Index</h2>
+<div id="results"></div>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", MVC.Subject.ActionNames.Create)
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+@section scripts{
+    <script src="~/Content/scripts/lib/jquery/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/scripts/lib/jquery-signalr/jquery.signalR-2.4.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script type="text/javascript" src="~/Content/scripts/js/SubjectUpdate.js"></script>
+    <script type="text/javascript" src="~/Content/scripts/js/SubjectSearch.js"></script>
 }
-
-</table>

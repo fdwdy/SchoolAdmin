@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render(Links.Bundles.Scripts.JQuery)
+    @Scripts.Render(Links.Bundles.Scripts.JQueryValidation)
     @Styles.Render(Links.Bundles.Content.Sitecontent)
 </head>
 <body>
@@ -16,7 +17,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", MVC.Home.ActionNames.Index, new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Application name", MVC.Home.Actions.Index(), new { @class = "navbar-brand" })
             </div>
         </div>
     </div>

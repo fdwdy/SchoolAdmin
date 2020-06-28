@@ -29,6 +29,7 @@ public static partial class MVC
 {
     public static ItAcademy.SchoolAdmin.Web.Controllers.EmployeeController Employee = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_EmployeeController();
     public static ItAcademy.SchoolAdmin.Web.Controllers.HomeController Home = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_HomeController();
+    public static ItAcademy.SchoolAdmin.Web.Controllers.SubjectController Subject = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_SubjectController();
     public static ItAcademy.SchoolAdmin.Web.Controllers.TestExceptionsController TestExceptions = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_TestExceptionsController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }

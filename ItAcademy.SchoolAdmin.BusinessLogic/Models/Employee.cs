@@ -19,6 +19,8 @@
 
         public string Phone { get; set; }
 
+        public string FullName => Name + ' ' + Surname + ' ' + Middlename;
+
         public ICollection<EmployeeSubject> EmployeeSubjects { get; set; }
     }
 }

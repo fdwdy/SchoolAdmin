@@ -21,5 +21,11 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Interfaces
         Task RemoveByIdAsync(string id);
 
         Task UpdateAsync(Subject emp);
+
+        Task SetEmployee(string id, List<Employee> emps);
+
+        Task<IEnumerable<Subject>> SearchAsync(string query);
+
+        Task<bool> FindByName(string name);
     }
 }

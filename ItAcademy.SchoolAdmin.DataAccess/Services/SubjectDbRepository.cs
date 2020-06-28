@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Threading.Tasks;
 using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
 using ItAcademy.SchoolAdmin.DataAccess.Models;
@@ -61,8 +60,6 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
                 .FirstOrDefaultAsync();
 
             return sbj;
-
-            // return await _db.Subjects.FindAsync(id);
         }
 
         public void Update(SubjectDb sbj)
@@ -82,9 +79,14 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
             return Result.Ok();
         }
 
-        public Task<IEnumerable<SubjectDb>> SearchAsync(string query)
+        public async Task<IEnumerable<SubjectDb>> SearchAsync(string query)
         {
-            throw new NotImplementedException();
+            return await _db.Subjects.Where(x => x.Name.Contains(query)).ToListAsync();
+        }
+
+        public async Task<bool> FindByName(string name)
+        {
+            return await _db.Subjects.AnyAsync(s => s.Name == name);
         }
     }
 }

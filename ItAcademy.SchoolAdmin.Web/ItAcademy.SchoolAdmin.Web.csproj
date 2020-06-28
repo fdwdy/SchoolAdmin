@@ -197,6 +197,8 @@
     <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\TestExceptionsController.cs" />
     <Compile Include="Filters\NLogExceptionHandlerAttribute.cs" />
+    <Compile Include="Models\EmployeeSelectViewModel.cs" />
+    <Compile Include="Models\SubjectEditEmployeeViewModel.cs" />
     <Compile Include="Models\SubjectViewModel.cs" />
     <Compile Include="T4MVC\EmployeeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -218,6 +220,9 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="T4MVC\SubjectController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4MVC\T4MVC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -238,6 +243,8 @@
     <Content Include="Content\css\bootstrap\bootstrap.min.css" />
     <Content Include="Content\css\Site.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\scripts\js\SubjectUpdate.js" />
+    <Content Include="Content\scripts\js\SubjectSearch.js" />
     <Content Include="Content\scripts\js\EmployeeSearch.js" />
     <Content Include="Content\scripts\js\EmployeeUpdate.js" />
     <Content Include="favicon.ico" />
@@ -304,6 +311,8 @@
     <Content Include="Views\Subject\CreateEdit.cshtml" />
     <Content Include="Views\Subject\Delete.cshtml" />
     <Content Include="Views\Subject\Details.cshtml" />
+    <Content Include="Views\Subject\EditEmployee.cshtml" />
+    <Content Include="Views\Subject\_SubjectData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

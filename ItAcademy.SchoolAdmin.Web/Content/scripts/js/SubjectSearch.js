@@ -2,10 +2,6 @@
 
     handler = new SearchHandler();
 
-    //$('#search').on('focusin', function () {
-    //    $('#search').val('');
-    //});
-
     $('#search').on('input', function () {
         return showResults(handler, false)
     });
@@ -19,6 +15,7 @@
     });
 
     $('#submit').click(function () {
+        console.log("click");
         return showResults(handler, true)
     });
 
@@ -63,7 +60,7 @@ class SearchHandler {
             return;
         }
 
-        this.xhr = $.ajax("http://localhost:13693/Employee/Search?", {
+        this.xhr = $.ajax("http://localhost:13693/Subject/Search?", {
             data: "query=" + this.query,
             timeout: 300,
             success: function (data) {
