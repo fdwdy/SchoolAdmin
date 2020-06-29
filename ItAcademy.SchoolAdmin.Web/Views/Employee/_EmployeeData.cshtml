@@ -3,7 +3,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", MVC.Employee.ActionNames.Create)
+    <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Create">Create new</a>
 </p>
 <table class="table">
     <tr>
@@ -38,8 +38,8 @@
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
             <td>
-                @Html.ActionLink("Edit", MVC.Employee.ActionNames.Edit, new { id = item.Id }) |
-                @Html.ActionLink("Delete", MVC.Employee.ActionNames.Delete, new { id = item.Id })
+                <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Edit/@item.Id">Edit  |</a>
+                <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Delete/@item.Id">Delete</a>
             </td>
         </tr>
 

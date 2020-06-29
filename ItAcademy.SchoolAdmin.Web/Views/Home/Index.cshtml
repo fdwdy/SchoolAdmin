@@ -3,6 +3,12 @@
 }
 <h1>School Admin</h1>
 
-@Html.ActionLink("All employees", MVC.Employee.Actions.Index()) |
-@Html.ActionLink("Add new employee", MVC.Employee.Actions.Create())<br/>
-@Html.ActionLink("All subjects", MVC.Subject.Actions.Index())
+<a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Index">AllEmployees</a>  |
+<a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Create">Add new employee</a>
+</br>
+<a href="/@MVC.Subject.Name/@MVC.Subject.ActionNames.Index">All subjects</a>
+
+@*@Html.ActionLink("All employees", MVC.Employee.Actions.Index()) |
+@Html.ActionLink("Add new employee", MVC.Employee.Actions.Create())
+<br />
+@Html.ActionLink("All subjects", MVC.Subject.Actions.Index())*@

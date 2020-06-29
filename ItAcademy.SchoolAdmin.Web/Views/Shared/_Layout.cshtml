@@ -17,7 +17,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", MVC.Home.Actions.Index(), new { @class = "navbar-brand" })
+                <a class="navbar-brand" href="/@MVC.Home.Name">SchoolAdmin</a>
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="#">Features</a>
+                        <a class="nav-item nav-link" href="#">Pricing</a>
+                        <a class="nav-item nav-link disabled" href="#">Disabled</a>
+                    </div>
             </div>
         </div>
     </div>
@@ -26,8 +32,8 @@
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - SchoolApp</p>
-            <a class="navbar-link" href="TestExceptions/Index">Test 404 Exception</a>
-            <a class="navbar-link" href="TestExceptions/Employees">Test IndexOutOfRange Exception</a>
+            <a class="navbar-link" href="/@MVC.TestExceptions.Name/@MVC.TestExceptions.ActionNames.Index">Test 404 Exception</a>
+            <a class="navbar-link" href="/@MVC.TestExceptions.Name/@MVC.TestExceptions.ActionNames.Employees">Test IndexOutOfRange Exception</a>
         </footer>
     </div>
 
@@ -35,3 +41,4 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
