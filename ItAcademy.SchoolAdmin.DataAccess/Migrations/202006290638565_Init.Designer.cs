@@ -7,13 +7,13 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class EmployeeSubjectModelNameNotUnique : IMigrationMetadata
+    public sealed partial class Init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(EmployeeSubjectModelNameNotUnique));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
         
         string IMigrationMetadata.Id
         {
-            get { return "202006261653023_EmployeeSubjectModelNameNotUnique"; }
+            get { return "202006290638565_Init"; }
         }
         
         string IMigrationMetadata.Source

@@ -7,10 +7,10 @@
 
 <h2>CreateEdit</h2>
 
-@using (Html.BeginForm("CreateEdit", "Subject", FormMethod.Post)) 
+@using (Html.BeginForm("CreateEdit", "Subject", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>SubjectViewModel</h4>
         <hr />
@@ -31,7 +31,7 @@
         </div>
     </div>
 }
-
+@Scripts.Render(Links.Bundles.Scripts.JQueryValidation)
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>

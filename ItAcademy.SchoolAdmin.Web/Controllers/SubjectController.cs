@@ -136,14 +136,16 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
                 emps.Add(await _empService.GetByIdAsync(selectedEmployees[i]));
             }
 
-            _sbjService.SetEmployee(id, emps);
+            await _sbjService.SetEmployee(id, emps);
             return RedirectToAction("Details", "Subject", new { id });
         }
 
         [HttpPost]
         public virtual async Task<ActionResult> CheckExistingSubject(string name)
         {
-            return Json(IsSubjectExists(name).Result, JsonRequestBehavior.AllowGet);
+            var subjectAlreadyExists = await IsSubjectExists(name);
+            var result = Json(!subjectAlreadyExists, JsonRequestBehavior.AllowGet);
+            return result;
         }
 
         private async Task<bool> IsSubjectExists(string name)

@@ -10,6 +10,6 @@ namespace ItAcademy.SchoolAdmin.DataAccess
             Employees = emps;
         }
 
-        public IEnumerable<EmployeeDb> Employees { get; }
+        public IEnumerable<EmployeeDb> Employees { get; set; }
     }
 }

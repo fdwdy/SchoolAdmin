@@ -50,25 +50,9 @@
     <Compile Include="EntitiesConfiguration\SubjectConfiguration.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
-    <Compile Include="Migrations\202006070738150_Init.cs" />
-    <Compile Include="Migrations\202006070738150_Init.designer.cs">
-      <DependentUpon>202006070738150_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006261627182_AddSubjects.cs" />
-    <Compile Include="Migrations\202006261627182_AddSubjects.designer.cs">
-      <DependentUpon>202006261627182_AddSubjects.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006261648133_EmployeeSubjectModel.cs" />
-    <Compile Include="Migrations\202006261648133_EmployeeSubjectModel.designer.cs">
-      <DependentUpon>202006261648133_EmployeeSubjectModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006261653023_EmployeeSubjectModelNameNotUnique.cs" />
-    <Compile Include="Migrations\202006261653023_EmployeeSubjectModelNameNotUnique.designer.cs">
-      <DependentUpon>202006261653023_EmployeeSubjectModelNameNotUnique.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006261656164_EmployeeSubjectModelNameUnique.cs" />
-    <Compile Include="Migrations\202006261656164_EmployeeSubjectModelNameUnique.designer.cs">
-      <DependentUpon>202006261656164_EmployeeSubjectModelNameUnique.cs</DependentUpon>
+    <Compile Include="Migrations\202006290638565_Init.cs" />
+    <Compile Include="Migrations\202006290638565_Init.designer.cs">
+      <DependentUpon>202006290638565_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EmployeeDb.cs" />
@@ -91,23 +75,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006070738150_Init.resx">
-      <DependentUpon>202006070738150_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006261627182_AddSubjects.resx">
-      <DependentUpon>202006261627182_AddSubjects.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006261648133_EmployeeSubjectModel.resx">
-      <DependentUpon>202006261648133_EmployeeSubjectModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006261653023_EmployeeSubjectModelNameNotUnique.resx">
-      <DependentUpon>202006261653023_EmployeeSubjectModelNameNotUnique.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006261656164_EmployeeSubjectModelNameUnique.resx">
-      <DependentUpon>202006261656164_EmployeeSubjectModelNameUnique.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="EntityFramework">
       <Version>6.4.4</Version>
     </PackageReference>
@@ -116,6 +83,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202006290638565_Init.resx">
+      <DependentUpon>202006290638565_Init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

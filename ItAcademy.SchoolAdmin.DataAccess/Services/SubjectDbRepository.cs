@@ -57,7 +57,7 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
             var sbj = await _db.Subjects
                 .Include(e => e.EmployeeSubjects.Select(c => c.Employee))
                 .Where(e => e.Id == id)
-                .FirstOrDefaultAsync();
+                .FirstOrDefaultAsync().ConfigureAwait(false);
 
             return sbj;
         }
