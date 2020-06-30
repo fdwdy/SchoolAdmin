@@ -34,7 +34,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             IEnumerable<Employee> emps = await _empService.GetAllAsync();
             IEnumerable<EmployeeListModel> models = _mapper.Map<IEnumerable<EmployeeListModel>>(emps);
-            return PartialView("_EmployeeData", models);
+            return PartialView(MVC.Employee.Views._EmployeeData, models);
         }
 
         [HttpGet]
@@ -83,7 +83,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         public virtual async Task<ActionResult> DeleteConfirmed(string id)
         {
             await _empService.RemoveByIdAsync(id);
-            return RedirectToAction("Index");
+            return RedirectToAction(MVC.Employee.Actions.Index());
         }
 
         [HttpGet]
@@ -111,7 +111,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             {
                 var model = _mapper.Map<EmployeeEditModel, Employee>(employee);
                 await _empService.UpdateAsync(model);
-                return RedirectToAction("Index");
+                return RedirectToAction(MVC.Employee.Actions.Index());
             }
 
             return View(employee);
@@ -122,7 +122,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             IEnumerable<Employee> emps = await _empService.SearchAsync(query);
             IEnumerable<EmployeeListModel> models = _mapper.Map<IEnumerable<EmployeeListModel>>(emps);
-            return PartialView("_EmployeeData", models);
+            return PartialView(MVC.Employee.Views._EmployeeData, models);
         }
 
         public async Task<EmployeeViewModel> GetEmployeeViewModelById(string id)

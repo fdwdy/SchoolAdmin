@@ -11,8 +11,6 @@
 
         IRepository<SubjectDb> Subjects { get; }
 
-        IRepository<EmployeeSubject> EmployeeSubjects { get; }
-
         void Save();
     }
 }

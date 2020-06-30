@@ -193,10 +193,11 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Controllers\TestExceptionsController.cs" />
     <Compile Include="Filters\NLogExceptionHandlerAttribute.cs" />
     <Compile Include="Models\EmployeeSelectViewModel.cs" />
-    <Compile Include="Models\SubjectEditEmployeeViewModel.cs" />
+    <Compile Include="Models\SubjectTeachersViewModel.cs" />
     <Compile Include="Models\SubjectViewModel.cs" />
     <Compile Include="T4MVC\EmployeeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -227,6 +228,9 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="T4MVC\Bundles.cs" />
+    <Compile Include="T4MVC\TeacherController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4MVC\TestExceptionsController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -311,6 +315,7 @@
     <Content Include="Views\Subject\Details.cshtml" />
     <Content Include="Views\Subject\EditEmployee.cshtml" />
     <Content Include="Views\Subject\_SubjectData.cshtml" />
+    <Content Include="Views\Teacher\EditForSubject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

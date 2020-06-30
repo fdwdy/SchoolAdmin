@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -14,12 +13,10 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
     {
         private readonly IMapper _mapper;
         private readonly ISubjectService _sbjService;
-        private readonly IEmployeeService _empService;
 
-        public SubjectController(ISubjectService sbjService, IMapper mapper, IEmployeeService empService)
+        public SubjectController(ISubjectService sbjService, IMapper mapper)
         {
             _sbjService = sbjService;
-            _empService = empService;
             _mapper = mapper;
         }
 
@@ -36,21 +33,21 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             IEnumerable<Subject> sbj = await _sbjService.GetAllAsync();
             IEnumerable<SubjectViewModel> models = _mapper.Map<IEnumerable<SubjectViewModel>>(sbj);
-            return PartialView("_SubjectData", models);
+            return PartialView(MVC.Subject.Views._SubjectData, models);
         }
 
         [HttpGet]
         public async virtual Task<ActionResult> Create()
         {
             SubjectViewModel model = new SubjectViewModel();
-            return View("CreateEdit", model);
+            return View(MVC.Subject.Views.CreateEdit, model);
         }
 
         [HttpGet]
         public async virtual Task<ActionResult> Edit(string id)
         {
             var sbj = _mapper.Map<SubjectViewModel>(await _sbjService.GetByIdAsync(id));
-            return View("CreateEdit", sbj);
+            return View(MVC.Subject.Views.CreateEdit, sbj);
         }
 
         [HttpPost]
@@ -68,7 +65,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
                     await _sbjService.UpdateAsync(subj);
                 }
 
-                return RedirectToAction("Index");
+                return RedirectToAction(MVC.Subject.Actions.Index());
             }
 
             return View();
@@ -79,7 +76,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             IEnumerable<Subject> sbj = await _sbjService.SearchAsync(query);
             IEnumerable<SubjectViewModel> models = _mapper.Map<IEnumerable<SubjectViewModel>>(sbj);
-            return PartialView("_SubjectData", models);
+            return PartialView(MVC.Subject.Views._SubjectData, models);
         }
 
         [HttpGet]
@@ -104,7 +101,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         public virtual async Task<ActionResult> DeleteConfirmed(string id)
         {
             await _sbjService.RemoveByIdAsync(id);
-            return RedirectToAction("Index");
+            return RedirectToAction(MVC.Subject.Actions.Index());
         }
 
         [HttpGet]
@@ -114,31 +111,31 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             return View(sbj);
         }
 
-        [HttpGet]
-        public virtual async Task<ActionResult> EditEmployee(string id)
-        {
-            var sbj = _mapper.Map<SubjectEditEmployeeViewModel>(await _sbjService.GetByIdAsync(id));
-            sbj.AllEmployees = _mapper.Map<IEnumerable<EmployeeSelectViewModel>>(await _empService.GetAllAsync());
-            foreach (var emp in sbj.AllEmployees)
-            {
-                emp.IsSelected = sbj.Employees.Any(e => e.Id == emp.Id);
-            }
+        ////[HttpGet]
+        ////public virtual async Task<ActionResult> EditEmployee(string id)
+        ////{
+        ////    var sbj = _mapper.Map<SubjectEditEmployeeViewModel>(await _sbjService.GetByIdAsync(id));
+        ////    sbj.AllEmployees = _mapper.Map<IEnumerable<EmployeeSelectViewModel>>(await _empService.GetAllAsync());
+        ////    ////foreach (var emp in sbj.AllEmployees)
+        ////    ////{
+        ////    ////    emp.IsSelected = sbj.Employees.Any(e => e.Id == emp.Id);
+        ////    ////}
 
-            return View(sbj);
-        }
+        ////    return View(sbj);
+        ////}
 
-        [HttpPost]
-        public virtual async Task<ActionResult> EditEmployee(string id, string[] selectedEmployees)
-        {
-            List<Employee> emps = new List<Employee>();
-            for (int i = 0; i < selectedEmployees.Count(); i++)
-            {
-                emps.Add(await _empService.GetByIdAsync(selectedEmployees[i]));
-            }
+        ////[HttpPost]
+        ////public virtual async Task<ActionResult> EditEmployee(string id, string[] selectedEmployees)
+        ////{
+        ////    List<Employee> emps = new List<Employee>();
+        ////    for (int i = 0; i < selectedEmployees.Count(); i++)
+        ////    {
+        ////        emps.Add(await _empService.GetByIdAsync(selectedEmployees[i]));
+        ////    }
 
-            await _sbjService.SetEmployee(id, emps);
-            return RedirectToAction("Details", "Subject", new { id });
-        }
+        ////    await _sbjService.SetEmployee(id, emps);
+        ////    return RedirectToAction("Details", "Subject", new { id });
+        ////}
 
         [HttpPost]
         public virtual async Task<ActionResult> CheckExistingSubject(string name)

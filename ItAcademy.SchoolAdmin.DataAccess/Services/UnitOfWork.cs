@@ -27,8 +27,6 @@
 
         public IRepository<SubjectDb> Subjects => _sbjRepository ?? (_sbjRepository = new SubjectDbRepository(Db));
 
-        public IRepository<EmployeeSubject> EmployeeSubjects => throw new NotImplementedException();
-
         public void Save()
         {
             Db.SaveChanges();

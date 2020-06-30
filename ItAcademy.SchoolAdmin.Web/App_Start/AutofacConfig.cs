@@ -26,6 +26,8 @@ namespace ItAcademy.SchoolAdmin.Web.App_Start
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             builder.RegisterType<EmployeeService>().As<IEmployeeService>().InstancePerRequest();
             builder.RegisterType<SubjectService>().As<ISubjectService>().InstancePerRequest();
+            builder.RegisterType<TeacherService>().As<ITeacherService>().InstancePerRequest();
+            builder.RegisterType<TeacherDbService>().As<ITeacherDbService>().InstancePerRequest();
             builder.RegisterDecorator<EmployeeServiceDecorator, IEmployeeService>();
             builder.RegisterDecorator<SubjectServiceDecorator, ISubjectService>();
             builder.RegisterType<EmployeeDbRepository>().As<IRepository<EmployeeDb>>().InstancePerRequest();

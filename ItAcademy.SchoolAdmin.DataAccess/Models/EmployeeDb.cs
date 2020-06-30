@@ -5,6 +5,11 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Models
 {
     public class EmployeeDb
     {
+        public EmployeeDb()
+        {
+            Subjects = new HashSet<SubjectDb>();
+        }
+
         public string Id { get; set; }
 
         public string Name { get; set; }
@@ -19,6 +24,8 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Models
 
         public string Phone { get; set; }
 
-        public ICollection<EmployeeSubject> EmployeeSubjects { get; set; }
+        public ICollection<SubjectDb> Subjects { get; set; }
+
+        ////public ICollection<EmployeeSubject> EmployeeSubjects { get; set; }
     }
 }

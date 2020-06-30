@@ -55,7 +55,6 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
         public async Task<SubjectDb> GetByIdAsync(string id)
         {
             var sbj = await _db.Subjects
-                .Include(e => e.EmployeeSubjects.Select(c => c.Employee))
                 .Where(e => e.Id == id)
                 .FirstOrDefaultAsync().ConfigureAwait(false);
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
@@ -37,7 +38,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
 
         public Task<Result<Subject>> AddAsync(Subject sbj)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public async Task<IEnumerable<Subject>> GetAllAsync()
@@ -67,22 +68,23 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
 
         public async Task SetEmployee(string id, List<Employee> emps)
         {
-            var subject = await _uow.Subjects.GetByIdAsync(id);
-            subject.EmployeeSubjects.Clear();
-            foreach (var emp in emps)
-            {
-                DataAccess.Models.EmployeeSubject empsbj = new DataAccess.Models.EmployeeSubject
-                {
-                    EmployeeId = emp.Id,
-                    SubjectId = subject.Id,
-                };
-                subject.EmployeeSubjects.Add(empsbj);
-                    ////subject.EmployeeSubjects.Add(new DataAccess.Models.EmployeeSubject
-                    ////{
-                    ////    EmployeeId = emp.Id,
-                    ////    SubjectId = subject.Id,
-                    ////});
-            }
+            throw new NotImplementedException();
+            ////var subject = await _uow.Subjects.GetByIdAsync(id);
+            ////subject.EmployeeSubjects.Clear();
+            ////foreach (var emp in emps)
+            ////{
+            ////    DataAccess.Models.EmployeeSubject empsbj = new DataAccess.Models.EmployeeSubject
+            ////    {
+            ////        EmployeeId = emp.Id,
+            ////        SubjectId = subject.Id,
+            ////    };
+            ////    subject.EmployeeSubjects.Add(empsbj);
+            ////        ////subject.EmployeeSubjects.Add(new DataAccess.Models.EmployeeSubject
+            ////        ////{
+            ////        ////    EmployeeId = emp.Id,
+            ////        ////    SubjectId = subject.Id,
+            ////        ////});
+            ////}
 
             ////_uow.Subjects.Update(subject);
             _uow.Save();

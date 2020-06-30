@@ -46,23 +46,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntitiesConfiguration\EmployeeConfiguration.cs" />
-    <Compile Include="EntitiesConfiguration\EmployeeSubjectConfiguration.cs" />
     <Compile Include="EntitiesConfiguration\SubjectConfiguration.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\ITeacherDbService.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Migrations\202006290638565_Init.cs" />
     <Compile Include="Migrations\202006290638565_Init.designer.cs">
       <DependentUpon>202006290638565_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006300645492_RemoveEmployeeSubject.cs" />
+    <Compile Include="Migrations\202006300645492_RemoveEmployeeSubject.designer.cs">
+      <DependentUpon>202006300645492_RemoveEmployeeSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006300702024_AddEmployeeSubjectManyToMany.cs" />
+    <Compile Include="Migrations\202006300702024_AddEmployeeSubjectManyToMany.designer.cs">
+      <DependentUpon>202006300702024_AddEmployeeSubjectManyToMany.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EmployeeDb.cs" />
-    <Compile Include="Models\EmployeeSubject.cs" />
     <Compile Include="Models\SubjectDb.cs" />
+    <Compile Include="Models\SubjectTeachersDb.cs" />
     <Compile Include="OnChangesSavedArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SchoolContext.cs" />
     <Compile Include="Services\EmployeeDbRepository.cs" />
     <Compile Include="Services\SubjectDbRepository.cs" />
+    <Compile Include="Services\TeacherDbService.cs" />
     <Compile Include="Services\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +96,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202006290638565_Init.resx">
       <DependentUpon>202006290638565_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006300645492_RemoveEmployeeSubject.resx">
+      <DependentUpon>202006300645492_RemoveEmployeeSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006300702024_AddEmployeeSubjectManyToMany.resx">
+      <DependentUpon>202006300702024_AddEmployeeSubjectManyToMany.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

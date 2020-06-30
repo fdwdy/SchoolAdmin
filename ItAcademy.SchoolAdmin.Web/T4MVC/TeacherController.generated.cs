@@ -25,10 +25,10 @@ using System.Web.Routing;
 using T4MVC;
 namespace ItAcademy.SchoolAdmin.Web.Controllers
 {
-    public partial class HomeController
+    public partial class TeacherController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected HomeController(Dummy d) { }
+        protected TeacherController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -56,15 +56,22 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> EditEmployee()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditEmployee);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public HomeController Actions { get { return MVC.Home; } }
+        public TeacherController Actions { get { return MVC.Teacher; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Home";
+        public readonly string Name = "Teacher";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "Home";
+        public const string NameConst = "Teacher";
         [GeneratedCode("T4MVC", "2.0")]
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -72,18 +79,25 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
-            public readonly string Index = "Index";
-            public readonly string NotFound = "NotFound";
+            public readonly string EditEmployee = "EditEmployee";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
-            public const string Index = "Index";
-            public const string NotFound = "NotFound";
+            public const string EditEmployee = "EditEmployee";
         }
 
 
+        static readonly ActionParamsClass_EditEmployee s_params_EditEmployee = new ActionParamsClass_EditEmployee();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_EditEmployee EditEmployeeParams { get { return s_params_EditEmployee; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_EditEmployee
+        {
+            public readonly string id = "id";
+            public readonly string selectedEmployees = "selectedEmployees";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -94,39 +108,40 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string Index = "Index";
-                public readonly string NotFound = "NotFound";
+                public readonly string EditForSubject = "EditForSubject";
             }
-            public readonly string Index = "~/Views/Home/Index.cshtml";
-            public readonly string NotFound = "~/Views/Home/NotFound.cshtml";
+            public readonly string EditForSubject = "~/Views/Teacher/EditForSubject.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_HomeController : ItAcademy.SchoolAdmin.Web.Controllers.HomeController
+    public partial class T4MVC_TeacherController : ItAcademy.SchoolAdmin.Web.Controllers.TeacherController
     {
-        public T4MVC_HomeController() : base(Dummy.Instance) { }
+        public T4MVC_TeacherController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void EditEmployeeOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string id);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Index()
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> EditEmployee(string id)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
-            IndexOverride(callInfo);
-            return callInfo;
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditEmployee);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            EditEmployeeOverride(callInfo, id);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 
         [NonAction]
-        partial void NotFoundOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void EditEmployeeOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string id, string[] selectedEmployees);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult NotFound()
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> EditEmployee(string id, string[] selectedEmployees)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.NotFound);
-            NotFoundOverride(callInfo);
-            return callInfo;
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditEmployee);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "selectedEmployees", selectedEmployees);
+            EditEmployeeOverride(callInfo, id, selectedEmployees);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 
     }

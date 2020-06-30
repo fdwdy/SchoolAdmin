@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
-using ItAcademy.SchoolAdmin.BusinessLogic.Models;
+﻿using System.Web.Mvc;
 
 namespace ItAcademy.SchoolAdmin.Web.Models
 {
@@ -11,9 +8,5 @@ namespace ItAcademy.SchoolAdmin.Web.Models
 
         [Remote("CheckExistingSubject", "Subject", HttpMethod = "POST", ErrorMessage = "Subject already exists")]
         public string Name { get; set; }
-
-        public ICollection<EmployeeSubject> EmployeeSubjects { get; set; }
-
-        public List<Employee> Employees => EmployeeSubjects.Select(c => c.Employee).ToList();
     }
 }
