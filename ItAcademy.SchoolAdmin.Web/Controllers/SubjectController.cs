@@ -111,32 +111,6 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             return View(sbj);
         }
 
-        ////[HttpGet]
-        ////public virtual async Task<ActionResult> EditEmployee(string id)
-        ////{
-        ////    var sbj = _mapper.Map<SubjectEditEmployeeViewModel>(await _sbjService.GetByIdAsync(id));
-        ////    sbj.AllEmployees = _mapper.Map<IEnumerable<EmployeeSelectViewModel>>(await _empService.GetAllAsync());
-        ////    ////foreach (var emp in sbj.AllEmployees)
-        ////    ////{
-        ////    ////    emp.IsSelected = sbj.Employees.Any(e => e.Id == emp.Id);
-        ////    ////}
-
-        ////    return View(sbj);
-        ////}
-
-        ////[HttpPost]
-        ////public virtual async Task<ActionResult> EditEmployee(string id, string[] selectedEmployees)
-        ////{
-        ////    List<Employee> emps = new List<Employee>();
-        ////    for (int i = 0; i < selectedEmployees.Count(); i++)
-        ////    {
-        ////        emps.Add(await _empService.GetByIdAsync(selectedEmployees[i]));
-        ////    }
-
-        ////    await _sbjService.SetEmployee(id, emps);
-        ////    return RedirectToAction("Details", "Subject", new { id });
-        ////}
-
         [HttpPost]
         public virtual async Task<ActionResult> CheckExistingSubject(string name)
         {

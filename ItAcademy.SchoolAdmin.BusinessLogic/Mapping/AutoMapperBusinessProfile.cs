@@ -8,11 +8,10 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Mapping
     {
         public AutoMapperBusinessProfile()
         {
-            CreateMap<EmployeeDb, EmployeeDTO>()
-                .ForMember("FullName", opt => opt.MapFrom(c => c.Name + ' ' + c.Middlename + ' ' + c.Surname)).ReverseMap();
             CreateMap<EmployeeDb, Employee>().ReverseMap();
             CreateMap<SubjectDb, Subject>().ReverseMap();
             CreateMap<SubjectTeachersDb, SubjectTeachers>().ReverseMap();
+            CreateMap<PositionDb, Position>().ReverseMap();
         }
     }
 }

@@ -13,6 +13,10 @@ namespace ItAcademy.SchoolAdmin.DataAccess.EntitiesConfiguration
                .Map(t => t.MapLeftKey("EmployeeId")
                .MapRightKey("SubjectId")
                .ToTable("EmployeeSubjects"));
+            HasMany(e => e.Positions).WithMany(s => s.Employees)
+               .Map(t => t.MapLeftKey("EmployeeId")
+               .MapRightKey("PositionId")
+               .ToTable("EmployeePositions"));
             Property(e => e.Id).HasColumnName("ID");
             Property(e => e.Name).HasColumnName("Name")
                 .IsRequired()

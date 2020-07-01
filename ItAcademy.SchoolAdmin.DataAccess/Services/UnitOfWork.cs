@@ -8,6 +8,7 @@
     {
         private EmployeeDbRepository _empRepository;
         private SubjectDbRepository _sbjRepository;
+        private PositionDbRepository _posRepository;
 
         private bool _disposedValue = false;
 
@@ -26,6 +27,8 @@
         public IRepository<EmployeeDb> Employees => _empRepository ?? (_empRepository = new EmployeeDbRepository(Db));
 
         public IRepository<SubjectDb> Subjects => _sbjRepository ?? (_sbjRepository = new SubjectDbRepository(Db));
+
+        public IRepository<PositionDb> Positions => _posRepository ?? (_posRepository = new PositionDbRepository(Db));
 
         public void Save()
         {

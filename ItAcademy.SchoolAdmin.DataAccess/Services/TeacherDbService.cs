@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
 using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
 using ItAcademy.SchoolAdmin.DataAccess.Models;
@@ -35,9 +37,25 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
             return result.First();
         }
 
-        public async Task SaveSubjectTeachers(SubjectTeachersDb subjectTeachers)
+        public async Task SaveSubjectTeachers(string subjectId, string[] subjectEmployeeIds)
         {
-            throw new System.NotImplementedException();
+            var subject = await _context.Subjects
+                .Where(s => s.Id == subjectId)
+                .Include(s => s.Employees).SingleOrDefaultAsync();
+            if (subjectEmployeeIds == null)
+            {
+                subject.Employees = new List<EmployeeDb>();
+            }
+            else
+            {
+                subject.Employees.Clear();
+                var subjectEmployees = _context.Employees
+                    .Where(e => subjectEmployeeIds.Contains(e.Id))
+                    .ToList();
+                subject.Employees = subjectEmployees;
+            }
+
+            await _context.SaveChangesAsync();
         }
     }
 }

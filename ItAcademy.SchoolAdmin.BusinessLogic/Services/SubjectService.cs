@@ -66,30 +66,6 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
             _uow.Subjects.Save();
         }
 
-        public async Task SetEmployee(string id, List<Employee> emps)
-        {
-            throw new NotImplementedException();
-            ////var subject = await _uow.Subjects.GetByIdAsync(id);
-            ////subject.EmployeeSubjects.Clear();
-            ////foreach (var emp in emps)
-            ////{
-            ////    DataAccess.Models.EmployeeSubject empsbj = new DataAccess.Models.EmployeeSubject
-            ////    {
-            ////        EmployeeId = emp.Id,
-            ////        SubjectId = subject.Id,
-            ////    };
-            ////    subject.EmployeeSubjects.Add(empsbj);
-            ////        ////subject.EmployeeSubjects.Add(new DataAccess.Models.EmployeeSubject
-            ////        ////{
-            ////        ////    EmployeeId = emp.Id,
-            ////        ////    SubjectId = subject.Id,
-            ////        ////});
-            ////}
-
-            ////_uow.Subjects.Update(subject);
-            _uow.Save();
-        }
-
         public async Task<bool> FindByName(string name)
         {
             return await _uow.Subjects.FindByName(name);

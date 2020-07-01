@@ -2,16 +2,16 @@
 
 namespace ItAcademy.SchoolAdmin.DataAccess.Models
 {
-    public class SubjectDb
+    public class PositionDb
     {
-        public SubjectDb()
-        {
-            Employees = new HashSet<EmployeeDb>();
-        }
-
         public string Id { get; set; }
 
         public string Name { get; set; }
+
+        /// <summary>
+        /// Использовать ли ushort?.
+        /// </summary>
+        public short MaxEmployees { get; set; }
 
         public ICollection<EmployeeDb> Employees { get; set; }
     }

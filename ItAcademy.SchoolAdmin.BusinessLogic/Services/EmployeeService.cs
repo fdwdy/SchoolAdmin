@@ -4,7 +4,6 @@
     using System.Threading.Tasks;
     using AutoMapper;
     using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
-    using ItAcademy.SchoolAdmin.BusinessLogic.Mapping;
     using ItAcademy.SchoolAdmin.BusinessLogic.Models;
     using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
     using ItAcademy.SchoolAdmin.DataAccess.Models;
@@ -30,13 +29,13 @@
             return _uow.Employees.Save();
         }
 
-        public IEnumerable<EmployeeDTO> GetAll()
+        public IEnumerable<Employee> GetAll()
         {
             var employees = _uow.Employees.GetAll();
-            return _mapper.Map<IEnumerable<EmployeeDb>, IEnumerable<EmployeeDTO>>(employees);
+            return _mapper.Map<IEnumerable<EmployeeDb>, IEnumerable<Employee>>(employees);
         }
 
-        public Task<Result<EmployeeDb>> AddAsync(EmployeeDTO emp)
+        public Task<Result<Employee>> AddAsync(Employee emp)
         {
             throw new System.NotImplementedException();
         }

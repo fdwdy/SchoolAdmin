@@ -20,7 +20,7 @@ namespace ItAcademy.SchoolAdmin.DataAccess
 
         public virtual DbSet<SubjectDb> Subjects { get; set; }
 
-        ////public virtual DbSet<EmployeeSubject> EmployeeSubjects { get; set; }
+        public virtual DbSet<PositionDb> Positions { get; set; }
 
         public override int SaveChanges()
         {
@@ -34,8 +34,7 @@ namespace ItAcademy.SchoolAdmin.DataAccess
         {
             modelBuilder.Configurations.Add(new EmployeeConfiguration());
             modelBuilder.Configurations.Add(new SubjectConfiguration());
-
-            ////modelBuilder.Configurations.Add(new EmployeeSubjectConfiguration());
+            modelBuilder.Configurations.Add(new PositionConfiguration());
         }
     }
 }

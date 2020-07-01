@@ -67,11 +67,6 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
             await _sbjService.RemoveByIdAsync(id);
         }
 
-        public async Task SetEmployee(string id, List<Employee> emps)
-        {
-            await _sbjService.SetEmployee(id, emps);
-        }
-
         public async Task UpdateAsync(Subject emp)
         {
             await _sbjService.UpdateAsync(emp);

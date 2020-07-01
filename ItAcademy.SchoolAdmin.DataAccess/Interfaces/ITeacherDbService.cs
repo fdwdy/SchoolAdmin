@@ -7,6 +7,6 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Interfaces
     {
         Task<SubjectTeachersDb> GetSubjectTeachers(string subjectId);
 
-        Task SaveSubjectTeachers(SubjectTeachersDb subjectTeachers);
+        Task SaveSubjectTeachers(string subjectId, string[] subjectEmployeeIds);
     }
 }

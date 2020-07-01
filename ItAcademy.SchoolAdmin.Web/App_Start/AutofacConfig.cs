@@ -27,11 +27,13 @@ namespace ItAcademy.SchoolAdmin.Web.App_Start
             builder.RegisterType<EmployeeService>().As<IEmployeeService>().InstancePerRequest();
             builder.RegisterType<SubjectService>().As<ISubjectService>().InstancePerRequest();
             builder.RegisterType<TeacherService>().As<ITeacherService>().InstancePerRequest();
+            builder.RegisterType<PositionService>().As<IPositionService>().InstancePerRequest();
             builder.RegisterType<TeacherDbService>().As<ITeacherDbService>().InstancePerRequest();
             builder.RegisterDecorator<EmployeeServiceDecorator, IEmployeeService>();
             builder.RegisterDecorator<SubjectServiceDecorator, ISubjectService>();
             builder.RegisterType<EmployeeDbRepository>().As<IRepository<EmployeeDb>>().InstancePerRequest();
             builder.RegisterType<SubjectDbRepository>().As<IRepository<SubjectDb>>().InstancePerRequest();
+            builder.RegisterType<PositionDbRepository>().As<IRepository<PositionDb>>().InstancePerRequest();
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
             builder.AddAutoMapper(typeof(MvcApplication).Assembly);
             builder.RegisterModule(new AutoMapperBusinessModule());

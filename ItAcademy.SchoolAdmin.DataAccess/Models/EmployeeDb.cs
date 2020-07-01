@@ -26,6 +26,6 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Models
 
         public ICollection<SubjectDb> Subjects { get; set; }
 
-        ////public ICollection<EmployeeSubject> EmployeeSubjects { get; set; }
+        public ICollection<PositionDb> Positions { get; set; }
     }
 }

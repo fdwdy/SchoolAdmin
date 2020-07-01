@@ -46,14 +46,8 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         [HttpPost]
         public virtual async Task<ActionResult> EditEmployee(string id, string[] selectedEmployees)
         {
-            ////List<Employee> emps = new List<Employee>();
-            ////for (int i = 0; i < selectedEmployees.Count(); i++)
-            ////{
-            ////    emps.Add(await _empService.GetByIdAsync(selectedEmployees[i]));
-            ////}
-
-            ////await _tchService.SaveSubjectTeachers();
-            return RedirectToAction("Details", "Subject", new { id });
+            await _tchService.SaveSubjectTeachers(id, selectedEmployees);
+            return RedirectToAction(MVC.Subject.Actions.Index());
         }
     }
 }

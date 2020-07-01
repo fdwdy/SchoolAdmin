@@ -7,6 +7,6 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Interfaces
     {
         Task<SubjectTeachers> GetSubjectTeachers(string subjectId);
 
-        Task SaveSubjectTeachers(SubjectTeachers subjectTeachers);
+        Task SaveSubjectTeachers(string subjectId, string[] subjectEmployeeIds);
     }
 }

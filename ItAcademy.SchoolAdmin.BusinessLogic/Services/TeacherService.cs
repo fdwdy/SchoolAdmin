@@ -3,10 +3,12 @@ using AutoMapper;
 using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
 using ItAcademy.SchoolAdmin.BusinessLogic.Models;
 using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
-using ItAcademy.SchoolAdmin.DataAccess.Models;
 
 namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
 {
+    /// <summary>
+    /// Нужен ли IDisposable?.
+    /// </summary>
     public class TeacherService : ITeacherService
     {
         private readonly IMapper _mapper;
@@ -24,9 +26,9 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
             return _mapper.Map<SubjectTeachers>(await _tchService.GetSubjectTeachers(subjectId));
         }
 
-        public async Task SaveSubjectTeachers(SubjectTeachers subjectTeachers)
+        public async Task SaveSubjectTeachers(string subjectId, string[] subjectEmployeeIds)
         {
-            await _tchService.SaveSubjectTeachers(_mapper.Map<SubjectTeachersDb>(subjectTeachers));
+            await _tchService.SaveSubjectTeachers(subjectId, subjectEmployeeIds);
         }
     }
 }
