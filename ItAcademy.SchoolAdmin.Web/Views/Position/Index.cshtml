@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Job positions</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -30,9 +30,9 @@
             @Html.DisplayFor(modelItem => item.MaxEmployees)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            <a href="/@MVC.Position.Name/@MVC.Position.ActionNames.Edit/@item.Id">Edit  |</a>
+            <a href="/@MVC.Worker.Name/@MVC.Worker.ActionNames.EditEmployee/@item.Id">Set Worker |</a>
+            <a href="/@MVC.Position.Name/@MVC.Position.ActionNames.Delete/@item.Id">Delete </a>
         </td>
     </tr>
 }

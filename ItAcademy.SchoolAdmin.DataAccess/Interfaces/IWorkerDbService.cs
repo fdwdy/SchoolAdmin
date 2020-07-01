@@ -2,7 +2,7 @@
 
 namespace ItAcademy.SchoolAdmin.DataAccess.Interfaces
 {
-    public interface ITeacherDbService : ICommonManyToManyEditService<SubjectTeachersDb, string, string[]>
+    public interface IWorkerDbService : ICommonManyToManyEditService<WorkerDb, string, string[]>
     {
     }
 }

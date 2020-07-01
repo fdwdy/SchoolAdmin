@@ -1,0 +1,43 @@
+﻿@model ItAcademy.SchoolAdmin.Web.Models.WorkerViewModel
+
+@{
+    ViewBag.Title = "EditForPosition";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditForPosition</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Set Position Worker</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.PositionName, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.DisplayFor(model => model.PositionName)
+
+        @Html.LabelFor(model => model.MaxEmployees, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.DisplayFor(model => model.MaxEmployees)
+
+        @foreach (var emp in Model.Employees)
+        {
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"
+                           name="selectedEmployees"
+                           value="@emp.Id"
+                           @(emp.IsSelected ? "checked=\"checked\"" : "") /> @emp.FullName
+                    </label>
+                </div>
+            }
+    </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

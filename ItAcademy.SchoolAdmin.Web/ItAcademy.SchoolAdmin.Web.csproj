@@ -196,11 +196,13 @@
     <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Controllers\TestExceptionsController.cs" />
+    <Compile Include="Controllers\WorkerController.cs" />
     <Compile Include="Filters\NLogExceptionHandlerAttribute.cs" />
     <Compile Include="Models\EmployeeSelectViewModel.cs" />
     <Compile Include="Models\PositionViewModel.cs" />
     <Compile Include="Models\SubjectTeachersViewModel.cs" />
     <Compile Include="Models\SubjectViewModel.cs" />
+    <Compile Include="Models\WorkerViewModel.cs" />
     <Compile Include="T4MVC\EmployeeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -217,6 +219,9 @@
     <Compile Include="Models\EmployeeListModel.cs" />
     <Compile Include="Models\EmployeeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4MVC\PositionController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4MVC\SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -236,7 +241,11 @@
     <Compile Include="T4MVC\TestExceptionsController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="T4MVC\WorkerController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Validators\EmployeeValidator.cs" />
+    <Compile Include="Validators\PositionViewModelValidator.cs" />
     <Compile Include="Validators\SubjectViewModelValidator.cs" />
     <Compile Include="Validators\ValidatorFactory.cs" />
   </ItemGroup>
@@ -317,6 +326,9 @@
     <Content Include="Views\Subject\_SubjectData.cshtml" />
     <Content Include="Views\Teacher\EditForSubject.cshtml" />
     <Content Include="Views\Position\Index.cshtml" />
+    <Content Include="Views\Position\CreateEdit.cshtml" />
+    <Content Include="Views\Position\Delete.cshtml" />
+    <Content Include="Views\Worker\EditForPosition.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

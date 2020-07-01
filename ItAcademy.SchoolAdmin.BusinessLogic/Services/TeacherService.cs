@@ -23,12 +23,12 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
 
         public async Task<SubjectTeachers> GetSubjectTeachers(string subjectId)
         {
-            return _mapper.Map<SubjectTeachers>(await _tchService.GetSubjectTeachers(subjectId));
+            return _mapper.Map<SubjectTeachers>(await _tchService.GetRelatedEntities(subjectId));
         }
 
         public async Task SaveSubjectTeachers(string subjectId, string[] subjectEmployeeIds)
         {
-            await _tchService.SaveSubjectTeachers(subjectId, subjectEmployeeIds);
+            await _tchService.SaveRelatedEntities(subjectId, subjectEmployeeIds);
         }
     }
 }

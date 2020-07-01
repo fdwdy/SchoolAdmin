@@ -25,10 +25,10 @@ using System.Web.Routing;
 using T4MVC;
 namespace ItAcademy.SchoolAdmin.Web.Controllers
 {
-    public partial class SubjectController
+    public partial class PositionController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected SubjectController(Dummy d) { }
+        protected PositionController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -72,13 +72,6 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Search()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Search);
-            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
-        }
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Delete()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Delete);
@@ -91,29 +84,15 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteConfirmed);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Details()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Details);
-            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
-        }
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> CheckExistingSubject()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CheckExistingSubject);
-            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
-        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public SubjectController Actions { get { return MVC.Subject; } }
+        public PositionController Actions { get { return MVC.Position; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Subject";
+        public readonly string Name = "Position";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "Subject";
+        public const string NameConst = "Position";
         [GeneratedCode("T4MVC", "2.0")]
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -122,30 +101,22 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
-            public readonly string GetSubjectData = "GetSubjectData";
             public readonly string Create = "Create";
             public readonly string Edit = "Edit";
             public readonly string CreateEdit = "CreateEdit";
-            public readonly string Search = "Search";
             public readonly string Delete = "Delete";
             public readonly string DeleteConfirmed = "Delete";
-            public readonly string Details = "Details";
-            public readonly string CheckExistingSubject = "CheckExistingSubject";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
-            public const string GetSubjectData = "GetSubjectData";
             public const string Create = "Create";
             public const string Edit = "Edit";
             public const string CreateEdit = "CreateEdit";
-            public const string Search = "Search";
             public const string Delete = "Delete";
             public const string DeleteConfirmed = "Delete";
-            public const string Details = "Details";
-            public const string CheckExistingSubject = "CheckExistingSubject";
         }
 
 
@@ -165,14 +136,6 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             public readonly string model = "model";
         }
-        static readonly ActionParamsClass_Search s_params_Search = new ActionParamsClass_Search();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_Search SearchParams { get { return s_params_Search; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_Search
-        {
-            public readonly string query = "query";
-        }
         static readonly ActionParamsClass_Delete s_params_Delete = new ActionParamsClass_Delete();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionParamsClass_Delete DeleteParams { get { return s_params_Delete; } }
@@ -189,22 +152,6 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             public readonly string id = "id";
         }
-        static readonly ActionParamsClass_Details s_params_Details = new ActionParamsClass_Details();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_Details DetailsParams { get { return s_params_Details; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_Details
-        {
-            public readonly string id = "id";
-        }
-        static readonly ActionParamsClass_CheckExistingSubject s_params_CheckExistingSubject = new ActionParamsClass_CheckExistingSubject();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_CheckExistingSubject CheckExistingSubjectParams { get { return s_params_CheckExistingSubject; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_CheckExistingSubject
-        {
-            public readonly string name = "name";
-        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -215,22 +162,20 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string _SubjectData = "_SubjectData";
                 public readonly string CreateEdit = "CreateEdit";
                 public readonly string Delete = "Delete";
                 public readonly string Index = "Index";
             }
-            public readonly string _SubjectData = "~/Views/Subject/_SubjectData.cshtml";
-            public readonly string CreateEdit = "~/Views/Subject/CreateEdit.cshtml";
-            public readonly string Delete = "~/Views/Subject/Delete.cshtml";
-            public readonly string Index = "~/Views/Subject/Index.cshtml";
+            public readonly string CreateEdit = "~/Views/Position/CreateEdit.cshtml";
+            public readonly string Delete = "~/Views/Position/Delete.cshtml";
+            public readonly string Index = "~/Views/Position/Index.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_SubjectController : ItAcademy.SchoolAdmin.Web.Controllers.SubjectController
+    public partial class T4MVC_PositionController : ItAcademy.SchoolAdmin.Web.Controllers.PositionController
     {
-        public T4MVC_SubjectController() : base(Dummy.Instance) { }
+        public T4MVC_PositionController() : base(Dummy.Instance) { }
 
         [NonAction]
         partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
@@ -240,17 +185,6 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
-            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
-        }
-
-        [NonAction]
-        partial void GetSubjectDataOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> GetSubjectData()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetSubjectData);
-            GetSubjectDataOverride(callInfo);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 
@@ -278,26 +212,14 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         }
 
         [NonAction]
-        partial void CreateEditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, ItAcademy.SchoolAdmin.Web.Models.SubjectViewModel model);
+        partial void CreateEditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, ItAcademy.SchoolAdmin.Web.Models.PositionViewModel model);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> CreateEdit(ItAcademy.SchoolAdmin.Web.Models.SubjectViewModel model)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> CreateEdit(ItAcademy.SchoolAdmin.Web.Models.PositionViewModel model)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CreateEdit);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             CreateEditOverride(callInfo, model);
-            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
-        }
-
-        [NonAction]
-        partial void SearchOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string query);
-
-        [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Search(string query)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Search);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "query", query);
-            SearchOverride(callInfo, query);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 
@@ -322,30 +244,6 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteConfirmed);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             DeleteConfirmedOverride(callInfo, id);
-            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
-        }
-
-        [NonAction]
-        partial void DetailsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string id);
-
-        [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Details(string id)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Details);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            DetailsOverride(callInfo, id);
-            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
-        }
-
-        [NonAction]
-        partial void CheckExistingSubjectOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string name);
-
-        [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> CheckExistingSubject(string name)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CheckExistingSubject);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "name", name);
-            CheckExistingSubjectOverride(callInfo, name);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

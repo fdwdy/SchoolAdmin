@@ -12,6 +12,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Mapping
             CreateMap<SubjectDb, Subject>().ReverseMap();
             CreateMap<SubjectTeachersDb, SubjectTeachers>().ReverseMap();
             CreateMap<PositionDb, Position>().ReverseMap();
+            CreateMap<WorkerDb, Worker>().ReverseMap();
         }
     }
 }

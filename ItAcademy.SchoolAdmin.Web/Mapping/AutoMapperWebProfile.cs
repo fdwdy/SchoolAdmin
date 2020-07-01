@@ -17,6 +17,7 @@ namespace ItAcademy.SchoolAdmin.Web.Mapping
                     opt => opt.MapFrom(e => $"{e.Name} {e.Middlename} {e.Surname}".Replace("  ", " ")));
             CreateMap<Subject, SubjectViewModel>().ReverseMap();
             CreateMap<Position, PositionViewModel>().ReverseMap();
+            CreateMap<Worker, WorkerViewModel>().ReverseMap();
         }
     }
 }

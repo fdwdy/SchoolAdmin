@@ -14,6 +14,7 @@ namespace ItAcademy.SchoolAdmin.Web.Validators
         {
             _validators.Add(typeof(IValidator<Employee>), new EmployeeValidator());
             _validators.Add(typeof(IValidator<SubjectViewModel>), new SubjectViewModelValidator());
+            _validators.Add(typeof(IValidator<PositionViewModel>), new PositionViewModelValidator());
         }
 
         public override IValidator CreateInstance(Type validatorType)

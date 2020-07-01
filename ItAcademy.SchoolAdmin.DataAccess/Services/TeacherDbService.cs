@@ -16,7 +16,7 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
             _context = context;
         }
 
-        public async Task<SubjectTeachersDb> GetSubjectTeachers(string subjectId)
+        public async Task<SubjectTeachersDb> GetRelatedEntities(string subjectId)
         {
             var result = _context.Subjects
                 .Where(s => s.Id == subjectId)
@@ -37,7 +37,7 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
             return result.First();
         }
 
-        public async Task SaveSubjectTeachers(string subjectId, string[] subjectEmployeeIds)
+        public async Task SaveRelatedEntities(string subjectId, string[] subjectEmployeeIds)
         {
             var subject = await _context.Subjects
                 .Where(s => s.Id == subjectId)

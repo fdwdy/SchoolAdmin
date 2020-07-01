@@ -48,9 +48,11 @@
     <Compile Include="EntitiesConfiguration\EmployeeConfiguration.cs" />
     <Compile Include="EntitiesConfiguration\PositionConfiguration.cs" />
     <Compile Include="EntitiesConfiguration\SubjectConfiguration.cs" />
+    <Compile Include="Interfaces\ICommonManyToManyEditService.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\ITeacherDbService.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Interfaces\IWorkerDbService.cs" />
     <Compile Include="Migrations\202006290638565_Init.cs" />
     <Compile Include="Migrations\202006290638565_Init.designer.cs">
       <DependentUpon>202006290638565_Init.cs</DependentUpon>
@@ -72,6 +74,7 @@
     <Compile Include="Models\PositionDb.cs" />
     <Compile Include="Models\SubjectDb.cs" />
     <Compile Include="Models\SubjectTeachersDb.cs" />
+    <Compile Include="Models\WorkerDb.cs" />
     <Compile Include="OnChangesSavedArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SchoolContext.cs" />
@@ -80,6 +83,7 @@
     <Compile Include="Services\SubjectDbRepository.cs" />
     <Compile Include="Services\TeacherDbService.cs" />
     <Compile Include="Services\UnitOfWork.cs" />
+    <Compile Include="Services\WorkerDbService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
