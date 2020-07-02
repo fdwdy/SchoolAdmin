@@ -108,7 +108,9 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string EditForPosition = "EditForPosition";
             }
+            public readonly string EditForPosition = "~/Views/Worker/EditForPosition.cshtml";
         }
     }
 

@@ -16,11 +16,26 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
-        @Html.LabelFor(model => model.PositionName, htmlAttributes: new { @class = "control-label col-md-2" })
-        @Html.DisplayFor(model => model.PositionName)
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PositionName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaxEmployees)
+                </th>
+            </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.PositionName)
+                    </td>
+                    <td>
+                        <input type="hidden" id="maxEmployees" value=@Model.MaxEmployees>
+                        <text>@Html.DisplayFor(model => model.MaxEmployees)</text>
+                    </td>
+                </tr>
+        </table>
 
-        @Html.LabelFor(model => model.MaxEmployees, htmlAttributes: new { @class = "control-label col-md-2" })
-        @Html.DisplayFor(model => model.MaxEmployees)
 
         @foreach (var emp in Model.Employees)
         {
@@ -41,3 +56,5 @@
         </div>
     </div>
 }
+
+<script src="~/Content/scripts/js/LimitCheckbox.js"></script>

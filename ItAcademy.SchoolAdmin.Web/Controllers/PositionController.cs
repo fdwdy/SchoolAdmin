@@ -87,5 +87,25 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             await _posService.RemoveByIdAsync(id);
             return RedirectToAction(MVC.Position.Actions.Index());
         }
+
+        [HttpPost]
+        public virtual async Task<ActionResult> CheckExistingPosition(PositionViewModel model)
+        {
+            var position = await _posService.GetByIdAsync(model.Id);
+            if (position.Name == model.Name)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                var positionAlreadyExists = await IsPositionExists(model.Name);
+                return Json(!positionAlreadyExists, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        private async Task<bool> IsPositionExists(string name)
+        {
+            return await _posService.FindByName(name);
+        }
     }
 }

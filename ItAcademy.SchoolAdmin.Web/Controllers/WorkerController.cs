@@ -13,12 +13,14 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         private readonly IMapper _mapper;
         private readonly IWorkerService _wrkService;
         private readonly IEmployeeService _empService;
+        private readonly IPositionService _posService;
 
-        public WorkerController(IWorkerService wrkService, IEmployeeService empService, IMapper mapper)
+        public WorkerController(IPositionService posService, IWorkerService wrkService, IEmployeeService empService, IMapper mapper)
         {
             _mapper = mapper;
             _wrkService = wrkService;
             _empService = empService;
+            _posService = posService;
         }
 
         [HttpGet]
@@ -26,6 +28,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             var employees = _mapper.Map<IEnumerable<EmployeeSelectViewModel>>(await _empService.GetAllAsync());
             var workers = await _wrkService.GetWorkers(id);
+            var position = await _posService.GetByIdAsync(id);
             foreach (var emp in employees)
             {
                 if (workers.EmployeeIds.Contains(emp.Id))
@@ -34,13 +37,14 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
                 }
             }
 
-            SubjectTeachersViewModel subjectTeacher = new SubjectTeachersViewModel
+            WorkerViewModel worker = new WorkerViewModel
             {
-                SubjectId = workers.PositionId,
+                PositionId = position.Id,
                 Employees = employees,
-                SubjectName = workers.PositionName,
+                PositionName = position.Name,
+                MaxEmployees = position.MaxEmployees
             };
-            return View(MVC.Teacher.Views.EditForSubject, subjectTeacher);
+            return View(MVC.Worker.Views.EditForPosition, worker);
         }
 
         [HttpPost]

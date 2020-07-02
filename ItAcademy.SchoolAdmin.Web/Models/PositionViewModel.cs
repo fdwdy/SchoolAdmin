@@ -1,14 +1,14 @@
-﻿namespace ItAcademy.SchoolAdmin.Web.Models
+﻿using System.Web.Mvc;
+
+namespace ItAcademy.SchoolAdmin.Web.Models
 {
     public class PositionViewModel
     {
         public string Id { get; set; }
 
+        [Remote("CheckExistingPosition", "Position", HttpMethod = "POST", ErrorMessage = "Position already exists", AdditionalFields = "Id")]
         public string Name { get; set; }
 
-        /// <summary>
-        /// Использовать ли ushort?.
-        /// </summary>
         public short MaxEmployees { get; set; }
     }
 }

@@ -42,9 +42,9 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
             _db.Positions.Remove(pos);
         }
 
-        public Task<bool> FindByName(string name)
+        public async Task<bool> FindByName(string name)
         {
-            throw new NotImplementedException();
+            return await _db.Positions.AnyAsync(s => s.Name == name);
         }
 
         public IEnumerable<PositionDb> GetAll()
