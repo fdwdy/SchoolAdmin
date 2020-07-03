@@ -87,12 +87,8 @@
     <Compile Include="SignalR\EmployeeContextModificationNotifyingServiceDecorator.cs" />
     <Compile Include="SignalR\PositionContextModificationNotifyingServiceDecorator.cs" />
     <Compile Include="SignalR\SubjectContextModificationNotifyingServiceDecorator.cs" />
-    <Compile Include="SignalR\EmployeeHub.cs" />
-    <Compile Include="SignalR\EmployeeServiceDecorator.cs" />
     <Compile Include="SignalR\ISchoolHub.cs" />
     <Compile Include="SignalR\SchoolHub.cs" />
-    <Compile Include="SignalR\SubjectHub.cs" />
-    <Compile Include="SignalR\SubjectServiceDecorator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ItAcademy.SchoolAdmin.DataAccess\ItAcademy.SchoolAdmin.DataAccess.csproj">

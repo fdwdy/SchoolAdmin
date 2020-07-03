@@ -20,24 +20,16 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MaxEmployees)
-        </th>
+        <th>Name</th>
+        <th>MaxEmployees</th>
         <th></th>
     </tr>
     <tbody id="positionDataTable">
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MaxEmployees)
-                </td>
+                <td>@item.Name</td>
+                <td>@item.MaxEmployees</td>
                 <td>
                     <a href="/@MVC.Position.Name/@MVC.Position.ActionNames.Edit/@item.Id">Edit  |</a>
                     <a href="/@MVC.Worker.Name/@MVC.Worker.ActionNames.EditEmployee/@item.Id">Set Worker |</a>

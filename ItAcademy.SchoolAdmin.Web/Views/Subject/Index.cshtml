@@ -17,18 +17,14 @@
 
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
+        <th>Name</th>
         <th></th>
     </tr>
     <tbody id="subjectDataTable">
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
+                <td>@item.Name</td>
                 <td>
                     <a href="/@MVC.Subject.Name/@MVC.Subject.ActionNames.Edit/@item.Id">Edit  |</a>
                     <a href="/@MVC.Teacher.Name/@MVC.Teacher.ActionNames.EditEmployee/@item.Id">Set Teacher  |</a>

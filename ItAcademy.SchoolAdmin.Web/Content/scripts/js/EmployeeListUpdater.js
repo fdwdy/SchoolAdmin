@@ -1,9 +1,4 @@
 ﻿var EmployeeListUpdater = (function () {
-    function toFormattedDate(dateString) {
-        const date = new Date(dateString);
-        return date.toLocaleDateString();
-    }
-
     return function (options) {
         return {
             updateData: function (employees) {
@@ -16,7 +11,7 @@
                             employee.FullName +
                             '</td>' +
                             '<td>' +
-                            toFormattedDate(employee.BirthDate) +
+                            employee.ConvertedDate +
                             '</td>' +
                             '<td>' +
                             (employee.Email || '') +
