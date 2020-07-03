@@ -21,28 +21,29 @@
         </th>
         <th></th>
     </tr>
+    <tbody id="employeeDataTable">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BirthDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Edit/@item.Id">Edit  |</a>
+                    <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Delete/@item.Id">Delete</a>
+                </td>
+            </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BirthDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Edit/@item.Id">Edit  |</a>
-                <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Delete/@item.Id">Delete</a>
-            </td>
-        </tr>
-
-    }
+        }
+    </tbody>
 
 </table>  

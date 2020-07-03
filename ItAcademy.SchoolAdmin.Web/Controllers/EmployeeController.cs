@@ -122,7 +122,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             IEnumerable<Employee> emps = await _empService.SearchAsync(query);
             IEnumerable<EmployeeListModel> models = _mapper.Map<IEnumerable<EmployeeListModel>>(emps);
-            return PartialView(MVC.Employee.Views._EmployeeData, models);
+            return Json(models, JsonRequestBehavior.AllowGet);
         }
 
         public async Task<EmployeeViewModel> GetEmployeeViewModelById(string id)

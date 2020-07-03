@@ -1,9 +1,55 @@
-﻿<h2>All employees</h2>
+﻿@model IEnumerable<ItAcademy.SchoolAdmin.Web.Models.EmployeeListModel>
 
 <input type="text" name="name" id="search" />
-<input type="button" value="Поиск" id="submit"/>
+<input type="button" value="Поиск" id="submit" />
 
-<div id="results"></div>
+<h2>Index</h2>
+
+<p>
+    <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Create">Create new</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th></th>
+    </tr>
+    <tbody id="employeeDataTable">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BirthDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Edit/@item.Id">Edit  |</a>
+                    <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Delete/@item.Id">Delete</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+
+</table>
 
 <p>
     <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Create">Create New Employee</a>
@@ -14,5 +60,20 @@
     <script src="~/Content/scripts/lib/jquery-signalr/jquery.signalR-2.4.1.min.js"></script>
     <script src="~/signalr/hubs"></script>
     <script type="text/javascript" src="~/Content/scripts/js/EmployeeUpdate.js"></script>
-    <script type="text/javascript" src="~/Content/scripts/js/EmployeeSearch.js"></script>
+    <script type="text/javascript" src="~/Content/scripts/js/SearchHandler.js"></script>
+    <script type="text/javascript" src="~/Content/scripts/js/EmployeeListUpdater.js"></script>
+    <script type="text/javascript">
+        let updater = new EmployeeListUpdater({
+            employeeTableBody: $('#employeeDataTable'),
+            urlsCellTemplate:
+                '@Html.ActionLink("Edit", "Edit", new {id = "_id_"}) | @Html.ActionLink("Delete", "Delete", new {id = "_id_"})'
+        });
+
+
+        let employeeSearchHandler = new SearchHandlerWrapper({
+            controllerName: 'employee',
+            actionName: 'search',
+            updater: updater
+        });
+    </script>
 }

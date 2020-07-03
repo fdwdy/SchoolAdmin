@@ -1,10 +1,6 @@
 ﻿$(document).ready(function () {
 
-    handler = new SearchHandler();
-
-    //$('#search').on('focusin', function () {
-    //    $('#search').val('');
-    //});
+    var handler = new SearchHandler("employee", "search");
 
     $('#search').on('input', function () {
         return showResults(handler, false)
@@ -49,12 +45,21 @@ class SearchHandler {
 
     xhr = new XMLHttpRequest();
 
-    constructor() {
+    url = '';
 
+    constructor(controller, action, updater) {
+        this.updater = updater;
+        this.controllerName = controller;
+        this.actionName = action;
     }
 
     setQuery(query) {
         this.query = query;
+    }
+
+    getConnectionString() {
+        this.url = "http://localhost:13693/" + this.controllerName + "/" + this.actionName + "?";
+        console.log(this.url)
     }
 
     processQuery() {
@@ -63,7 +68,7 @@ class SearchHandler {
             return;
         }
 
-        this.xhr = $.ajax("http://localhost:13693/Employee/Search?", {
+        this.xhr = $.ajax(this.url, {
             data: "query=" + this.query,
             timeout: 300,
             success: function (data) {
