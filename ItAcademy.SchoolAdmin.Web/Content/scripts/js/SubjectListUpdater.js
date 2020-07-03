@@ -1,17 +1,17 @@
-﻿var EmployeeListUpdater = (function () {
+﻿var SubjectListUpdater = (function () {
     return function (options) {
         return {
-            updateData: function (employees) {
-                console.log(employees)
+            updateData: function (subjects) {
+                console.log(subjects)
                 var tbody = $('<tbody></tbody>');
-                $.each(employees,
-                    (index, employee) => {
+                $.each(subjects,
+                    (index, subject) => {
                         tbody.append('<tr>' +
                             '<td>' +
-                            employee.Name +
+                            subject.Name +
                             '</td>' +
                             '<td>' +
-                            options.urlsCellTemplate.replace(/_id_/g, employee.Id) +
+                            options.urlsCellTemplate.replace(/_id_/g, subject.Id) +
                             '</td></tr>');
                     });
                 options.subjectTableBody.replaceWith(tbody);

@@ -50,7 +50,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             {
                 if (pos.Id == null)
                 {
-                    _posService.Add(pos);
+                    await _posService.AddAsync(pos);
                 }
                 else
                 {
@@ -91,16 +91,24 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         [HttpPost]
         public virtual async Task<ActionResult> CheckExistingPosition(PositionViewModel model)
         {
-            var position = await _posService.GetByIdAsync(model.Id);
-            if (position.Name == model.Name)
+            if (model.Id != null)
             {
-                return Json(true, JsonRequestBehavior.AllowGet);
+                var position = await _posService.GetByIdAsync(model.Id);
+                return Json(position.Name == model.Name, JsonRequestBehavior.AllowGet);
             }
             else
             {
                 var positionAlreadyExists = await IsPositionExists(model.Name);
                 return Json(!positionAlreadyExists, JsonRequestBehavior.AllowGet);
             }
+        }
+
+        [HttpGet]
+        public virtual async Task<ActionResult> Search(string query)
+        {
+            IEnumerable<Position> positions = await _posService.SearchAsync(query);
+            IEnumerable<PositionViewModel> models = _mapper.Map<IEnumerable<PositionViewModel>>(positions);
+            return Json(models, JsonRequestBehavior.AllowGet);
         }
 
         private async Task<bool> IsPositionExists(string name)

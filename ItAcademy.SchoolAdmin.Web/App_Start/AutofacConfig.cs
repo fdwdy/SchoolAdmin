@@ -32,6 +32,7 @@ namespace ItAcademy.SchoolAdmin.Web.App_Start
             builder.RegisterType<WorkerDbService>().As<IWorkerDbService>().InstancePerRequest();
             builder.RegisterDecorator<EmployeeContextModificationNotifyingServiceDecorator, IEmployeeService>();
             builder.RegisterDecorator<SubjectContextModificationNotifyingServiceDecorator, ISubjectService>();
+            builder.RegisterDecorator<PositionContextModificationNotifyingServiceDecorator, IPositionService>();
             builder.RegisterType<EmployeeDbRepository>().As<IRepository<EmployeeDb>>().InstancePerRequest();
             builder.RegisterType<SubjectDbRepository>().As<IRepository<SubjectDb>>().InstancePerRequest();
             builder.RegisterType<PositionDbRepository>().As<IRepository<PositionDb>>().InstancePerRequest();

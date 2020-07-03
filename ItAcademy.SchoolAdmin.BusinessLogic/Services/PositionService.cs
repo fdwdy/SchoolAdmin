@@ -29,9 +29,10 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
             return _uow.Positions.Save();
         }
 
-        public Task AddAsync(Position pos)
+        public async Task AddAsync(Position pos)
         {
-            throw new System.NotImplementedException();
+            _uow.Positions.Create(_mapper.Map<Position, PositionDb>(pos));
+            await _uow.SaveAsync();
         }
 
         public async Task<bool> FindByName(string name)

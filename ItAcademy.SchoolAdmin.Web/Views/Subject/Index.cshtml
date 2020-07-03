@@ -3,15 +3,13 @@
 
 
 <h2>All subjects</h2>
-
+<br />
 <input type="text" name="name" id="search" />
 <input type="button" value="Поиск" id="submit" />
 
 <p style="display: none" class="list-updated-notification">
     Subject list updated. <a href="#" class="list-updated-notification-link">Click here</a> to refresh.
 </p>
-
-@*<div id="results"></div>*@
 
 <p>
     @Html.ActionLink("Create New", MVC.Subject.ActionNames.Create)
@@ -50,19 +48,19 @@
     <script type="text/javascript" src="~/Content/scripts/js/CommonListModificationHandler.js"></script>
     <script type="text/javascript">
 
-        let updater = new EmployeeListUpdater({
+        let updater = new SubjectListUpdater({
             subjectTableBody: $('#subjectDataTable'),
             urlsCellTemplate:
                 '@Html.ActionLink("Edit", "Edit", new {id = "_id_"}) | @Html.ActionLink("Delete", "Delete", new {id = "_id_"})'
         });
 
-        let employeeSearchHandler = new SearchHandlerWrapper({
+        let subjectSearchHandler = new SearchHandlerWrapper({
             controllerName: 'subject',
             actionName: 'search',
             updater: updater
         });
 
-        let employeeListModificationHandler = new CommonListModificationHandler({
+        let subjectListModificationHandler = new CommonListModificationHandler({
             listModifiedEventName: '@SubjectContextModificationNotifyingServiceDecorator.MethodName',
             listUpdater: updater,
             listUpdatedNotificationArea: $('.list-updated-notification')
@@ -70,11 +68,3 @@
 
     </script>
 }
-
-@*@section scripts{
-        <script src="~/Content/scripts/lib/jquery/jquery-3.3.1.min.js"></script>
-        <script src="~/Content/scripts/lib/jquery-signalr/jquery.signalR-2.4.1.min.js"></script>
-        <script src="~/signalr/hubs"></script>
-        <script type="text/javascript" src="~/Content/scripts/js/SubjectUpdate.js"></script>
-        <script type="text/javascript" src="~/Content/scripts/js/SubjectSearch.js"></script>
-    }*@

@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<ItAcademy.SchoolAdmin.Web.Models.PositionViewModel>
+@using ItAcademy.SchoolAdmin.BusinessLogic.SignalR
 
 @{
     ViewBag.Title = "Index";
@@ -6,6 +7,13 @@
 }
 
 <h2>Job positions</h2>
+<br />
+<input type="text" name="name" id="search" />
+<input type="button" value="Поиск" id="submit" />
+
+<p style="display: none" class="list-updated-notification">
+    Subject list updated. <a href="#" class="list-updated-notification-link">Click here</a> to refresh.
+</p>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -20,21 +28,52 @@
         </th>
         <th></th>
     </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaxEmployees)
-        </td>
-        <td>
-            <a href="/@MVC.Position.Name/@MVC.Position.ActionNames.Edit/@item.Id">Edit  |</a>
-            <a href="/@MVC.Worker.Name/@MVC.Worker.ActionNames.EditEmployee/@item.Id">Set Worker |</a>
-            <a href="/@MVC.Position.Name/@MVC.Position.ActionNames.Delete/@item.Id">Delete </a>
-        </td>
-    </tr>
-}
-
+    <tbody id="positionDataTable">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaxEmployees)
+                </td>
+                <td>
+                    <a href="/@MVC.Position.Name/@MVC.Position.ActionNames.Edit/@item.Id">Edit  |</a>
+                    <a href="/@MVC.Worker.Name/@MVC.Worker.ActionNames.EditEmployee/@item.Id">Set Worker |</a>
+                    <a href="/@MVC.Position.Name/@MVC.Position.ActionNames.Delete/@item.Id">Delete </a>
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+@section scripts{
+    <script src="~/Content/scripts/lib/jquery/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/scripts/lib/jquery-signalr/jquery.signalR-2.4.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script type="text/javascript" src="~/Content/scripts/js/SearchHandler.js"></script>
+    <script type="text/javascript" src="~/Content/scripts/js/PositionListUpdater.js"></script>
+    <script type="text/javascript" src="~/Content/scripts/js/CommonListModificationHandler.js"></script>
+    <script type="text/javascript">
+
+        let updater = new PositionListUpdater({
+            positionTableBody: $('#positionDataTable'),
+            urlsCellTemplate:
+                '@Html.ActionLink("Edit", "Edit", new {id = "_id_"}) | @Html.ActionLink("Delete", "Delete", new {id = "_id_"})'
+        });
+
+        let positionSearchHandler = new SearchHandlerWrapper({
+            controllerName: 'position',
+            actionName: 'search',
+            updater: updater
+        });
+
+        let positionListModificationHandler = new CommonListModificationHandler({
+            listModifiedEventName: '@PositionContextModificationNotifyingServiceDecorator.MethodName',
+            listUpdater: updater,
+            listUpdatedNotificationArea: $('.list-updated-notification')
+        });
+
+    </script>
+}
