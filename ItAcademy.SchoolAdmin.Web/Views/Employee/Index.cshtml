@@ -1,7 +1,13 @@
 ﻿@model IEnumerable<ItAcademy.SchoolAdmin.Web.Models.EmployeeListModel>
+@using ItAcademy.SchoolAdmin.BusinessLogic.SignalR
+
 
 <input type="text" name="name" id="search" />
 <input type="button" value="Поиск" id="submit" />
+
+<p style="display: none" class="list-updated-notification">
+    Employee list updated. <a href="#" class="list-updated-notification-link">Click here</a> to refresh.
+</p>
 
 <h2>Index</h2>
 
@@ -59,21 +65,28 @@
     <script src="~/Content/scripts/lib/jquery/jquery-3.3.1.min.js"></script>
     <script src="~/Content/scripts/lib/jquery-signalr/jquery.signalR-2.4.1.min.js"></script>
     <script src="~/signalr/hubs"></script>
-    <script type="text/javascript" src="~/Content/scripts/js/EmployeeUpdate.js"></script>
     <script type="text/javascript" src="~/Content/scripts/js/SearchHandler.js"></script>
     <script type="text/javascript" src="~/Content/scripts/js/EmployeeListUpdater.js"></script>
+    <script type="text/javascript" src="~/Content/scripts/js/CommonListModificationHandler.js"></script>
     <script type="text/javascript">
+
         let updater = new EmployeeListUpdater({
             employeeTableBody: $('#employeeDataTable'),
             urlsCellTemplate:
                 '@Html.ActionLink("Edit", "Edit", new {id = "_id_"}) | @Html.ActionLink("Delete", "Delete", new {id = "_id_"})'
         });
 
-
         let employeeSearchHandler = new SearchHandlerWrapper({
             controllerName: 'employee',
             actionName: 'search',
             updater: updater
         });
+
+        let employeeListModificationHandler = new CommonListModificationHandler({
+            listModifiedEventName: '@EmployeeContextModificationNotifyingServiceDecorator.MethodName',
+            listUpdater: updater,
+            listUpdatedNotificationArea: $('.list-updated-notification')
+        });
+
     </script>
 }

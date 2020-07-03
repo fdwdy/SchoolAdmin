@@ -11,7 +11,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Interfaces
 
         IEnumerable<TEntity> GetAll();
 
-        Task<Result<TEntity>> AddAsync(TEntity entity);
+        Task AddAsync(TEntity entity);
 
         Task<IEnumerable<TEntity>> GetAllAsync();
 

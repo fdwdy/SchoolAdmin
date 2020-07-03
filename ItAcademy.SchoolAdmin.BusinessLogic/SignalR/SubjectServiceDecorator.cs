@@ -37,9 +37,9 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
             return result;
         }
 
-        public async Task<Result<Subject>> AddAsync(Subject sbj)
+        public async Task AddAsync(Subject sbj)
         {
-            return await _sbjService.AddAsync(sbj);
+            await _sbjService.AddAsync(sbj);
         }
 
         public Task<bool> FindByName(string name)

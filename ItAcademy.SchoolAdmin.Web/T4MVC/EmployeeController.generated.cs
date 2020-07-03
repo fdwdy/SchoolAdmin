@@ -229,12 +229,12 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, ItAcademy.SchoolAdmin.BusinessLogic.Models.Employee model);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Create(ItAcademy.SchoolAdmin.BusinessLogic.Models.Employee model)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Create(ItAcademy.SchoolAdmin.BusinessLogic.Models.Employee model)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Create);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             CreateOverride(callInfo, model);
-            return callInfo;
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 
         [NonAction]

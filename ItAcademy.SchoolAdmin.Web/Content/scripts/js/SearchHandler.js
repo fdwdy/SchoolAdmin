@@ -53,7 +53,6 @@ class SearchHandler {
         this.controllerName = controller;
         this.actionName = action;
         this.updater = updater;
-        console.log('sdfsdfsdfsd');
     }
 
     setQuery(query) {

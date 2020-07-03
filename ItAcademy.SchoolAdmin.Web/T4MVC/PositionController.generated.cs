@@ -84,6 +84,13 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteConfirmed);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> CheckExistingPosition()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CheckExistingPosition);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public PositionController Actions { get { return MVC.Position; } }
@@ -106,6 +113,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             public readonly string CreateEdit = "CreateEdit";
             public readonly string Delete = "Delete";
             public readonly string DeleteConfirmed = "Delete";
+            public readonly string CheckExistingPosition = "CheckExistingPosition";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -117,6 +125,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             public const string CreateEdit = "CreateEdit";
             public const string Delete = "Delete";
             public const string DeleteConfirmed = "Delete";
+            public const string CheckExistingPosition = "CheckExistingPosition";
         }
 
 
@@ -151,6 +160,14 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         public class ActionParamsClass_DeleteConfirmed
         {
             public readonly string id = "id";
+        }
+        static readonly ActionParamsClass_CheckExistingPosition s_params_CheckExistingPosition = new ActionParamsClass_CheckExistingPosition();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_CheckExistingPosition CheckExistingPositionParams { get { return s_params_CheckExistingPosition; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_CheckExistingPosition
+        {
+            public readonly string model = "model";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -244,6 +261,18 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteConfirmed);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             DeleteConfirmedOverride(callInfo, id);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void CheckExistingPositionOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, ItAcademy.SchoolAdmin.Web.Models.PositionViewModel model);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> CheckExistingPosition(ItAcademy.SchoolAdmin.Web.Models.PositionViewModel model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CheckExistingPosition);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            CheckExistingPositionOverride(callInfo, model);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

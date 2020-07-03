@@ -53,9 +53,9 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
             return _empService.GetAllAsync();
         }
 
-        public Task<Result<Employee>> AddAsync(Employee emp)
+        public async Task AddAsync(Employee emp)
         {
-            return _empService.AddAsync(emp);
+            await _empService.AddAsync(emp);
         }
 
         public async Task RemoveByIdAsync(string id)

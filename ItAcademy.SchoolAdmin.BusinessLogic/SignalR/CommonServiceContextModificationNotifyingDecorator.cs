@@ -28,14 +28,15 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
 
         public Result Add(TEntity entity)
         {
-            return _decoratedService.Add(entity);
-        }
-
-        public async Task<Result<TEntity>> AddAsync(TEntity entity)
-        {
-            var result = await _decoratedService.AddAsync(entity);
+            var result = _decoratedService.Add(entity);
             NotifyOnListModified();
             return result;
+        }
+
+        public async Task AddAsync(TEntity entity)
+        {
+            await _decoratedService.AddAsync(entity);
+            NotifyOnListModified();
         }
 
         public IEnumerable<TEntity> GetAll()
@@ -72,11 +73,8 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
 
         protected virtual void NotifyOnListModified()
         {
-            _context.OnChangesSaved += async (sender, args) =>
-            {
-                var currentEntities = MapEntities(await _decoratedService.GetAllAsync());
-                await _hub.NotifyAll(new object[] { currentEntities });
-            };
+            var currentEntities = _decoratedService.GetAll();
+            _hub.NotifyAll(new object[] { currentEntities,  });
         }
 
         protected virtual IEnumerable<object> MapEntities(IEnumerable<TEntity> entities)

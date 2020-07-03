@@ -35,9 +35,10 @@
             return _mapper.Map<IEnumerable<EmployeeDb>, IEnumerable<Employee>>(employees);
         }
 
-        public Task<Result<Employee>> AddAsync(Employee emp)
+        public async Task AddAsync(Employee emp)
         {
-            throw new System.NotImplementedException();
+            _uow.Employees.Create(_mapper.Map<Employee, EmployeeDb>(emp));
+            await _uow.SaveAsync();
         }
 
         public async Task<IEnumerable<Employee>> GetAllAsync()

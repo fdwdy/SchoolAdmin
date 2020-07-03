@@ -36,7 +36,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
             return _mapper.Map<IEnumerable<SubjectDb>, IEnumerable<Subject>>(subjects);
         }
 
-        public Task<Result<Subject>> AddAsync(Subject sbj)
+        public Task AddAsync(Subject sbj)
         {
             throw new NotImplementedException();
         }

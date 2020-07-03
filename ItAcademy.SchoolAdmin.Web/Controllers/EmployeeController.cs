@@ -45,17 +45,12 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         }
 
         [HttpPost]
-        public virtual ActionResult Create(Employee model)
+        public virtual async Task<ActionResult> Create(Employee model)
         {
                 if (ModelState.IsValid)
                 {
-                    var result = _empService.Add(model);
-                    if (result.IsSuccess)
-                    {
-                        return RedirectToAction("Index");
-                    }
-
-                    TempData["ErrorMessage"] = result.Message;
+                    await _empService.AddAsync(model);
+                    return RedirectToAction("Index");
                 }
 
                 return View();

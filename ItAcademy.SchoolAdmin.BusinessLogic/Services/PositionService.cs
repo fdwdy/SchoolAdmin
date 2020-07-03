@@ -29,7 +29,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
             return _uow.Positions.Save();
         }
 
-        public Task<Result<Position>> AddAsync(Position pos)
+        public Task AddAsync(Position pos)
         {
             throw new System.NotImplementedException();
         }

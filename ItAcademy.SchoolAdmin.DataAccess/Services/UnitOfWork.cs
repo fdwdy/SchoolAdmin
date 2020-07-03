@@ -1,6 +1,7 @@
 ﻿namespace ItAcademy.SchoolAdmin.DataAccess.Services
 {
     using System;
+    using System.Threading.Tasks;
     using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
     using ItAcademy.SchoolAdmin.DataAccess.Models;
 
@@ -35,7 +36,7 @@
             Db.SaveChanges();
         }
 
-        public async void SaveAsync()
+        public async Task SaveAsync()
         {
             await Db.SaveChangesAsync();
         }
