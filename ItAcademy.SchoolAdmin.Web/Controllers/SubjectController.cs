@@ -76,7 +76,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             IEnumerable<Subject> sbj = await _sbjService.SearchAsync(query);
             IEnumerable<SubjectViewModel> models = _mapper.Map<IEnumerable<SubjectViewModel>>(sbj);
-            return PartialView(MVC.Subject.Views._SubjectData, models);
+            return Json(models, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]

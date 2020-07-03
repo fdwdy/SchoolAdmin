@@ -4,7 +4,7 @@
         let hb = $.connection.schoolHub;
 
         $.connection.hub.start().done(function () {
-
+            console.log("startuem")
         });
 
         hb.client.broadcast = function (message) {

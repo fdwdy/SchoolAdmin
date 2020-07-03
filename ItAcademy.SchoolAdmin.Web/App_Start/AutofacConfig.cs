@@ -21,8 +21,6 @@ namespace ItAcademy.SchoolAdmin.Web.App_Start
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<SchoolContext>().AsSelf().InstancePerRequest();
-            //////builder.RegisterType<EmployeeHub>().AsSelf().InstancePerRequest();
-            //////builder.RegisterType<SubjectHub>().AsSelf().InstancePerRequest();
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             builder.RegisterType<SchoolHub>().As<ISchoolHub>().InstancePerRequest();
             builder.RegisterType<EmployeeService>().As<IEmployeeService>().InstancePerRequest();
@@ -32,9 +30,8 @@ namespace ItAcademy.SchoolAdmin.Web.App_Start
             builder.RegisterType<WorkerService>().As<IWorkerService>().InstancePerRequest();
             builder.RegisterType<TeacherDbService>().As<ITeacherDbService>().InstancePerRequest();
             builder.RegisterType<WorkerDbService>().As<IWorkerDbService>().InstancePerRequest();
-            ////builder.RegisterDecorator<EmployeeServiceDecorator, IEmployeeService>();
             builder.RegisterDecorator<EmployeeContextModificationNotifyingServiceDecorator, IEmployeeService>();
-            builder.RegisterDecorator<SubjectServiceDecorator, ISubjectService>();
+            builder.RegisterDecorator<SubjectContextModificationNotifyingServiceDecorator, ISubjectService>();
             builder.RegisterType<EmployeeDbRepository>().As<IRepository<EmployeeDb>>().InstancePerRequest();
             builder.RegisterType<SubjectDbRepository>().As<IRepository<SubjectDb>>().InstancePerRequest();
             builder.RegisterType<PositionDbRepository>().As<IRepository<PositionDb>>().InstancePerRequest();

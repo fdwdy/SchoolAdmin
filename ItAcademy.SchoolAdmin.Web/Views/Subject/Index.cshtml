@@ -1,18 +1,80 @@
-﻿<h2>All employees</h2>
+﻿@model IEnumerable<ItAcademy.SchoolAdmin.Web.Models.SubjectViewModel>
+@using ItAcademy.SchoolAdmin.BusinessLogic.SignalR
+
+
+<h2>All subjects</h2>
 
 <input type="text" name="name" id="search" />
 <input type="button" value="Поиск" id="submit" />
 
-<div id="results"></div>
+<p style="display: none" class="list-updated-notification">
+    Subject list updated. <a href="#" class="list-updated-notification-link">Click here</a> to refresh.
+</p>
+
+@*<div id="results"></div>*@
 
 <p>
     @Html.ActionLink("Create New", MVC.Subject.ActionNames.Create)
 </p>
 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+    <tbody id="subjectDataTable">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <a href="/@MVC.Subject.Name/@MVC.Subject.ActionNames.Edit/@item.Id">Edit  |</a>
+                    <a href="/@MVC.Teacher.Name/@MVC.Teacher.ActionNames.EditEmployee/@item.Id">Set Teacher  |</a>
+                    <a href="/@MVC.Subject.Name/@MVC.Subject.ActionNames.Delete/@item.Id">Delete  |</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
 @section scripts{
     <script src="~/Content/scripts/lib/jquery/jquery-3.3.1.min.js"></script>
     <script src="~/Content/scripts/lib/jquery-signalr/jquery.signalR-2.4.1.min.js"></script>
     <script src="~/signalr/hubs"></script>
-    <script type="text/javascript" src="~/Content/scripts/js/SubjectUpdate.js"></script>
-    <script type="text/javascript" src="~/Content/scripts/js/SubjectSearch.js"></script>
+    <script type="text/javascript" src="~/Content/scripts/js/SearchHandler.js"></script>
+    <script type="text/javascript" src="~/Content/scripts/js/SubjectListUpdater.js"></script>
+    <script type="text/javascript" src="~/Content/scripts/js/CommonListModificationHandler.js"></script>
+    <script type="text/javascript">
+
+        let updater = new EmployeeListUpdater({
+            subjectTableBody: $('#subjectDataTable'),
+            urlsCellTemplate:
+                '@Html.ActionLink("Edit", "Edit", new {id = "_id_"}) | @Html.ActionLink("Delete", "Delete", new {id = "_id_"})'
+        });
+
+        let employeeSearchHandler = new SearchHandlerWrapper({
+            controllerName: 'subject',
+            actionName: 'search',
+            updater: updater
+        });
+
+        let employeeListModificationHandler = new CommonListModificationHandler({
+            listModifiedEventName: '@SubjectContextModificationNotifyingServiceDecorator.MethodName',
+            listUpdater: updater,
+            listUpdatedNotificationArea: $('.list-updated-notification')
+        });
+
+    </script>
 }
+
+@*@section scripts{
+        <script src="~/Content/scripts/lib/jquery/jquery-3.3.1.min.js"></script>
+        <script src="~/Content/scripts/lib/jquery-signalr/jquery.signalR-2.4.1.min.js"></script>
+        <script src="~/signalr/hubs"></script>
+        <script type="text/javascript" src="~/Content/scripts/js/SubjectUpdate.js"></script>
+        <script type="text/javascript" src="~/Content/scripts/js/SubjectSearch.js"></script>
+    }*@
