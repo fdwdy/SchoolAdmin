@@ -1,87 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
-using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
 using ItAcademy.SchoolAdmin.DataAccess.Models;
-using ItAcademy.SchoolAdmin.Infrastructure;
 
 namespace ItAcademy.SchoolAdmin.DataAccess.Services
 {
-    public class PositionDbRepository : IRepository<PositionDb>
+    public class PositionDbRepository : BaseDbRepository<PositionDb>
     {
         private SchoolContext _db;
 
-        private PositionDb _pos;
-
         public PositionDbRepository(SchoolContext db)
+            : base(db)
         {
             _db = db;
         }
 
-        public void Create(PositionDb pos)
+        public PositionDbRepository(SchoolContext db, DbSet<PositionDb> set)
+            : base(db, set)
         {
-            _pos = pos;
-            _pos.Id = Guid.NewGuid().ToString();
-            _db.Positions.Add(_pos);
+            _db = db;
         }
 
-        public void Delete(int id)
-        {
-            PositionDb pos = _db.Positions.Find(id);
-            if (pos != null)
-            {
-                _db.Positions.Remove(pos);
-            }
-        }
-
-        public async Task DeleteAsync(string id)
-        {
-            PositionDb pos = await _db.Positions.FindAsync(id);
-            _db.Positions.Remove(pos);
-        }
-
-        public async Task<bool> FindByName(string name)
+        public override async Task<bool> FindByName(string name)
         {
             return await _db.Positions.AnyAsync(s => s.Name == name);
         }
 
-        public IEnumerable<PositionDb> GetAll()
+        public override async Task<IEnumerable<PositionDb>> SearchAsync(string query)
         {
-            return _db.Positions;
-        }
-
-        public async Task<IEnumerable<PositionDb>> GetAllAsync()
-        {
-            return await _db.Positions.ToListAsync().ConfigureAwait(false);
-        }
-
-        public async Task<PositionDb> GetByIdAsync(string id)
-        {
-            return await _db.Positions.FindAsync(id);
-        }
-
-        public Result Save()
-        {
-            _db.SaveChanges();
-            return Result.Ok();
-        }
-
-        public async Task<IEnumerable<PositionDb>> SearchAsync(string query)
-        {
-            return await _db.Positions.Where(x => x.Name.Contains(query)).ToListAsync();
-        }
-
-        public void Update(PositionDb pos)
-        {
-            _db.Entry(pos).State = EntityState.Modified;
-        }
-
-        public async Task UpdateAsync(PositionDb pos)
-        {
-            _db.Positions.Attach(pos);
-            _db.Entry(pos).State = EntityState.Modified;
+            var result = await _db.Positions.Where(x => x.Name.Contains(query)).ToListAsync();
+            return result;
         }
     }
 }

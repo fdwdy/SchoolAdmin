@@ -1,4 +1,14 @@
 ﻿var EmployeeListUpdater = (function () {
+
+    function parsePhones(phones) {
+        var string = '';
+        $.each(phones,
+            (index, phone) => {
+                string += phone + '<br/>';
+            });
+        return string;
+    }
+
     return function (options) {
         return {
             updateData: function (employees) {
@@ -17,7 +27,10 @@
                             (employee.Email || '') +
                             '</td>' +
                             '<td>' +
-                            (employee.Phone || '') +
+                            ////(employee.Phone || '') +
+                            ////'</td>' +
+                            ////'<td>' +
+                            parsePhones(employee.Phones) +
                             '</td>' +
                             '<td>' +
                             options.urlsCellTemplate.replace(/_id_/g, employee.Id) +

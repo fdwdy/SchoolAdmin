@@ -3,86 +3,77 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
-using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
 using ItAcademy.SchoolAdmin.DataAccess.Models;
-using ItAcademy.SchoolAdmin.Infrastructure;
 
 namespace ItAcademy.SchoolAdmin.DataAccess.Services
 {
-    public class EmployeeDbRepository : IRepository<EmployeeDb>
+    public class EmployeeDbRepository : BaseDbRepository<EmployeeDb>
     {
         private SchoolContext _db;
 
-        private EmployeeDb _emp;
-
         public EmployeeDbRepository(SchoolContext db)
+            : base(db)
         {
             _db = db;
         }
 
-        public void Create(EmployeeDb emp)
+        public EmployeeDbRepository(SchoolContext db, DbSet<EmployeeDb> set)
+            : base(db, set)
         {
-            _emp = emp;
-            _emp.Id = Guid.NewGuid().ToString();
-            _db.Employees.Add(_emp);
+            _db = db;
         }
 
-        public IEnumerable<EmployeeDb> GetAll()
+        public override void Create(EmployeeDb item)
         {
-            return _db.Employees;
-        }
-
-        public void Update(EmployeeDb emp)
-        {
-            _db.Entry(emp).State = EntityState.Modified;
-        }
-
-        public void Delete(int id)
-        {
-            EmployeeDb emp = _db.Employees.Find(id);
-            if (emp != null)
+            foreach (var phone in item.Phones)
             {
-                _db.Employees.Remove(emp);
+                phone.Id = Guid.NewGuid().ToString();
+                _db.Entry(phone).State = EntityState.Added;
             }
+
+            base.Create(item);
         }
 
-        public async Task DeleteAsync(string id)
+        public override async Task UpdateAsync(EmployeeDb item)
         {
-            EmployeeDb emp = await _db.Employees.FindAsync(id);
-            _db.Employees.Remove(emp);
+            await _db.Phones.Where(p => p.EmployeeId == item.Id)
+                .ForEachAsync(d => _db.Entry(d).State = EntityState.Deleted);
+            foreach (var phone in item.Phones)
+            {
+                if (phone.Id == null)
+                {
+                    phone.Id = Guid.NewGuid().ToString();
+                }
+
+                _db.Entry(phone).State = EntityState.Added;
+            }
+
+            _db.Employees.Attach(item);
+            _db.Entry(item).State = EntityState.Modified;
         }
 
-        public async Task<IEnumerable<EmployeeDb>> GetAllAsync()
+        public override async Task<EmployeeDb> GetByIdAsync(string id)
         {
-            return await _db.Employees.ToListAsync().ConfigureAwait(false);
+            return await _db.Employees.Include(e => e.Phones)
+                .FirstOrDefaultAsync(e => e.Id == id);
         }
 
-        public async Task<EmployeeDb> GetByIdAsync(string id)
+        public override async Task<IEnumerable<EmployeeDb>> GetAllAsync()
         {
-            return await _db.Employees.FindAsync(id);
+            return await _db.Employees.Include(e => e.Phones).ToListAsync();
         }
 
-        public async Task UpdateAsync(EmployeeDb emp)
+        public override async Task<IEnumerable<EmployeeDb>> SearchAsync(string query)
         {
-            _db.Employees.Attach(emp);
-            _db.Entry(emp).State = EntityState.Modified;
+            var result = await _db.Employees.Where(x =>
+               x.Name.Contains(query) || x.Middlename.Contains(query) ||
+               x.Surname.Contains(query) || x.Email.Contains(query) ||
+               x.Phones.Any(p => p.Number.Contains(query)) || x.Phone.Contains(query))
+               .Include(e => e.Phones).ToListAsync();
+            return result;
         }
 
-        public async Task<IEnumerable<EmployeeDb>> SearchAsync(string query)
-        {
-            return await _db.Employees.Where(x =>
-                x.Name.Contains(query) || x.Middlename.Contains(query) ||
-                x.Surname.Contains(query) || x.Email.Contains(query) ||
-                x.Phone.Contains(query)).ToListAsync();
-        }
-
-        public Result Save()
-        {
-            _db.SaveChanges();
-            return Result.Ok();
-        }
-
-        public Task<bool> FindByName(string name)
+        public override Task<bool> FindByName(string name)
         {
             throw new NotImplementedException();
         }

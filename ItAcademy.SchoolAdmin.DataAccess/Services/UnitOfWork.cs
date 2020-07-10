@@ -23,20 +23,25 @@
             Db = context;
         }
 
+        ////public UnitOfWork(IRepository<EmployeeDb> empRepo)
+        ////{
+        ////    Db = new SchoolContext();
+        ////}
+
         public SchoolContext Db { get; }
 
-        public IRepository<EmployeeDb> Employees => _empRepository ?? (_empRepository = new EmployeeDbRepository(Db));
+        public virtual IRepository<EmployeeDb> Employees => _empRepository ?? (_empRepository = new EmployeeDbRepository(Db));
 
-        public IRepository<SubjectDb> Subjects => _sbjRepository ?? (_sbjRepository = new SubjectDbRepository(Db));
+        public virtual IRepository<SubjectDb> Subjects => _sbjRepository ?? (_sbjRepository = new SubjectDbRepository(Db));
 
-        public IRepository<PositionDb> Positions => _posRepository ?? (_posRepository = new PositionDbRepository(Db));
+        public virtual IRepository<PositionDb> Positions => _posRepository ?? (_posRepository = new PositionDbRepository(Db));
 
-        public void Save()
+        public virtual void Save()
         {
             Db.SaveChanges();
         }
 
-        public async Task SaveAsync()
+        public virtual async Task SaveAsync()
         {
             await Db.SaveChangesAsync();
         }

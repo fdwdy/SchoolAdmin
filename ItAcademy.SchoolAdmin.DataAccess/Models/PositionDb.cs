@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using ItAcademy.SchoolAdmin.DataAccess.Services;
 
 namespace ItAcademy.SchoolAdmin.DataAccess.Models
 {
-    public class PositionDb
+    public class PositionDb : IDbEntity
     {
         public string Id { get; set; }
 

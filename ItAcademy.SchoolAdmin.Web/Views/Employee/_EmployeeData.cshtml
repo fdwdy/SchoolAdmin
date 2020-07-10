@@ -3,7 +3,7 @@
 <h2>Index</h2>
 
 <p>
-    <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Create">Create new</a>
+    <a href="@Url.Action(MVC.Employee.Create())">Create new</a>
 </p>
 <table class="table">
     <tr>
@@ -20,10 +20,10 @@
                 <td>@item.FullName</td>
                 <td>@item.BirthDate</td>
                 <td>@item.Email</td>
-                <td>@item.Phone</td>
+                @*<td>@item.Phone</td>*@
                 <td>
-                    <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Edit/@item.Id">Edit  |</a>
-                    <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Delete/@item.Id">Delete</a>
+                    <a href="@Url.Action(MVC.Employee.Edit(@item.Id))">Edit |</a>
+                    <a href="@Url.Action(MVC.Employee.Delete(@item.Id))">Delete</a>
                 </td>
             </tr>
 

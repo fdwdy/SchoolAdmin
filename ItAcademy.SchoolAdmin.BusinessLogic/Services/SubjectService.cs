@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
@@ -36,9 +35,10 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
             return _mapper.Map<IEnumerable<SubjectDb>, IEnumerable<Subject>>(subjects);
         }
 
-        public Task AddAsync(Subject sbj)
+        public async Task AddAsync(Subject sbj)
         {
-            throw new NotImplementedException();
+            _uow.Subjects.Create(_mapper.Map<Subject, SubjectDb>(sbj));
+            await _uow.SaveAsync();
         }
 
         public async Task<IEnumerable<Subject>> GetAllAsync()

@@ -125,12 +125,10 @@ namespace Links
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
                 public static readonly string CommonListModificationHandler_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/CommonListModificationHandler.min.js") ? Url("CommonListModificationHandler.min.js") : Url("CommonListModificationHandler.js");
                 public static readonly string EmployeeListUpdater_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/EmployeeListUpdater.min.js") ? Url("EmployeeListUpdater.min.js") : Url("EmployeeListUpdater.js");
-                public static readonly string EmployeeSearch_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/EmployeeSearch.min.js") ? Url("EmployeeSearch.min.js") : Url("EmployeeSearch.js");
-                public static readonly string EmployeeUpdate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/EmployeeUpdate.min.js") ? Url("EmployeeUpdate.min.js") : Url("EmployeeUpdate.js");
                 public static readonly string LimitCheckbox_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/LimitCheckbox.min.js") ? Url("LimitCheckbox.min.js") : Url("LimitCheckbox.js");
+                public static readonly string PositionListUpdater_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/PositionListUpdater.min.js") ? Url("PositionListUpdater.min.js") : Url("PositionListUpdater.js");
                 public static readonly string SearchHandler_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/SearchHandler.min.js") ? Url("SearchHandler.min.js") : Url("SearchHandler.js");
-                public static readonly string SubjectSearch_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/SubjectSearch.min.js") ? Url("SubjectSearch.min.js") : Url("SubjectSearch.js");
-                public static readonly string SubjectUpdate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/SubjectUpdate.min.js") ? Url("SubjectUpdate.min.js") : Url("SubjectUpdate.js");
+                public static readonly string SubjectListUpdater_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/SubjectListUpdater.min.js") ? Url("SubjectListUpdater.min.js") : Url("SubjectListUpdater.js");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -225,12 +223,10 @@ namespace Links
                     {
                         public static readonly string CommonListModificationHandler_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/js/CommonListModificationHandler.js"); 
                         public static readonly string EmployeeListUpdater_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/js/EmployeeListUpdater.js"); 
-                        public static readonly string EmployeeSearch_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/js/EmployeeSearch.js"); 
-                        public static readonly string EmployeeUpdate_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/js/EmployeeUpdate.js"); 
                         public static readonly string LimitCheckbox_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/js/LimitCheckbox.js"); 
+                        public static readonly string PositionListUpdater_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/js/PositionListUpdater.js"); 
                         public static readonly string SearchHandler_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/js/SearchHandler.js"); 
-                        public static readonly string SubjectSearch_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/js/SubjectSearch.js"); 
-                        public static readonly string SubjectUpdate_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/js/SubjectUpdate.js"); 
+                        public static readonly string SubjectListUpdater_js = T4MVCHelpers.ProcessAssetPath("~/Content/scripts/js/SubjectListUpdater.js"); 
                     }
                 }
                 public static partial class lib 

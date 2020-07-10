@@ -21,9 +21,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Index">Employees</a></li>
-                    <li><a href="/@MVC.Subject.Name/@MVC.Subject.ActionNames.Index">Subjects</a></li>
-                    <li><a href="/@MVC.Position.Name/@MVC.Position.ActionNames.Index">Administration</a></li>
+                    <li><a href="@Url.Action(MVC.Employee.Index())">Employees</a></li>
+                    <li><a href="@Url.Action(MVC.Subject.Index())">Subjects</a></li>
+                    <li><a href="@Url.Action(MVC.Position.Index())">Administration</a></li>
                 </ul>
             </div>
         </div>
@@ -33,8 +33,8 @@
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - SchoolApp</p>
-            <a class="navbar-link" href="/@MVC.TestExceptions.Name/@MVC.TestExceptions.ActionNames.Index">Test 404 Exception</a>
-            <a class="navbar-link" href="/@MVC.TestExceptions.Name/@MVC.TestExceptions.ActionNames.Employees">Test IndexOutOfRange Exception</a>
+            <a class="navbar-link" href="@Url.Action(MVC.TestExceptions.Index())">Test 404 Exception</a>
+            <a class="navbar-link" href="@Url.Action(MVC.TestExceptions.Employees())">Test IndexOutOfRange Exception</a>
         </footer>
     </div>
 

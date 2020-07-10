@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntitiesConfiguration\EmployeeConfiguration.cs" />
+    <Compile Include="EntitiesConfiguration\PhoneConfiguration.cs" />
     <Compile Include="EntitiesConfiguration\PositionConfiguration.cs" />
     <Compile Include="EntitiesConfiguration\SubjectConfiguration.cs" />
     <Compile Include="Interfaces\ICommonManyToManyEditService.cs" />
@@ -69,15 +70,30 @@
     <Compile Include="Migrations\202007010949053_AddEmployeePositionManyToMany.designer.cs">
       <DependentUpon>202007010949053_AddEmployeePositionManyToMany.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007090948074_AddPhonesTable.cs" />
+    <Compile Include="Migrations\202007090948074_AddPhonesTable.designer.cs">
+      <DependentUpon>202007090948074_AddPhonesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007091113202_InsertPhonesData.cs" />
+    <Compile Include="Migrations\202007091113202_InsertPhonesData.designer.cs">
+      <DependentUpon>202007091113202_InsertPhonesData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007101803311_MakeEmployeePhonePropertyNotRequired.cs" />
+    <Compile Include="Migrations\202007101803311_MakeEmployeePhonePropertyNotRequired.designer.cs">
+      <DependentUpon>202007101803311_MakeEmployeePhonePropertyNotRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EmployeeDb.cs" />
+    <Compile Include="Models\PhoneDb.cs" />
     <Compile Include="Models\PositionDb.cs" />
     <Compile Include="Models\SubjectDb.cs" />
     <Compile Include="Models\SubjectTeachersDb.cs" />
     <Compile Include="Models\WorkerDb.cs" />
-    <Compile Include="OnChangesSavedArgs.cs" />
+    <Compile Include="Services\OnChangesSavedArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SchoolContext.cs" />
+    <Compile Include="Models\SchoolContext.cs" />
+    <Compile Include="Services\BaseDbRepository.cs" />
+    <Compile Include="Services\IDbEntity.cs" />
     <Compile Include="Services\EmployeeDbRepository.cs" />
     <Compile Include="Services\PositionDbRepository.cs" />
     <Compile Include="Services\SubjectDbRepository.cs" />
@@ -116,6 +132,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007010949053_AddEmployeePositionManyToMany.resx">
       <DependentUpon>202007010949053_AddEmployeePositionManyToMany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007090948074_AddPhonesTable.resx">
+      <DependentUpon>202007090948074_AddPhonesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007091113202_InsertPhonesData.resx">
+      <DependentUpon>202007091113202_InsertPhonesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007101803311_MakeEmployeePhonePropertyNotRequired.resx">
+      <DependentUpon>202007101803311_MakeEmployeePhonePropertyNotRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

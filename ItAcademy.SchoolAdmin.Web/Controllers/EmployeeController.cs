@@ -41,14 +41,20 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         public virtual ActionResult Create()
         {
             CreateEmployeeViewModel model = new CreateEmployeeViewModel();
+            IEnumerable<PhoneViewModel> phonesList = new List<PhoneViewModel>()
+            {
+                new PhoneViewModel(),
+            };
+            model.Phones = phonesList;
             return View(model);
         }
 
         [HttpPost]
-        public virtual async Task<ActionResult> Create(Employee model)
+        public virtual async Task<ActionResult> Create(CreateEmployeeViewModel employee)
         {
                 if (ModelState.IsValid)
                 {
+                    var model = _mapper.Map<CreateEmployeeViewModel, Employee>(employee);
                     await _empService.AddAsync(model);
                     return RedirectToAction("Index");
                 }
@@ -110,6 +116,11 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             }
 
             return View(employee);
+        }
+
+        public virtual async Task<ActionResult> BlankEditorRow()
+        {
+            return PartialView("_PhoneRow", new PhoneViewModel());
         }
 
         [HttpGet]

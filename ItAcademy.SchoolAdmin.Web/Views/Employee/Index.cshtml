@@ -11,38 +11,41 @@
 </p>
 
 <p>
-    <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Create">Create new</a>
+    <a href="@Url.Action(MVC.Employee.Create())">Create new</a>
 </p>
 <table class="table">
     <tr>
         <th>Full Name</th>
         <th>Date of Birth</th>
         <th>E-mail</th>
-        <th>Phone</th>
+        @*<th>Phone</th>*@
+        <th>Phones</th>
         <th></th>
     </tr>
     <tbody id="employeeDataTable">
         @foreach (var item in Model)
         {
-            <tr>
-                <td>@item.FullName</td>
-                <td>@item.BirthDate</td>
-                <td>@item.Email</td>
-                <td>@item.Phone</td>
-                <td>
-                    <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Edit/@item.Id">Edit  |</a>
-                    <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Delete/@item.Id">Delete</a>
-                </td>
-            </tr>
+        <tr>
+            <td>@item.FullName</td>
+            <td>@item.BirthDate</td>
+            <td>@item.Email</td>
+            @*<td>@item.Phone</td>*@
+            <td>
+                @foreach (var phone in item.Phones)
+                {
+                    @phone<br />
+                }
+            </td>
+            <td>
+                <a href="@Url.Action(MVC.Employee.Edit(@item.Id))">Edit  |</a>
+                <a href="@Url.Action(MVC.Employee.Delete(@item.Id))">Delete</a>
+            </td>
+        </tr>
 
         }
     </tbody>
 
 </table>
-
-<p>
-    <a href="/@MVC.Employee.Name/@MVC.Employee.ActionNames.Create">Create New Employee</a>
-</p>
 
 @section scripts{
     <script src="~/Content/scripts/lib/jquery/jquery-3.3.1.min.js"></script>

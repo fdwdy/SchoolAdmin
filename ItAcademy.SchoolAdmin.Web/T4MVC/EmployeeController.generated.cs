@@ -106,6 +106,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             public readonly string Delete = "Delete";
             public readonly string DeleteConfirmed = "Delete";
             public readonly string Edit = "Edit";
+            public readonly string BlankEditorRow = "BlankEditorRow";
             public readonly string Search = "Search";
         }
 
@@ -118,6 +119,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             public const string Delete = "Delete";
             public const string DeleteConfirmed = "Delete";
             public const string Edit = "Edit";
+            public const string BlankEditorRow = "BlankEditorRow";
             public const string Search = "Search";
         }
 
@@ -128,7 +130,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_Create
         {
-            public readonly string model = "model";
+            public readonly string employee = "employee";
         }
         static readonly ActionParamsClass_Delete s_params_Delete = new ActionParamsClass_Delete();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -174,12 +176,14 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             public class _ViewNamesClass
             {
                 public readonly string _EmployeeData = "_EmployeeData";
+                public readonly string _PhoneRow = "_PhoneRow";
                 public readonly string Create = "Create";
                 public readonly string Delete = "Delete";
                 public readonly string Edit = "Edit";
                 public readonly string Index = "Index";
             }
             public readonly string _EmployeeData = "~/Views/Employee/_EmployeeData.cshtml";
+            public readonly string _PhoneRow = "~/Views/Employee/_PhoneRow.cshtml";
             public readonly string Create = "~/Views/Employee/Create.cshtml";
             public readonly string Delete = "~/Views/Employee/Delete.cshtml";
             public readonly string Edit = "~/Views/Employee/Edit.cshtml";
@@ -226,14 +230,14 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         }
 
         [NonAction]
-        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, ItAcademy.SchoolAdmin.BusinessLogic.Models.Employee model);
+        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, ItAcademy.SchoolAdmin.Web.Models.CreateEmployeeViewModel employee);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Create(ItAcademy.SchoolAdmin.BusinessLogic.Models.Employee model)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Create(ItAcademy.SchoolAdmin.Web.Models.CreateEmployeeViewModel employee)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Create);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
-            CreateOverride(callInfo, model);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "employee", employee);
+            CreateOverride(callInfo, employee);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 
@@ -282,6 +286,17 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "employee", employee);
             EditOverride(callInfo, employee);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void BlankEditorRowOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> BlankEditorRow()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.BlankEditorRow);
+            BlankEditorRowOverride(callInfo);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

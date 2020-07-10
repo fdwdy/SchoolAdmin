@@ -31,9 +31,9 @@
                 <td>@item.Name</td>
                 <td>@item.MaxEmployees</td>
                 <td>
-                    <a href="/@MVC.Position.Name/@MVC.Position.ActionNames.Edit/@item.Id">Edit  |</a>
-                    <a href="/@MVC.Worker.Name/@MVC.Worker.ActionNames.EditEmployee/@item.Id">Set Worker |</a>
-                    <a href="/@MVC.Position.Name/@MVC.Position.ActionNames.Delete/@item.Id">Delete </a>
+                    <a href="@Url.Action(MVC.Position.Edit(item.Id))">Edit  |</a>
+                    <a href="@Url.Action(MVC.Worker.EditEmployee(item.Id))">Set Worker |</a>
+                    <a href="@Url.Action(MVC.Position.Delete(item.Id))">Delete </a>
                 </td>
             </tr>
         }

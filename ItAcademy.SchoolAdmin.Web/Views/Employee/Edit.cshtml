@@ -1,4 +1,5 @@
 ﻿@model ItAcademy.SchoolAdmin.Web.Models.EmployeeEditModel
+@using HtmlHelpers.BeginCollectionItem
 
 @using (Html.BeginForm())
 {
@@ -49,12 +50,28 @@
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
             </div>
+        </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Phones, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div id="editorRows">
+                    @foreach (var phone in Model.Phones)
+                    {
+                        Html.RenderPartial("_PhoneRow", phone);
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-offset-2 col-md-10">
+            @Html.ActionLink("Add phone", "BlankEditorRow", null, new { id = "addItem" })
         </div>
 
         <div class="form-group">
@@ -64,7 +81,17 @@
         </div>
     </div>
 }
-
 <div>
     @Html.ActionLink("Back to List", MVC.Employee.ActionNames.Index)
 </div>
+
+<script>
+    $("#addItem").click(function () {
+        $.ajax({
+            url: this.href,
+            cache: false,
+            success: function (html) { $("#editorRows").append(html); }
+        });
+        return false;
+    });
+</script>

@@ -1,0 +1,17 @@
+﻿using System.Data.Entity.ModelConfiguration;
+using ItAcademy.SchoolAdmin.DataAccess.Models;
+
+namespace ItAcademy.SchoolAdmin.DataAccess.EntitiesConfiguration
+{
+    public class PhoneConfiguration : EntityTypeConfiguration<PhoneDb>
+    {
+        public PhoneConfiguration()
+        {
+            ToTable("Phones");
+            HasKey(e => e.Id);
+            Property(e => e.Id).HasColumnName("ID");
+            Property(e => e.Number).HasColumnName("Number");
+            HasRequired(s => s.Employee).WithMany(g => g.Phones).HasForeignKey(s => s.EmployeeId);
+        }
+    }
+}

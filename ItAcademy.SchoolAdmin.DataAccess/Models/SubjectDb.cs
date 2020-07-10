@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using ItAcademy.SchoolAdmin.DataAccess.Services;
 
 namespace ItAcademy.SchoolAdmin.DataAccess.Models
 {
-    public class SubjectDb
+    public class SubjectDb : IDbEntity
     {
         public SubjectDb()
         {

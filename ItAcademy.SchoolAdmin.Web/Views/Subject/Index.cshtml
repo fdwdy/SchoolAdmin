@@ -26,9 +26,9 @@
             <tr>
                 <td>@item.Name</td>
                 <td>
-                    <a href="/@MVC.Subject.Name/@MVC.Subject.ActionNames.Edit/@item.Id">Edit  |</a>
-                    <a href="/@MVC.Teacher.Name/@MVC.Teacher.ActionNames.EditEmployee/@item.Id">Set Teacher  |</a>
-                    <a href="/@MVC.Subject.Name/@MVC.Subject.ActionNames.Delete/@item.Id">Delete  |</a>
+                    <a href="@Url.Action(MVC.Subject.Edit(item.Id))">Edit  |</a>
+                    <a href="@Url.Action(MVC.Teacher.EditEmployee(item.Id))">Set Teacher  |</a>
+                    <a href="@Url.Action(MVC.Subject.Delete(item.Id))">Delete  |</a>
                 </td>
             </tr>
         }

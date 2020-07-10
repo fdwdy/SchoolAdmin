@@ -2,10 +2,11 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
+    using ItAcademy.SchoolAdmin.DataAccess.Services;
     using ItAcademy.SchoolAdmin.Infrastructure;
 
     public interface IRepository<T>
-        where T : class
+        where T : class, IDbEntity
     {
         IEnumerable<T> GetAll();
 

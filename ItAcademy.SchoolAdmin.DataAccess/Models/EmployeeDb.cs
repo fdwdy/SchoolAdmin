@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using ItAcademy.SchoolAdmin.DataAccess.Services;
 
 namespace ItAcademy.SchoolAdmin.DataAccess.Models
 {
-    public class EmployeeDb
+    public class EmployeeDb : IDbEntity
     {
         public EmployeeDb()
         {
@@ -27,5 +28,7 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Models
         public ICollection<SubjectDb> Subjects { get; set; }
 
         public ICollection<PositionDb> Positions { get; set; }
+
+        public ICollection<PhoneDb> Phones { get; set; }
     }
 }

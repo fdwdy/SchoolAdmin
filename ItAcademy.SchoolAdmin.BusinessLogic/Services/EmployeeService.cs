@@ -1,14 +1,14 @@
-﻿namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
-{
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
-    using AutoMapper;
-    using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
-    using ItAcademy.SchoolAdmin.BusinessLogic.Models;
-    using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
-    using ItAcademy.SchoolAdmin.DataAccess.Models;
-    using ItAcademy.SchoolAdmin.Infrastructure;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using AutoMapper;
+using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
+using ItAcademy.SchoolAdmin.BusinessLogic.Models;
+using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
+using ItAcademy.SchoolAdmin.DataAccess.Models;
+using ItAcademy.SchoolAdmin.Infrastructure;
 
+namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
+{
     public class EmployeeService : IEmployeeService
     {
         private readonly IMapper _mapper;
@@ -61,7 +61,8 @@
 
         public async Task UpdateAsync(Employee emp)
         {
-            var employee = _mapper.Map<Employee, EmployeeDb>(emp);
+            var empWithPhoneId = UpdateEmployeePhones(emp.Phones, emp);
+            var employee = _mapper.Map<Employee, EmployeeDb>(empWithPhoneId);
             await _uow.Employees.UpdateAsync(employee);
             _uow.Employees.Save();
         }
@@ -88,6 +89,21 @@
 
                 _disposedValue = true;
             }
+        }
+
+        private Employee UpdateEmployeePhones(IEnumerable<Phone> newPhones, Employee employeeToUpdate)
+        {
+            if (newPhones == null)
+            {
+                employeeToUpdate.Phones = new List<Phone>();
+            }
+
+            foreach (var phone in employeeToUpdate.Phones)
+            {
+                phone.EmployeeId = employeeToUpdate.Id;
+            }
+
+            return employeeToUpdate;
         }
     }
 }
