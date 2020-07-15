@@ -37,6 +37,9 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Migrations
 
         public override void Down()
         {
+            Sql("UPDATE dbo.Employees " +
+                "SET Phone = phone.Number " +
+                "FROM Employees e LEFT JOIN Phones phone ON e.ID = phone.EmployeeId");
         }
     }
 }
