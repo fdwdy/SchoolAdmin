@@ -6,9 +6,6 @@
 
         public string Name { get; set; }
 
-        /// <summary>
-        /// Использовать ли ushort?.
-        /// </summary>
         public short MaxEmployees { get; set; }
     }
 }

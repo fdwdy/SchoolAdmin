@@ -15,6 +15,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ItAcademy.SchoolAdmin.Datab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItAcademy.SchoolAdmin.Tests", "ItAcademy.SchoolAdmin.Tests\ItAcademy.SchoolAdmin.Tests.csproj", "{8C16BDE3-5563-41D1-8B88-ADC4921200C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItAcademy.SchoolAdmin.WebAPI", "ItAcademy.SchoolAdmin.WebAPI\ItAcademy.SchoolAdmin.WebAPI.csproj", "{7352D4B3-4AB8-40FA-B684-564994B79968}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,14 @@ Global
 		{8C16BDE3-5563-41D1-8B88-ADC4921200C5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8C16BDE3-5563-41D1-8B88-ADC4921200C5}.Release|x86.ActiveCfg = Release|Any CPU
 		{8C16BDE3-5563-41D1-8B88-ADC4921200C5}.Release|x86.Build.0 = Release|Any CPU
+		{7352D4B3-4AB8-40FA-B684-564994B79968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7352D4B3-4AB8-40FA-B684-564994B79968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7352D4B3-4AB8-40FA-B684-564994B79968}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7352D4B3-4AB8-40FA-B684-564994B79968}.Debug|x86.Build.0 = Debug|Any CPU
+		{7352D4B3-4AB8-40FA-B684-564994B79968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7352D4B3-4AB8-40FA-B684-564994B79968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7352D4B3-4AB8-40FA-B684-564994B79968}.Release|x86.ActiveCfg = Release|Any CPU
+		{7352D4B3-4AB8-40FA-B684-564994B79968}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

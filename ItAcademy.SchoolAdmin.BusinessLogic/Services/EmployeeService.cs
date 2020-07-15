@@ -13,13 +13,16 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
     {
         private readonly IMapper _mapper;
 
+        private readonly IEmployeeDbService _empDbService;
+
         private bool _disposedValue = false;
 
         private IUnitOfWork _uow;
 
-        public EmployeeService(IUnitOfWork uow, IMapper mapper)
+        public EmployeeService(IUnitOfWork uow, IMapper mapper, IEmployeeDbService empDbService)
         {
             _uow = uow;
+            _empDbService = empDbService;
             _mapper = mapper;
         }
 
@@ -70,6 +73,12 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
         public async Task<IEnumerable<Employee>> SearchAsync(string query)
         {
             var employees = await _uow.Employees.SearchAsync(query);
+            return _mapper.Map<IEnumerable<EmployeeDb>, IEnumerable<Employee>>(employees);
+        }
+
+        public async Task<IEnumerable<Employee>> GetAllWithPhonesSubjectsAndPositionsSorted()
+        {
+            var employees = await _empDbService.GetAllWithPhonesSubjectsAndPositionsSorted();
             return _mapper.Map<IEnumerable<EmployeeDb>, IEnumerable<Employee>>(employees);
         }
 

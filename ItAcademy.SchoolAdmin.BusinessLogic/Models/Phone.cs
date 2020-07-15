@@ -7,7 +7,5 @@
         public string Number { get; set; }
 
         public string EmployeeId { get; set; }
-
-        ////public Employee Employee { get; set; }
     }
 }

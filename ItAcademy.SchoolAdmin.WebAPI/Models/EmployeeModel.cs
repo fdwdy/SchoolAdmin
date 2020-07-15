@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ItAcademy.SchoolAdmin.BusinessLogic.Models
+namespace ItAcademy.SchoolAdmin.WebAPI.Models
 {
-    public class Employee
+    public class EmployeeModel
     {
         public string Id { get; set; }
 
@@ -17,14 +17,12 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Models
 
         public string Email { get; set; }
 
-        ////public string Phone { get; set; }
-
         public string FullName => Name + ' ' + Surname + ' ' + Middlename;
 
-        public IEnumerable<Phone> Phones { get; set; }
+        public IEnumerable<PhoneModel> Phones { get; set; }
 
-        public IEnumerable<Subject> Subjects { get; set; }
+        public IEnumerable<SubjectModel> Subjects { get; set; }
 
-        public IEnumerable<Position> Positions { get; set; }
+        public IEnumerable<PositionModel> Positions { get; set; }
     }
 }
