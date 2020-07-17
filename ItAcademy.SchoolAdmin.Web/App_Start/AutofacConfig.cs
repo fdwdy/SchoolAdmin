@@ -3,6 +3,7 @@ using Autofac;
 using Autofac.Integration.Mvc;
 using AutoMapper;
 using AutoMapper.Contrib.Autofac.DependencyInjection;
+using ItAcademy.SchoolAdmin.BusinessLogic.Autofac;
 using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
 using ItAcademy.SchoolAdmin.BusinessLogic.Mapping;
 using ItAcademy.SchoolAdmin.BusinessLogic.Services;
@@ -38,6 +39,7 @@ namespace ItAcademy.SchoolAdmin.Web.App_Start
             builder.RegisterType<PositionDbRepository>().As<IRepository<PositionDb>>().InstancePerRequest();
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
             builder.AddAutoMapper(typeof(MvcApplication).Assembly);
+            builder.RegisterModule(new DatabaseServicesModule());
             builder.RegisterModule(new AutoMapperBusinessModule());
             builder.RegisterModule(new AutoMapperWebModule());
 

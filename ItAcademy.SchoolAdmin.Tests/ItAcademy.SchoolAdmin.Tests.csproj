@@ -51,6 +51,7 @@
     <Compile Include="Providers\TestDbAsyncEnumerator.cs" />
     <Compile Include="Providers\TestDbAsyncQueryProvider.cs" />
     <Compile Include="MVC\Positions\PositionsTest.cs" />
+    <Compile Include="WebAPI\Employees\EmployeesAPITest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -97,9 +98,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="WebAPI\Employees\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ItAcademy.SchoolAdmin.BusinessLogic\ItAcademy.SchoolAdmin.BusinessLogic.csproj">
       <Project>{a7ab52a0-f5b8-467b-b368-8551ee3978d2}</Project>

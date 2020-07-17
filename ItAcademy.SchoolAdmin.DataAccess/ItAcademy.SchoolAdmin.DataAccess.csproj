@@ -87,6 +87,10 @@
     <Compile Include="Migrations\202007131159066_PhoneRequiredUniqueIndex.designer.cs">
       <DependentUpon>202007131159066_PhoneRequiredUniqueIndex.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007161231416_RefactorEmployeePhoneUndex.cs" />
+    <Compile Include="Migrations\202007161231416_RefactorEmployeePhoneUndex.designer.cs">
+      <DependentUpon>202007161231416_RefactorEmployeePhoneUndex.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EmployeeDb.cs" />
     <Compile Include="Models\PhoneDb.cs" />
@@ -149,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007131159066_PhoneRequiredUniqueIndex.resx">
       <DependentUpon>202007131159066_PhoneRequiredUniqueIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007161231416_RefactorEmployeePhoneUndex.resx">
+      <DependentUpon>202007161231416_RefactorEmployeePhoneUndex.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

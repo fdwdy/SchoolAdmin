@@ -13,6 +13,8 @@ namespace ItAcademy.SchoolAdmin.Web.Validators
         static ValidatorFactory()
         {
             _validators.Add(typeof(IValidator<Employee>), new EmployeeValidator());
+            _validators.Add(typeof(IValidator<PhoneViewModel>), new PhoneValidator());
+            _validators.Add(typeof(IValidator<CreateEmployeeViewModel>), new EmployeeValidator());
             _validators.Add(typeof(IValidator<SubjectViewModel>), new SubjectViewModelValidator());
             _validators.Add(typeof(IValidator<PositionViewModel>), new PositionViewModelValidator());
         }

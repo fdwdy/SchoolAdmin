@@ -19,8 +19,12 @@
 
 <script>
     $("a.deleteRow").click(function () {
-        console.log("click")
-        $(this).parents("div.editorRow:first").remove();
+        if ($("a.deleteRow").length == 1) {
+            $(".editorRow .form-control.text-box.single-line").val('');
+        }
+        else {
+            $(this).parents("div.editorRow:first").remove();
+        }
         return false;
     });
 </script>

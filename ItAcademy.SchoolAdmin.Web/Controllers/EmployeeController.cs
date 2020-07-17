@@ -59,7 +59,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
                     return RedirectToAction("Index");
                 }
 
-                return View();
+                return View(employee);
         }
 
         [HttpGet]

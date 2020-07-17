@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Autofac;
 using AutoMapper;
 using ItAcademy.SchoolAdmin.BusinessLogic.Mapping;
-using ItAcademy.SchoolAdmin.BusinessLogic.Models;
 using ItAcademy.SchoolAdmin.BusinessLogic.Services;
 using ItAcademy.SchoolAdmin.DataAccess;
 using ItAcademy.SchoolAdmin.DataAccess.Models;
@@ -19,7 +18,7 @@ using NUnit.Framework;
 namespace ItAcademy.SchoolAdmin.Tests.Employees
 {
     [TestFixture]
-    public class EmployeesTest
+    public class EmployeesAPITest
     {
         private IMapper _mapper;
         private IQueryable<EmployeeDb> _employees;
@@ -31,20 +30,10 @@ namespace ItAcademy.SchoolAdmin.Tests.Employees
         [OneTimeSetUp]
         public void Setup()
         {
-            ////var resolver = DependencyResolver.Current;
-            ////_mapper = resolver.GetService<IMapper>();
-
             var builder = new ContainerBuilder();
-            ////builder.AddAutoMapper(typeof(MvcApplication).Assembly);
             builder.RegisterModule(new AutoMapperBusinessModule());
-            ////builder.RegisterModule(new AutoMapperWebModule());
             var container = builder.Build();
-            ////container.Resolve<MapperConfiguration>();
             _mapper = container.Resolve<IMapper>();
-
-            ////var container = builder.Build();
-            ////var container = AutofacConfig.ConfigureContainer();
-            ////_mapper = container.< IMapper > ();
         }
 
         [SetUp]
@@ -93,77 +82,16 @@ namespace ItAcademy.SchoolAdmin.Tests.Employees
 
         [Test]
         [Category("Employee")]
-        public async Task ShouldAddEmployee()
-        {
-            // Arrage
-            var service = new EmployeeService(_mockUow.Object, _mapper, _mockRepo.Object);
-
-            // Act
-            var b = new Employee
-            {
-                Name = "Petr",
-            };
-            await service.AddAsync(b);
-
-            // Assert
-            _mockUow.Verify(m => m.SaveAsync(), Times.Once());
-        }
-
-        [Test]
-        [Category("Employee")]
         public async Task ShouldGetAllEmployeesAsync()
         {
             // Arrage
             var service = new EmployeeService(_mockUow.Object, _mapper, _mockRepo.Object);
 
             // Act
-            var q = await service.GetAllAsync();
+            var q = await service.GetAllWithPhonesSubjectsAndPositionsSorted();
 
             // Assert
             _mockUow.Verify(m => m.Employees.GetAllAsync(), Times.Once());
-        }
-
-        [Test]
-        [Category("Employee")]
-        public async Task ShouldGetEmployeeByIdAsync()
-        {
-            // Arrage
-            var service = new EmployeeService(_mockUow.Object, _mapper, _mockRepo.Object);
-
-            // Act
-            var x = await service.GetByIdAsync("123");
-
-            // Assert
-            ////Assert.AreEqual(x.Id, "123");
-            _mockUow.Verify(m => m.Employees.GetByIdAsync(It.IsAny<string>()), Times.Once());
-        }
-
-        [Test]
-        [Category("Employee")]
-        public async Task ShouldDeleteEmployeeById()
-        {
-            // Arrage
-            var service = new EmployeeService(_mockUow.Object, _mapper, _mockRepo.Object);
-
-            // Act
-            await service.RemoveByIdAsync("123");
-
-            // Assert
-            _mockSet.Verify(m => m.Remove(It.IsAny<EmployeeDb>()), Times.Once());
-        }
-
-        [Test]
-        [Category("Employee")]
-        public async Task ShouldReturnEmployeeByQuery()
-        {
-            // Arrage
-            var service = new EmployeeService(_mockUow.Object, _mapper, _mockRepo.Object);
-
-            // Act
-            var result = await service.SearchAsync("Ivan");
-
-            // Assert
-            _mockRepo.Verify(m => m.SearchAsync(It.IsAny<string>()), Times.Once());
         }
     }
 }
