@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Autofac;
 using AutoMapper;
 using ItAcademy.SchoolAdmin.BusinessLogic.Mapping;
+using ItAcademy.SchoolAdmin.BusinessLogic.Models;
 using ItAcademy.SchoolAdmin.BusinessLogic.Services;
 using ItAcademy.SchoolAdmin.DataAccess;
 using ItAcademy.SchoolAdmin.DataAccess.Models;
@@ -75,6 +76,8 @@ namespace ItAcademy.SchoolAdmin.Tests.Employees
             _mockContext.Setup(x => x.Employees).Returns(_mockSet.Object);
 
             _mockRepo = new Mock<EmployeeDbRepository>(_mockContext.Object, _mockSet.Object);
+            _mockRepo.Setup(x => x.GetAllWithPhonesSubjectsAndPositionsSorted())
+                .Returns(Task.FromResult(_employees.AsEnumerable()));
 
             _mockUow = new Mock<UnitOfWork>();
             _mockUow.Setup(x => x.Employees).Returns(_mockRepo.Object);
@@ -91,7 +94,7 @@ namespace ItAcademy.SchoolAdmin.Tests.Employees
             var q = await service.GetAllWithPhonesSubjectsAndPositionsSorted();
 
             // Assert
-            _mockUow.Verify(m => m.Employees.GetAllAsync(), Times.Once());
+            _mockRepo.Verify(m => m.GetAllWithPhonesSubjectsAndPositionsSorted(), Times.Once());
         }
     }
 }

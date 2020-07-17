@@ -31,20 +31,10 @@ namespace ItAcademy.SchoolAdmin.Tests.Employees
         [OneTimeSetUp]
         public void Setup()
         {
-            ////var resolver = DependencyResolver.Current;
-            ////_mapper = resolver.GetService<IMapper>();
-
             var builder = new ContainerBuilder();
-            ////builder.AddAutoMapper(typeof(MvcApplication).Assembly);
             builder.RegisterModule(new AutoMapperBusinessModule());
-            ////builder.RegisterModule(new AutoMapperWebModule());
             var container = builder.Build();
-            ////container.Resolve<MapperConfiguration>();
             _mapper = container.Resolve<IMapper>();
-
-            ////var container = builder.Build();
-            ////var container = AutofacConfig.ConfigureContainer();
-            ////_mapper = container.< IMapper > ();
         }
 
         [SetUp]
@@ -134,7 +124,6 @@ namespace ItAcademy.SchoolAdmin.Tests.Employees
             var x = await service.GetByIdAsync("123");
 
             // Assert
-            ////Assert.AreEqual(x.Id, "123");
             _mockUow.Verify(m => m.Employees.GetByIdAsync(It.IsAny<string>()), Times.Once());
         }
 

@@ -79,12 +79,12 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<EmployeeDb>> GetAllWithPhonesSubjectsAndPositionsSorted()
+        public async virtual Task<IEnumerable<EmployeeDb>> GetAllWithPhonesSubjectsAndPositionsSorted()
         {
-            return _db.Employees
+            return await _db.Employees
                          .Include(e => e.Phones).Include(e => e.Subjects).Include(e => e.Positions)
                          .OrderBy(e => e.Surname).ThenBy(e => e.Name).ThenBy(e => e.Middlename)
-                         .ThenBy(e => e.Email).ThenByDescending(e => e.BirthDate);
+                         .ThenBy(e => e.Email).ThenByDescending(e => e.BirthDate).ToListAsync();
         }
     }
 }

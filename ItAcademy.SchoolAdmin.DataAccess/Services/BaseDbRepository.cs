@@ -58,11 +58,12 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
 
         public virtual async Task<T> GetByIdAsync(string id)
         {
-            var query = from item in _dbSet select item;
-            return await query
-                .SingleOrDefaultAsync(c => c.Id.Equals(
-                    id, StringComparison.OrdinalIgnoreCase))
-                .ConfigureAwait(false);
+            return await _dbSet.FindAsync(id);
+            ////var query = from item in _dbSet select item;
+            ////return await query
+            ////    .SingleOrDefaultAsync(c => c.Id.Equals(
+            ////        id, StringComparison.OrdinalIgnoreCase))
+            ////    .ConfigureAwait(false);
         }
 
         public Result Save()
