@@ -24,7 +24,6 @@
                     Surname = "Ivanov",
                     BirthDate = System.DateTime.Now,
                     Email = "ivanov@mail.rr",
-                    Phone = "+111 00 00",
                 },
                 new EmployeeDb()
                 {
@@ -34,7 +33,6 @@
                     Surname = "Petrov",
                     BirthDate = System.DateTime.Now,
                     Email = "perov@mail.rr",
-                    Phone = "+222 00 00",
                 },
                 new EmployeeDb()
                 {
@@ -44,7 +42,6 @@
                     Surname = "Sidorov",
                     BirthDate = System.DateTime.Now,
                     Email = "sidorov@mail.rr",
-                    Phone = "+333 00 00",
                 });
 
             context.SaveChanges();
@@ -78,34 +75,6 @@
             }
 
             context.SaveChanges();
-
-            ////var employeeSubjects = new List<EmployeeSubject>
-            ////{
-            ////    new EmployeeSubject
-            ////    {
-            ////        EmployeeId = context.Employees.FirstOrDefault(e => e.Name == "Petr").Id,
-            ////        SubjectId = context.Subjects.FirstOrDefault(s => s.Name == "English").Id,
-            ////    },
-            ////    new EmployeeSubject
-            ////    {
-            ////        EmployeeId = context.Employees.FirstOrDefault(e => e.Name == "Sidor").Id,
-            ////        SubjectId = context.Subjects.FirstOrDefault(s => s.Name == "Russian").Id,
-            ////    },
-            ////};
-
-            ////foreach (EmployeeSubject e in employeeSubjects)
-            ////{
-            ////    var empDb = context.EmployeeSubjects.Where(
-            ////        s =>
-            ////             s.Employee.Id == e.EmployeeId &&
-            ////             s.Subject.Id == e.SubjectId).SingleOrDefault();
-            ////    if (empDb == null)
-            ////    {
-            ////        context.EmployeeSubjects.AddOrUpdate(e);
-            ////    }
-            ////}
-
-            ////context.SaveChanges();
         }
     }
 }

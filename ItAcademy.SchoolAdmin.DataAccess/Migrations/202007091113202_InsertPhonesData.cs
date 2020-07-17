@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Migrations;
-using ItAcademy.SchoolAdmin.DataAccess.Models;
+﻿using System.Data.Entity.Migrations;
 
 namespace ItAcademy.SchoolAdmin.DataAccess.Migrations
 {
@@ -9,30 +6,9 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Migrations
     {
         public override void Up()
         {
-            if (System.Diagnostics.Debugger.IsAttached == false)
-            {
-                System.Diagnostics.Debugger.Launch();
-            }
-
-            using (var context = new SchoolContext())
-            {
-                var employees = context.Employees;
-                foreach (var emp in employees)
-                {
-                    var phone = new PhoneDb
-                    {
-                        Id = Guid.NewGuid().ToString(),
-                        Number = emp.Phone,
-                    };
-
-                    emp.Phones = new List<PhoneDb>
-                    {
-                        phone,
-                    };
-                }
-
-                context.SaveChanges();
-            }
+            Sql("INSERT INTO Phones (ID, Number, EmployeeId) " +
+                "SELECT NEWID() AS Expr1, Phone, ID " +
+                "FROM Employees");
         }
 
         public override void Down()

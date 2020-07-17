@@ -15,8 +15,6 @@ namespace ItAcademy.SchoolAdmin.Web.Models
 
         public string Email { get; set; }
 
-        ////public string Phone { get; set; }
-
         public string FullName => $"{Name} {Surname} {Middlename}".Replace("  ", " ");
 
         public IEnumerable<PhoneViewModel> Phones { get; set; }

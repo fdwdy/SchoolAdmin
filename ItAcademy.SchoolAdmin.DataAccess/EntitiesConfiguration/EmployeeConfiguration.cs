@@ -27,9 +27,9 @@ namespace ItAcademy.SchoolAdmin.DataAccess.EntitiesConfiguration
             Property(e => e.Surname).HasColumnName("Surname")
                 .IsRequired()
                 .HasMaxLength(255);
-            Property(e => e.Phone).HasColumnName("Phone")
+            ////Property(e => e.Phone).HasColumnName("Phone")
                 ////.IsRequired()
-                .HasMaxLength(255);
+                ////.HasMaxLength(255);
             Property(e => e.Email).HasColumnName("Email")
                 .IsRequired()
                 .HasMaxLength(255);

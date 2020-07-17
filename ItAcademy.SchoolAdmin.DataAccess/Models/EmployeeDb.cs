@@ -23,8 +23,6 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Models
 
         public string Email { get; set; }
 
-        public string Phone { get; set; }
-
         public ICollection<SubjectDb> Subjects { get; set; }
 
         public ICollection<PositionDb> Positions { get; set; }

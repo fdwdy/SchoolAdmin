@@ -69,7 +69,7 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
             var result = await _db.Employees.Where(x =>
                x.Name.Contains(query) || x.Middlename.Contains(query) ||
                x.Surname.Contains(query) || x.Email.Contains(query) ||
-               x.Phones.Any(p => p.Number.Contains(query)) || x.Phone.Contains(query))
+               x.Phones.Any(p => p.Number.Contains(query)))
                .Include(e => e.Phones).ToListAsync();
             return result;
         }

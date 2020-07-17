@@ -17,8 +17,6 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Models
 
         public string Email { get; set; }
 
-        ////public string Phone { get; set; }
-
         public string FullName => Name + ' ' + Surname + ' ' + Middlename;
 
         public IEnumerable<Phone> Phones { get; set; }

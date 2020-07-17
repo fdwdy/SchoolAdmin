@@ -91,6 +91,10 @@
     <Compile Include="Migrations\202007161231416_RefactorEmployeePhoneUndex.designer.cs">
       <DependentUpon>202007161231416_RefactorEmployeePhoneUndex.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007171747022_RemovePhoneFromEmployeeModel.cs" />
+    <Compile Include="Migrations\202007171747022_RemovePhoneFromEmployeeModel.designer.cs">
+      <DependentUpon>202007171747022_RemovePhoneFromEmployeeModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EmployeeDb.cs" />
     <Compile Include="Models\PhoneDb.cs" />
@@ -156,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007161231416_RefactorEmployeePhoneUndex.resx">
       <DependentUpon>202007161231416_RefactorEmployeePhoneUndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007171747022_RemovePhoneFromEmployeeModel.resx">
+      <DependentUpon>202007171747022_RemovePhoneFromEmployeeModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
