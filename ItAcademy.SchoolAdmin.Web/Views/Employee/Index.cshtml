@@ -18,7 +18,6 @@
         <th>Full Name</th>
         <th>Date of Birth</th>
         <th>E-mail</th>
-        @*<th>Phone</th>*@
         <th>Phones</th>
         <th></th>
     </tr>
@@ -29,7 +28,6 @@
             <td>@item.FullName</td>
             <td>@item.BirthDate</td>
             <td>@item.Email</td>
-            @*<td>@item.Phone</td>*@
             <td>
                 @foreach (var phone in item.Phones)
                 {
@@ -37,6 +35,7 @@
                 }
             </td>
             <td>
+                <a href="@Url.Action(MVC.Employee.SendMessage(@item.Id))">Send Message  |</a>
                 <a href="@Url.Action(MVC.Employee.Edit(@item.Id))">Edit  |</a>
                 <a href="@Url.Action(MVC.Employee.Delete(@item.Id))">Delete</a>
             </td>

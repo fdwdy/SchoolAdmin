@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ItAcademy.SchoolAdmin.DataAccess.Enums;
 using ItAcademy.SchoolAdmin.DataAccess.Services;
 
 namespace ItAcademy.SchoolAdmin.DataAccess.Models
@@ -22,6 +23,8 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Models
         public DateTime BirthDate { get; set; }
 
         public string Email { get; set; }
+
+        public MessageTypeDb MessageType { get; set; }
 
         public ICollection<SubjectDb> Subjects { get; set; }
 

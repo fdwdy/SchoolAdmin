@@ -131,6 +131,34 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             return Json(models, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpGet]
+        public virtual async Task<ActionResult> SendMessage(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            EmployeeEditModel employee = await GetEmployeeEditModelById(id);
+            if (employee == null)
+            {
+                return HttpNotFound();
+            }
+
+            MessageViewModel msg = new MessageViewModel()
+            {
+                RecipientId = id,
+            };
+
+            return View(msg);
+        }
+
+        [HttpPost]
+        public virtual async Task<ActionResult> SendMessageConfirmed()
+        {
+            return View();
+        }
+
         public async Task<EmployeeViewModel> GetEmployeeViewModelById(string id)
         {
             return _mapper.Map<EmployeeViewModel>(await _empService.GetByIdAsync(id));

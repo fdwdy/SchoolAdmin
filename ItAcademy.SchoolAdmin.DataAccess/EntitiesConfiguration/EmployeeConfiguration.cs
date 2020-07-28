@@ -18,6 +18,7 @@ namespace ItAcademy.SchoolAdmin.DataAccess.EntitiesConfiguration
                .MapRightKey("PositionId")
                .ToTable("EmployeePositions"));
             Property(e => e.Id).HasColumnName("ID");
+            Property(e => e.MessageType).HasColumnName("MessageType");
             Property(e => e.Name).HasColumnName("Name")
                 .IsRequired()
                 .HasMaxLength(255);
@@ -27,9 +28,6 @@ namespace ItAcademy.SchoolAdmin.DataAccess.EntitiesConfiguration
             Property(e => e.Surname).HasColumnName("Surname")
                 .IsRequired()
                 .HasMaxLength(255);
-            ////Property(e => e.Phone).HasColumnName("Phone")
-                ////.IsRequired()
-                ////.HasMaxLength(255);
             Property(e => e.Email).HasColumnName("Email")
                 .IsRequired()
                 .HasMaxLength(255);

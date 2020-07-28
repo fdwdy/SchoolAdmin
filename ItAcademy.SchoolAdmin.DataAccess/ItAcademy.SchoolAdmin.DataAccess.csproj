@@ -49,6 +49,7 @@
     <Compile Include="EntitiesConfiguration\PhoneConfiguration.cs" />
     <Compile Include="EntitiesConfiguration\PositionConfiguration.cs" />
     <Compile Include="EntitiesConfiguration\SubjectConfiguration.cs" />
+    <Compile Include="Enums\MessageTypeDb.cs" />
     <Compile Include="Interfaces\ICommonManyToManyEditService.cs" />
     <Compile Include="Interfaces\IEmployeeDbService.cs" />
     <Compile Include="Interfaces\IPositionDbService.cs" />
@@ -97,12 +98,17 @@
     <Compile Include="Migrations\202007171747022_RemovePhoneFromEmployeeModel.designer.cs">
       <DependentUpon>202007171747022_RemovePhoneFromEmployeeModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007281431404_AddMessageType.cs" />
+    <Compile Include="Migrations\202007281431404_AddMessageType.designer.cs">
+      <DependentUpon>202007281431404_AddMessageType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DTOs\EmployeeDbPositionStatistics.cs" />
     <Compile Include="Models\DTOs\EmployeeDbSubjectStatistics.cs" />
     <Compile Include="Models\DTOs\PositionDbStatistics.cs" />
     <Compile Include="Models\DTOs\SubjectDbStatistics.cs" />
     <Compile Include="Models\EmployeeDb.cs" />
+    <Compile Include="Models\MessageDb.cs" />
     <Compile Include="Models\PhoneDb.cs" />
     <Compile Include="Models\PositionDb.cs" />
     <Compile Include="Models\SubjectDb.cs" />
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007171747022_RemovePhoneFromEmployeeModel.resx">
       <DependentUpon>202007171747022_RemovePhoneFromEmployeeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007281431404_AddMessageType.resx">
+      <DependentUpon>202007281431404_AddMessageType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

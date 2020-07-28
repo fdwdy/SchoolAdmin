@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autofac\DatabaseServicesModule.cs" />
+    <Compile Include="Enums\MessageType.cs" />
     <Compile Include="Interfaces\ICommonService.cs" />
     <Compile Include="Interfaces\IEmployeeService.cs" />
     <Compile Include="Interfaces\IPositionService.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Models\DTOs\PositionStatistics.cs" />
     <Compile Include="Models\DTOs\SubjectStatistics.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Phone.cs" />
     <Compile Include="Models\Position.cs" />
     <Compile Include="Models\Subject.cs" />
@@ -132,5 +134,6 @@
       <Version>2.2.0</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

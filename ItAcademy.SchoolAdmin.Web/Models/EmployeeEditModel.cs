@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ItAcademy.SchoolAdmin.Web.Enums;
 
 namespace ItAcademy.SchoolAdmin.Web.Models
 {
@@ -16,6 +17,8 @@ namespace ItAcademy.SchoolAdmin.Web.Models
         public DateTime BirthDate { get; set; }
 
         public string Email { get; set; }
+
+        public MessageTypeEnum MessageType { get; set; }
 
         public string FullName => Name + ' ' + Surname + ' ' + Middlename;
 

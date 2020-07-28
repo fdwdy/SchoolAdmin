@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ItAcademy.SchoolAdmin.BusinessLogic.Enums;
 
 namespace ItAcademy.SchoolAdmin.BusinessLogic.Models
 {
@@ -16,6 +17,8 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Models
         public DateTime BirthDate { get; set; }
 
         public string Email { get; set; }
+
+        public MessageType MessageType { get; set; }
 
         public string FullName => Name + ' ' + Surname + ' ' + Middlename;
 

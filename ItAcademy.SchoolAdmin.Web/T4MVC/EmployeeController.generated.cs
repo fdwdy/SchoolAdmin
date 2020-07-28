@@ -84,6 +84,13 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Search);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SendMessage()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendMessage);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public EmployeeController Actions { get { return MVC.Employee; } }
@@ -108,6 +115,8 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             public readonly string Edit = "Edit";
             public readonly string BlankEditorRow = "BlankEditorRow";
             public readonly string Search = "Search";
+            public readonly string SendMessage = "SendMessage";
+            public readonly string SendMessageConfirmed = "SendMessageConfirmed";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -121,6 +130,8 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             public const string Edit = "Edit";
             public const string BlankEditorRow = "BlankEditorRow";
             public const string Search = "Search";
+            public const string SendMessage = "SendMessage";
+            public const string SendMessageConfirmed = "SendMessageConfirmed";
         }
 
 
@@ -165,6 +176,14 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             public readonly string query = "query";
         }
+        static readonly ActionParamsClass_SendMessage s_params_SendMessage = new ActionParamsClass_SendMessage();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_SendMessage SendMessageParams { get { return s_params_SendMessage; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_SendMessage
+        {
+            public readonly string id = "id";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -181,6 +200,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
                 public readonly string Delete = "Delete";
                 public readonly string Edit = "Edit";
                 public readonly string Index = "Index";
+                public readonly string SendMessage = "SendMessage";
             }
             public readonly string _EmployeeData = "~/Views/Employee/_EmployeeData.cshtml";
             public readonly string _PhoneRow = "~/Views/Employee/_PhoneRow.cshtml";
@@ -188,6 +208,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             public readonly string Delete = "~/Views/Employee/Delete.cshtml";
             public readonly string Edit = "~/Views/Employee/Edit.cshtml";
             public readonly string Index = "~/Views/Employee/Index.cshtml";
+            public readonly string SendMessage = "~/Views/Employee/SendMessage.cshtml";
         }
     }
 
@@ -309,6 +330,29 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Search);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "query", query);
             SearchOverride(callInfo, query);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void SendMessageOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string id);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SendMessage(string id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendMessage);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            SendMessageOverride(callInfo, id);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void SendMessageConfirmedOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SendMessageConfirmed()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendMessageConfirmed);
+            SendMessageConfirmedOverride(callInfo);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 
