@@ -8,13 +8,15 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Autofac
 {
     public class DatabaseServicesModule : Module
     {
-        public bool ObeySpeedLimit { get; set; }
-
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<SchoolContext>().AsSelf().InstancePerRequest();
             builder.RegisterType<EmployeeDbRepository>().As<IRepository<EmployeeDb>>().InstancePerRequest();
             builder.RegisterType<EmployeeDbRepository>().As<IEmployeeDbService>().InstancePerRequest();
+            builder.RegisterType<SubjectDbRepository>().As<IRepository<SubjectDb>>().InstancePerRequest();
+            builder.RegisterType<SubjectDbRepository>().As<ISubjectDbService>().InstancePerRequest();
+            builder.RegisterType<PositionDbRepository>().As<IRepository<PositionDb>>().InstancePerRequest();
+            builder.RegisterType<PositionDbRepository>().As<IPositionDbService>().InstancePerRequest();
         }
     }
 }

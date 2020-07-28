@@ -3,8 +3,10 @@ using System.Threading.Tasks;
 using AutoMapper;
 using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
 using ItAcademy.SchoolAdmin.BusinessLogic.Models;
+using ItAcademy.SchoolAdmin.BusinessLogic.Models.DTOs;
 using ItAcademy.SchoolAdmin.DataAccess.Interfaces;
 using ItAcademy.SchoolAdmin.DataAccess.Models;
+using ItAcademy.SchoolAdmin.DataAccess.Models.DTOs;
 using ItAcademy.SchoolAdmin.Infrastructure;
 
 namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
@@ -13,14 +15,17 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
     {
         private readonly IMapper _mapper;
 
+        private readonly IPositionDbService _posService;
+
         private bool _disposedValue = false;
 
         private IUnitOfWork _uow;
 
-        public PositionService(IUnitOfWork uow, IMapper mapper)
+        public PositionService(IUnitOfWork uow, IMapper mapper, IPositionDbService posService)
         {
             _uow = uow;
             _mapper = mapper;
+            _posService = posService;
         }
 
         public Result Add(Position pos)
@@ -75,6 +80,18 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
             var position = _mapper.Map<Position, PositionDb>(pos);
             await _uow.Positions.UpdateAsync(position);
             _uow.Positions.Save();
+        }
+
+        public async Task<IEnumerable<PositionStatistics>> GetAllWithEmployeesSorted()
+        {
+            var positions = await _posService.GetAllWithEmployeesSorted();
+            return _mapper.Map<IEnumerable<PositionDbStatistics>, IEnumerable<PositionStatistics>>(positions);
+        }
+
+        public async Task<PositionStatistics> GetByNameWithEmployeesSorted(string name)
+        {
+            var position = await _posService.GetByNameWithEmployeesSorted(name);
+            return _mapper.Map<PositionDbStatistics, PositionStatistics>(position);
         }
 
         public void Dispose()

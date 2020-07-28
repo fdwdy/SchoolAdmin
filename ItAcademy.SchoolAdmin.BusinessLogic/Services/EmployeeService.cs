@@ -82,6 +82,12 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
             return _mapper.Map<IEnumerable<EmployeeDb>, IEnumerable<Employee>>(employees);
         }
 
+        public async Task<Employee> GetByNameSorted(string name)
+        {
+            var employee = await _empDbService.GetByNameSorted(name);
+            return _mapper.Map<EmployeeDb, Employee>(employee);
+        }
+
         public void Dispose()
         {
             Dispose(true);

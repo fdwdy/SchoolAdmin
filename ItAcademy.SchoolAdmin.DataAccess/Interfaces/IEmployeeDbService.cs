@@ -7,5 +7,7 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Interfaces
     public interface IEmployeeDbService
     {
         Task<IEnumerable<EmployeeDb>> GetAllWithPhonesSubjectsAndPositionsSorted();
+
+        Task<EmployeeDb> GetByNameSorted(string name);
     }
 }

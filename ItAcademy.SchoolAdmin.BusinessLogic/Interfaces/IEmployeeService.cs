@@ -8,5 +8,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Interfaces
     public interface IEmployeeService : ICommonService<Employee>, IDisposable
     {
         Task<IEnumerable<Employee>> GetAllWithPhonesSubjectsAndPositionsSorted();
+
+        Task<Employee> GetByNameSorted(string name);
     }
 }

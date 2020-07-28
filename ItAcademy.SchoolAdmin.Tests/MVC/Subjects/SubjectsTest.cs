@@ -86,7 +86,7 @@ namespace ItAcademy.SchoolAdmin.Tests.Subjects
         public async Task ShouldAddSubject()
         {
             // Arrage
-            var service = new SubjectService(_mockUow.Object, _mapper);
+            var service = new SubjectService(_mockUow.Object, _mapper, _mockRepo.Object);
 
             // Act
             var b = new Subject
@@ -105,7 +105,7 @@ namespace ItAcademy.SchoolAdmin.Tests.Subjects
         public async Task ShouldGetAllSubjectsAsync()
         {
             // Arrage
-            var service = new SubjectService(_mockUow.Object, _mapper);
+            var service = new SubjectService(_mockUow.Object, _mapper, _mockRepo.Object);
 
             // Act
             var q = await service.GetAllAsync();
@@ -119,7 +119,7 @@ namespace ItAcademy.SchoolAdmin.Tests.Subjects
         public async Task ShouldGetSubjectByIdAsync()
         {
             // Arrage
-            var service = new SubjectService(_mockUow.Object, _mapper);
+            var service = new SubjectService(_mockUow.Object, _mapper, _mockRepo.Object);
 
             // Act
             var x = await service.GetByIdAsync("123");
@@ -133,7 +133,7 @@ namespace ItAcademy.SchoolAdmin.Tests.Subjects
         public async Task ShouldDeleteSubjectById()
         {
             // Arrage
-            var service = new SubjectService(_mockUow.Object, _mapper);
+            var service = new SubjectService(_mockUow.Object, _mapper, _mockRepo.Object);
 
             // Act
             await service.RemoveByIdAsync("123");
@@ -147,7 +147,7 @@ namespace ItAcademy.SchoolAdmin.Tests.Subjects
         public async Task ShouldReturnSubjectByQuery()
         {
             // Arrage
-            var service = new SubjectService(_mockUow.Object, _mapper);
+            var service = new SubjectService(_mockUow.Object, _mapper, _mockRepo.Object);
 
             // Act
             var result = await service.SearchAsync("Subject");

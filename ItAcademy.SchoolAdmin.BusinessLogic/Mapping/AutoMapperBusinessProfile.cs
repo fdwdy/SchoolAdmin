@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using ItAcademy.SchoolAdmin.BusinessLogic.Models;
+using ItAcademy.SchoolAdmin.BusinessLogic.Models.DTOs;
 using ItAcademy.SchoolAdmin.DataAccess.Models;
+using ItAcademy.SchoolAdmin.DataAccess.Models.DTOs;
 
 namespace ItAcademy.SchoolAdmin.BusinessLogic.Mapping
 {
@@ -14,6 +16,10 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Mapping
             CreateMap<PositionDb, Position>().ReverseMap();
             CreateMap<WorkerDb, Worker>().ReverseMap();
             CreateMap<PhoneDb, Phone>().ReverseMap();
+            CreateMap<SubjectDbStatistics, SubjectStatistics>().ReverseMap();
+            CreateMap<EmployeeDbSubjectStatistics, EmployeeSubjectStatistics>().ReverseMap();
+            CreateMap<PositionDbStatistics, PositionStatistics>().ReverseMap();
+            CreateMap<EmployeeDbPositionStatistics, EmployeePositionStatistics>().ReverseMap();
         }
     }
 }

@@ -33,9 +33,14 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.SignalR
             Dispose(true);
         }
 
-        public Task<IEnumerable<Employee>> GetAllWithPhonesSubjectsAndPositionsSorted()
+        public async Task<IEnumerable<Employee>> GetAllWithPhonesSubjectsAndPositionsSorted()
         {
-            return _empService.GetAllWithPhonesSubjectsAndPositionsSorted();
+            return await _empService.GetAllWithPhonesSubjectsAndPositionsSorted();
+        }
+
+        public async Task<Employee> GetByNameSorted(string name)
+        {
+            return await _empService.GetByNameSorted(name);
         }
 
         protected virtual void Dispose(bool disposing)

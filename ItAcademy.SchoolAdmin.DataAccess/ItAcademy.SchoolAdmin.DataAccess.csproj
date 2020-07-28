@@ -51,7 +51,9 @@
     <Compile Include="EntitiesConfiguration\SubjectConfiguration.cs" />
     <Compile Include="Interfaces\ICommonManyToManyEditService.cs" />
     <Compile Include="Interfaces\IEmployeeDbService.cs" />
+    <Compile Include="Interfaces\IPositionDbService.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\ISubjectDbService.cs" />
     <Compile Include="Interfaces\ITeacherDbService.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\IWorkerDbService.cs" />
@@ -96,6 +98,10 @@
       <DependentUpon>202007171747022_RemovePhoneFromEmployeeModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DTOs\EmployeeDbPositionStatistics.cs" />
+    <Compile Include="Models\DTOs\EmployeeDbSubjectStatistics.cs" />
+    <Compile Include="Models\DTOs\PositionDbStatistics.cs" />
+    <Compile Include="Models\DTOs\SubjectDbStatistics.cs" />
     <Compile Include="Models\EmployeeDb.cs" />
     <Compile Include="Models\PhoneDb.cs" />
     <Compile Include="Models\PositionDb.cs" />
@@ -165,5 +171,6 @@
       <DependentUpon>202007171747022_RemovePhoneFromEmployeeModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

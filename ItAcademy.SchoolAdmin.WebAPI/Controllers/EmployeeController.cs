@@ -21,7 +21,8 @@ namespace ItAcademy.SchoolAdmin.WebAPI.Controllers
         /// Get All Employees Sorted
         /// </summary>
         /// <returns></returns>
-        [HttpGet, Route("")]
+        [HttpGet]
+        [Route("")]
         [SwaggerResponse(HttpStatusCode.BadRequest, "Bad Request")]
         [SwaggerResponse(HttpStatusCode.NotFound, "Employees don't exist")]
         [SwaggerResponse(HttpStatusCode.OK, "Employees found", typeof(EmployeeModel))]
@@ -29,6 +30,22 @@ namespace ItAcademy.SchoolAdmin.WebAPI.Controllers
         public async Task<IHttpActionResult> GetAll()
         {
             var result = await _empService.GetAllWithPhonesSubjectsAndPositionsSorted();
+            return result == null ? NotFound() : (IHttpActionResult)Ok(result);
+        }
+
+        /// <summary>
+        /// Get All Employees Sorted
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("{id}")]
+        [SwaggerResponse(HttpStatusCode.BadRequest, "Bad Request")]
+        [SwaggerResponse(HttpStatusCode.NotFound, "Employees don't exist")]
+        [SwaggerResponse(HttpStatusCode.OK, "Employees found", typeof(EmployeeModel))]
+        [SwaggerResponse(HttpStatusCode.InternalServerError, "Something went wrong")]
+        public async Task<IHttpActionResult> GetByName(string name)
+        {
+            var result = await _empService.GetByNameSorted(name);
             return result == null ? NotFound() : (IHttpActionResult)Ok(result);
         }
     }

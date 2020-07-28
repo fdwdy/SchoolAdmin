@@ -21,7 +21,12 @@ namespace ItAcademy.SchoolAdmin.WebAPI.App_Start
             builder.RegisterType<SchoolHub>().As<ISchoolHub>().InstancePerRequest();
             builder.RegisterModule(new DatabaseServicesModule());
             builder.RegisterDecorator<EmployeeContextModificationNotifyingServiceDecorator, IEmployeeService>();
+            builder.RegisterDecorator<SubjectContextModificationNotifyingServiceDecorator, ISubjectService>();
+            builder.RegisterDecorator<PositionContextModificationNotifyingServiceDecorator, IPositionService>();
             builder.RegisterType<EmployeeService>().As<IEmployeeService>().InstancePerRequest();
+            builder.RegisterType<SubjectService>().As<ISubjectService>().InstancePerRequest();
+            builder.RegisterType<PositionService>().As<IPositionService>().InstancePerRequest();
+
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             builder.AddAutoMapper(Assembly.GetExecutingAssembly());

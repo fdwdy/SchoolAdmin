@@ -73,6 +73,11 @@
     <Compile Include="Interfaces\IWorkerService.cs" />
     <Compile Include="Mapping\AutoMapperBusinessModule.cs" />
     <Compile Include="Mapping\AutoMapperBusinessProfile.cs" />
+    <Compile Include="Models\DTOs\EmployeeItemBase.cs" />
+    <Compile Include="Models\DTOs\EmployeePositionStatistics.cs" />
+    <Compile Include="Models\DTOs\EmployeeSubjectStatistics.cs" />
+    <Compile Include="Models\DTOs\PositionStatistics.cs" />
+    <Compile Include="Models\DTOs\SubjectStatistics.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Phone.cs" />
     <Compile Include="Models\Position.cs" />

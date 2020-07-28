@@ -86,5 +86,10 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
                          .OrderBy(e => e.Surname).ThenBy(e => e.Name).ThenBy(e => e.Middlename)
                          .ThenBy(e => e.Email).ThenByDescending(e => e.BirthDate).ToListAsync();
         }
+
+        public Task<EmployeeDb> GetByNameSorted(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
