@@ -116,7 +116,6 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             public readonly string BlankEditorRow = "BlankEditorRow";
             public readonly string Search = "Search";
             public readonly string SendMessage = "SendMessage";
-            public readonly string SendMessageConfirmed = "SendMessageConfirmed";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -131,7 +130,6 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             public const string BlankEditorRow = "BlankEditorRow";
             public const string Search = "Search";
             public const string SendMessage = "SendMessage";
-            public const string SendMessageConfirmed = "SendMessageConfirmed";
         }
 
 
@@ -183,6 +181,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         public class ActionParamsClass_SendMessage
         {
             public readonly string id = "id";
+            public readonly string msg = "msg";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -346,13 +345,14 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         }
 
         [NonAction]
-        partial void SendMessageConfirmedOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void SendMessageOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, ItAcademy.SchoolAdmin.Web.Models.MessageViewModel msg);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SendMessageConfirmed()
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> SendMessage(ItAcademy.SchoolAdmin.Web.Models.MessageViewModel msg)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendMessageConfirmed);
-            SendMessageConfirmedOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendMessage);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "msg", msg);
+            SendMessageOverride(callInfo, msg);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

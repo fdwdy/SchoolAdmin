@@ -193,6 +193,7 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Validators\EmployeeValidator.cs" />
+    <Compile Include="Validators\MessageViewModelValidator.cs" />
     <Compile Include="Validators\PhoneValidator.cs" />
     <Compile Include="Validators\PositionViewModelValidator.cs" />
     <Compile Include="Validators\SubjectViewModelValidator.cs" />

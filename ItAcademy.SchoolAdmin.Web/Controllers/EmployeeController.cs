@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using AutoMapper;
 using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
 using ItAcademy.SchoolAdmin.BusinessLogic.Models;
+using ItAcademy.SchoolAdmin.Web.Enums;
 using ItAcademy.SchoolAdmin.Web.Models;
 
 namespace ItAcademy.SchoolAdmin.Web.Controllers
@@ -150,13 +151,24 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
                 RecipientId = id,
             };
 
+            if (employee.MessageType == MessageTypeEnum.Email)
+            {
+                msg.Length = 500;
+                msg.Type = employee.MessageType;
+            }
+            else
+            {
+                msg.Length = 120;
+                msg.Type = employee.MessageType;
+            }
+
             return View(msg);
         }
 
         [HttpPost]
-        public virtual async Task<ActionResult> SendMessageConfirmed()
+        public virtual async Task<ActionResult> SendMessage(MessageViewModel msg)
         {
-            return View();
+            return RedirectToAction(MVC.Employee.Actions.Index());
         }
 
         public async Task<EmployeeViewModel> GetEmployeeViewModelById(string id)
@@ -167,6 +179,14 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         public async Task<EmployeeEditModel> GetEmployeeEditModelById(string id)
         {
             return _mapper.Map<EmployeeEditModel>(await _empService.GetByIdAsync(id));
+        }
+
+        [HttpPost]
+        public virtual async Task<ActionResult> CheckMessageLength(string text, int length)
+        {
+            bool isLengthValid = text.Length > length ? true : false;
+            var result = Json(!isLengthValid, JsonRequestBehavior.AllowGet);
+            return result;
         }
     }
 }

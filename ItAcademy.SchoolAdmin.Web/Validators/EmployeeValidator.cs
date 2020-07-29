@@ -1,7 +1,5 @@
-﻿using System.Linq;
-using FluentValidation;
+﻿using FluentValidation;
 using ItAcademy.SchoolAdmin.Web.Models;
-using Microsoft.Ajax.Utilities;
 
 namespace ItAcademy.SchoolAdmin.Web.Validators
 {
