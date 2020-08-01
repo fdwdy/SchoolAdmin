@@ -50,18 +50,25 @@
             </div>
         </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Phones, htmlAttributes: new { @class = "control-label col-md-2" })
-        @Html.ValidationMessageFor(model => model.Phones, "", new { @class = "text-danger" })
-        <div class="col-md-10">
-            <div id="editorRows">
-                @foreach (var phone in Model.Phones)
-                {
-                    Html.RenderPartial("_PhoneRow", phone);
-                }
+        <div class="form-group">
+            @Html.LabelFor(model => model.MessageType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.MessageType, new { htmlAttributes = new { @class = "form-control" } })
             </div>
         </div>
-    </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Phones, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.ValidationMessageFor(model => model.Phones, "", new { @class = "text-danger" })
+            <div class="col-md-10">
+                <div id="editorRows">
+                    @foreach (var phone in Model.Phones)
+                    {
+                        Html.RenderPartial("_PhoneRow", phone);
+                    }
+                </div>
+            </div>
+        </div>
 
         <div class="col-md-offset-2 col-md-10">
             @Html.ActionLink("Add phone", "BlankEditorRow", null, new { id = "addItem" })
