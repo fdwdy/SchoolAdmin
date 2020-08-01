@@ -12,6 +12,6 @@ namespace ItAcademy.SchoolAdmin.WebAPI.Models
 
         public ICollection<EmployeePositionStatisticsModel> Employees { get; set; }
 
-        public int Vacant => MaxEmployees - Employees.Count;
+        public int Vacant { get; set; }
     }
 }

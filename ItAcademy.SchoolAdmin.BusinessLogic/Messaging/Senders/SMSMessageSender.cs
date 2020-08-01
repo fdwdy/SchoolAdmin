@@ -40,8 +40,8 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Messaging.Senders
         public Result<Message> Send(Message message, Employee emp)
         {
             Logger.Info($"Sending SMS to employee {emp.FullName}, " +
-                $"phone number: {emp.Phones.FirstOrDefault()}, " +
-                $"Text: {message}.");
+                $"phone number: {emp.Phones.FirstOrDefault().Number}, " +
+                $"Text: {message.Text}.");
             message.Status = Enums.MessageStatus.Ok;
             return Result<Message>.Ok(message);
         }

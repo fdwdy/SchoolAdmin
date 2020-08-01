@@ -11,5 +11,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Models.DTOs
         public short MaxEmployees { get; set; }
 
         public ICollection<EmployeePositionStatistics> Employees { get; set; }
+
+        public int Vacant => MaxEmployees - Employees.Count;
     }
 }
