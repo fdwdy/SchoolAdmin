@@ -17,10 +17,10 @@
             return new Result<T>(true, null, data);
         }
 
-        public static Result<T> Fail<T>(string message)
+        public static Result<T> Fail<T>(T data, string message)
             where T : class
         {
-            return new Result<T>(false, message, null);
+            return new Result<T>(false, message, data);
         }
     }
 }

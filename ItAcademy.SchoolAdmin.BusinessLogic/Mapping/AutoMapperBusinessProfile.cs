@@ -11,6 +11,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Mapping
         public AutoMapperBusinessProfile()
         {
             CreateMap<EmployeeDb, Employee>().ReverseMap();
+            CreateMap<MessageDb, Message>().ReverseMap();
             CreateMap<SubjectDb, Subject>().ReverseMap();
             CreateMap<SubjectTeachersDb, SubjectTeachers>().ReverseMap();
             CreateMap<PositionDb, Position>().ReverseMap();

@@ -15,6 +15,6 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Models
 
         public DateTime Time { get; set; }
 
-        public string Status { get; set; }
+        public MessageStatus Status { get; set; }
     }
 }

@@ -13,6 +13,7 @@ namespace ItAcademy.SchoolAdmin.Web.Mapping
             CreateMap<Employee, EmployeeViewModel>().ReverseMap();
             CreateMap<Employee, EmployeeEditModel>().ReverseMap();
             CreateMap<Employee, EmployeeSelectViewModel>().ReverseMap();
+            CreateMap<Employee, EmployeeContactsModel>().ReverseMap();
             CreateMap<Employee, CreateEmployeeViewModel>().ReverseMap();
             CreateMap<Employee, EmployeeListModel>()
                 .ForMember(

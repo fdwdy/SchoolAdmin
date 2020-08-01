@@ -1,8 +1,8 @@
 ﻿namespace ItAcademy.SchoolAdmin.DataAccess.Enums
 {
-    public enum MessageTypeDb
+    public enum MessageStatusDb
     {
-        Email,
-        SMS,
+        Ok,
+        Error,
     }
 }

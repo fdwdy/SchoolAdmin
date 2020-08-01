@@ -5,7 +5,7 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Models
 {
     public class MessageDb
     {
-        public string Id { get; set; }
+        public Guid Id { get; set; }
 
         public string RecipientId { get; set; }
 
@@ -15,6 +15,6 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Models
 
         public DateTime Time { get; set; }
 
-        public string Status { get; set; }
+        public MessageStatusDb Status { get; set; }
     }
 }

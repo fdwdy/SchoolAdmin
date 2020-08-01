@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using AutoMapper;
 using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
+using ItAcademy.SchoolAdmin.BusinessLogic.Messaging;
 using ItAcademy.SchoolAdmin.BusinessLogic.Models;
 using ItAcademy.SchoolAdmin.Web.Enums;
 using ItAcademy.SchoolAdmin.Web.Models;
@@ -15,11 +16,13 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IEmployeeService _empService;
+        private readonly IMessageSenderService _msgService;
 
-        public EmployeeController(IEmployeeService empService, IMapper mapper)
+        public EmployeeController(IEmployeeService empService, IMapper mapper, IMessageSenderService msgService)
         {
             _empService = empService;
             _mapper = mapper;
+            _msgService = msgService;
         }
 
         [HttpGet]
@@ -168,6 +171,14 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         [HttpPost]
         public virtual async Task<ActionResult> SendMessage(MessageViewModel msg)
         {
+            Employee employee = _mapper.Map<Employee>(await _empService.GetByIdAsync(msg.RecipientId));
+            var result = _msgService.SendMessageToEmployee(msg.Text, employee);
+            if (result.IsError)
+            {
+                ModelState.AddModelError("Warning", result.Message);
+                return View(msg);
+            }
+
             return RedirectToAction(MVC.Employee.Actions.Index());
         }
 
