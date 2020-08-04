@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Content/sb-theme/scss/_buttons.css",
+    "inputFile": "Content/sb-theme/scss/_buttons.scss"
+  },
+  {
+    "outputFile": "Content/sb-theme/vendor/bootstrap/scss/bootstrap.css",
+    "inputFile": "Content/sb-theme/vendor/bootstrap/scss/bootstrap.scss"
+  }
+]

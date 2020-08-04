@@ -1,19 +1,88 @@
 ﻿@model IEnumerable<ItAcademy.SchoolAdmin.Web.Models.EmployeeListModel>
 @using ItAcademy.SchoolAdmin.BusinessLogic.SignalR
 
-<h2>All employees</h2>
+<h2 class="h2 mb-2 text-gray-800">Employees</h2>
 
-<input type="text" name="name" id="search" />
-<input type="button" value="Поиск" id="submit" />
+@*<input type="text" name="name" id="search" />
+<input type="button" value="Поиск" id="submit" />*@
 
 <p style="display: none" class="list-updated-notification">
     Employee list updated. <a href="#" class="list-updated-notification-link">Click here</a> to refresh.
 </p>
 
-<p>
-    <a href="@Url.Action(MVC.Employee.Create())">Create new</a>
+<p class="col-md-1">
+    <a class="btn btn-primary btn-user btn-block" href="@Url.Action(MVC.Employee.Create())">Create new</a>
 </p>
-<table class="table">
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Employees summary</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="dataTable_filter" class="dataTables_filter">
+                        <label>
+                            Search:
+                            <input type="text" name="name" id="search" class="dataTables_filter form-control form-control-sm" />
+                        </label>
+                        <input type="button" value="Поиск" id="submit" />
+                    </div>
+                </div>
+            </div>
+            <table class="table" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Date of Birth</th>
+                        <th>E-mail</th>
+                        <th>Phones</th>
+                        <th>Manage</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Date of Birth</th>
+                        <th>E-mail</th>
+                        <th>Phones</th>
+                        <th>Manage</th>
+                    </tr>
+                </tfoot>
+                <tbody id="employeeDataTable">
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.FullName</td>
+                            <td>@item.BirthDate</td>
+                            <td>@item.Email</td>
+                            <td>
+                                @foreach (var phone in item.Phones)
+                                {
+                                    @phone<br />
+                                }
+                            </td>
+                            <td>
+                                <a class="btn btn-success btn-circle btn-sm" href="@Url.Action(MVC.Employee.SendMessage(@item.Id))" title="Send message">
+                                    <i class="fas fa-sms"></i>
+                                </a>
+                                <a class="btn btn-info btn-circle btn-sm" href="@Url.Action(MVC.Employee.Edit(@item.Id))" title="Edit employee">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                                <a class="btn btn-danger btn-circle btn-sm" href="@Url.Action(MVC.Employee.Delete(@item.Id))" title="Delete employee">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@*<table class="table">
     <tr>
         <th>Full Name</th>
         <th>Date of Birth</th>
@@ -40,11 +109,10 @@
                 <a href="@Url.Action(MVC.Employee.Delete(@item.Id))">Delete</a>
             </td>
         </tr>
-
         }
     </tbody>
 
-</table>
+</table>*@
 
 @section scripts{
     <script src="~/Content/scripts/lib/jquery/jquery-3.3.1.min.js"></script>

@@ -19,6 +19,14 @@ namespace ItAcademy.SchoolAdmin.Web
 
             bundles.Add(new ScriptBundle(Links.Bundles.Scripts.JQueryValidation).Include(
                         "~/Content/scripts/lib/jquery-validation/jquery.validate*"));
+
+            bundles.Add(new StyleBundle(Links.Bundles.Content.ContentCss).Include(
+                        "~/Content/sb-theme/vendor/bootstrap/scss/bootstrap.css",
+                        "~/Content/sb-theme/css/sb-admin-2.css",
+                        "~/Content/sb-theme/vendor/fontawesome-free/css/all.min.css"));
+
+            bundles.Add(new ScriptBundle(Links.Bundles.Scripts.Bootstrap4).Include(
+                        "~/Content/sb-theme/vendor/bootstrap/bootstrap.js"));
         }
     }
 }

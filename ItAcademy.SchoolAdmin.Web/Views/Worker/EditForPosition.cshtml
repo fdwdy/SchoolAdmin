@@ -5,16 +5,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>EditForPosition</h2>
+    <h2 class="h2 mb-2 text-gray-800">Set Position Workers</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Set Position Worker</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="col-md-6 form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
         <table class="table">
             <tr>
@@ -25,15 +24,15 @@
                     @Html.DisplayNameFor(model => model.MaxEmployees)
                 </th>
             </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayFor(model => model.PositionName)
-                    </td>
-                    <td>
-                        <input type="hidden" id="maxEmployees" value=@Model.MaxEmployees>
-                        <text>@Html.DisplayFor(model => model.MaxEmployees)</text>
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.PositionName)
+                </td>
+                <td>
+                    <input type="hidden" id="maxEmployees" value=@Model.MaxEmployees>
+                    <text>@Html.DisplayFor(model => model.MaxEmployees)</text>
+                </td>
+            </tr>
         </table>
 
 
@@ -49,12 +48,12 @@
                 </div>
             }
     </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-2">
+            <input type="submit" value="Save" class="btn btn-success btn-user btn-block" />
         </div>
     </div>
+</div>
 }
 
 <script src="~/Content/scripts/js/LimitCheckbox.js"></script>
