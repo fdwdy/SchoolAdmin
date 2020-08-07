@@ -91,6 +91,13 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendMessage);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> CheckMessageLength()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CheckMessageLength);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public EmployeeController Actions { get { return MVC.Employee; } }
@@ -116,6 +123,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             public readonly string BlankEditorRow = "BlankEditorRow";
             public readonly string Search = "Search";
             public readonly string SendMessage = "SendMessage";
+            public readonly string CheckMessageLength = "CheckMessageLength";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -130,6 +138,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             public const string BlankEditorRow = "BlankEditorRow";
             public const string Search = "Search";
             public const string SendMessage = "SendMessage";
+            public const string CheckMessageLength = "CheckMessageLength";
         }
 
 
@@ -182,6 +191,15 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         {
             public readonly string id = "id";
             public readonly string msg = "msg";
+        }
+        static readonly ActionParamsClass_CheckMessageLength s_params_CheckMessageLength = new ActionParamsClass_CheckMessageLength();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_CheckMessageLength CheckMessageLengthParams { get { return s_params_CheckMessageLength; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_CheckMessageLength
+        {
+            public readonly string text = "text";
+            public readonly string length = "length";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -353,6 +371,19 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SendMessage);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "msg", msg);
             SendMessageOverride(callInfo, msg);
+            return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
+        }
+
+        [NonAction]
+        partial void CheckMessageLengthOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string text, int length);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> CheckMessageLength(string text, int length)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CheckMessageLength);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "text", text);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "length", length);
+            CheckMessageLengthOverride(callInfo, text, length);
             return System.Threading.Tasks.Task.FromResult(callInfo as System.Web.Mvc.ActionResult);
         }
 

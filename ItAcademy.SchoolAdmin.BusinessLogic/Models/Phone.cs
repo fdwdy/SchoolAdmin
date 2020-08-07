@@ -7,5 +7,7 @@
         public string Number { get; set; }
 
         public string EmployeeId { get; set; }
+
+        public bool IsPrimary { get; set; }
     }
 }

@@ -29,6 +29,7 @@ public static partial class MVC
 {
     public static ItAcademy.SchoolAdmin.Web.Controllers.EmployeeController Employee = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_EmployeeController();
     public static ItAcademy.SchoolAdmin.Web.Controllers.HomeController Home = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_HomeController();
+    public static ItAcademy.SchoolAdmin.Web.Controllers.MessageController Message = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_MessageController();
     public static ItAcademy.SchoolAdmin.Web.Controllers.PositionController Position = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_PositionController();
     public static ItAcademy.SchoolAdmin.Web.Controllers.SubjectController Subject = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_SubjectController();
     public static ItAcademy.SchoolAdmin.Web.Controllers.TeacherController Teacher = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_TeacherController();
@@ -111,6 +112,2063 @@ namespace Links
             public static readonly string glyphicons_halflings_regular_ttf = Url("glyphicons-halflings-regular.ttf");
             public static readonly string glyphicons_halflings_regular_woff = Url("glyphicons-halflings-regular.woff");
             public static readonly string glyphicons_halflings_regular_woff2 = Url("glyphicons-halflings-regular.woff2");
+        }
+    
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class sb_theme {
+            public const string UrlPath = "~/Content/sb-theme";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class css {
+                public const string UrlPath = "~/Content/sb-theme/css";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string sb_admin_2_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/sb-admin-2.min.css") ? Url("sb-admin-2.min.css") : Url("sb-admin-2.css");
+                public static readonly string sb_admin_2_min_css = Url("sb-admin-2.min.css");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class img {
+                public const string UrlPath = "~/Content/sb-theme/img";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string undraw_posting_photo_svg = Url("undraw_posting_photo.svg");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class js {
+                public const string UrlPath = "~/Content/sb-theme/js";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class demo {
+                    public const string UrlPath = "~/Content/sb-theme/js/demo";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string chart_area_demo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/chart-area-demo.min.js") ? Url("chart-area-demo.min.js") : Url("chart-area-demo.js");
+                    public static readonly string chart_bar_demo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/chart-bar-demo.min.js") ? Url("chart-bar-demo.min.js") : Url("chart-bar-demo.js");
+                    public static readonly string chart_pie_demo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/chart-pie-demo.min.js") ? Url("chart-pie-demo.min.js") : Url("chart-pie-demo.js");
+                    public static readonly string datatables_demo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/datatables-demo.min.js") ? Url("datatables-demo.min.js") : Url("datatables-demo.js");
+                }
+            
+                public static readonly string sb_admin_2_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/sb-admin-2.min.js") ? Url("sb-admin-2.min.js") : Url("sb-admin-2.js");
+                public static readonly string sb_admin_2_min_js = Url("sb-admin-2.min.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class scss {
+                public const string UrlPath = "~/Content/sb-theme/scss";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                public static readonly string _buttons_scss = Url("_buttons.scss");
+                public static readonly string _cards_scss = Url("_cards.scss");
+                public static readonly string _charts_scss = Url("_charts.scss");
+                public static readonly string _dropdowns_scss = Url("_dropdowns.scss");
+                public static readonly string _error_scss = Url("_error.scss");
+                public static readonly string _footer_scss = Url("_footer.scss");
+                public static readonly string _global_scss = Url("_global.scss");
+                public static readonly string _login_scss = Url("_login.scss");
+                public static readonly string _mixins_scss = Url("_mixins.scss");
+                public static readonly string _navs_scss = Url("_navs.scss");
+                public static readonly string _utilities_scss = Url("_utilities.scss");
+                public static readonly string _variables_scss = Url("_variables.scss");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class navs {
+                    public const string UrlPath = "~/Content/sb-theme/scss/navs";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string _global_scss = Url("_global.scss");
+                    public static readonly string _sidebar_scss = Url("_sidebar.scss");
+                    public static readonly string _topbar_scss = Url("_topbar.scss");
+                }
+            
+                public static readonly string sb_admin_2_scss = Url("sb-admin-2.scss");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class utilities {
+                    public const string UrlPath = "~/Content/sb-theme/scss/utilities";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string _animation_scss = Url("_animation.scss");
+                    public static readonly string _background_scss = Url("_background.scss");
+                    public static readonly string _border_scss = Url("_border.scss");
+                    public static readonly string _display_scss = Url("_display.scss");
+                    public static readonly string _progress_scss = Url("_progress.scss");
+                    public static readonly string _rotate_scss = Url("_rotate.scss");
+                    public static readonly string _text_scss = Url("_text.scss");
+                }
+            
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class vendor {
+                public const string UrlPath = "~/Content/sb-theme/vendor";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class bootstrap {
+                    public const string UrlPath = "~/Content/sb-theme/vendor/bootstrap";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class js {
+                        public const string UrlPath = "~/Content/sb-theme/vendor/bootstrap/js";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                        public static readonly string bootstrap_bundle_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap.bundle.min.js") ? Url("bootstrap.bundle.min.js") : Url("bootstrap.bundle.js");
+                        public static readonly string bootstrap_bundle_js_map = Url("bootstrap.bundle.js.map");
+                        public static readonly string bootstrap_bundle_min_js = Url("bootstrap.bundle.min.js");
+                        public static readonly string bootstrap_bundle_min_js_map = Url("bootstrap.bundle.min.js.map");
+                        public static readonly string bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap.min.js") ? Url("bootstrap.min.js") : Url("bootstrap.js");
+                        public static readonly string bootstrap_js_map = Url("bootstrap.js.map");
+                        public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
+                        public static readonly string bootstrap_min_js_map = Url("bootstrap.min.js.map");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class scss {
+                        public const string UrlPath = "~/Content/sb-theme/vendor/bootstrap/scss";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                        public static readonly string _alert_scss = Url("_alert.scss");
+                        public static readonly string _badge_scss = Url("_badge.scss");
+                        public static readonly string _breadcrumb_scss = Url("_breadcrumb.scss");
+                        public static readonly string _button_group_scss = Url("_button-group.scss");
+                        public static readonly string _buttons_scss = Url("_buttons.scss");
+                        public static readonly string _card_scss = Url("_card.scss");
+                        public static readonly string _carousel_scss = Url("_carousel.scss");
+                        public static readonly string _close_scss = Url("_close.scss");
+                        public static readonly string _code_scss = Url("_code.scss");
+                        public static readonly string _custom_forms_scss = Url("_custom-forms.scss");
+                        public static readonly string _dropdown_scss = Url("_dropdown.scss");
+                        public static readonly string _forms_scss = Url("_forms.scss");
+                        public static readonly string _functions_scss = Url("_functions.scss");
+                        public static readonly string _grid_scss = Url("_grid.scss");
+                        public static readonly string _images_scss = Url("_images.scss");
+                        public static readonly string _input_group_scss = Url("_input-group.scss");
+                        public static readonly string _jumbotron_scss = Url("_jumbotron.scss");
+                        public static readonly string _list_group_scss = Url("_list-group.scss");
+                        public static readonly string _media_scss = Url("_media.scss");
+                        public static readonly string _mixins_scss = Url("_mixins.scss");
+                        public static readonly string _modal_scss = Url("_modal.scss");
+                        public static readonly string _nav_scss = Url("_nav.scss");
+                        public static readonly string _navbar_scss = Url("_navbar.scss");
+                        public static readonly string _pagination_scss = Url("_pagination.scss");
+                        public static readonly string _popover_scss = Url("_popover.scss");
+                        public static readonly string _print_scss = Url("_print.scss");
+                        public static readonly string _progress_scss = Url("_progress.scss");
+                        public static readonly string _reboot_scss = Url("_reboot.scss");
+                        public static readonly string _root_scss = Url("_root.scss");
+                        public static readonly string _spinners_scss = Url("_spinners.scss");
+                        public static readonly string _tables_scss = Url("_tables.scss");
+                        public static readonly string _toasts_scss = Url("_toasts.scss");
+                        public static readonly string _tooltip_scss = Url("_tooltip.scss");
+                        public static readonly string _transitions_scss = Url("_transitions.scss");
+                        public static readonly string _type_scss = Url("_type.scss");
+                        public static readonly string _utilities_scss = Url("_utilities.scss");
+                        public static readonly string _variables_scss = Url("_variables.scss");
+                        public static readonly string bootstrap_grid_scss = Url("bootstrap-grid.scss");
+                        public static readonly string bootstrap_reboot_scss = Url("bootstrap-reboot.scss");
+                        public static readonly string bootstrap_scss = Url("bootstrap.scss");
+                        public static readonly string bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/bootstrap.min.css") ? Url("bootstrap.min.css") : Url("bootstrap.css");
+                        public static readonly string bootstrap_min_css = Url("bootstrap.min.css");
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class mixins {
+                            public const string UrlPath = "~/Content/sb-theme/vendor/bootstrap/scss/mixins";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                            public static readonly string _alert_scss = Url("_alert.scss");
+                            public static readonly string _background_variant_scss = Url("_background-variant.scss");
+                            public static readonly string _badge_scss = Url("_badge.scss");
+                            public static readonly string _border_radius_scss = Url("_border-radius.scss");
+                            public static readonly string _box_shadow_scss = Url("_box-shadow.scss");
+                            public static readonly string _breakpoints_scss = Url("_breakpoints.scss");
+                            public static readonly string _buttons_scss = Url("_buttons.scss");
+                            public static readonly string _caret_scss = Url("_caret.scss");
+                            public static readonly string _clearfix_scss = Url("_clearfix.scss");
+                            public static readonly string _deprecate_scss = Url("_deprecate.scss");
+                            public static readonly string _float_scss = Url("_float.scss");
+                            public static readonly string _forms_scss = Url("_forms.scss");
+                            public static readonly string _gradients_scss = Url("_gradients.scss");
+                            public static readonly string _grid_framework_scss = Url("_grid-framework.scss");
+                            public static readonly string _grid_scss = Url("_grid.scss");
+                            public static readonly string _hover_scss = Url("_hover.scss");
+                            public static readonly string _image_scss = Url("_image.scss");
+                            public static readonly string _list_group_scss = Url("_list-group.scss");
+                            public static readonly string _lists_scss = Url("_lists.scss");
+                            public static readonly string _nav_divider_scss = Url("_nav-divider.scss");
+                            public static readonly string _pagination_scss = Url("_pagination.scss");
+                            public static readonly string _reset_text_scss = Url("_reset-text.scss");
+                            public static readonly string _resize_scss = Url("_resize.scss");
+                            public static readonly string _screen_reader_scss = Url("_screen-reader.scss");
+                            public static readonly string _size_scss = Url("_size.scss");
+                            public static readonly string _table_row_scss = Url("_table-row.scss");
+                            public static readonly string _text_emphasis_scss = Url("_text-emphasis.scss");
+                            public static readonly string _text_hide_scss = Url("_text-hide.scss");
+                            public static readonly string _text_truncate_scss = Url("_text-truncate.scss");
+                            public static readonly string _transition_scss = Url("_transition.scss");
+                            public static readonly string _visibility_scss = Url("_visibility.scss");
+                        }
+                    
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class utilities {
+                            public const string UrlPath = "~/Content/sb-theme/vendor/bootstrap/scss/utilities";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                            public static readonly string _align_scss = Url("_align.scss");
+                            public static readonly string _background_scss = Url("_background.scss");
+                            public static readonly string _borders_scss = Url("_borders.scss");
+                            public static readonly string _clearfix_scss = Url("_clearfix.scss");
+                            public static readonly string _display_scss = Url("_display.scss");
+                            public static readonly string _embed_scss = Url("_embed.scss");
+                            public static readonly string _flex_scss = Url("_flex.scss");
+                            public static readonly string _float_scss = Url("_float.scss");
+                            public static readonly string _interactions_scss = Url("_interactions.scss");
+                            public static readonly string _overflow_scss = Url("_overflow.scss");
+                            public static readonly string _position_scss = Url("_position.scss");
+                            public static readonly string _screenreaders_scss = Url("_screenreaders.scss");
+                            public static readonly string _shadows_scss = Url("_shadows.scss");
+                            public static readonly string _sizing_scss = Url("_sizing.scss");
+                            public static readonly string _spacing_scss = Url("_spacing.scss");
+                            public static readonly string _stretched_link_scss = Url("_stretched-link.scss");
+                            public static readonly string _text_scss = Url("_text.scss");
+                            public static readonly string _visibility_scss = Url("_visibility.scss");
+                        }
+                    
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class vendor {
+                            public const string UrlPath = "~/Content/sb-theme/vendor/bootstrap/scss/vendor";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                            public static readonly string _rfs_scss = Url("_rfs.scss");
+                        }
+                    
+                    }
+                
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class chart_js {
+                    public const string UrlPath = "~/Content/sb-theme/vendor/chart.js";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string Chart_bundle_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/Chart.bundle.min.js") ? Url("Chart.bundle.min.js") : Url("Chart.bundle.js");
+                    public static readonly string Chart_bundle_min_js = Url("Chart.bundle.min.js");
+                    public static readonly string Chart_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/Chart.min.js") ? Url("Chart.min.js") : Url("Chart.js");
+                    public static readonly string Chart_min_js = Url("Chart.min.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class datatables {
+                    public const string UrlPath = "~/Content/sb-theme/vendor/datatables";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string dataTables_bootstrap4_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/dataTables.bootstrap4.min.css") ? Url("dataTables.bootstrap4.min.css") : Url("dataTables.bootstrap4.css");
+                    public static readonly string dataTables_bootstrap4_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/dataTables.bootstrap4.min.js") ? Url("dataTables.bootstrap4.min.js") : Url("dataTables.bootstrap4.js");
+                    public static readonly string dataTables_bootstrap4_min_css = Url("dataTables.bootstrap4.min.css");
+                    public static readonly string dataTables_bootstrap4_min_js = Url("dataTables.bootstrap4.min.js");
+                    public static readonly string jquery_dataTables_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.dataTables.min.js") ? Url("jquery.dataTables.min.js") : Url("jquery.dataTables.js");
+                    public static readonly string jquery_dataTables_min_js = Url("jquery.dataTables.min.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class fontawesome_free {
+                    public const string UrlPath = "~/Content/sb-theme/vendor/fontawesome-free";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class css {
+                        public const string UrlPath = "~/Content/sb-theme/vendor/fontawesome-free/css";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                        public static readonly string all_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/all.min.css") ? Url("all.min.css") : Url("all.css");
+                        public static readonly string all_min_css = Url("all.min.css");
+                        public static readonly string brands_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/brands.min.css") ? Url("brands.min.css") : Url("brands.css");
+                        public static readonly string brands_min_css = Url("brands.min.css");
+                        public static readonly string fontawesome_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fontawesome.min.css") ? Url("fontawesome.min.css") : Url("fontawesome.css");
+                        public static readonly string fontawesome_min_css = Url("fontawesome.min.css");
+                        public static readonly string regular_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/regular.min.css") ? Url("regular.min.css") : Url("regular.css");
+                        public static readonly string regular_min_css = Url("regular.min.css");
+                        public static readonly string solid_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/solid.min.css") ? Url("solid.min.css") : Url("solid.css");
+                        public static readonly string solid_min_css = Url("solid.min.css");
+                        public static readonly string svg_with_js_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/svg-with-js.min.css") ? Url("svg-with-js.min.css") : Url("svg-with-js.css");
+                        public static readonly string svg_with_js_min_css = Url("svg-with-js.min.css");
+                        public static readonly string v4_shims_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/v4-shims.min.css") ? Url("v4-shims.min.css") : Url("v4-shims.css");
+                        public static readonly string v4_shims_min_css = Url("v4-shims.min.css");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class js {
+                        public const string UrlPath = "~/Content/sb-theme/vendor/fontawesome-free/js";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                        public static readonly string all_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/all.min.js") ? Url("all.min.js") : Url("all.js");
+                        public static readonly string all_min_js = Url("all.min.js");
+                        public static readonly string brands_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/brands.min.js") ? Url("brands.min.js") : Url("brands.js");
+                        public static readonly string brands_min_js = Url("brands.min.js");
+                        public static readonly string conflict_detection_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/conflict-detection.min.js") ? Url("conflict-detection.min.js") : Url("conflict-detection.js");
+                        public static readonly string conflict_detection_min_js = Url("conflict-detection.min.js");
+                        public static readonly string fontawesome_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fontawesome.min.js") ? Url("fontawesome.min.js") : Url("fontawesome.js");
+                        public static readonly string fontawesome_min_js = Url("fontawesome.min.js");
+                        public static readonly string regular_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/regular.min.js") ? Url("regular.min.js") : Url("regular.js");
+                        public static readonly string regular_min_js = Url("regular.min.js");
+                        public static readonly string solid_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/solid.min.js") ? Url("solid.min.js") : Url("solid.js");
+                        public static readonly string solid_min_js = Url("solid.min.js");
+                        public static readonly string v4_shims_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/v4-shims.min.js") ? Url("v4-shims.min.js") : Url("v4-shims.js");
+                        public static readonly string v4_shims_min_js = Url("v4-shims.min.js");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class less {
+                        public const string UrlPath = "~/Content/sb-theme/vendor/fontawesome-free/less";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                        public static readonly string _animated_less = Url("_animated.less");
+                        public static readonly string _bordered_pulled_less = Url("_bordered-pulled.less");
+                        public static readonly string _core_less = Url("_core.less");
+                        public static readonly string _fixed_width_less = Url("_fixed-width.less");
+                        public static readonly string _icons_less = Url("_icons.less");
+                        public static readonly string _larger_less = Url("_larger.less");
+                        public static readonly string _list_less = Url("_list.less");
+                        public static readonly string _mixins_less = Url("_mixins.less");
+                        public static readonly string _rotated_flipped_less = Url("_rotated-flipped.less");
+                        public static readonly string _screen_reader_less = Url("_screen-reader.less");
+                        public static readonly string _shims_less = Url("_shims.less");
+                        public static readonly string _stacked_less = Url("_stacked.less");
+                        public static readonly string _variables_less = Url("_variables.less");
+                        public static readonly string brands_less = Url("brands.less");
+                        public static readonly string fontawesome_less = Url("fontawesome.less");
+                        public static readonly string regular_less = Url("regular.less");
+                        public static readonly string solid_less = Url("solid.less");
+                        public static readonly string v4_shims_less = Url("v4-shims.less");
+                    }
+                
+                    public static readonly string LICENSE_txt = Url("LICENSE.txt");
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class metadata {
+                        public const string UrlPath = "~/Content/sb-theme/vendor/fontawesome-free/metadata";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                        public static readonly string categories_yml = Url("categories.yml");
+                        public static readonly string icons_yml = Url("icons.yml");
+                        public static readonly string shims_yml = Url("shims.yml");
+                        public static readonly string sponsors_yml = Url("sponsors.yml");
+                    }
+                
+                    public static readonly string package_json = Url("package.json");
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class scss {
+                        public const string UrlPath = "~/Content/sb-theme/vendor/fontawesome-free/scss";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                        public static readonly string _animated_scss = Url("_animated.scss");
+                        public static readonly string _bordered_pulled_scss = Url("_bordered-pulled.scss");
+                        public static readonly string _core_scss = Url("_core.scss");
+                        public static readonly string _fixed_width_scss = Url("_fixed-width.scss");
+                        public static readonly string _icons_scss = Url("_icons.scss");
+                        public static readonly string _larger_scss = Url("_larger.scss");
+                        public static readonly string _list_scss = Url("_list.scss");
+                        public static readonly string _mixins_scss = Url("_mixins.scss");
+                        public static readonly string _rotated_flipped_scss = Url("_rotated-flipped.scss");
+                        public static readonly string _screen_reader_scss = Url("_screen-reader.scss");
+                        public static readonly string _shims_scss = Url("_shims.scss");
+                        public static readonly string _stacked_scss = Url("_stacked.scss");
+                        public static readonly string _variables_scss = Url("_variables.scss");
+                        public static readonly string brands_scss = Url("brands.scss");
+                        public static readonly string fontawesome_scss = Url("fontawesome.scss");
+                        public static readonly string regular_scss = Url("regular.scss");
+                        public static readonly string solid_scss = Url("solid.scss");
+                        public static readonly string v4_shims_scss = Url("v4-shims.scss");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class sprites {
+                        public const string UrlPath = "~/Content/sb-theme/vendor/fontawesome-free/sprites";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                        public static readonly string brands_svg = Url("brands.svg");
+                        public static readonly string regular_svg = Url("regular.svg");
+                        public static readonly string solid_svg = Url("solid.svg");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class svgs {
+                        public const string UrlPath = "~/Content/sb-theme/vendor/fontawesome-free/svgs";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class brands {
+                            public const string UrlPath = "~/Content/sb-theme/vendor/fontawesome-free/svgs/brands";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                            public static readonly string _500px_svg = Url("500px.svg");
+                            public static readonly string accessible_icon_svg = Url("accessible-icon.svg");
+                            public static readonly string accusoft_svg = Url("accusoft.svg");
+                            public static readonly string acquisitions_incorporated_svg = Url("acquisitions-incorporated.svg");
+                            public static readonly string adn_svg = Url("adn.svg");
+                            public static readonly string adobe_svg = Url("adobe.svg");
+                            public static readonly string adversal_svg = Url("adversal.svg");
+                            public static readonly string affiliatetheme_svg = Url("affiliatetheme.svg");
+                            public static readonly string airbnb_svg = Url("airbnb.svg");
+                            public static readonly string algolia_svg = Url("algolia.svg");
+                            public static readonly string alipay_svg = Url("alipay.svg");
+                            public static readonly string amazon_pay_svg = Url("amazon-pay.svg");
+                            public static readonly string amazon_svg = Url("amazon.svg");
+                            public static readonly string amilia_svg = Url("amilia.svg");
+                            public static readonly string android_svg = Url("android.svg");
+                            public static readonly string angellist_svg = Url("angellist.svg");
+                            public static readonly string angrycreative_svg = Url("angrycreative.svg");
+                            public static readonly string angular_svg = Url("angular.svg");
+                            public static readonly string app_store_ios_svg = Url("app-store-ios.svg");
+                            public static readonly string app_store_svg = Url("app-store.svg");
+                            public static readonly string apper_svg = Url("apper.svg");
+                            public static readonly string apple_pay_svg = Url("apple-pay.svg");
+                            public static readonly string apple_svg = Url("apple.svg");
+                            public static readonly string artstation_svg = Url("artstation.svg");
+                            public static readonly string asymmetrik_svg = Url("asymmetrik.svg");
+                            public static readonly string atlassian_svg = Url("atlassian.svg");
+                            public static readonly string audible_svg = Url("audible.svg");
+                            public static readonly string autoprefixer_svg = Url("autoprefixer.svg");
+                            public static readonly string avianex_svg = Url("avianex.svg");
+                            public static readonly string aviato_svg = Url("aviato.svg");
+                            public static readonly string aws_svg = Url("aws.svg");
+                            public static readonly string bandcamp_svg = Url("bandcamp.svg");
+                            public static readonly string battle_net_svg = Url("battle-net.svg");
+                            public static readonly string behance_square_svg = Url("behance-square.svg");
+                            public static readonly string behance_svg = Url("behance.svg");
+                            public static readonly string bimobject_svg = Url("bimobject.svg");
+                            public static readonly string bitbucket_svg = Url("bitbucket.svg");
+                            public static readonly string bitcoin_svg = Url("bitcoin.svg");
+                            public static readonly string bity_svg = Url("bity.svg");
+                            public static readonly string black_tie_svg = Url("black-tie.svg");
+                            public static readonly string blackberry_svg = Url("blackberry.svg");
+                            public static readonly string blogger_b_svg = Url("blogger-b.svg");
+                            public static readonly string blogger_svg = Url("blogger.svg");
+                            public static readonly string bluetooth_b_svg = Url("bluetooth-b.svg");
+                            public static readonly string bluetooth_svg = Url("bluetooth.svg");
+                            public static readonly string bootstrap_svg = Url("bootstrap.svg");
+                            public static readonly string btc_svg = Url("btc.svg");
+                            public static readonly string buffer_svg = Url("buffer.svg");
+                            public static readonly string buromobelexperte_svg = Url("buromobelexperte.svg");
+                            public static readonly string buy_n_large_svg = Url("buy-n-large.svg");
+                            public static readonly string buysellads_svg = Url("buysellads.svg");
+                            public static readonly string canadian_maple_leaf_svg = Url("canadian-maple-leaf.svg");
+                            public static readonly string cc_amazon_pay_svg = Url("cc-amazon-pay.svg");
+                            public static readonly string cc_amex_svg = Url("cc-amex.svg");
+                            public static readonly string cc_apple_pay_svg = Url("cc-apple-pay.svg");
+                            public static readonly string cc_diners_club_svg = Url("cc-diners-club.svg");
+                            public static readonly string cc_discover_svg = Url("cc-discover.svg");
+                            public static readonly string cc_jcb_svg = Url("cc-jcb.svg");
+                            public static readonly string cc_mastercard_svg = Url("cc-mastercard.svg");
+                            public static readonly string cc_paypal_svg = Url("cc-paypal.svg");
+                            public static readonly string cc_stripe_svg = Url("cc-stripe.svg");
+                            public static readonly string cc_visa_svg = Url("cc-visa.svg");
+                            public static readonly string centercode_svg = Url("centercode.svg");
+                            public static readonly string centos_svg = Url("centos.svg");
+                            public static readonly string chrome_svg = Url("chrome.svg");
+                            public static readonly string chromecast_svg = Url("chromecast.svg");
+                            public static readonly string cloudscale_svg = Url("cloudscale.svg");
+                            public static readonly string cloudsmith_svg = Url("cloudsmith.svg");
+                            public static readonly string cloudversify_svg = Url("cloudversify.svg");
+                            public static readonly string codepen_svg = Url("codepen.svg");
+                            public static readonly string codiepie_svg = Url("codiepie.svg");
+                            public static readonly string confluence_svg = Url("confluence.svg");
+                            public static readonly string connectdevelop_svg = Url("connectdevelop.svg");
+                            public static readonly string contao_svg = Url("contao.svg");
+                            public static readonly string cotton_bureau_svg = Url("cotton-bureau.svg");
+                            public static readonly string cpanel_svg = Url("cpanel.svg");
+                            public static readonly string creative_commons_by_svg = Url("creative-commons-by.svg");
+                            public static readonly string creative_commons_nc_eu_svg = Url("creative-commons-nc-eu.svg");
+                            public static readonly string creative_commons_nc_jp_svg = Url("creative-commons-nc-jp.svg");
+                            public static readonly string creative_commons_nc_svg = Url("creative-commons-nc.svg");
+                            public static readonly string creative_commons_nd_svg = Url("creative-commons-nd.svg");
+                            public static readonly string creative_commons_pd_alt_svg = Url("creative-commons-pd-alt.svg");
+                            public static readonly string creative_commons_pd_svg = Url("creative-commons-pd.svg");
+                            public static readonly string creative_commons_remix_svg = Url("creative-commons-remix.svg");
+                            public static readonly string creative_commons_sa_svg = Url("creative-commons-sa.svg");
+                            public static readonly string creative_commons_sampling_plus_svg = Url("creative-commons-sampling-plus.svg");
+                            public static readonly string creative_commons_sampling_svg = Url("creative-commons-sampling.svg");
+                            public static readonly string creative_commons_share_svg = Url("creative-commons-share.svg");
+                            public static readonly string creative_commons_zero_svg = Url("creative-commons-zero.svg");
+                            public static readonly string creative_commons_svg = Url("creative-commons.svg");
+                            public static readonly string critical_role_svg = Url("critical-role.svg");
+                            public static readonly string css3_alt_svg = Url("css3-alt.svg");
+                            public static readonly string css3_svg = Url("css3.svg");
+                            public static readonly string cuttlefish_svg = Url("cuttlefish.svg");
+                            public static readonly string d_and_d_beyond_svg = Url("d-and-d-beyond.svg");
+                            public static readonly string d_and_d_svg = Url("d-and-d.svg");
+                            public static readonly string dailymotion_svg = Url("dailymotion.svg");
+                            public static readonly string dashcube_svg = Url("dashcube.svg");
+                            public static readonly string deezer_svg = Url("deezer.svg");
+                            public static readonly string delicious_svg = Url("delicious.svg");
+                            public static readonly string deploydog_svg = Url("deploydog.svg");
+                            public static readonly string deskpro_svg = Url("deskpro.svg");
+                            public static readonly string dev_svg = Url("dev.svg");
+                            public static readonly string deviantart_svg = Url("deviantart.svg");
+                            public static readonly string dhl_svg = Url("dhl.svg");
+                            public static readonly string diaspora_svg = Url("diaspora.svg");
+                            public static readonly string digg_svg = Url("digg.svg");
+                            public static readonly string digital_ocean_svg = Url("digital-ocean.svg");
+                            public static readonly string discord_svg = Url("discord.svg");
+                            public static readonly string discourse_svg = Url("discourse.svg");
+                            public static readonly string dochub_svg = Url("dochub.svg");
+                            public static readonly string docker_svg = Url("docker.svg");
+                            public static readonly string draft2digital_svg = Url("draft2digital.svg");
+                            public static readonly string dribbble_square_svg = Url("dribbble-square.svg");
+                            public static readonly string dribbble_svg = Url("dribbble.svg");
+                            public static readonly string dropbox_svg = Url("dropbox.svg");
+                            public static readonly string drupal_svg = Url("drupal.svg");
+                            public static readonly string dyalog_svg = Url("dyalog.svg");
+                            public static readonly string earlybirds_svg = Url("earlybirds.svg");
+                            public static readonly string ebay_svg = Url("ebay.svg");
+                            public static readonly string edge_legacy_svg = Url("edge-legacy.svg");
+                            public static readonly string edge_svg = Url("edge.svg");
+                            public static readonly string elementor_svg = Url("elementor.svg");
+                            public static readonly string ello_svg = Url("ello.svg");
+                            public static readonly string ember_svg = Url("ember.svg");
+                            public static readonly string empire_svg = Url("empire.svg");
+                            public static readonly string envira_svg = Url("envira.svg");
+                            public static readonly string erlang_svg = Url("erlang.svg");
+                            public static readonly string ethereum_svg = Url("ethereum.svg");
+                            public static readonly string etsy_svg = Url("etsy.svg");
+                            public static readonly string evernote_svg = Url("evernote.svg");
+                            public static readonly string expeditedssl_svg = Url("expeditedssl.svg");
+                            public static readonly string facebook_f_svg = Url("facebook-f.svg");
+                            public static readonly string facebook_messenger_svg = Url("facebook-messenger.svg");
+                            public static readonly string facebook_square_svg = Url("facebook-square.svg");
+                            public static readonly string facebook_svg = Url("facebook.svg");
+                            public static readonly string fantasy_flight_games_svg = Url("fantasy-flight-games.svg");
+                            public static readonly string fedex_svg = Url("fedex.svg");
+                            public static readonly string fedora_svg = Url("fedora.svg");
+                            public static readonly string figma_svg = Url("figma.svg");
+                            public static readonly string firefox_browser_svg = Url("firefox-browser.svg");
+                            public static readonly string firefox_svg = Url("firefox.svg");
+                            public static readonly string first_order_alt_svg = Url("first-order-alt.svg");
+                            public static readonly string first_order_svg = Url("first-order.svg");
+                            public static readonly string firstdraft_svg = Url("firstdraft.svg");
+                            public static readonly string flickr_svg = Url("flickr.svg");
+                            public static readonly string flipboard_svg = Url("flipboard.svg");
+                            public static readonly string fly_svg = Url("fly.svg");
+                            public static readonly string font_awesome_alt_svg = Url("font-awesome-alt.svg");
+                            public static readonly string font_awesome_flag_svg = Url("font-awesome-flag.svg");
+                            public static readonly string font_awesome_logo_full_svg = Url("font-awesome-logo-full.svg");
+                            public static readonly string font_awesome_svg = Url("font-awesome.svg");
+                            public static readonly string fonticons_fi_svg = Url("fonticons-fi.svg");
+                            public static readonly string fonticons_svg = Url("fonticons.svg");
+                            public static readonly string fort_awesome_alt_svg = Url("fort-awesome-alt.svg");
+                            public static readonly string fort_awesome_svg = Url("fort-awesome.svg");
+                            public static readonly string forumbee_svg = Url("forumbee.svg");
+                            public static readonly string foursquare_svg = Url("foursquare.svg");
+                            public static readonly string free_code_camp_svg = Url("free-code-camp.svg");
+                            public static readonly string freebsd_svg = Url("freebsd.svg");
+                            public static readonly string fulcrum_svg = Url("fulcrum.svg");
+                            public static readonly string galactic_republic_svg = Url("galactic-republic.svg");
+                            public static readonly string galactic_senate_svg = Url("galactic-senate.svg");
+                            public static readonly string get_pocket_svg = Url("get-pocket.svg");
+                            public static readonly string gg_circle_svg = Url("gg-circle.svg");
+                            public static readonly string gg_svg = Url("gg.svg");
+                            public static readonly string git_alt_svg = Url("git-alt.svg");
+                            public static readonly string git_square_svg = Url("git-square.svg");
+                            public static readonly string git_svg = Url("git.svg");
+                            public static readonly string github_alt_svg = Url("github-alt.svg");
+                            public static readonly string github_square_svg = Url("github-square.svg");
+                            public static readonly string github_svg = Url("github.svg");
+                            public static readonly string gitkraken_svg = Url("gitkraken.svg");
+                            public static readonly string gitlab_svg = Url("gitlab.svg");
+                            public static readonly string gitter_svg = Url("gitter.svg");
+                            public static readonly string glide_g_svg = Url("glide-g.svg");
+                            public static readonly string glide_svg = Url("glide.svg");
+                            public static readonly string gofore_svg = Url("gofore.svg");
+                            public static readonly string goodreads_g_svg = Url("goodreads-g.svg");
+                            public static readonly string goodreads_svg = Url("goodreads.svg");
+                            public static readonly string google_drive_svg = Url("google-drive.svg");
+                            public static readonly string google_pay_svg = Url("google-pay.svg");
+                            public static readonly string google_play_svg = Url("google-play.svg");
+                            public static readonly string google_plus_g_svg = Url("google-plus-g.svg");
+                            public static readonly string google_plus_square_svg = Url("google-plus-square.svg");
+                            public static readonly string google_plus_svg = Url("google-plus.svg");
+                            public static readonly string google_wallet_svg = Url("google-wallet.svg");
+                            public static readonly string google_svg = Url("google.svg");
+                            public static readonly string gratipay_svg = Url("gratipay.svg");
+                            public static readonly string grav_svg = Url("grav.svg");
+                            public static readonly string gripfire_svg = Url("gripfire.svg");
+                            public static readonly string grunt_svg = Url("grunt.svg");
+                            public static readonly string gulp_svg = Url("gulp.svg");
+                            public static readonly string hacker_news_square_svg = Url("hacker-news-square.svg");
+                            public static readonly string hacker_news_svg = Url("hacker-news.svg");
+                            public static readonly string hackerrank_svg = Url("hackerrank.svg");
+                            public static readonly string hips_svg = Url("hips.svg");
+                            public static readonly string hire_a_helper_svg = Url("hire-a-helper.svg");
+                            public static readonly string hooli_svg = Url("hooli.svg");
+                            public static readonly string hornbill_svg = Url("hornbill.svg");
+                            public static readonly string hotjar_svg = Url("hotjar.svg");
+                            public static readonly string houzz_svg = Url("houzz.svg");
+                            public static readonly string html5_svg = Url("html5.svg");
+                            public static readonly string hubspot_svg = Url("hubspot.svg");
+                            public static readonly string ideal_svg = Url("ideal.svg");
+                            public static readonly string imdb_svg = Url("imdb.svg");
+                            public static readonly string instagram_square_svg = Url("instagram-square.svg");
+                            public static readonly string instagram_svg = Url("instagram.svg");
+                            public static readonly string intercom_svg = Url("intercom.svg");
+                            public static readonly string internet_explorer_svg = Url("internet-explorer.svg");
+                            public static readonly string invision_svg = Url("invision.svg");
+                            public static readonly string ioxhost_svg = Url("ioxhost.svg");
+                            public static readonly string itch_io_svg = Url("itch-io.svg");
+                            public static readonly string itunes_note_svg = Url("itunes-note.svg");
+                            public static readonly string itunes_svg = Url("itunes.svg");
+                            public static readonly string java_svg = Url("java.svg");
+                            public static readonly string jedi_order_svg = Url("jedi-order.svg");
+                            public static readonly string jenkins_svg = Url("jenkins.svg");
+                            public static readonly string jira_svg = Url("jira.svg");
+                            public static readonly string joget_svg = Url("joget.svg");
+                            public static readonly string joomla_svg = Url("joomla.svg");
+                            public static readonly string js_square_svg = Url("js-square.svg");
+                            public static readonly string js_svg = Url("js.svg");
+                            public static readonly string jsfiddle_svg = Url("jsfiddle.svg");
+                            public static readonly string kaggle_svg = Url("kaggle.svg");
+                            public static readonly string keybase_svg = Url("keybase.svg");
+                            public static readonly string keycdn_svg = Url("keycdn.svg");
+                            public static readonly string kickstarter_k_svg = Url("kickstarter-k.svg");
+                            public static readonly string kickstarter_svg = Url("kickstarter.svg");
+                            public static readonly string korvue_svg = Url("korvue.svg");
+                            public static readonly string laravel_svg = Url("laravel.svg");
+                            public static readonly string lastfm_square_svg = Url("lastfm-square.svg");
+                            public static readonly string lastfm_svg = Url("lastfm.svg");
+                            public static readonly string leanpub_svg = Url("leanpub.svg");
+                            public static readonly string less_svg = Url("less.svg");
+                            public static readonly string line_svg = Url("line.svg");
+                            public static readonly string linkedin_in_svg = Url("linkedin-in.svg");
+                            public static readonly string linkedin_svg = Url("linkedin.svg");
+                            public static readonly string linode_svg = Url("linode.svg");
+                            public static readonly string linux_svg = Url("linux.svg");
+                            public static readonly string lyft_svg = Url("lyft.svg");
+                            public static readonly string magento_svg = Url("magento.svg");
+                            public static readonly string mailchimp_svg = Url("mailchimp.svg");
+                            public static readonly string mandalorian_svg = Url("mandalorian.svg");
+                            public static readonly string markdown_svg = Url("markdown.svg");
+                            public static readonly string mastodon_svg = Url("mastodon.svg");
+                            public static readonly string maxcdn_svg = Url("maxcdn.svg");
+                            public static readonly string mdb_svg = Url("mdb.svg");
+                            public static readonly string medapps_svg = Url("medapps.svg");
+                            public static readonly string medium_m_svg = Url("medium-m.svg");
+                            public static readonly string medium_svg = Url("medium.svg");
+                            public static readonly string medrt_svg = Url("medrt.svg");
+                            public static readonly string meetup_svg = Url("meetup.svg");
+                            public static readonly string megaport_svg = Url("megaport.svg");
+                            public static readonly string mendeley_svg = Url("mendeley.svg");
+                            public static readonly string microblog_svg = Url("microblog.svg");
+                            public static readonly string microsoft_svg = Url("microsoft.svg");
+                            public static readonly string mix_svg = Url("mix.svg");
+                            public static readonly string mixcloud_svg = Url("mixcloud.svg");
+                            public static readonly string mixer_svg = Url("mixer.svg");
+                            public static readonly string mizuni_svg = Url("mizuni.svg");
+                            public static readonly string modx_svg = Url("modx.svg");
+                            public static readonly string monero_svg = Url("monero.svg");
+                            public static readonly string napster_svg = Url("napster.svg");
+                            public static readonly string neos_svg = Url("neos.svg");
+                            public static readonly string nimblr_svg = Url("nimblr.svg");
+                            public static readonly string node_js_svg = Url("node-js.svg");
+                            public static readonly string node_svg = Url("node.svg");
+                            public static readonly string npm_svg = Url("npm.svg");
+                            public static readonly string ns8_svg = Url("ns8.svg");
+                            public static readonly string nutritionix_svg = Url("nutritionix.svg");
+                            public static readonly string odnoklassniki_square_svg = Url("odnoklassniki-square.svg");
+                            public static readonly string odnoklassniki_svg = Url("odnoklassniki.svg");
+                            public static readonly string old_republic_svg = Url("old-republic.svg");
+                            public static readonly string opencart_svg = Url("opencart.svg");
+                            public static readonly string openid_svg = Url("openid.svg");
+                            public static readonly string opera_svg = Url("opera.svg");
+                            public static readonly string optin_monster_svg = Url("optin-monster.svg");
+                            public static readonly string orcid_svg = Url("orcid.svg");
+                            public static readonly string osi_svg = Url("osi.svg");
+                            public static readonly string page4_svg = Url("page4.svg");
+                            public static readonly string pagelines_svg = Url("pagelines.svg");
+                            public static readonly string palfed_svg = Url("palfed.svg");
+                            public static readonly string patreon_svg = Url("patreon.svg");
+                            public static readonly string paypal_svg = Url("paypal.svg");
+                            public static readonly string penny_arcade_svg = Url("penny-arcade.svg");
+                            public static readonly string periscope_svg = Url("periscope.svg");
+                            public static readonly string phabricator_svg = Url("phabricator.svg");
+                            public static readonly string phoenix_framework_svg = Url("phoenix-framework.svg");
+                            public static readonly string phoenix_squadron_svg = Url("phoenix-squadron.svg");
+                            public static readonly string php_svg = Url("php.svg");
+                            public static readonly string pied_piper_alt_svg = Url("pied-piper-alt.svg");
+                            public static readonly string pied_piper_hat_svg = Url("pied-piper-hat.svg");
+                            public static readonly string pied_piper_pp_svg = Url("pied-piper-pp.svg");
+                            public static readonly string pied_piper_square_svg = Url("pied-piper-square.svg");
+                            public static readonly string pied_piper_svg = Url("pied-piper.svg");
+                            public static readonly string pinterest_p_svg = Url("pinterest-p.svg");
+                            public static readonly string pinterest_square_svg = Url("pinterest-square.svg");
+                            public static readonly string pinterest_svg = Url("pinterest.svg");
+                            public static readonly string playstation_svg = Url("playstation.svg");
+                            public static readonly string product_hunt_svg = Url("product-hunt.svg");
+                            public static readonly string pushed_svg = Url("pushed.svg");
+                            public static readonly string python_svg = Url("python.svg");
+                            public static readonly string qq_svg = Url("qq.svg");
+                            public static readonly string quinscape_svg = Url("quinscape.svg");
+                            public static readonly string quora_svg = Url("quora.svg");
+                            public static readonly string r_project_svg = Url("r-project.svg");
+                            public static readonly string raspberry_pi_svg = Url("raspberry-pi.svg");
+                            public static readonly string ravelry_svg = Url("ravelry.svg");
+                            public static readonly string react_svg = Url("react.svg");
+                            public static readonly string reacteurope_svg = Url("reacteurope.svg");
+                            public static readonly string readme_svg = Url("readme.svg");
+                            public static readonly string rebel_svg = Url("rebel.svg");
+                            public static readonly string red_river_svg = Url("red-river.svg");
+                            public static readonly string reddit_alien_svg = Url("reddit-alien.svg");
+                            public static readonly string reddit_square_svg = Url("reddit-square.svg");
+                            public static readonly string reddit_svg = Url("reddit.svg");
+                            public static readonly string redhat_svg = Url("redhat.svg");
+                            public static readonly string renren_svg = Url("renren.svg");
+                            public static readonly string replyd_svg = Url("replyd.svg");
+                            public static readonly string researchgate_svg = Url("researchgate.svg");
+                            public static readonly string resolving_svg = Url("resolving.svg");
+                            public static readonly string rev_svg = Url("rev.svg");
+                            public static readonly string rocketchat_svg = Url("rocketchat.svg");
+                            public static readonly string rockrms_svg = Url("rockrms.svg");
+                            public static readonly string rust_svg = Url("rust.svg");
+                            public static readonly string safari_svg = Url("safari.svg");
+                            public static readonly string salesforce_svg = Url("salesforce.svg");
+                            public static readonly string sass_svg = Url("sass.svg");
+                            public static readonly string schlix_svg = Url("schlix.svg");
+                            public static readonly string scribd_svg = Url("scribd.svg");
+                            public static readonly string searchengin_svg = Url("searchengin.svg");
+                            public static readonly string sellcast_svg = Url("sellcast.svg");
+                            public static readonly string sellsy_svg = Url("sellsy.svg");
+                            public static readonly string servicestack_svg = Url("servicestack.svg");
+                            public static readonly string shirtsinbulk_svg = Url("shirtsinbulk.svg");
+                            public static readonly string shopify_svg = Url("shopify.svg");
+                            public static readonly string shopware_svg = Url("shopware.svg");
+                            public static readonly string simplybuilt_svg = Url("simplybuilt.svg");
+                            public static readonly string sistrix_svg = Url("sistrix.svg");
+                            public static readonly string sith_svg = Url("sith.svg");
+                            public static readonly string sketch_svg = Url("sketch.svg");
+                            public static readonly string skyatlas_svg = Url("skyatlas.svg");
+                            public static readonly string skype_svg = Url("skype.svg");
+                            public static readonly string slack_hash_svg = Url("slack-hash.svg");
+                            public static readonly string slack_svg = Url("slack.svg");
+                            public static readonly string slideshare_svg = Url("slideshare.svg");
+                            public static readonly string snapchat_ghost_svg = Url("snapchat-ghost.svg");
+                            public static readonly string snapchat_square_svg = Url("snapchat-square.svg");
+                            public static readonly string snapchat_svg = Url("snapchat.svg");
+                            public static readonly string soundcloud_svg = Url("soundcloud.svg");
+                            public static readonly string sourcetree_svg = Url("sourcetree.svg");
+                            public static readonly string speakap_svg = Url("speakap.svg");
+                            public static readonly string speaker_deck_svg = Url("speaker-deck.svg");
+                            public static readonly string spotify_svg = Url("spotify.svg");
+                            public static readonly string squarespace_svg = Url("squarespace.svg");
+                            public static readonly string stack_exchange_svg = Url("stack-exchange.svg");
+                            public static readonly string stack_overflow_svg = Url("stack-overflow.svg");
+                            public static readonly string stackpath_svg = Url("stackpath.svg");
+                            public static readonly string staylinked_svg = Url("staylinked.svg");
+                            public static readonly string steam_square_svg = Url("steam-square.svg");
+                            public static readonly string steam_symbol_svg = Url("steam-symbol.svg");
+                            public static readonly string steam_svg = Url("steam.svg");
+                            public static readonly string sticker_mule_svg = Url("sticker-mule.svg");
+                            public static readonly string strava_svg = Url("strava.svg");
+                            public static readonly string stripe_s_svg = Url("stripe-s.svg");
+                            public static readonly string stripe_svg = Url("stripe.svg");
+                            public static readonly string studiovinari_svg = Url("studiovinari.svg");
+                            public static readonly string stumbleupon_circle_svg = Url("stumbleupon-circle.svg");
+                            public static readonly string stumbleupon_svg = Url("stumbleupon.svg");
+                            public static readonly string superpowers_svg = Url("superpowers.svg");
+                            public static readonly string supple_svg = Url("supple.svg");
+                            public static readonly string suse_svg = Url("suse.svg");
+                            public static readonly string swift_svg = Url("swift.svg");
+                            public static readonly string symfony_svg = Url("symfony.svg");
+                            public static readonly string teamspeak_svg = Url("teamspeak.svg");
+                            public static readonly string telegram_plane_svg = Url("telegram-plane.svg");
+                            public static readonly string telegram_svg = Url("telegram.svg");
+                            public static readonly string tencent_weibo_svg = Url("tencent-weibo.svg");
+                            public static readonly string the_red_yeti_svg = Url("the-red-yeti.svg");
+                            public static readonly string themeco_svg = Url("themeco.svg");
+                            public static readonly string themeisle_svg = Url("themeisle.svg");
+                            public static readonly string think_peaks_svg = Url("think-peaks.svg");
+                            public static readonly string tiktok_svg = Url("tiktok.svg");
+                            public static readonly string trade_federation_svg = Url("trade-federation.svg");
+                            public static readonly string trello_svg = Url("trello.svg");
+                            public static readonly string tripadvisor_svg = Url("tripadvisor.svg");
+                            public static readonly string tumblr_square_svg = Url("tumblr-square.svg");
+                            public static readonly string tumblr_svg = Url("tumblr.svg");
+                            public static readonly string twitch_svg = Url("twitch.svg");
+                            public static readonly string twitter_square_svg = Url("twitter-square.svg");
+                            public static readonly string twitter_svg = Url("twitter.svg");
+                            public static readonly string typo3_svg = Url("typo3.svg");
+                            public static readonly string uber_svg = Url("uber.svg");
+                            public static readonly string ubuntu_svg = Url("ubuntu.svg");
+                            public static readonly string uikit_svg = Url("uikit.svg");
+                            public static readonly string umbraco_svg = Url("umbraco.svg");
+                            public static readonly string uniregistry_svg = Url("uniregistry.svg");
+                            public static readonly string unity_svg = Url("unity.svg");
+                            public static readonly string unsplash_svg = Url("unsplash.svg");
+                            public static readonly string untappd_svg = Url("untappd.svg");
+                            public static readonly string ups_svg = Url("ups.svg");
+                            public static readonly string usb_svg = Url("usb.svg");
+                            public static readonly string usps_svg = Url("usps.svg");
+                            public static readonly string ussunnah_svg = Url("ussunnah.svg");
+                            public static readonly string vaadin_svg = Url("vaadin.svg");
+                            public static readonly string viacoin_svg = Url("viacoin.svg");
+                            public static readonly string viadeo_square_svg = Url("viadeo-square.svg");
+                            public static readonly string viadeo_svg = Url("viadeo.svg");
+                            public static readonly string viber_svg = Url("viber.svg");
+                            public static readonly string vimeo_square_svg = Url("vimeo-square.svg");
+                            public static readonly string vimeo_v_svg = Url("vimeo-v.svg");
+                            public static readonly string vimeo_svg = Url("vimeo.svg");
+                            public static readonly string vine_svg = Url("vine.svg");
+                            public static readonly string vk_svg = Url("vk.svg");
+                            public static readonly string vnv_svg = Url("vnv.svg");
+                            public static readonly string vuejs_svg = Url("vuejs.svg");
+                            public static readonly string waze_svg = Url("waze.svg");
+                            public static readonly string weebly_svg = Url("weebly.svg");
+                            public static readonly string weibo_svg = Url("weibo.svg");
+                            public static readonly string weixin_svg = Url("weixin.svg");
+                            public static readonly string whatsapp_square_svg = Url("whatsapp-square.svg");
+                            public static readonly string whatsapp_svg = Url("whatsapp.svg");
+                            public static readonly string whmcs_svg = Url("whmcs.svg");
+                            public static readonly string wikipedia_w_svg = Url("wikipedia-w.svg");
+                            public static readonly string windows_svg = Url("windows.svg");
+                            public static readonly string wix_svg = Url("wix.svg");
+                            public static readonly string wizards_of_the_coast_svg = Url("wizards-of-the-coast.svg");
+                            public static readonly string wolf_pack_battalion_svg = Url("wolf-pack-battalion.svg");
+                            public static readonly string wordpress_simple_svg = Url("wordpress-simple.svg");
+                            public static readonly string wordpress_svg = Url("wordpress.svg");
+                            public static readonly string wpbeginner_svg = Url("wpbeginner.svg");
+                            public static readonly string wpexplorer_svg = Url("wpexplorer.svg");
+                            public static readonly string wpforms_svg = Url("wpforms.svg");
+                            public static readonly string wpressr_svg = Url("wpressr.svg");
+                            public static readonly string xbox_svg = Url("xbox.svg");
+                            public static readonly string xing_square_svg = Url("xing-square.svg");
+                            public static readonly string xing_svg = Url("xing.svg");
+                            public static readonly string y_combinator_svg = Url("y-combinator.svg");
+                            public static readonly string yahoo_svg = Url("yahoo.svg");
+                            public static readonly string yammer_svg = Url("yammer.svg");
+                            public static readonly string yandex_international_svg = Url("yandex-international.svg");
+                            public static readonly string yandex_svg = Url("yandex.svg");
+                            public static readonly string yarn_svg = Url("yarn.svg");
+                            public static readonly string yelp_svg = Url("yelp.svg");
+                            public static readonly string yoast_svg = Url("yoast.svg");
+                            public static readonly string youtube_square_svg = Url("youtube-square.svg");
+                            public static readonly string youtube_svg = Url("youtube.svg");
+                            public static readonly string zhihu_svg = Url("zhihu.svg");
+                        }
+                    
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class regular {
+                            public const string UrlPath = "~/Content/sb-theme/vendor/fontawesome-free/svgs/regular";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                            public static readonly string address_book_svg = Url("address-book.svg");
+                            public static readonly string address_card_svg = Url("address-card.svg");
+                            public static readonly string angry_svg = Url("angry.svg");
+                            public static readonly string arrow_alt_circle_down_svg = Url("arrow-alt-circle-down.svg");
+                            public static readonly string arrow_alt_circle_left_svg = Url("arrow-alt-circle-left.svg");
+                            public static readonly string arrow_alt_circle_right_svg = Url("arrow-alt-circle-right.svg");
+                            public static readonly string arrow_alt_circle_up_svg = Url("arrow-alt-circle-up.svg");
+                            public static readonly string bell_slash_svg = Url("bell-slash.svg");
+                            public static readonly string bell_svg = Url("bell.svg");
+                            public static readonly string bookmark_svg = Url("bookmark.svg");
+                            public static readonly string building_svg = Url("building.svg");
+                            public static readonly string calendar_alt_svg = Url("calendar-alt.svg");
+                            public static readonly string calendar_check_svg = Url("calendar-check.svg");
+                            public static readonly string calendar_minus_svg = Url("calendar-minus.svg");
+                            public static readonly string calendar_plus_svg = Url("calendar-plus.svg");
+                            public static readonly string calendar_times_svg = Url("calendar-times.svg");
+                            public static readonly string calendar_svg = Url("calendar.svg");
+                            public static readonly string caret_square_down_svg = Url("caret-square-down.svg");
+                            public static readonly string caret_square_left_svg = Url("caret-square-left.svg");
+                            public static readonly string caret_square_right_svg = Url("caret-square-right.svg");
+                            public static readonly string caret_square_up_svg = Url("caret-square-up.svg");
+                            public static readonly string chart_bar_svg = Url("chart-bar.svg");
+                            public static readonly string check_circle_svg = Url("check-circle.svg");
+                            public static readonly string check_square_svg = Url("check-square.svg");
+                            public static readonly string circle_svg = Url("circle.svg");
+                            public static readonly string clipboard_svg = Url("clipboard.svg");
+                            public static readonly string clock_svg = Url("clock.svg");
+                            public static readonly string clone_svg = Url("clone.svg");
+                            public static readonly string closed_captioning_svg = Url("closed-captioning.svg");
+                            public static readonly string comment_alt_svg = Url("comment-alt.svg");
+                            public static readonly string comment_dots_svg = Url("comment-dots.svg");
+                            public static readonly string comment_svg = Url("comment.svg");
+                            public static readonly string comments_svg = Url("comments.svg");
+                            public static readonly string compass_svg = Url("compass.svg");
+                            public static readonly string copy_svg = Url("copy.svg");
+                            public static readonly string copyright_svg = Url("copyright.svg");
+                            public static readonly string credit_card_svg = Url("credit-card.svg");
+                            public static readonly string dizzy_svg = Url("dizzy.svg");
+                            public static readonly string dot_circle_svg = Url("dot-circle.svg");
+                            public static readonly string edit_svg = Url("edit.svg");
+                            public static readonly string envelope_open_svg = Url("envelope-open.svg");
+                            public static readonly string envelope_svg = Url("envelope.svg");
+                            public static readonly string eye_slash_svg = Url("eye-slash.svg");
+                            public static readonly string eye_svg = Url("eye.svg");
+                            public static readonly string file_alt_svg = Url("file-alt.svg");
+                            public static readonly string file_archive_svg = Url("file-archive.svg");
+                            public static readonly string file_audio_svg = Url("file-audio.svg");
+                            public static readonly string file_code_svg = Url("file-code.svg");
+                            public static readonly string file_excel_svg = Url("file-excel.svg");
+                            public static readonly string file_image_svg = Url("file-image.svg");
+                            public static readonly string file_pdf_svg = Url("file-pdf.svg");
+                            public static readonly string file_powerpoint_svg = Url("file-powerpoint.svg");
+                            public static readonly string file_video_svg = Url("file-video.svg");
+                            public static readonly string file_word_svg = Url("file-word.svg");
+                            public static readonly string file_svg = Url("file.svg");
+                            public static readonly string flag_svg = Url("flag.svg");
+                            public static readonly string flushed_svg = Url("flushed.svg");
+                            public static readonly string folder_open_svg = Url("folder-open.svg");
+                            public static readonly string folder_svg = Url("folder.svg");
+                            public static readonly string font_awesome_logo_full_svg = Url("font-awesome-logo-full.svg");
+                            public static readonly string frown_open_svg = Url("frown-open.svg");
+                            public static readonly string frown_svg = Url("frown.svg");
+                            public static readonly string futbol_svg = Url("futbol.svg");
+                            public static readonly string gem_svg = Url("gem.svg");
+                            public static readonly string grimace_svg = Url("grimace.svg");
+                            public static readonly string grin_alt_svg = Url("grin-alt.svg");
+                            public static readonly string grin_beam_sweat_svg = Url("grin-beam-sweat.svg");
+                            public static readonly string grin_beam_svg = Url("grin-beam.svg");
+                            public static readonly string grin_hearts_svg = Url("grin-hearts.svg");
+                            public static readonly string grin_squint_tears_svg = Url("grin-squint-tears.svg");
+                            public static readonly string grin_squint_svg = Url("grin-squint.svg");
+                            public static readonly string grin_stars_svg = Url("grin-stars.svg");
+                            public static readonly string grin_tears_svg = Url("grin-tears.svg");
+                            public static readonly string grin_tongue_squint_svg = Url("grin-tongue-squint.svg");
+                            public static readonly string grin_tongue_wink_svg = Url("grin-tongue-wink.svg");
+                            public static readonly string grin_tongue_svg = Url("grin-tongue.svg");
+                            public static readonly string grin_wink_svg = Url("grin-wink.svg");
+                            public static readonly string grin_svg = Url("grin.svg");
+                            public static readonly string hand_lizard_svg = Url("hand-lizard.svg");
+                            public static readonly string hand_paper_svg = Url("hand-paper.svg");
+                            public static readonly string hand_peace_svg = Url("hand-peace.svg");
+                            public static readonly string hand_point_down_svg = Url("hand-point-down.svg");
+                            public static readonly string hand_point_left_svg = Url("hand-point-left.svg");
+                            public static readonly string hand_point_right_svg = Url("hand-point-right.svg");
+                            public static readonly string hand_point_up_svg = Url("hand-point-up.svg");
+                            public static readonly string hand_pointer_svg = Url("hand-pointer.svg");
+                            public static readonly string hand_rock_svg = Url("hand-rock.svg");
+                            public static readonly string hand_scissors_svg = Url("hand-scissors.svg");
+                            public static readonly string hand_spock_svg = Url("hand-spock.svg");
+                            public static readonly string handshake_svg = Url("handshake.svg");
+                            public static readonly string hdd_svg = Url("hdd.svg");
+                            public static readonly string heart_svg = Url("heart.svg");
+                            public static readonly string hospital_svg = Url("hospital.svg");
+                            public static readonly string hourglass_svg = Url("hourglass.svg");
+                            public static readonly string id_badge_svg = Url("id-badge.svg");
+                            public static readonly string id_card_svg = Url("id-card.svg");
+                            public static readonly string image_svg = Url("image.svg");
+                            public static readonly string images_svg = Url("images.svg");
+                            public static readonly string keyboard_svg = Url("keyboard.svg");
+                            public static readonly string kiss_beam_svg = Url("kiss-beam.svg");
+                            public static readonly string kiss_wink_heart_svg = Url("kiss-wink-heart.svg");
+                            public static readonly string kiss_svg = Url("kiss.svg");
+                            public static readonly string laugh_beam_svg = Url("laugh-beam.svg");
+                            public static readonly string laugh_squint_svg = Url("laugh-squint.svg");
+                            public static readonly string laugh_wink_svg = Url("laugh-wink.svg");
+                            public static readonly string laugh_svg = Url("laugh.svg");
+                            public static readonly string lemon_svg = Url("lemon.svg");
+                            public static readonly string life_ring_svg = Url("life-ring.svg");
+                            public static readonly string lightbulb_svg = Url("lightbulb.svg");
+                            public static readonly string list_alt_svg = Url("list-alt.svg");
+                            public static readonly string map_svg = Url("map.svg");
+                            public static readonly string meh_blank_svg = Url("meh-blank.svg");
+                            public static readonly string meh_rolling_eyes_svg = Url("meh-rolling-eyes.svg");
+                            public static readonly string meh_svg = Url("meh.svg");
+                            public static readonly string minus_square_svg = Url("minus-square.svg");
+                            public static readonly string money_bill_alt_svg = Url("money-bill-alt.svg");
+                            public static readonly string moon_svg = Url("moon.svg");
+                            public static readonly string newspaper_svg = Url("newspaper.svg");
+                            public static readonly string object_group_svg = Url("object-group.svg");
+                            public static readonly string object_ungroup_svg = Url("object-ungroup.svg");
+                            public static readonly string paper_plane_svg = Url("paper-plane.svg");
+                            public static readonly string pause_circle_svg = Url("pause-circle.svg");
+                            public static readonly string play_circle_svg = Url("play-circle.svg");
+                            public static readonly string plus_square_svg = Url("plus-square.svg");
+                            public static readonly string question_circle_svg = Url("question-circle.svg");
+                            public static readonly string registered_svg = Url("registered.svg");
+                            public static readonly string sad_cry_svg = Url("sad-cry.svg");
+                            public static readonly string sad_tear_svg = Url("sad-tear.svg");
+                            public static readonly string save_svg = Url("save.svg");
+                            public static readonly string share_square_svg = Url("share-square.svg");
+                            public static readonly string smile_beam_svg = Url("smile-beam.svg");
+                            public static readonly string smile_wink_svg = Url("smile-wink.svg");
+                            public static readonly string smile_svg = Url("smile.svg");
+                            public static readonly string snowflake_svg = Url("snowflake.svg");
+                            public static readonly string square_svg = Url("square.svg");
+                            public static readonly string star_half_svg = Url("star-half.svg");
+                            public static readonly string star_svg = Url("star.svg");
+                            public static readonly string sticky_note_svg = Url("sticky-note.svg");
+                            public static readonly string stop_circle_svg = Url("stop-circle.svg");
+                            public static readonly string sun_svg = Url("sun.svg");
+                            public static readonly string surprise_svg = Url("surprise.svg");
+                            public static readonly string thumbs_down_svg = Url("thumbs-down.svg");
+                            public static readonly string thumbs_up_svg = Url("thumbs-up.svg");
+                            public static readonly string times_circle_svg = Url("times-circle.svg");
+                            public static readonly string tired_svg = Url("tired.svg");
+                            public static readonly string trash_alt_svg = Url("trash-alt.svg");
+                            public static readonly string user_circle_svg = Url("user-circle.svg");
+                            public static readonly string user_svg = Url("user.svg");
+                            public static readonly string window_close_svg = Url("window-close.svg");
+                            public static readonly string window_maximize_svg = Url("window-maximize.svg");
+                            public static readonly string window_minimize_svg = Url("window-minimize.svg");
+                            public static readonly string window_restore_svg = Url("window-restore.svg");
+                        }
+                    
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class solid {
+                            public const string UrlPath = "~/Content/sb-theme/vendor/fontawesome-free/svgs/solid";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                            public static readonly string ad_svg = Url("ad.svg");
+                            public static readonly string address_book_svg = Url("address-book.svg");
+                            public static readonly string address_card_svg = Url("address-card.svg");
+                            public static readonly string adjust_svg = Url("adjust.svg");
+                            public static readonly string air_freshener_svg = Url("air-freshener.svg");
+                            public static readonly string align_center_svg = Url("align-center.svg");
+                            public static readonly string align_justify_svg = Url("align-justify.svg");
+                            public static readonly string align_left_svg = Url("align-left.svg");
+                            public static readonly string align_right_svg = Url("align-right.svg");
+                            public static readonly string allergies_svg = Url("allergies.svg");
+                            public static readonly string ambulance_svg = Url("ambulance.svg");
+                            public static readonly string american_sign_language_interpreting_svg = Url("american-sign-language-interpreting.svg");
+                            public static readonly string anchor_svg = Url("anchor.svg");
+                            public static readonly string angle_double_down_svg = Url("angle-double-down.svg");
+                            public static readonly string angle_double_left_svg = Url("angle-double-left.svg");
+                            public static readonly string angle_double_right_svg = Url("angle-double-right.svg");
+                            public static readonly string angle_double_up_svg = Url("angle-double-up.svg");
+                            public static readonly string angle_down_svg = Url("angle-down.svg");
+                            public static readonly string angle_left_svg = Url("angle-left.svg");
+                            public static readonly string angle_right_svg = Url("angle-right.svg");
+                            public static readonly string angle_up_svg = Url("angle-up.svg");
+                            public static readonly string angry_svg = Url("angry.svg");
+                            public static readonly string ankh_svg = Url("ankh.svg");
+                            public static readonly string apple_alt_svg = Url("apple-alt.svg");
+                            public static readonly string archive_svg = Url("archive.svg");
+                            public static readonly string archway_svg = Url("archway.svg");
+                            public static readonly string arrow_alt_circle_down_svg = Url("arrow-alt-circle-down.svg");
+                            public static readonly string arrow_alt_circle_left_svg = Url("arrow-alt-circle-left.svg");
+                            public static readonly string arrow_alt_circle_right_svg = Url("arrow-alt-circle-right.svg");
+                            public static readonly string arrow_alt_circle_up_svg = Url("arrow-alt-circle-up.svg");
+                            public static readonly string arrow_circle_down_svg = Url("arrow-circle-down.svg");
+                            public static readonly string arrow_circle_left_svg = Url("arrow-circle-left.svg");
+                            public static readonly string arrow_circle_right_svg = Url("arrow-circle-right.svg");
+                            public static readonly string arrow_circle_up_svg = Url("arrow-circle-up.svg");
+                            public static readonly string arrow_down_svg = Url("arrow-down.svg");
+                            public static readonly string arrow_left_svg = Url("arrow-left.svg");
+                            public static readonly string arrow_right_svg = Url("arrow-right.svg");
+                            public static readonly string arrow_up_svg = Url("arrow-up.svg");
+                            public static readonly string arrows_alt_h_svg = Url("arrows-alt-h.svg");
+                            public static readonly string arrows_alt_v_svg = Url("arrows-alt-v.svg");
+                            public static readonly string arrows_alt_svg = Url("arrows-alt.svg");
+                            public static readonly string assistive_listening_systems_svg = Url("assistive-listening-systems.svg");
+                            public static readonly string asterisk_svg = Url("asterisk.svg");
+                            public static readonly string at_svg = Url("at.svg");
+                            public static readonly string atlas_svg = Url("atlas.svg");
+                            public static readonly string atom_svg = Url("atom.svg");
+                            public static readonly string audio_description_svg = Url("audio-description.svg");
+                            public static readonly string award_svg = Url("award.svg");
+                            public static readonly string baby_carriage_svg = Url("baby-carriage.svg");
+                            public static readonly string baby_svg = Url("baby.svg");
+                            public static readonly string backspace_svg = Url("backspace.svg");
+                            public static readonly string backward_svg = Url("backward.svg");
+                            public static readonly string bacon_svg = Url("bacon.svg");
+                            public static readonly string bacteria_svg = Url("bacteria.svg");
+                            public static readonly string bacterium_svg = Url("bacterium.svg");
+                            public static readonly string bahai_svg = Url("bahai.svg");
+                            public static readonly string balance_scale_left_svg = Url("balance-scale-left.svg");
+                            public static readonly string balance_scale_right_svg = Url("balance-scale-right.svg");
+                            public static readonly string balance_scale_svg = Url("balance-scale.svg");
+                            public static readonly string ban_svg = Url("ban.svg");
+                            public static readonly string band_aid_svg = Url("band-aid.svg");
+                            public static readonly string barcode_svg = Url("barcode.svg");
+                            public static readonly string bars_svg = Url("bars.svg");
+                            public static readonly string baseball_ball_svg = Url("baseball-ball.svg");
+                            public static readonly string basketball_ball_svg = Url("basketball-ball.svg");
+                            public static readonly string bath_svg = Url("bath.svg");
+                            public static readonly string battery_empty_svg = Url("battery-empty.svg");
+                            public static readonly string battery_full_svg = Url("battery-full.svg");
+                            public static readonly string battery_half_svg = Url("battery-half.svg");
+                            public static readonly string battery_quarter_svg = Url("battery-quarter.svg");
+                            public static readonly string battery_three_quarters_svg = Url("battery-three-quarters.svg");
+                            public static readonly string bed_svg = Url("bed.svg");
+                            public static readonly string beer_svg = Url("beer.svg");
+                            public static readonly string bell_slash_svg = Url("bell-slash.svg");
+                            public static readonly string bell_svg = Url("bell.svg");
+                            public static readonly string bezier_curve_svg = Url("bezier-curve.svg");
+                            public static readonly string bible_svg = Url("bible.svg");
+                            public static readonly string bicycle_svg = Url("bicycle.svg");
+                            public static readonly string biking_svg = Url("biking.svg");
+                            public static readonly string binoculars_svg = Url("binoculars.svg");
+                            public static readonly string biohazard_svg = Url("biohazard.svg");
+                            public static readonly string birthday_cake_svg = Url("birthday-cake.svg");
+                            public static readonly string blender_phone_svg = Url("blender-phone.svg");
+                            public static readonly string blender_svg = Url("blender.svg");
+                            public static readonly string blind_svg = Url("blind.svg");
+                            public static readonly string blog_svg = Url("blog.svg");
+                            public static readonly string bold_svg = Url("bold.svg");
+                            public static readonly string bolt_svg = Url("bolt.svg");
+                            public static readonly string bomb_svg = Url("bomb.svg");
+                            public static readonly string bone_svg = Url("bone.svg");
+                            public static readonly string bong_svg = Url("bong.svg");
+                            public static readonly string book_dead_svg = Url("book-dead.svg");
+                            public static readonly string book_medical_svg = Url("book-medical.svg");
+                            public static readonly string book_open_svg = Url("book-open.svg");
+                            public static readonly string book_reader_svg = Url("book-reader.svg");
+                            public static readonly string book_svg = Url("book.svg");
+                            public static readonly string bookmark_svg = Url("bookmark.svg");
+                            public static readonly string border_all_svg = Url("border-all.svg");
+                            public static readonly string border_none_svg = Url("border-none.svg");
+                            public static readonly string border_style_svg = Url("border-style.svg");
+                            public static readonly string bowling_ball_svg = Url("bowling-ball.svg");
+                            public static readonly string box_open_svg = Url("box-open.svg");
+                            public static readonly string box_tissue_svg = Url("box-tissue.svg");
+                            public static readonly string box_svg = Url("box.svg");
+                            public static readonly string boxes_svg = Url("boxes.svg");
+                            public static readonly string braille_svg = Url("braille.svg");
+                            public static readonly string brain_svg = Url("brain.svg");
+                            public static readonly string bread_slice_svg = Url("bread-slice.svg");
+                            public static readonly string briefcase_medical_svg = Url("briefcase-medical.svg");
+                            public static readonly string briefcase_svg = Url("briefcase.svg");
+                            public static readonly string broadcast_tower_svg = Url("broadcast-tower.svg");
+                            public static readonly string broom_svg = Url("broom.svg");
+                            public static readonly string brush_svg = Url("brush.svg");
+                            public static readonly string bug_svg = Url("bug.svg");
+                            public static readonly string building_svg = Url("building.svg");
+                            public static readonly string bullhorn_svg = Url("bullhorn.svg");
+                            public static readonly string bullseye_svg = Url("bullseye.svg");
+                            public static readonly string burn_svg = Url("burn.svg");
+                            public static readonly string bus_alt_svg = Url("bus-alt.svg");
+                            public static readonly string bus_svg = Url("bus.svg");
+                            public static readonly string business_time_svg = Url("business-time.svg");
+                            public static readonly string calculator_svg = Url("calculator.svg");
+                            public static readonly string calendar_alt_svg = Url("calendar-alt.svg");
+                            public static readonly string calendar_check_svg = Url("calendar-check.svg");
+                            public static readonly string calendar_day_svg = Url("calendar-day.svg");
+                            public static readonly string calendar_minus_svg = Url("calendar-minus.svg");
+                            public static readonly string calendar_plus_svg = Url("calendar-plus.svg");
+                            public static readonly string calendar_times_svg = Url("calendar-times.svg");
+                            public static readonly string calendar_week_svg = Url("calendar-week.svg");
+                            public static readonly string calendar_svg = Url("calendar.svg");
+                            public static readonly string camera_retro_svg = Url("camera-retro.svg");
+                            public static readonly string camera_svg = Url("camera.svg");
+                            public static readonly string campground_svg = Url("campground.svg");
+                            public static readonly string candy_cane_svg = Url("candy-cane.svg");
+                            public static readonly string cannabis_svg = Url("cannabis.svg");
+                            public static readonly string capsules_svg = Url("capsules.svg");
+                            public static readonly string car_alt_svg = Url("car-alt.svg");
+                            public static readonly string car_battery_svg = Url("car-battery.svg");
+                            public static readonly string car_crash_svg = Url("car-crash.svg");
+                            public static readonly string car_side_svg = Url("car-side.svg");
+                            public static readonly string car_svg = Url("car.svg");
+                            public static readonly string caravan_svg = Url("caravan.svg");
+                            public static readonly string caret_down_svg = Url("caret-down.svg");
+                            public static readonly string caret_left_svg = Url("caret-left.svg");
+                            public static readonly string caret_right_svg = Url("caret-right.svg");
+                            public static readonly string caret_square_down_svg = Url("caret-square-down.svg");
+                            public static readonly string caret_square_left_svg = Url("caret-square-left.svg");
+                            public static readonly string caret_square_right_svg = Url("caret-square-right.svg");
+                            public static readonly string caret_square_up_svg = Url("caret-square-up.svg");
+                            public static readonly string caret_up_svg = Url("caret-up.svg");
+                            public static readonly string carrot_svg = Url("carrot.svg");
+                            public static readonly string cart_arrow_down_svg = Url("cart-arrow-down.svg");
+                            public static readonly string cart_plus_svg = Url("cart-plus.svg");
+                            public static readonly string cash_register_svg = Url("cash-register.svg");
+                            public static readonly string cat_svg = Url("cat.svg");
+                            public static readonly string certificate_svg = Url("certificate.svg");
+                            public static readonly string chair_svg = Url("chair.svg");
+                            public static readonly string chalkboard_teacher_svg = Url("chalkboard-teacher.svg");
+                            public static readonly string chalkboard_svg = Url("chalkboard.svg");
+                            public static readonly string charging_station_svg = Url("charging-station.svg");
+                            public static readonly string chart_area_svg = Url("chart-area.svg");
+                            public static readonly string chart_bar_svg = Url("chart-bar.svg");
+                            public static readonly string chart_line_svg = Url("chart-line.svg");
+                            public static readonly string chart_pie_svg = Url("chart-pie.svg");
+                            public static readonly string check_circle_svg = Url("check-circle.svg");
+                            public static readonly string check_double_svg = Url("check-double.svg");
+                            public static readonly string check_square_svg = Url("check-square.svg");
+                            public static readonly string check_svg = Url("check.svg");
+                            public static readonly string cheese_svg = Url("cheese.svg");
+                            public static readonly string chess_bishop_svg = Url("chess-bishop.svg");
+                            public static readonly string chess_board_svg = Url("chess-board.svg");
+                            public static readonly string chess_king_svg = Url("chess-king.svg");
+                            public static readonly string chess_knight_svg = Url("chess-knight.svg");
+                            public static readonly string chess_pawn_svg = Url("chess-pawn.svg");
+                            public static readonly string chess_queen_svg = Url("chess-queen.svg");
+                            public static readonly string chess_rook_svg = Url("chess-rook.svg");
+                            public static readonly string chess_svg = Url("chess.svg");
+                            public static readonly string chevron_circle_down_svg = Url("chevron-circle-down.svg");
+                            public static readonly string chevron_circle_left_svg = Url("chevron-circle-left.svg");
+                            public static readonly string chevron_circle_right_svg = Url("chevron-circle-right.svg");
+                            public static readonly string chevron_circle_up_svg = Url("chevron-circle-up.svg");
+                            public static readonly string chevron_down_svg = Url("chevron-down.svg");
+                            public static readonly string chevron_left_svg = Url("chevron-left.svg");
+                            public static readonly string chevron_right_svg = Url("chevron-right.svg");
+                            public static readonly string chevron_up_svg = Url("chevron-up.svg");
+                            public static readonly string child_svg = Url("child.svg");
+                            public static readonly string church_svg = Url("church.svg");
+                            public static readonly string circle_notch_svg = Url("circle-notch.svg");
+                            public static readonly string circle_svg = Url("circle.svg");
+                            public static readonly string city_svg = Url("city.svg");
+                            public static readonly string clinic_medical_svg = Url("clinic-medical.svg");
+                            public static readonly string clipboard_check_svg = Url("clipboard-check.svg");
+                            public static readonly string clipboard_list_svg = Url("clipboard-list.svg");
+                            public static readonly string clipboard_svg = Url("clipboard.svg");
+                            public static readonly string clock_svg = Url("clock.svg");
+                            public static readonly string clone_svg = Url("clone.svg");
+                            public static readonly string closed_captioning_svg = Url("closed-captioning.svg");
+                            public static readonly string cloud_download_alt_svg = Url("cloud-download-alt.svg");
+                            public static readonly string cloud_meatball_svg = Url("cloud-meatball.svg");
+                            public static readonly string cloud_moon_rain_svg = Url("cloud-moon-rain.svg");
+                            public static readonly string cloud_moon_svg = Url("cloud-moon.svg");
+                            public static readonly string cloud_rain_svg = Url("cloud-rain.svg");
+                            public static readonly string cloud_showers_heavy_svg = Url("cloud-showers-heavy.svg");
+                            public static readonly string cloud_sun_rain_svg = Url("cloud-sun-rain.svg");
+                            public static readonly string cloud_sun_svg = Url("cloud-sun.svg");
+                            public static readonly string cloud_upload_alt_svg = Url("cloud-upload-alt.svg");
+                            public static readonly string cloud_svg = Url("cloud.svg");
+                            public static readonly string cocktail_svg = Url("cocktail.svg");
+                            public static readonly string code_branch_svg = Url("code-branch.svg");
+                            public static readonly string code_svg = Url("code.svg");
+                            public static readonly string coffee_svg = Url("coffee.svg");
+                            public static readonly string cog_svg = Url("cog.svg");
+                            public static readonly string cogs_svg = Url("cogs.svg");
+                            public static readonly string coins_svg = Url("coins.svg");
+                            public static readonly string columns_svg = Url("columns.svg");
+                            public static readonly string comment_alt_svg = Url("comment-alt.svg");
+                            public static readonly string comment_dollar_svg = Url("comment-dollar.svg");
+                            public static readonly string comment_dots_svg = Url("comment-dots.svg");
+                            public static readonly string comment_medical_svg = Url("comment-medical.svg");
+                            public static readonly string comment_slash_svg = Url("comment-slash.svg");
+                            public static readonly string comment_svg = Url("comment.svg");
+                            public static readonly string comments_dollar_svg = Url("comments-dollar.svg");
+                            public static readonly string comments_svg = Url("comments.svg");
+                            public static readonly string compact_disc_svg = Url("compact-disc.svg");
+                            public static readonly string compass_svg = Url("compass.svg");
+                            public static readonly string compress_alt_svg = Url("compress-alt.svg");
+                            public static readonly string compress_arrows_alt_svg = Url("compress-arrows-alt.svg");
+                            public static readonly string compress_svg = Url("compress.svg");
+                            public static readonly string concierge_bell_svg = Url("concierge-bell.svg");
+                            public static readonly string cookie_bite_svg = Url("cookie-bite.svg");
+                            public static readonly string cookie_svg = Url("cookie.svg");
+                            public static readonly string copy_svg = Url("copy.svg");
+                            public static readonly string copyright_svg = Url("copyright.svg");
+                            public static readonly string couch_svg = Url("couch.svg");
+                            public static readonly string credit_card_svg = Url("credit-card.svg");
+                            public static readonly string crop_alt_svg = Url("crop-alt.svg");
+                            public static readonly string crop_svg = Url("crop.svg");
+                            public static readonly string cross_svg = Url("cross.svg");
+                            public static readonly string crosshairs_svg = Url("crosshairs.svg");
+                            public static readonly string crow_svg = Url("crow.svg");
+                            public static readonly string crown_svg = Url("crown.svg");
+                            public static readonly string crutch_svg = Url("crutch.svg");
+                            public static readonly string cube_svg = Url("cube.svg");
+                            public static readonly string cubes_svg = Url("cubes.svg");
+                            public static readonly string cut_svg = Url("cut.svg");
+                            public static readonly string database_svg = Url("database.svg");
+                            public static readonly string deaf_svg = Url("deaf.svg");
+                            public static readonly string democrat_svg = Url("democrat.svg");
+                            public static readonly string desktop_svg = Url("desktop.svg");
+                            public static readonly string dharmachakra_svg = Url("dharmachakra.svg");
+                            public static readonly string diagnoses_svg = Url("diagnoses.svg");
+                            public static readonly string dice_d20_svg = Url("dice-d20.svg");
+                            public static readonly string dice_d6_svg = Url("dice-d6.svg");
+                            public static readonly string dice_five_svg = Url("dice-five.svg");
+                            public static readonly string dice_four_svg = Url("dice-four.svg");
+                            public static readonly string dice_one_svg = Url("dice-one.svg");
+                            public static readonly string dice_six_svg = Url("dice-six.svg");
+                            public static readonly string dice_three_svg = Url("dice-three.svg");
+                            public static readonly string dice_two_svg = Url("dice-two.svg");
+                            public static readonly string dice_svg = Url("dice.svg");
+                            public static readonly string digital_tachograph_svg = Url("digital-tachograph.svg");
+                            public static readonly string directions_svg = Url("directions.svg");
+                            public static readonly string disease_svg = Url("disease.svg");
+                            public static readonly string divide_svg = Url("divide.svg");
+                            public static readonly string dizzy_svg = Url("dizzy.svg");
+                            public static readonly string dna_svg = Url("dna.svg");
+                            public static readonly string dog_svg = Url("dog.svg");
+                            public static readonly string dollar_sign_svg = Url("dollar-sign.svg");
+                            public static readonly string dolly_flatbed_svg = Url("dolly-flatbed.svg");
+                            public static readonly string dolly_svg = Url("dolly.svg");
+                            public static readonly string donate_svg = Url("donate.svg");
+                            public static readonly string door_closed_svg = Url("door-closed.svg");
+                            public static readonly string door_open_svg = Url("door-open.svg");
+                            public static readonly string dot_circle_svg = Url("dot-circle.svg");
+                            public static readonly string dove_svg = Url("dove.svg");
+                            public static readonly string download_svg = Url("download.svg");
+                            public static readonly string drafting_compass_svg = Url("drafting-compass.svg");
+                            public static readonly string dragon_svg = Url("dragon.svg");
+                            public static readonly string draw_polygon_svg = Url("draw-polygon.svg");
+                            public static readonly string drum_steelpan_svg = Url("drum-steelpan.svg");
+                            public static readonly string drum_svg = Url("drum.svg");
+                            public static readonly string drumstick_bite_svg = Url("drumstick-bite.svg");
+                            public static readonly string dumbbell_svg = Url("dumbbell.svg");
+                            public static readonly string dumpster_fire_svg = Url("dumpster-fire.svg");
+                            public static readonly string dumpster_svg = Url("dumpster.svg");
+                            public static readonly string dungeon_svg = Url("dungeon.svg");
+                            public static readonly string edit_svg = Url("edit.svg");
+                            public static readonly string egg_svg = Url("egg.svg");
+                            public static readonly string eject_svg = Url("eject.svg");
+                            public static readonly string ellipsis_h_svg = Url("ellipsis-h.svg");
+                            public static readonly string ellipsis_v_svg = Url("ellipsis-v.svg");
+                            public static readonly string envelope_open_text_svg = Url("envelope-open-text.svg");
+                            public static readonly string envelope_open_svg = Url("envelope-open.svg");
+                            public static readonly string envelope_square_svg = Url("envelope-square.svg");
+                            public static readonly string envelope_svg = Url("envelope.svg");
+                            public static readonly string equals_svg = Url("equals.svg");
+                            public static readonly string eraser_svg = Url("eraser.svg");
+                            public static readonly string ethernet_svg = Url("ethernet.svg");
+                            public static readonly string euro_sign_svg = Url("euro-sign.svg");
+                            public static readonly string exchange_alt_svg = Url("exchange-alt.svg");
+                            public static readonly string exclamation_circle_svg = Url("exclamation-circle.svg");
+                            public static readonly string exclamation_triangle_svg = Url("exclamation-triangle.svg");
+                            public static readonly string exclamation_svg = Url("exclamation.svg");
+                            public static readonly string expand_alt_svg = Url("expand-alt.svg");
+                            public static readonly string expand_arrows_alt_svg = Url("expand-arrows-alt.svg");
+                            public static readonly string expand_svg = Url("expand.svg");
+                            public static readonly string external_link_alt_svg = Url("external-link-alt.svg");
+                            public static readonly string external_link_square_alt_svg = Url("external-link-square-alt.svg");
+                            public static readonly string eye_dropper_svg = Url("eye-dropper.svg");
+                            public static readonly string eye_slash_svg = Url("eye-slash.svg");
+                            public static readonly string eye_svg = Url("eye.svg");
+                            public static readonly string fan_svg = Url("fan.svg");
+                            public static readonly string fast_backward_svg = Url("fast-backward.svg");
+                            public static readonly string fast_forward_svg = Url("fast-forward.svg");
+                            public static readonly string faucet_svg = Url("faucet.svg");
+                            public static readonly string fax_svg = Url("fax.svg");
+                            public static readonly string feather_alt_svg = Url("feather-alt.svg");
+                            public static readonly string feather_svg = Url("feather.svg");
+                            public static readonly string female_svg = Url("female.svg");
+                            public static readonly string fighter_jet_svg = Url("fighter-jet.svg");
+                            public static readonly string file_alt_svg = Url("file-alt.svg");
+                            public static readonly string file_archive_svg = Url("file-archive.svg");
+                            public static readonly string file_audio_svg = Url("file-audio.svg");
+                            public static readonly string file_code_svg = Url("file-code.svg");
+                            public static readonly string file_contract_svg = Url("file-contract.svg");
+                            public static readonly string file_csv_svg = Url("file-csv.svg");
+                            public static readonly string file_download_svg = Url("file-download.svg");
+                            public static readonly string file_excel_svg = Url("file-excel.svg");
+                            public static readonly string file_export_svg = Url("file-export.svg");
+                            public static readonly string file_image_svg = Url("file-image.svg");
+                            public static readonly string file_import_svg = Url("file-import.svg");
+                            public static readonly string file_invoice_dollar_svg = Url("file-invoice-dollar.svg");
+                            public static readonly string file_invoice_svg = Url("file-invoice.svg");
+                            public static readonly string file_medical_alt_svg = Url("file-medical-alt.svg");
+                            public static readonly string file_medical_svg = Url("file-medical.svg");
+                            public static readonly string file_pdf_svg = Url("file-pdf.svg");
+                            public static readonly string file_powerpoint_svg = Url("file-powerpoint.svg");
+                            public static readonly string file_prescription_svg = Url("file-prescription.svg");
+                            public static readonly string file_signature_svg = Url("file-signature.svg");
+                            public static readonly string file_upload_svg = Url("file-upload.svg");
+                            public static readonly string file_video_svg = Url("file-video.svg");
+                            public static readonly string file_word_svg = Url("file-word.svg");
+                            public static readonly string file_svg = Url("file.svg");
+                            public static readonly string fill_drip_svg = Url("fill-drip.svg");
+                            public static readonly string fill_svg = Url("fill.svg");
+                            public static readonly string film_svg = Url("film.svg");
+                            public static readonly string filter_svg = Url("filter.svg");
+                            public static readonly string fingerprint_svg = Url("fingerprint.svg");
+                            public static readonly string fire_alt_svg = Url("fire-alt.svg");
+                            public static readonly string fire_extinguisher_svg = Url("fire-extinguisher.svg");
+                            public static readonly string fire_svg = Url("fire.svg");
+                            public static readonly string first_aid_svg = Url("first-aid.svg");
+                            public static readonly string fish_svg = Url("fish.svg");
+                            public static readonly string fist_raised_svg = Url("fist-raised.svg");
+                            public static readonly string flag_checkered_svg = Url("flag-checkered.svg");
+                            public static readonly string flag_usa_svg = Url("flag-usa.svg");
+                            public static readonly string flag_svg = Url("flag.svg");
+                            public static readonly string flask_svg = Url("flask.svg");
+                            public static readonly string flushed_svg = Url("flushed.svg");
+                            public static readonly string folder_minus_svg = Url("folder-minus.svg");
+                            public static readonly string folder_open_svg = Url("folder-open.svg");
+                            public static readonly string folder_plus_svg = Url("folder-plus.svg");
+                            public static readonly string folder_svg = Url("folder.svg");
+                            public static readonly string font_awesome_logo_full_svg = Url("font-awesome-logo-full.svg");
+                            public static readonly string font_svg = Url("font.svg");
+                            public static readonly string football_ball_svg = Url("football-ball.svg");
+                            public static readonly string forward_svg = Url("forward.svg");
+                            public static readonly string frog_svg = Url("frog.svg");
+                            public static readonly string frown_open_svg = Url("frown-open.svg");
+                            public static readonly string frown_svg = Url("frown.svg");
+                            public static readonly string funnel_dollar_svg = Url("funnel-dollar.svg");
+                            public static readonly string futbol_svg = Url("futbol.svg");
+                            public static readonly string gamepad_svg = Url("gamepad.svg");
+                            public static readonly string gas_pump_svg = Url("gas-pump.svg");
+                            public static readonly string gavel_svg = Url("gavel.svg");
+                            public static readonly string gem_svg = Url("gem.svg");
+                            public static readonly string genderless_svg = Url("genderless.svg");
+                            public static readonly string ghost_svg = Url("ghost.svg");
+                            public static readonly string gift_svg = Url("gift.svg");
+                            public static readonly string gifts_svg = Url("gifts.svg");
+                            public static readonly string glass_cheers_svg = Url("glass-cheers.svg");
+                            public static readonly string glass_martini_alt_svg = Url("glass-martini-alt.svg");
+                            public static readonly string glass_martini_svg = Url("glass-martini.svg");
+                            public static readonly string glass_whiskey_svg = Url("glass-whiskey.svg");
+                            public static readonly string glasses_svg = Url("glasses.svg");
+                            public static readonly string globe_africa_svg = Url("globe-africa.svg");
+                            public static readonly string globe_americas_svg = Url("globe-americas.svg");
+                            public static readonly string globe_asia_svg = Url("globe-asia.svg");
+                            public static readonly string globe_europe_svg = Url("globe-europe.svg");
+                            public static readonly string globe_svg = Url("globe.svg");
+                            public static readonly string golf_ball_svg = Url("golf-ball.svg");
+                            public static readonly string gopuram_svg = Url("gopuram.svg");
+                            public static readonly string graduation_cap_svg = Url("graduation-cap.svg");
+                            public static readonly string greater_than_equal_svg = Url("greater-than-equal.svg");
+                            public static readonly string greater_than_svg = Url("greater-than.svg");
+                            public static readonly string grimace_svg = Url("grimace.svg");
+                            public static readonly string grin_alt_svg = Url("grin-alt.svg");
+                            public static readonly string grin_beam_sweat_svg = Url("grin-beam-sweat.svg");
+                            public static readonly string grin_beam_svg = Url("grin-beam.svg");
+                            public static readonly string grin_hearts_svg = Url("grin-hearts.svg");
+                            public static readonly string grin_squint_tears_svg = Url("grin-squint-tears.svg");
+                            public static readonly string grin_squint_svg = Url("grin-squint.svg");
+                            public static readonly string grin_stars_svg = Url("grin-stars.svg");
+                            public static readonly string grin_tears_svg = Url("grin-tears.svg");
+                            public static readonly string grin_tongue_squint_svg = Url("grin-tongue-squint.svg");
+                            public static readonly string grin_tongue_wink_svg = Url("grin-tongue-wink.svg");
+                            public static readonly string grin_tongue_svg = Url("grin-tongue.svg");
+                            public static readonly string grin_wink_svg = Url("grin-wink.svg");
+                            public static readonly string grin_svg = Url("grin.svg");
+                            public static readonly string grip_horizontal_svg = Url("grip-horizontal.svg");
+                            public static readonly string grip_lines_vertical_svg = Url("grip-lines-vertical.svg");
+                            public static readonly string grip_lines_svg = Url("grip-lines.svg");
+                            public static readonly string grip_vertical_svg = Url("grip-vertical.svg");
+                            public static readonly string guitar_svg = Url("guitar.svg");
+                            public static readonly string h_square_svg = Url("h-square.svg");
+                            public static readonly string hamburger_svg = Url("hamburger.svg");
+                            public static readonly string hammer_svg = Url("hammer.svg");
+                            public static readonly string hamsa_svg = Url("hamsa.svg");
+                            public static readonly string hand_holding_heart_svg = Url("hand-holding-heart.svg");
+                            public static readonly string hand_holding_medical_svg = Url("hand-holding-medical.svg");
+                            public static readonly string hand_holding_usd_svg = Url("hand-holding-usd.svg");
+                            public static readonly string hand_holding_water_svg = Url("hand-holding-water.svg");
+                            public static readonly string hand_holding_svg = Url("hand-holding.svg");
+                            public static readonly string hand_lizard_svg = Url("hand-lizard.svg");
+                            public static readonly string hand_middle_finger_svg = Url("hand-middle-finger.svg");
+                            public static readonly string hand_paper_svg = Url("hand-paper.svg");
+                            public static readonly string hand_peace_svg = Url("hand-peace.svg");
+                            public static readonly string hand_point_down_svg = Url("hand-point-down.svg");
+                            public static readonly string hand_point_left_svg = Url("hand-point-left.svg");
+                            public static readonly string hand_point_right_svg = Url("hand-point-right.svg");
+                            public static readonly string hand_point_up_svg = Url("hand-point-up.svg");
+                            public static readonly string hand_pointer_svg = Url("hand-pointer.svg");
+                            public static readonly string hand_rock_svg = Url("hand-rock.svg");
+                            public static readonly string hand_scissors_svg = Url("hand-scissors.svg");
+                            public static readonly string hand_sparkles_svg = Url("hand-sparkles.svg");
+                            public static readonly string hand_spock_svg = Url("hand-spock.svg");
+                            public static readonly string hands_helping_svg = Url("hands-helping.svg");
+                            public static readonly string hands_wash_svg = Url("hands-wash.svg");
+                            public static readonly string hands_svg = Url("hands.svg");
+                            public static readonly string handshake_alt_slash_svg = Url("handshake-alt-slash.svg");
+                            public static readonly string handshake_slash_svg = Url("handshake-slash.svg");
+                            public static readonly string handshake_svg = Url("handshake.svg");
+                            public static readonly string hanukiah_svg = Url("hanukiah.svg");
+                            public static readonly string hard_hat_svg = Url("hard-hat.svg");
+                            public static readonly string hashtag_svg = Url("hashtag.svg");
+                            public static readonly string hat_cowboy_side_svg = Url("hat-cowboy-side.svg");
+                            public static readonly string hat_cowboy_svg = Url("hat-cowboy.svg");
+                            public static readonly string hat_wizard_svg = Url("hat-wizard.svg");
+                            public static readonly string hdd_svg = Url("hdd.svg");
+                            public static readonly string head_side_cough_slash_svg = Url("head-side-cough-slash.svg");
+                            public static readonly string head_side_cough_svg = Url("head-side-cough.svg");
+                            public static readonly string head_side_mask_svg = Url("head-side-mask.svg");
+                            public static readonly string head_side_virus_svg = Url("head-side-virus.svg");
+                            public static readonly string heading_svg = Url("heading.svg");
+                            public static readonly string headphones_alt_svg = Url("headphones-alt.svg");
+                            public static readonly string headphones_svg = Url("headphones.svg");
+                            public static readonly string headset_svg = Url("headset.svg");
+                            public static readonly string heart_broken_svg = Url("heart-broken.svg");
+                            public static readonly string heart_svg = Url("heart.svg");
+                            public static readonly string heartbeat_svg = Url("heartbeat.svg");
+                            public static readonly string helicopter_svg = Url("helicopter.svg");
+                            public static readonly string highlighter_svg = Url("highlighter.svg");
+                            public static readonly string hiking_svg = Url("hiking.svg");
+                            public static readonly string hippo_svg = Url("hippo.svg");
+                            public static readonly string history_svg = Url("history.svg");
+                            public static readonly string hockey_puck_svg = Url("hockey-puck.svg");
+                            public static readonly string holly_berry_svg = Url("holly-berry.svg");
+                            public static readonly string home_svg = Url("home.svg");
+                            public static readonly string horse_head_svg = Url("horse-head.svg");
+                            public static readonly string horse_svg = Url("horse.svg");
+                            public static readonly string hospital_alt_svg = Url("hospital-alt.svg");
+                            public static readonly string hospital_symbol_svg = Url("hospital-symbol.svg");
+                            public static readonly string hospital_user_svg = Url("hospital-user.svg");
+                            public static readonly string hospital_svg = Url("hospital.svg");
+                            public static readonly string hot_tub_svg = Url("hot-tub.svg");
+                            public static readonly string hotdog_svg = Url("hotdog.svg");
+                            public static readonly string hotel_svg = Url("hotel.svg");
+                            public static readonly string hourglass_end_svg = Url("hourglass-end.svg");
+                            public static readonly string hourglass_half_svg = Url("hourglass-half.svg");
+                            public static readonly string hourglass_start_svg = Url("hourglass-start.svg");
+                            public static readonly string hourglass_svg = Url("hourglass.svg");
+                            public static readonly string house_damage_svg = Url("house-damage.svg");
+                            public static readonly string house_user_svg = Url("house-user.svg");
+                            public static readonly string hryvnia_svg = Url("hryvnia.svg");
+                            public static readonly string i_cursor_svg = Url("i-cursor.svg");
+                            public static readonly string ice_cream_svg = Url("ice-cream.svg");
+                            public static readonly string icicles_svg = Url("icicles.svg");
+                            public static readonly string icons_svg = Url("icons.svg");
+                            public static readonly string id_badge_svg = Url("id-badge.svg");
+                            public static readonly string id_card_alt_svg = Url("id-card-alt.svg");
+                            public static readonly string id_card_svg = Url("id-card.svg");
+                            public static readonly string igloo_svg = Url("igloo.svg");
+                            public static readonly string image_svg = Url("image.svg");
+                            public static readonly string images_svg = Url("images.svg");
+                            public static readonly string inbox_svg = Url("inbox.svg");
+                            public static readonly string indent_svg = Url("indent.svg");
+                            public static readonly string industry_svg = Url("industry.svg");
+                            public static readonly string infinity_svg = Url("infinity.svg");
+                            public static readonly string info_circle_svg = Url("info-circle.svg");
+                            public static readonly string info_svg = Url("info.svg");
+                            public static readonly string italic_svg = Url("italic.svg");
+                            public static readonly string jedi_svg = Url("jedi.svg");
+                            public static readonly string joint_svg = Url("joint.svg");
+                            public static readonly string journal_whills_svg = Url("journal-whills.svg");
+                            public static readonly string kaaba_svg = Url("kaaba.svg");
+                            public static readonly string key_svg = Url("key.svg");
+                            public static readonly string keyboard_svg = Url("keyboard.svg");
+                            public static readonly string khanda_svg = Url("khanda.svg");
+                            public static readonly string kiss_beam_svg = Url("kiss-beam.svg");
+                            public static readonly string kiss_wink_heart_svg = Url("kiss-wink-heart.svg");
+                            public static readonly string kiss_svg = Url("kiss.svg");
+                            public static readonly string kiwi_bird_svg = Url("kiwi-bird.svg");
+                            public static readonly string landmark_svg = Url("landmark.svg");
+                            public static readonly string language_svg = Url("language.svg");
+                            public static readonly string laptop_code_svg = Url("laptop-code.svg");
+                            public static readonly string laptop_house_svg = Url("laptop-house.svg");
+                            public static readonly string laptop_medical_svg = Url("laptop-medical.svg");
+                            public static readonly string laptop_svg = Url("laptop.svg");
+                            public static readonly string laugh_beam_svg = Url("laugh-beam.svg");
+                            public static readonly string laugh_squint_svg = Url("laugh-squint.svg");
+                            public static readonly string laugh_wink_svg = Url("laugh-wink.svg");
+                            public static readonly string laugh_svg = Url("laugh.svg");
+                            public static readonly string layer_group_svg = Url("layer-group.svg");
+                            public static readonly string leaf_svg = Url("leaf.svg");
+                            public static readonly string lemon_svg = Url("lemon.svg");
+                            public static readonly string less_than_equal_svg = Url("less-than-equal.svg");
+                            public static readonly string less_than_svg = Url("less-than.svg");
+                            public static readonly string level_down_alt_svg = Url("level-down-alt.svg");
+                            public static readonly string level_up_alt_svg = Url("level-up-alt.svg");
+                            public static readonly string life_ring_svg = Url("life-ring.svg");
+                            public static readonly string lightbulb_svg = Url("lightbulb.svg");
+                            public static readonly string link_svg = Url("link.svg");
+                            public static readonly string lira_sign_svg = Url("lira-sign.svg");
+                            public static readonly string list_alt_svg = Url("list-alt.svg");
+                            public static readonly string list_ol_svg = Url("list-ol.svg");
+                            public static readonly string list_ul_svg = Url("list-ul.svg");
+                            public static readonly string list_svg = Url("list.svg");
+                            public static readonly string location_arrow_svg = Url("location-arrow.svg");
+                            public static readonly string lock_open_svg = Url("lock-open.svg");
+                            public static readonly string lock_svg = Url("lock.svg");
+                            public static readonly string long_arrow_alt_down_svg = Url("long-arrow-alt-down.svg");
+                            public static readonly string long_arrow_alt_left_svg = Url("long-arrow-alt-left.svg");
+                            public static readonly string long_arrow_alt_right_svg = Url("long-arrow-alt-right.svg");
+                            public static readonly string long_arrow_alt_up_svg = Url("long-arrow-alt-up.svg");
+                            public static readonly string low_vision_svg = Url("low-vision.svg");
+                            public static readonly string luggage_cart_svg = Url("luggage-cart.svg");
+                            public static readonly string lungs_virus_svg = Url("lungs-virus.svg");
+                            public static readonly string lungs_svg = Url("lungs.svg");
+                            public static readonly string magic_svg = Url("magic.svg");
+                            public static readonly string magnet_svg = Url("magnet.svg");
+                            public static readonly string mail_bulk_svg = Url("mail-bulk.svg");
+                            public static readonly string male_svg = Url("male.svg");
+                            public static readonly string map_marked_alt_svg = Url("map-marked-alt.svg");
+                            public static readonly string map_marked_svg = Url("map-marked.svg");
+                            public static readonly string map_marker_alt_svg = Url("map-marker-alt.svg");
+                            public static readonly string map_marker_svg = Url("map-marker.svg");
+                            public static readonly string map_pin_svg = Url("map-pin.svg");
+                            public static readonly string map_signs_svg = Url("map-signs.svg");
+                            public static readonly string map_svg = Url("map.svg");
+                            public static readonly string marker_svg = Url("marker.svg");
+                            public static readonly string mars_double_svg = Url("mars-double.svg");
+                            public static readonly string mars_stroke_h_svg = Url("mars-stroke-h.svg");
+                            public static readonly string mars_stroke_v_svg = Url("mars-stroke-v.svg");
+                            public static readonly string mars_stroke_svg = Url("mars-stroke.svg");
+                            public static readonly string mars_svg = Url("mars.svg");
+                            public static readonly string mask_svg = Url("mask.svg");
+                            public static readonly string medal_svg = Url("medal.svg");
+                            public static readonly string medkit_svg = Url("medkit.svg");
+                            public static readonly string meh_blank_svg = Url("meh-blank.svg");
+                            public static readonly string meh_rolling_eyes_svg = Url("meh-rolling-eyes.svg");
+                            public static readonly string meh_svg = Url("meh.svg");
+                            public static readonly string memory_svg = Url("memory.svg");
+                            public static readonly string menorah_svg = Url("menorah.svg");
+                            public static readonly string mercury_svg = Url("mercury.svg");
+                            public static readonly string meteor_svg = Url("meteor.svg");
+                            public static readonly string microchip_svg = Url("microchip.svg");
+                            public static readonly string microphone_alt_slash_svg = Url("microphone-alt-slash.svg");
+                            public static readonly string microphone_alt_svg = Url("microphone-alt.svg");
+                            public static readonly string microphone_slash_svg = Url("microphone-slash.svg");
+                            public static readonly string microphone_svg = Url("microphone.svg");
+                            public static readonly string microscope_svg = Url("microscope.svg");
+                            public static readonly string minus_circle_svg = Url("minus-circle.svg");
+                            public static readonly string minus_square_svg = Url("minus-square.svg");
+                            public static readonly string minus_svg = Url("minus.svg");
+                            public static readonly string mitten_svg = Url("mitten.svg");
+                            public static readonly string mobile_alt_svg = Url("mobile-alt.svg");
+                            public static readonly string mobile_svg = Url("mobile.svg");
+                            public static readonly string money_bill_alt_svg = Url("money-bill-alt.svg");
+                            public static readonly string money_bill_wave_alt_svg = Url("money-bill-wave-alt.svg");
+                            public static readonly string money_bill_wave_svg = Url("money-bill-wave.svg");
+                            public static readonly string money_bill_svg = Url("money-bill.svg");
+                            public static readonly string money_check_alt_svg = Url("money-check-alt.svg");
+                            public static readonly string money_check_svg = Url("money-check.svg");
+                            public static readonly string monument_svg = Url("monument.svg");
+                            public static readonly string moon_svg = Url("moon.svg");
+                            public static readonly string mortar_pestle_svg = Url("mortar-pestle.svg");
+                            public static readonly string mosque_svg = Url("mosque.svg");
+                            public static readonly string motorcycle_svg = Url("motorcycle.svg");
+                            public static readonly string mountain_svg = Url("mountain.svg");
+                            public static readonly string mouse_pointer_svg = Url("mouse-pointer.svg");
+                            public static readonly string mouse_svg = Url("mouse.svg");
+                            public static readonly string mug_hot_svg = Url("mug-hot.svg");
+                            public static readonly string music_svg = Url("music.svg");
+                            public static readonly string network_wired_svg = Url("network-wired.svg");
+                            public static readonly string neuter_svg = Url("neuter.svg");
+                            public static readonly string newspaper_svg = Url("newspaper.svg");
+                            public static readonly string not_equal_svg = Url("not-equal.svg");
+                            public static readonly string notes_medical_svg = Url("notes-medical.svg");
+                            public static readonly string object_group_svg = Url("object-group.svg");
+                            public static readonly string object_ungroup_svg = Url("object-ungroup.svg");
+                            public static readonly string oil_can_svg = Url("oil-can.svg");
+                            public static readonly string om_svg = Url("om.svg");
+                            public static readonly string otter_svg = Url("otter.svg");
+                            public static readonly string outdent_svg = Url("outdent.svg");
+                            public static readonly string pager_svg = Url("pager.svg");
+                            public static readonly string paint_brush_svg = Url("paint-brush.svg");
+                            public static readonly string paint_roller_svg = Url("paint-roller.svg");
+                            public static readonly string palette_svg = Url("palette.svg");
+                            public static readonly string pallet_svg = Url("pallet.svg");
+                            public static readonly string paper_plane_svg = Url("paper-plane.svg");
+                            public static readonly string paperclip_svg = Url("paperclip.svg");
+                            public static readonly string parachute_box_svg = Url("parachute-box.svg");
+                            public static readonly string paragraph_svg = Url("paragraph.svg");
+                            public static readonly string parking_svg = Url("parking.svg");
+                            public static readonly string passport_svg = Url("passport.svg");
+                            public static readonly string pastafarianism_svg = Url("pastafarianism.svg");
+                            public static readonly string paste_svg = Url("paste.svg");
+                            public static readonly string pause_circle_svg = Url("pause-circle.svg");
+                            public static readonly string pause_svg = Url("pause.svg");
+                            public static readonly string paw_svg = Url("paw.svg");
+                            public static readonly string peace_svg = Url("peace.svg");
+                            public static readonly string pen_alt_svg = Url("pen-alt.svg");
+                            public static readonly string pen_fancy_svg = Url("pen-fancy.svg");
+                            public static readonly string pen_nib_svg = Url("pen-nib.svg");
+                            public static readonly string pen_square_svg = Url("pen-square.svg");
+                            public static readonly string pen_svg = Url("pen.svg");
+                            public static readonly string pencil_alt_svg = Url("pencil-alt.svg");
+                            public static readonly string pencil_ruler_svg = Url("pencil-ruler.svg");
+                            public static readonly string people_arrows_svg = Url("people-arrows.svg");
+                            public static readonly string people_carry_svg = Url("people-carry.svg");
+                            public static readonly string pepper_hot_svg = Url("pepper-hot.svg");
+                            public static readonly string percent_svg = Url("percent.svg");
+                            public static readonly string percentage_svg = Url("percentage.svg");
+                            public static readonly string person_booth_svg = Url("person-booth.svg");
+                            public static readonly string phone_alt_svg = Url("phone-alt.svg");
+                            public static readonly string phone_slash_svg = Url("phone-slash.svg");
+                            public static readonly string phone_square_alt_svg = Url("phone-square-alt.svg");
+                            public static readonly string phone_square_svg = Url("phone-square.svg");
+                            public static readonly string phone_volume_svg = Url("phone-volume.svg");
+                            public static readonly string phone_svg = Url("phone.svg");
+                            public static readonly string photo_video_svg = Url("photo-video.svg");
+                            public static readonly string piggy_bank_svg = Url("piggy-bank.svg");
+                            public static readonly string pills_svg = Url("pills.svg");
+                            public static readonly string pizza_slice_svg = Url("pizza-slice.svg");
+                            public static readonly string place_of_worship_svg = Url("place-of-worship.svg");
+                            public static readonly string plane_arrival_svg = Url("plane-arrival.svg");
+                            public static readonly string plane_departure_svg = Url("plane-departure.svg");
+                            public static readonly string plane_slash_svg = Url("plane-slash.svg");
+                            public static readonly string plane_svg = Url("plane.svg");
+                            public static readonly string play_circle_svg = Url("play-circle.svg");
+                            public static readonly string play_svg = Url("play.svg");
+                            public static readonly string plug_svg = Url("plug.svg");
+                            public static readonly string plus_circle_svg = Url("plus-circle.svg");
+                            public static readonly string plus_square_svg = Url("plus-square.svg");
+                            public static readonly string plus_svg = Url("plus.svg");
+                            public static readonly string podcast_svg = Url("podcast.svg");
+                            public static readonly string poll_h_svg = Url("poll-h.svg");
+                            public static readonly string poll_svg = Url("poll.svg");
+                            public static readonly string poo_storm_svg = Url("poo-storm.svg");
+                            public static readonly string poo_svg = Url("poo.svg");
+                            public static readonly string poop_svg = Url("poop.svg");
+                            public static readonly string portrait_svg = Url("portrait.svg");
+                            public static readonly string pound_sign_svg = Url("pound-sign.svg");
+                            public static readonly string power_off_svg = Url("power-off.svg");
+                            public static readonly string pray_svg = Url("pray.svg");
+                            public static readonly string praying_hands_svg = Url("praying-hands.svg");
+                            public static readonly string prescription_bottle_alt_svg = Url("prescription-bottle-alt.svg");
+                            public static readonly string prescription_bottle_svg = Url("prescription-bottle.svg");
+                            public static readonly string prescription_svg = Url("prescription.svg");
+                            public static readonly string print_svg = Url("print.svg");
+                            public static readonly string procedures_svg = Url("procedures.svg");
+                            public static readonly string project_diagram_svg = Url("project-diagram.svg");
+                            public static readonly string pump_medical_svg = Url("pump-medical.svg");
+                            public static readonly string pump_soap_svg = Url("pump-soap.svg");
+                            public static readonly string puzzle_piece_svg = Url("puzzle-piece.svg");
+                            public static readonly string qrcode_svg = Url("qrcode.svg");
+                            public static readonly string question_circle_svg = Url("question-circle.svg");
+                            public static readonly string question_svg = Url("question.svg");
+                            public static readonly string quidditch_svg = Url("quidditch.svg");
+                            public static readonly string quote_left_svg = Url("quote-left.svg");
+                            public static readonly string quote_right_svg = Url("quote-right.svg");
+                            public static readonly string quran_svg = Url("quran.svg");
+                            public static readonly string radiation_alt_svg = Url("radiation-alt.svg");
+                            public static readonly string radiation_svg = Url("radiation.svg");
+                            public static readonly string rainbow_svg = Url("rainbow.svg");
+                            public static readonly string random_svg = Url("random.svg");
+                            public static readonly string receipt_svg = Url("receipt.svg");
+                            public static readonly string record_vinyl_svg = Url("record-vinyl.svg");
+                            public static readonly string recycle_svg = Url("recycle.svg");
+                            public static readonly string redo_alt_svg = Url("redo-alt.svg");
+                            public static readonly string redo_svg = Url("redo.svg");
+                            public static readonly string registered_svg = Url("registered.svg");
+                            public static readonly string remove_format_svg = Url("remove-format.svg");
+                            public static readonly string reply_all_svg = Url("reply-all.svg");
+                            public static readonly string reply_svg = Url("reply.svg");
+                            public static readonly string republican_svg = Url("republican.svg");
+                            public static readonly string restroom_svg = Url("restroom.svg");
+                            public static readonly string retweet_svg = Url("retweet.svg");
+                            public static readonly string ribbon_svg = Url("ribbon.svg");
+                            public static readonly string ring_svg = Url("ring.svg");
+                            public static readonly string road_svg = Url("road.svg");
+                            public static readonly string robot_svg = Url("robot.svg");
+                            public static readonly string rocket_svg = Url("rocket.svg");
+                            public static readonly string route_svg = Url("route.svg");
+                            public static readonly string rss_square_svg = Url("rss-square.svg");
+                            public static readonly string rss_svg = Url("rss.svg");
+                            public static readonly string ruble_sign_svg = Url("ruble-sign.svg");
+                            public static readonly string ruler_combined_svg = Url("ruler-combined.svg");
+                            public static readonly string ruler_horizontal_svg = Url("ruler-horizontal.svg");
+                            public static readonly string ruler_vertical_svg = Url("ruler-vertical.svg");
+                            public static readonly string ruler_svg = Url("ruler.svg");
+                            public static readonly string running_svg = Url("running.svg");
+                            public static readonly string rupee_sign_svg = Url("rupee-sign.svg");
+                            public static readonly string sad_cry_svg = Url("sad-cry.svg");
+                            public static readonly string sad_tear_svg = Url("sad-tear.svg");
+                            public static readonly string satellite_dish_svg = Url("satellite-dish.svg");
+                            public static readonly string satellite_svg = Url("satellite.svg");
+                            public static readonly string save_svg = Url("save.svg");
+                            public static readonly string school_svg = Url("school.svg");
+                            public static readonly string screwdriver_svg = Url("screwdriver.svg");
+                            public static readonly string scroll_svg = Url("scroll.svg");
+                            public static readonly string sd_card_svg = Url("sd-card.svg");
+                            public static readonly string search_dollar_svg = Url("search-dollar.svg");
+                            public static readonly string search_location_svg = Url("search-location.svg");
+                            public static readonly string search_minus_svg = Url("search-minus.svg");
+                            public static readonly string search_plus_svg = Url("search-plus.svg");
+                            public static readonly string search_svg = Url("search.svg");
+                            public static readonly string seedling_svg = Url("seedling.svg");
+                            public static readonly string server_svg = Url("server.svg");
+                            public static readonly string shapes_svg = Url("shapes.svg");
+                            public static readonly string share_alt_square_svg = Url("share-alt-square.svg");
+                            public static readonly string share_alt_svg = Url("share-alt.svg");
+                            public static readonly string share_square_svg = Url("share-square.svg");
+                            public static readonly string share_svg = Url("share.svg");
+                            public static readonly string shekel_sign_svg = Url("shekel-sign.svg");
+                            public static readonly string shield_alt_svg = Url("shield-alt.svg");
+                            public static readonly string shield_virus_svg = Url("shield-virus.svg");
+                            public static readonly string ship_svg = Url("ship.svg");
+                            public static readonly string shipping_fast_svg = Url("shipping-fast.svg");
+                            public static readonly string shoe_prints_svg = Url("shoe-prints.svg");
+                            public static readonly string shopping_bag_svg = Url("shopping-bag.svg");
+                            public static readonly string shopping_basket_svg = Url("shopping-basket.svg");
+                            public static readonly string shopping_cart_svg = Url("shopping-cart.svg");
+                            public static readonly string shower_svg = Url("shower.svg");
+                            public static readonly string shuttle_van_svg = Url("shuttle-van.svg");
+                            public static readonly string sign_in_alt_svg = Url("sign-in-alt.svg");
+                            public static readonly string sign_language_svg = Url("sign-language.svg");
+                            public static readonly string sign_out_alt_svg = Url("sign-out-alt.svg");
+                            public static readonly string sign_svg = Url("sign.svg");
+                            public static readonly string signal_svg = Url("signal.svg");
+                            public static readonly string signature_svg = Url("signature.svg");
+                            public static readonly string sim_card_svg = Url("sim-card.svg");
+                            public static readonly string sink_svg = Url("sink.svg");
+                            public static readonly string sitemap_svg = Url("sitemap.svg");
+                            public static readonly string skating_svg = Url("skating.svg");
+                            public static readonly string skiing_nordic_svg = Url("skiing-nordic.svg");
+                            public static readonly string skiing_svg = Url("skiing.svg");
+                            public static readonly string skull_crossbones_svg = Url("skull-crossbones.svg");
+                            public static readonly string skull_svg = Url("skull.svg");
+                            public static readonly string slash_svg = Url("slash.svg");
+                            public static readonly string sleigh_svg = Url("sleigh.svg");
+                            public static readonly string sliders_h_svg = Url("sliders-h.svg");
+                            public static readonly string smile_beam_svg = Url("smile-beam.svg");
+                            public static readonly string smile_wink_svg = Url("smile-wink.svg");
+                            public static readonly string smile_svg = Url("smile.svg");
+                            public static readonly string smog_svg = Url("smog.svg");
+                            public static readonly string smoking_ban_svg = Url("smoking-ban.svg");
+                            public static readonly string smoking_svg = Url("smoking.svg");
+                            public static readonly string sms_svg = Url("sms.svg");
+                            public static readonly string snowboarding_svg = Url("snowboarding.svg");
+                            public static readonly string snowflake_svg = Url("snowflake.svg");
+                            public static readonly string snowman_svg = Url("snowman.svg");
+                            public static readonly string snowplow_svg = Url("snowplow.svg");
+                            public static readonly string soap_svg = Url("soap.svg");
+                            public static readonly string socks_svg = Url("socks.svg");
+                            public static readonly string solar_panel_svg = Url("solar-panel.svg");
+                            public static readonly string sort_alpha_down_alt_svg = Url("sort-alpha-down-alt.svg");
+                            public static readonly string sort_alpha_down_svg = Url("sort-alpha-down.svg");
+                            public static readonly string sort_alpha_up_alt_svg = Url("sort-alpha-up-alt.svg");
+                            public static readonly string sort_alpha_up_svg = Url("sort-alpha-up.svg");
+                            public static readonly string sort_amount_down_alt_svg = Url("sort-amount-down-alt.svg");
+                            public static readonly string sort_amount_down_svg = Url("sort-amount-down.svg");
+                            public static readonly string sort_amount_up_alt_svg = Url("sort-amount-up-alt.svg");
+                            public static readonly string sort_amount_up_svg = Url("sort-amount-up.svg");
+                            public static readonly string sort_down_svg = Url("sort-down.svg");
+                            public static readonly string sort_numeric_down_alt_svg = Url("sort-numeric-down-alt.svg");
+                            public static readonly string sort_numeric_down_svg = Url("sort-numeric-down.svg");
+                            public static readonly string sort_numeric_up_alt_svg = Url("sort-numeric-up-alt.svg");
+                            public static readonly string sort_numeric_up_svg = Url("sort-numeric-up.svg");
+                            public static readonly string sort_up_svg = Url("sort-up.svg");
+                            public static readonly string sort_svg = Url("sort.svg");
+                            public static readonly string spa_svg = Url("spa.svg");
+                            public static readonly string space_shuttle_svg = Url("space-shuttle.svg");
+                            public static readonly string spell_check_svg = Url("spell-check.svg");
+                            public static readonly string spider_svg = Url("spider.svg");
+                            public static readonly string spinner_svg = Url("spinner.svg");
+                            public static readonly string splotch_svg = Url("splotch.svg");
+                            public static readonly string spray_can_svg = Url("spray-can.svg");
+                            public static readonly string square_full_svg = Url("square-full.svg");
+                            public static readonly string square_root_alt_svg = Url("square-root-alt.svg");
+                            public static readonly string square_svg = Url("square.svg");
+                            public static readonly string stamp_svg = Url("stamp.svg");
+                            public static readonly string star_and_crescent_svg = Url("star-and-crescent.svg");
+                            public static readonly string star_half_alt_svg = Url("star-half-alt.svg");
+                            public static readonly string star_half_svg = Url("star-half.svg");
+                            public static readonly string star_of_david_svg = Url("star-of-david.svg");
+                            public static readonly string star_of_life_svg = Url("star-of-life.svg");
+                            public static readonly string star_svg = Url("star.svg");
+                            public static readonly string step_backward_svg = Url("step-backward.svg");
+                            public static readonly string step_forward_svg = Url("step-forward.svg");
+                            public static readonly string stethoscope_svg = Url("stethoscope.svg");
+                            public static readonly string sticky_note_svg = Url("sticky-note.svg");
+                            public static readonly string stop_circle_svg = Url("stop-circle.svg");
+                            public static readonly string stop_svg = Url("stop.svg");
+                            public static readonly string stopwatch_20_svg = Url("stopwatch-20.svg");
+                            public static readonly string stopwatch_svg = Url("stopwatch.svg");
+                            public static readonly string store_alt_slash_svg = Url("store-alt-slash.svg");
+                            public static readonly string store_alt_svg = Url("store-alt.svg");
+                            public static readonly string store_slash_svg = Url("store-slash.svg");
+                            public static readonly string store_svg = Url("store.svg");
+                            public static readonly string stream_svg = Url("stream.svg");
+                            public static readonly string street_view_svg = Url("street-view.svg");
+                            public static readonly string strikethrough_svg = Url("strikethrough.svg");
+                            public static readonly string stroopwafel_svg = Url("stroopwafel.svg");
+                            public static readonly string subscript_svg = Url("subscript.svg");
+                            public static readonly string subway_svg = Url("subway.svg");
+                            public static readonly string suitcase_rolling_svg = Url("suitcase-rolling.svg");
+                            public static readonly string suitcase_svg = Url("suitcase.svg");
+                            public static readonly string sun_svg = Url("sun.svg");
+                            public static readonly string superscript_svg = Url("superscript.svg");
+                            public static readonly string surprise_svg = Url("surprise.svg");
+                            public static readonly string swatchbook_svg = Url("swatchbook.svg");
+                            public static readonly string swimmer_svg = Url("swimmer.svg");
+                            public static readonly string swimming_pool_svg = Url("swimming-pool.svg");
+                            public static readonly string synagogue_svg = Url("synagogue.svg");
+                            public static readonly string sync_alt_svg = Url("sync-alt.svg");
+                            public static readonly string sync_svg = Url("sync.svg");
+                            public static readonly string syringe_svg = Url("syringe.svg");
+                            public static readonly string table_tennis_svg = Url("table-tennis.svg");
+                            public static readonly string table_svg = Url("table.svg");
+                            public static readonly string tablet_alt_svg = Url("tablet-alt.svg");
+                            public static readonly string tablet_svg = Url("tablet.svg");
+                            public static readonly string tablets_svg = Url("tablets.svg");
+                            public static readonly string tachometer_alt_svg = Url("tachometer-alt.svg");
+                            public static readonly string tag_svg = Url("tag.svg");
+                            public static readonly string tags_svg = Url("tags.svg");
+                            public static readonly string tape_svg = Url("tape.svg");
+                            public static readonly string tasks_svg = Url("tasks.svg");
+                            public static readonly string taxi_svg = Url("taxi.svg");
+                            public static readonly string teeth_open_svg = Url("teeth-open.svg");
+                            public static readonly string teeth_svg = Url("teeth.svg");
+                            public static readonly string temperature_high_svg = Url("temperature-high.svg");
+                            public static readonly string temperature_low_svg = Url("temperature-low.svg");
+                            public static readonly string tenge_svg = Url("tenge.svg");
+                            public static readonly string terminal_svg = Url("terminal.svg");
+                            public static readonly string text_height_svg = Url("text-height.svg");
+                            public static readonly string text_width_svg = Url("text-width.svg");
+                            public static readonly string th_large_svg = Url("th-large.svg");
+                            public static readonly string th_list_svg = Url("th-list.svg");
+                            public static readonly string th_svg = Url("th.svg");
+                            public static readonly string theater_masks_svg = Url("theater-masks.svg");
+                            public static readonly string thermometer_empty_svg = Url("thermometer-empty.svg");
+                            public static readonly string thermometer_full_svg = Url("thermometer-full.svg");
+                            public static readonly string thermometer_half_svg = Url("thermometer-half.svg");
+                            public static readonly string thermometer_quarter_svg = Url("thermometer-quarter.svg");
+                            public static readonly string thermometer_three_quarters_svg = Url("thermometer-three-quarters.svg");
+                            public static readonly string thermometer_svg = Url("thermometer.svg");
+                            public static readonly string thumbs_down_svg = Url("thumbs-down.svg");
+                            public static readonly string thumbs_up_svg = Url("thumbs-up.svg");
+                            public static readonly string thumbtack_svg = Url("thumbtack.svg");
+                            public static readonly string ticket_alt_svg = Url("ticket-alt.svg");
+                            public static readonly string times_circle_svg = Url("times-circle.svg");
+                            public static readonly string times_svg = Url("times.svg");
+                            public static readonly string tint_slash_svg = Url("tint-slash.svg");
+                            public static readonly string tint_svg = Url("tint.svg");
+                            public static readonly string tired_svg = Url("tired.svg");
+                            public static readonly string toggle_off_svg = Url("toggle-off.svg");
+                            public static readonly string toggle_on_svg = Url("toggle-on.svg");
+                            public static readonly string toilet_paper_slash_svg = Url("toilet-paper-slash.svg");
+                            public static readonly string toilet_paper_svg = Url("toilet-paper.svg");
+                            public static readonly string toilet_svg = Url("toilet.svg");
+                            public static readonly string toolbox_svg = Url("toolbox.svg");
+                            public static readonly string tools_svg = Url("tools.svg");
+                            public static readonly string tooth_svg = Url("tooth.svg");
+                            public static readonly string torah_svg = Url("torah.svg");
+                            public static readonly string torii_gate_svg = Url("torii-gate.svg");
+                            public static readonly string tractor_svg = Url("tractor.svg");
+                            public static readonly string trademark_svg = Url("trademark.svg");
+                            public static readonly string traffic_light_svg = Url("traffic-light.svg");
+                            public static readonly string trailer_svg = Url("trailer.svg");
+                            public static readonly string train_svg = Url("train.svg");
+                            public static readonly string tram_svg = Url("tram.svg");
+                            public static readonly string transgender_alt_svg = Url("transgender-alt.svg");
+                            public static readonly string transgender_svg = Url("transgender.svg");
+                            public static readonly string trash_alt_svg = Url("trash-alt.svg");
+                            public static readonly string trash_restore_alt_svg = Url("trash-restore-alt.svg");
+                            public static readonly string trash_restore_svg = Url("trash-restore.svg");
+                            public static readonly string trash_svg = Url("trash.svg");
+                            public static readonly string tree_svg = Url("tree.svg");
+                            public static readonly string trophy_svg = Url("trophy.svg");
+                            public static readonly string truck_loading_svg = Url("truck-loading.svg");
+                            public static readonly string truck_monster_svg = Url("truck-monster.svg");
+                            public static readonly string truck_moving_svg = Url("truck-moving.svg");
+                            public static readonly string truck_pickup_svg = Url("truck-pickup.svg");
+                            public static readonly string truck_svg = Url("truck.svg");
+                            public static readonly string tshirt_svg = Url("tshirt.svg");
+                            public static readonly string tty_svg = Url("tty.svg");
+                            public static readonly string tv_svg = Url("tv.svg");
+                            public static readonly string umbrella_beach_svg = Url("umbrella-beach.svg");
+                            public static readonly string umbrella_svg = Url("umbrella.svg");
+                            public static readonly string underline_svg = Url("underline.svg");
+                            public static readonly string undo_alt_svg = Url("undo-alt.svg");
+                            public static readonly string undo_svg = Url("undo.svg");
+                            public static readonly string universal_access_svg = Url("universal-access.svg");
+                            public static readonly string university_svg = Url("university.svg");
+                            public static readonly string unlink_svg = Url("unlink.svg");
+                            public static readonly string unlock_alt_svg = Url("unlock-alt.svg");
+                            public static readonly string unlock_svg = Url("unlock.svg");
+                            public static readonly string upload_svg = Url("upload.svg");
+                            public static readonly string user_alt_slash_svg = Url("user-alt-slash.svg");
+                            public static readonly string user_alt_svg = Url("user-alt.svg");
+                            public static readonly string user_astronaut_svg = Url("user-astronaut.svg");
+                            public static readonly string user_check_svg = Url("user-check.svg");
+                            public static readonly string user_circle_svg = Url("user-circle.svg");
+                            public static readonly string user_clock_svg = Url("user-clock.svg");
+                            public static readonly string user_cog_svg = Url("user-cog.svg");
+                            public static readonly string user_edit_svg = Url("user-edit.svg");
+                            public static readonly string user_friends_svg = Url("user-friends.svg");
+                            public static readonly string user_graduate_svg = Url("user-graduate.svg");
+                            public static readonly string user_injured_svg = Url("user-injured.svg");
+                            public static readonly string user_lock_svg = Url("user-lock.svg");
+                            public static readonly string user_md_svg = Url("user-md.svg");
+                            public static readonly string user_minus_svg = Url("user-minus.svg");
+                            public static readonly string user_ninja_svg = Url("user-ninja.svg");
+                            public static readonly string user_nurse_svg = Url("user-nurse.svg");
+                            public static readonly string user_plus_svg = Url("user-plus.svg");
+                            public static readonly string user_secret_svg = Url("user-secret.svg");
+                            public static readonly string user_shield_svg = Url("user-shield.svg");
+                            public static readonly string user_slash_svg = Url("user-slash.svg");
+                            public static readonly string user_tag_svg = Url("user-tag.svg");
+                            public static readonly string user_tie_svg = Url("user-tie.svg");
+                            public static readonly string user_times_svg = Url("user-times.svg");
+                            public static readonly string user_svg = Url("user.svg");
+                            public static readonly string users_cog_svg = Url("users-cog.svg");
+                            public static readonly string users_slash_svg = Url("users-slash.svg");
+                            public static readonly string users_svg = Url("users.svg");
+                            public static readonly string utensil_spoon_svg = Url("utensil-spoon.svg");
+                            public static readonly string utensils_svg = Url("utensils.svg");
+                            public static readonly string vector_square_svg = Url("vector-square.svg");
+                            public static readonly string venus_double_svg = Url("venus-double.svg");
+                            public static readonly string venus_mars_svg = Url("venus-mars.svg");
+                            public static readonly string venus_svg = Url("venus.svg");
+                            public static readonly string vial_svg = Url("vial.svg");
+                            public static readonly string vials_svg = Url("vials.svg");
+                            public static readonly string video_slash_svg = Url("video-slash.svg");
+                            public static readonly string video_svg = Url("video.svg");
+                            public static readonly string vihara_svg = Url("vihara.svg");
+                            public static readonly string virus_slash_svg = Url("virus-slash.svg");
+                            public static readonly string virus_svg = Url("virus.svg");
+                            public static readonly string viruses_svg = Url("viruses.svg");
+                            public static readonly string voicemail_svg = Url("voicemail.svg");
+                            public static readonly string volleyball_ball_svg = Url("volleyball-ball.svg");
+                            public static readonly string volume_down_svg = Url("volume-down.svg");
+                            public static readonly string volume_mute_svg = Url("volume-mute.svg");
+                            public static readonly string volume_off_svg = Url("volume-off.svg");
+                            public static readonly string volume_up_svg = Url("volume-up.svg");
+                            public static readonly string vote_yea_svg = Url("vote-yea.svg");
+                            public static readonly string vr_cardboard_svg = Url("vr-cardboard.svg");
+                            public static readonly string walking_svg = Url("walking.svg");
+                            public static readonly string wallet_svg = Url("wallet.svg");
+                            public static readonly string warehouse_svg = Url("warehouse.svg");
+                            public static readonly string water_svg = Url("water.svg");
+                            public static readonly string wave_square_svg = Url("wave-square.svg");
+                            public static readonly string weight_hanging_svg = Url("weight-hanging.svg");
+                            public static readonly string weight_svg = Url("weight.svg");
+                            public static readonly string wheelchair_svg = Url("wheelchair.svg");
+                            public static readonly string wifi_svg = Url("wifi.svg");
+                            public static readonly string wind_svg = Url("wind.svg");
+                            public static readonly string window_close_svg = Url("window-close.svg");
+                            public static readonly string window_maximize_svg = Url("window-maximize.svg");
+                            public static readonly string window_minimize_svg = Url("window-minimize.svg");
+                            public static readonly string window_restore_svg = Url("window-restore.svg");
+                            public static readonly string wine_bottle_svg = Url("wine-bottle.svg");
+                            public static readonly string wine_glass_alt_svg = Url("wine-glass-alt.svg");
+                            public static readonly string wine_glass_svg = Url("wine-glass.svg");
+                            public static readonly string won_sign_svg = Url("won-sign.svg");
+                            public static readonly string wrench_svg = Url("wrench.svg");
+                            public static readonly string x_ray_svg = Url("x-ray.svg");
+                            public static readonly string yen_sign_svg = Url("yen-sign.svg");
+                            public static readonly string yin_yang_svg = Url("yin-yang.svg");
+                        }
+                    
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class webfonts {
+                        public const string UrlPath = "~/Content/sb-theme/vendor/fontawesome-free/webfonts";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                        public static readonly string fa_brands_400_eot = Url("fa-brands-400.eot");
+                        public static readonly string fa_brands_400_svg = Url("fa-brands-400.svg");
+                        public static readonly string fa_brands_400_ttf = Url("fa-brands-400.ttf");
+                        public static readonly string fa_brands_400_woff = Url("fa-brands-400.woff");
+                        public static readonly string fa_brands_400_woff2 = Url("fa-brands-400.woff2");
+                        public static readonly string fa_regular_400_eot = Url("fa-regular-400.eot");
+                        public static readonly string fa_regular_400_svg = Url("fa-regular-400.svg");
+                        public static readonly string fa_regular_400_ttf = Url("fa-regular-400.ttf");
+                        public static readonly string fa_regular_400_woff = Url("fa-regular-400.woff");
+                        public static readonly string fa_regular_400_woff2 = Url("fa-regular-400.woff2");
+                        public static readonly string fa_solid_900_eot = Url("fa-solid-900.eot");
+                        public static readonly string fa_solid_900_svg = Url("fa-solid-900.svg");
+                        public static readonly string fa_solid_900_ttf = Url("fa-solid-900.ttf");
+                        public static readonly string fa_solid_900_woff = Url("fa-solid-900.woff");
+                        public static readonly string fa_solid_900_woff2 = Url("fa-solid-900.woff2");
+                    }
+                
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class jquery {
+                    public const string UrlPath = "~/Content/sb-theme/vendor/jquery";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string jquery_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.min.js") ? Url("jquery.min.js") : Url("jquery.js");
+                    public static readonly string jquery_min_js = Url("jquery.min.js");
+                    public static readonly string jquery_min_map = Url("jquery.min.map");
+                    public static readonly string jquery_slim_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.slim.min.js") ? Url("jquery.slim.min.js") : Url("jquery.slim.js");
+                    public static readonly string jquery_slim_min_js = Url("jquery.slim.min.js");
+                    public static readonly string jquery_slim_min_map = Url("jquery.slim.min.map");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class jquery_easing {
+                    public const string UrlPath = "~/Content/sb-theme/vendor/jquery-easing";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(UrlPath); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(UrlPath + "/" + fileName); }
+                    public static readonly string jquery_easing_compatibility_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.easing.compatibility.min.js") ? Url("jquery.easing.compatibility.min.js") : Url("jquery.easing.compatibility.js");
+                    public static readonly string jquery_easing_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/jquery.easing.min.js") ? Url("jquery.easing.min.js") : Url("jquery.easing.js");
+                    public static readonly string jquery_easing_min_js = Url("jquery.easing.min.js");
+                }
+            
+            }
+        
         }
     
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -211,6 +2269,251 @@ namespace Links
             }
             public static partial class fonts 
             {
+                public static class Assets
+                {
+                }
+            }
+            public static partial class sb_theme 
+            {
+                public static partial class css 
+                {
+                    public static class Assets
+                    {
+                        public static readonly string sb_admin_2_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/css/sb-admin-2.css");
+                        public static readonly string sb_admin_2_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/css/sb-admin-2.min.css");
+                    }
+                }
+                public static partial class img 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
+                public static partial class js 
+                {
+                    public static partial class demo 
+                    {
+                        public static class Assets
+                        {
+                            public static readonly string chart_area_demo_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/js/demo/chart-area-demo.js"); 
+                            public static readonly string chart_bar_demo_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/js/demo/chart-bar-demo.js"); 
+                            public static readonly string chart_pie_demo_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/js/demo/chart-pie-demo.js"); 
+                            public static readonly string datatables_demo_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/js/demo/datatables-demo.js"); 
+                        }
+                    }
+                    public static class Assets
+                    {
+                        public static readonly string sb_admin_2_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/js/sb-admin-2.js"); 
+                        public static readonly string sb_admin_2_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/js/sb-admin-2.min.js"); 
+                    }
+                }
+                public static partial class scss 
+                {
+                    public static partial class navs 
+                    {
+                        public static class Assets
+                        {
+                        }
+                    }
+                    public static partial class utilities 
+                    {
+                        public static class Assets
+                        {
+                        }
+                    }
+                    public static class Assets
+                    {
+                    }
+                }
+                public static partial class vendor 
+                {
+                    public static partial class bootstrap 
+                    {
+                        public static partial class js 
+                        {
+                            public static class Assets
+                            {
+                                public static readonly string bootstrap_bundle_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/bootstrap/js/bootstrap.bundle.js"); 
+                                public static readonly string bootstrap_bundle_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/bootstrap/js/bootstrap.bundle.min.js"); 
+                                public static readonly string bootstrap_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/bootstrap/js/bootstrap.js"); 
+                                public static readonly string bootstrap_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/bootstrap/js/bootstrap.min.js"); 
+                            }
+                        }
+                        public static partial class scss 
+                        {
+                            public static partial class mixins 
+                            {
+                                public static class Assets
+                                {
+                                }
+                            }
+                            public static partial class utilities 
+                            {
+                                public static class Assets
+                                {
+                                }
+                            }
+                            public static partial class vendor 
+                            {
+                                public static class Assets
+                                {
+                                }
+                            }
+                            public static class Assets
+                            {
+                                public static readonly string bootstrap_css_ = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/bootstrap/scss/bootstrap.css");
+                                public static readonly string bootstrap_min_css_ = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/bootstrap/scss/bootstrap.min.css");
+                            }
+                        }
+                        public static class Assets
+                        {
+                        }
+                    }
+                    public static partial class chart_js 
+                    {
+                        public static class Assets
+                        {
+                            public static readonly string Chart_bundle_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/chart.js/Chart.bundle.js"); 
+                            public static readonly string Chart_bundle_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/chart.js/Chart.bundle.min.js"); 
+                            public static readonly string Chart_js_ = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/chart.js/Chart.js"); 
+                            public static readonly string Chart_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/chart.js/Chart.min.js"); 
+                        }
+                    }
+                    public static partial class datatables 
+                    {
+                        public static class Assets
+                        {
+                            public static readonly string dataTables_bootstrap4_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/datatables/dataTables.bootstrap4.css");
+                            public static readonly string dataTables_bootstrap4_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/datatables/dataTables.bootstrap4.js"); 
+                            public static readonly string dataTables_bootstrap4_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/datatables/dataTables.bootstrap4.min.css");
+                            public static readonly string dataTables_bootstrap4_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/datatables/dataTables.bootstrap4.min.js"); 
+                            public static readonly string jquery_dataTables_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/datatables/jquery.dataTables.js"); 
+                            public static readonly string jquery_dataTables_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/datatables/jquery.dataTables.min.js"); 
+                        }
+                    }
+                    public static partial class fontawesome_free 
+                    {
+                        public static partial class css 
+                        {
+                            public static class Assets
+                            {
+                                public static readonly string all_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/css/all.css");
+                                public static readonly string all_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/css/all.min.css");
+                                public static readonly string brands_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/css/brands.css");
+                                public static readonly string brands_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/css/brands.min.css");
+                                public static readonly string fontawesome_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/css/fontawesome.css");
+                                public static readonly string fontawesome_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/css/fontawesome.min.css");
+                                public static readonly string regular_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/css/regular.css");
+                                public static readonly string regular_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/css/regular.min.css");
+                                public static readonly string solid_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/css/solid.css");
+                                public static readonly string solid_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/css/solid.min.css");
+                                public static readonly string svg_with_js_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/css/svg-with-js.css");
+                                public static readonly string svg_with_js_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/css/svg-with-js.min.css");
+                                public static readonly string v4_shims_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/css/v4-shims.css");
+                                public static readonly string v4_shims_min_css = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/css/v4-shims.min.css");
+                            }
+                        }
+                        public static partial class js 
+                        {
+                            public static class Assets
+                            {
+                                public static readonly string all_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/js/all.js"); 
+                                public static readonly string all_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/js/all.min.js"); 
+                                public static readonly string brands_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/js/brands.js"); 
+                                public static readonly string brands_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/js/brands.min.js"); 
+                                public static readonly string conflict_detection_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/js/conflict-detection.js"); 
+                                public static readonly string conflict_detection_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/js/conflict-detection.min.js"); 
+                                public static readonly string fontawesome_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/js/fontawesome.js"); 
+                                public static readonly string fontawesome_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/js/fontawesome.min.js"); 
+                                public static readonly string regular_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/js/regular.js"); 
+                                public static readonly string regular_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/js/regular.min.js"); 
+                                public static readonly string solid_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/js/solid.js"); 
+                                public static readonly string solid_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/js/solid.min.js"); 
+                                public static readonly string v4_shims_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/js/v4-shims.js"); 
+                                public static readonly string v4_shims_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/fontawesome-free/js/v4-shims.min.js"); 
+                            }
+                        }
+                        public static partial class less 
+                        {
+                            public static class Assets
+                            {
+                            }
+                        }
+                        public static partial class metadata 
+                        {
+                            public static class Assets
+                            {
+                            }
+                        }
+                        public static partial class scss 
+                        {
+                            public static class Assets
+                            {
+                            }
+                        }
+                        public static partial class sprites 
+                        {
+                            public static class Assets
+                            {
+                            }
+                        }
+                        public static partial class svgs 
+                        {
+                            public static partial class brands 
+                            {
+                                public static class Assets
+                                {
+                                }
+                            }
+                            public static partial class regular 
+                            {
+                                public static class Assets
+                                {
+                                }
+                            }
+                            public static partial class solid 
+                            {
+                                public static class Assets
+                                {
+                                }
+                            }
+                            public static class Assets
+                            {
+                            }
+                        }
+                        public static partial class webfonts 
+                        {
+                            public static class Assets
+                            {
+                            }
+                        }
+                        public static class Assets
+                        {
+                        }
+                    }
+                    public static partial class jquery 
+                    {
+                        public static class Assets
+                        {
+                            public static readonly string jquery_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/jquery/jquery.js"); 
+                            public static readonly string jquery_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/jquery/jquery.min.js"); 
+                            public static readonly string jquery_slim_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/jquery/jquery.slim.js"); 
+                            public static readonly string jquery_slim_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/jquery/jquery.slim.min.js"); 
+                        }
+                    }
+                    public static partial class jquery_easing 
+                    {
+                        public static class Assets
+                        {
+                            public static readonly string jquery_easing_compatibility_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/jquery-easing/jquery.easing.compatibility.js"); 
+                            public static readonly string jquery_easing_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/jquery-easing/jquery.easing.js"); 
+                            public static readonly string jquery_easing_min_js = T4MVCHelpers.ProcessAssetPath("~/Content/sb-theme/vendor/jquery-easing/jquery.easing.min.js"); 
+                        }
+                    }
+                    public static class Assets
+                    {
+                    }
+                }
                 public static class Assets
                 {
                 }

@@ -143,11 +143,13 @@
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Controllers\TestExceptionsController.cs" />
     <Compile Include="Controllers\WorkerController.cs" />
+    <Compile Include="Enums\MessageStatusEnum.cs" />
     <Compile Include="Enums\MessageTypeEnum.cs" />
     <Compile Include="Filters\NLogExceptionHandlerAttribute.cs" />
     <Compile Include="Models\EmployeeContactsModel.cs" />
     <Compile Include="Models\EmployeeSelectViewModel.cs" />
     <Compile Include="Models\MessageViewModel.cs" />
+    <Compile Include="Models\MessageWithRecipientName.cs" />
     <Compile Include="Models\PhoneViewModel.cs" />
     <Compile Include="Models\PositionViewModel.cs" />
     <Compile Include="Models\SubjectTeachersViewModel.cs" />
@@ -169,6 +171,9 @@
     <Compile Include="Models\EmployeeListModel.cs" />
     <Compile Include="Models\EmployeeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4MVC\MessageController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4MVC\PositionController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -2136,10 +2141,10 @@
     <Content Include="Views\Worker\EditForPosition.cshtml" />
     <Content Include="Views\Employee\_PhoneRow.cshtml" />
     <Content Include="Views\Employee\SendMessage.cshtml" />
+    <Content Include="Views\Message\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Message\" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

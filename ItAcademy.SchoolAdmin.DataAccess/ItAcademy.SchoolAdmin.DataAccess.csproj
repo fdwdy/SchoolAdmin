@@ -116,6 +116,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DTOs\EmployeeDbPositionStatistics.cs" />
     <Compile Include="Models\DTOs\EmployeeDbSubjectStatistics.cs" />
+    <Compile Include="Models\DTOs\MessageDbWithRecipientName.cs" />
     <Compile Include="Models\DTOs\PositionDbStatistics.cs" />
     <Compile Include="Models\DTOs\SubjectDbStatistics.cs" />
     <Compile Include="Models\EmployeeDb.cs" />

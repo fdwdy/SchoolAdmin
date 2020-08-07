@@ -76,7 +76,7 @@
     <Compile Include="Mapping\AutoMapperBusinessModule.cs" />
     <Compile Include="Mapping\AutoMapperBusinessProfile.cs" />
     <Compile Include="Messaging\IMessageHandler.cs" />
-    <Compile Include="Messaging\IMessageSenderService.cs" />
+    <Compile Include="Messaging\IMessageService.cs" />
     <Compile Include="Messaging\MessageSaver.cs" />
     <Compile Include="Messaging\MessageSenderService.cs" />
     <Compile Include="Messaging\MessageManager.cs" />
@@ -87,6 +87,7 @@
     <Compile Include="Models\DTOs\EmployeeItemBase.cs" />
     <Compile Include="Models\DTOs\EmployeePositionStatistics.cs" />
     <Compile Include="Models\DTOs\EmployeeSubjectStatistics.cs" />
+    <Compile Include="Models\DTOs\MessageWithRecipientName.cs" />
     <Compile Include="Models\DTOs\PositionStatistics.cs" />
     <Compile Include="Models\DTOs\SubjectStatistics.cs" />
     <Compile Include="Models\Employee.cs" />

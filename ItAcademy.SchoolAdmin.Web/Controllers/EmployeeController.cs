@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -16,9 +17,9 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IEmployeeService _empService;
-        private readonly IMessageSenderService _msgService;
+        private readonly IMessageService _msgService;
 
-        public EmployeeController(IEmployeeService empService, IMapper mapper, IMessageSenderService msgService)
+        public EmployeeController(IEmployeeService empService, IMapper mapper, IMessageService msgService)
         {
             _empService = empService;
             _mapper = mapper;

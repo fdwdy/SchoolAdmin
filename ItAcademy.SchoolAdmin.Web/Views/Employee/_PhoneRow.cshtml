@@ -1,29 +1,56 @@
 ﻿@using HtmlHelpers.BeginCollectionItem
 @model ItAcademy.SchoolAdmin.Web.Models.PhoneViewModel
 
-<div class="editorRow">
-    @using (Html.BeginCollectionItem("Phones"))
-    {
-        @Html.HiddenFor(model => model.Id)
+    <div class="editorRow">
+        @using (Html.BeginCollectionItem("Phones"))
+        {
+            @Html.HiddenFor(model => model.Id)
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Number, htmlAttributes: new { @class = "control-label col-md-2" })
-        @Html.EditorFor(model => model.Number, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessageFor(model => model.Number, "", new { @class = "text-danger" })
-        <div class="col-md-offset-2 col-md-10">
-            <a href="#" class="deleteRow">Remove</a>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Number, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Number, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Number, "", new { @class = "text-danger" })
+            <div class="primaryPhone">
+                @*<input type="radio" id="IsPrimary" name="IsPrimary" value="false" data_group = "myGroup"> Primary*@
+                @Html.RadioButtonFor(m => m.IsPrimary, true, new { @data_group = "myGroup", @data_val = "false" }) Primary
+            </div>
+            <div class="col-md-offset-2 col-md-10">
+                <a href="#" class="deleteRow">Remove</a>
+            </div>
         </div>
+        }
     </div>
-    }
-</div>
 
 <script>
+    $(function changeAttr() {
+        $('input[type="radio"][data-group="myGroup"]').change(function () {
+            console.log($(this))
+            $('input[type="radio"][data-group="myGroup"]').removeAttr('checked');
+            $('input[type="radio"][data-group="myGroup"]').prop('checked', false);
+            $('input[type="radio"][data-group="myGroup"]').attr('value', false);
+            $(this).attr('checked', 'checked');
+            $(this).prop('checked', 'true');
+            $(this).attr('value', true);
+        });
+    });
+
+    $(document).ready(function () {
+        console.log($('.primaryPhone').length);
+        if (($('.primaryPhone').length == 1)) {
+            $('.primaryPhone').first().find('input').attr('checked', "checked");
+            $('.primaryPhone').first().find('input').prop('value', true);
+        }
+    });
+
+
     $("a.deleteRow").click(function () {
         if ($("a.deleteRow").length == 1) {
             $(".editorRow .form-control.text-box.single-line").val('');
         }
         else {
             $(this).parents("div.editorRow:first").remove();
+            $('.primaryPhone').first().find('input').prop('checked', true)
+            $('.primaryPhone').first().find('input').prop('value', true);
         }
         return false;
     });

@@ -21,7 +21,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Autofac
             builder.RegisterType<SubjectDbRepository>().As<ISubjectDbService>().InstancePerRequest();
             builder.RegisterType<PositionDbRepository>().As<IRepository<PositionDb>>().InstancePerRequest();
             builder.RegisterType<PositionDbRepository>().As<IPositionDbService>().InstancePerRequest();
-            builder.RegisterType<MessageSenderService>().As<IMessageSenderService>().InstancePerRequest();
+            builder.RegisterType<MessageSenderService>().As<IMessageService>().InstancePerRequest();
         }
     }
 }

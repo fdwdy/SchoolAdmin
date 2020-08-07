@@ -107,8 +107,21 @@
                     </a>
                     <div id="collapseAdministration" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="@Url.Action(MVC.Position.Index())">View all</a>
-                            <a class="collapse-item" href="@Url.Action(MVC.Position.Create())">Add new</a>
+                            <a class="collapse-item" href="@Url.Action(MVC.Position.Index())">View all positions</a>
+                            <a class="collapse-item" href="@Url.Action(MVC.Position.Create())">Add position</a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Nav Item - Messages Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMessages" aria-expanded="true" aria-controls="collapseUtilities">
+                        <i class="fas fa-fw fa-wrench"></i>
+                        <span>Message center</span>
+                    </a>
+                    <div id="collapseMessages" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="@Url.Action(MVC.Message.Index())">View all</a>
                         </div>
                     </div>
                 </li>

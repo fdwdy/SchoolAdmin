@@ -2,6 +2,7 @@
 using System.Linq;
 using AutoMapper;
 using ItAcademy.SchoolAdmin.BusinessLogic.Models;
+using ItAcademy.SchoolAdmin.BusinessLogic.Models.DTOs;
 using ItAcademy.SchoolAdmin.Web.Models;
 
 namespace ItAcademy.SchoolAdmin.Web.Mapping
@@ -23,6 +24,7 @@ namespace ItAcademy.SchoolAdmin.Web.Mapping
                 e => e.Phones,
                 m => m.MapFrom(p => GetStringNumbers(p)));
             CreateMap<Subject, SubjectViewModel>().ReverseMap();
+            CreateMap<MessageWithRecipientName, MessageWithRecipient>().ReverseMap();
             CreateMap<Position, PositionViewModel>().ReverseMap();
             CreateMap<Worker, WorkerViewModel>().ReverseMap();
             CreateMap<Phone, PhoneViewModel>().ReverseMap();

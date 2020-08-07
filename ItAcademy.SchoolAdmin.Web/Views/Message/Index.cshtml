@@ -1,0 +1,101 @@
+﻿@model IEnumerable<ItAcademy.SchoolAdmin.Web.Models.MessageWithRecipient>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="h2 mb-2 text-gray-800">Message Center</h2>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Summary</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Recipient</th>
+                        <th>Text</th>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Manage</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Recipient</th>
+                        <th>Text</th>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Manage</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                        var msgStatus = item.Status.ToString() == "Error" ? "text-xs font-weight-bold text-danger text-uppercase" : "text-xs font-weight-bold text-success text-uppercase";
+
+                        <tr>
+                            <td>@item.RecipientFullName</td>
+                            <td>@item.Text</td>
+                            <td>@item.Time</td>
+                            <td>@item.Type</td>
+                            <td class="@msgStatus">@item.Status</td>
+                            <td>
+                                <button class="btn btn-secondary btn-circle btn-sm" title="Send again" value="@item.Id">
+                                    <i class="fas fa-undo"></i>
+                                </button>
+                                <div class="d-none">
+                                    <i class="fas fa-undo"></i>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Content/scripts/lib/jquery/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/scripts/lib/jquery-signalr/jquery.signalR-2.4.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script type="text/javascript" src="~/Content/scripts/js/SearchHandler.js"></script>
+    <script type="text/javascript" src="~/Content/scripts/js/EmployeeListUpdater.js"></script>
+    <script type="text/javascript" src="~/Content/scripts/js/CommonListModificationHandler.js"></script>
+    <script type="text/javascript">
+        $('.btn').click(function () {
+            var btn = $(this)
+            btn.prop('disabled', true);
+            $.ajax({
+                url: "/Message/ResendMessage",
+                type: "POST",
+                data: {id: $(this).val()},
+                cache: false,
+                async: true,
+                success: function (data) {
+                    if (data.Status == 2) {
+                        $('#result-icon').removeClass('d-none');
+                        console.log(btn.parent());
+                    }
+                    else if (data.Status == 0) {
+                        $('#result-icon').removeClass('d-none');
+                        console.log(btn.parent());
+                    }
+                },
+                error: function () {
+                    console.log("error");
+                },
+                complete: function () {
+                    btn.prop('disabled', false);
+                }
+            });
+        });
+    </script>
+}
