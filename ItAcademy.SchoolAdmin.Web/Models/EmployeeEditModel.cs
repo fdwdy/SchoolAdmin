@@ -18,6 +18,8 @@ namespace ItAcademy.SchoolAdmin.Web.Models
 
         public string Email { get; set; }
 
+        public virtual PhoneViewModel PrimaryPhone { get; set; }
+
         public MessageTypeEnum MessageType { get; set; }
 
         public string FullName => Name + ' ' + Surname + ' ' + Middlename;

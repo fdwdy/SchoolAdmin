@@ -55,6 +55,7 @@
     <Compile Include="Interfaces\ICommonManyToManyEditService.cs" />
     <Compile Include="Interfaces\IEmployeeDbService.cs" />
     <Compile Include="Interfaces\IMessageDbService.cs" />
+    <Compile Include="Interfaces\IPhoneDbService.cs" />
     <Compile Include="Interfaces\IPositionDbService.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\ISubjectDbService.cs" />
@@ -113,6 +114,18 @@
     <Compile Include="Migrations\202008010456590_ChangeMessageStatusType.designer.cs">
       <DependentUpon>202008010456590_ChangeMessageStatusType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008071553434_AddPrimaryPhoneId.cs" />
+    <Compile Include="Migrations\202008071553434_AddPrimaryPhoneId.designer.cs">
+      <DependentUpon>202008071553434_AddPrimaryPhoneId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008071635367_ChangePrimaryPhoneIdDataType.cs" />
+    <Compile Include="Migrations\202008071635367_ChangePrimaryPhoneIdDataType.designer.cs">
+      <DependentUpon>202008071635367_ChangePrimaryPhoneIdDataType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008080653373_AddPrimaryPhoneForeignKey.cs" />
+    <Compile Include="Migrations\202008080653373_AddPrimaryPhoneForeignKey.designer.cs">
+      <DependentUpon>202008080653373_AddPrimaryPhoneForeignKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DTOs\EmployeeDbPositionStatistics.cs" />
     <Compile Include="Models\DTOs\EmployeeDbSubjectStatistics.cs" />
@@ -133,6 +146,7 @@
     <Compile Include="Services\BaseDbRepository.cs" />
     <Compile Include="Services\IDbEntity.cs" />
     <Compile Include="Services\EmployeeDbRepository.cs" />
+    <Compile Include="Services\PhoneDbService.cs" />
     <Compile Include="Services\PositionDbRepository.cs" />
     <Compile Include="Services\SubjectDbRepository.cs" />
     <Compile Include="Services\TeacherDbService.cs" />
@@ -197,6 +211,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008010456590_ChangeMessageStatusType.resx">
       <DependentUpon>202008010456590_ChangeMessageStatusType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008071553434_AddPrimaryPhoneId.resx">
+      <DependentUpon>202008071553434_AddPrimaryPhoneId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008071635367_ChangePrimaryPhoneIdDataType.resx">
+      <DependentUpon>202008071635367_ChangePrimaryPhoneIdDataType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008080653373_AddPrimaryPhoneForeignKey.resx">
+      <DependentUpon>202008080653373_AddPrimaryPhoneForeignKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

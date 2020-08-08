@@ -18,6 +18,8 @@ namespace ItAcademy.SchoolAdmin.Web.Models
 
         public MessageTypeEnum MessageType { get; set; }
 
+        public virtual PhoneViewModel PrimaryPhone { get; set; }
+
         public string FullName => $"{Name} {Surname} {Middlename}".Replace("  ", " ");
 
         public IEnumerable<PhoneViewModel> Phones { get; set; }

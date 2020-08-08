@@ -24,6 +24,11 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Models
 
         public string Email { get; set; }
 
+        ////[ForeignKey("PrimaryPhone")]
+        public string PrimaryPhoneId { get; set; }
+
+        ////public virtual PhoneDb PrimaryPhone { get; set; }
+
         public MessageTypeDb MessageType { get; set; }
 
         public ICollection<SubjectDb> Subjects { get; set; }

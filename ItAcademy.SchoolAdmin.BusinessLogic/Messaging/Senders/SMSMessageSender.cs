@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using Autofac;
+using ItAcademy.SchoolAdmin.BusinessLogic.Autofac;
+using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
 using ItAcademy.SchoolAdmin.BusinessLogic.Models;
 using ItAcademy.SchoolAdmin.Infrastructure;
 using NLog;
@@ -9,13 +11,19 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Messaging.Senders
     {
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
+        private IPhoneService _phService;
+
         public SMSMessageSender()
         {
+            var builder = new ContainerBuilder();
+            builder.RegisterModule(new PhoneServiceModule());
+            var container = builder.Build();
+            _phService = container.Resolve<IPhoneService>();
         }
 
         public bool IsProperContactAvailable(Employee emp)
         {
-            return emp.Phones.FirstOrDefault() == null ? false : true;
+            return _phService.GetNumberById(emp.PrimaryPhoneId) == null ? false : true;
         }
 
         public Result<Message> Process(Message msg, Employee emp)
@@ -40,7 +48,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Messaging.Senders
         public Result<Message> Send(Message message, Employee emp)
         {
             Logger.Info($"Sending SMS to employee {emp.FullName}, " +
-                $"phone number: {emp.Phones.FirstOrDefault().Number}, " +
+                $"phone number: {_phService.GetNumberById(emp.PrimaryPhoneId)}, " +
                 $"Text: {message.Text}.");
             message.Status = Enums.MessageStatus.Ok;
             return Result<Message>.Ok(message);

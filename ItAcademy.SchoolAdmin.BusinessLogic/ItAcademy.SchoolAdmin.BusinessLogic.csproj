@@ -65,10 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autofac\DatabaseServicesModule.cs" />
+    <Compile Include="Autofac\PhoneServiceModule.cs" />
     <Compile Include="Enums\MessageStatus.cs" />
     <Compile Include="Enums\MessageType.cs" />
     <Compile Include="Interfaces\ICommonService.cs" />
     <Compile Include="Interfaces\IEmployeeService.cs" />
+    <Compile Include="Interfaces\IPhoneService.cs" />
     <Compile Include="Interfaces\IPositionService.cs" />
     <Compile Include="Interfaces\ISubjectService.cs" />
     <Compile Include="Interfaces\ITeacherService.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Models\Worker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\EmployeeService.cs" />
+    <Compile Include="Services\PhoneService.cs" />
     <Compile Include="Services\PositionService.cs" />
     <Compile Include="Services\SubjectService.cs" />
     <Compile Include="Services\TeacherService.cs" />

@@ -53,7 +53,9 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
         public async Task<Employee> GetByIdAsync(string id)
         {
             var employee = await _uow.Employees.GetByIdAsync(id);
-            return _mapper.Map<EmployeeDb, Employee>(employee);
+            var emp = _mapper.Map<EmployeeDb, Employee>(employee);
+            SetPrimaryPhone(emp);
+            return emp;
         }
 
         public async Task RemoveByIdAsync(string id)
@@ -119,6 +121,23 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
             }
 
             return employeeToUpdate;
+        }
+
+        private Employee SetPrimaryPhone(Employee emp)
+        {
+            if (emp.Phones != null)
+            {
+                foreach (Phone ph in emp.Phones)
+                {
+                    if (ph.Id == emp.PrimaryPhoneId)
+                    {
+                        ph.IsPrimary = true;
+                        break;
+                    }
+                }
+            }
+
+            return emp;
         }
     }
 }

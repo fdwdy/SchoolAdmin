@@ -10,6 +10,10 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Models
         public string Number { get; set; }
 
         [Index("IX_PhoneNumbers_Phone_EmployeeId", 1, IsUnique = true)]
+
+        [NotMapped]
+        public bool IsPrimary { get; set; }
+
         public string EmployeeId { get; set; }
 
         public EmployeeDb Employee { get; set; }

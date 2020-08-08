@@ -29,6 +29,11 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
             foreach (var phone in item.Phones)
             {
                 phone.Id = Guid.NewGuid().ToString();
+                if (phone.IsPrimary)
+                {
+                    item.PrimaryPhoneId = phone.Id;
+                }
+
                 _db.Entry(phone).State = EntityState.Added;
             }
 
@@ -44,6 +49,11 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
                 if (phone.Id == null)
                 {
                     phone.Id = Guid.NewGuid().ToString();
+                }
+
+                if (phone.IsPrimary)
+                {
+                    item.PrimaryPhoneId = phone.Id;
                 }
 
                 _db.Entry(phone).State = EntityState.Added;

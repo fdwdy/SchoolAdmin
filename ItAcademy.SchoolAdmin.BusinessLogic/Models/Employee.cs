@@ -20,6 +20,10 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Models
 
         public MessageType MessageType { get; set; }
 
+        public string PrimaryPhoneId { get; set; }
+
+        ////public virtual Phone PrimaryPhone { get; set; }
+
         public string FullName => Name + ' ' + Surname + ' ' + Middlename;
 
         public IEnumerable<Phone> Phones { get; set; }
