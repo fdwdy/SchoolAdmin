@@ -14,6 +14,11 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Services
 
         public string GetNumberById(string id)
         {
+            if (id == null)
+            {
+                return id;
+            }
+
             var phone = _context.Phones.FirstOrDefault(e => e.Id == id);
             return phone.Number;
         }

@@ -46,12 +46,12 @@
                             <td>@item.Time</td>
                             <td>@item.Type</td>
                             <td class="@msgStatus">@item.Status</td>
-                            <td>
+                            <td class="msgManage">
                                 <button class="btn btn-secondary btn-circle btn-sm" title="Send again" value="@item.Id">
                                     <i class="fas fa-undo"></i>
                                 </button>
                                 <div class="d-none">
-                                    <i class="fas fa-undo"></i>
+                                    <i></i>
                                 </div>
                             </td>
                         </tr>
@@ -64,11 +64,6 @@
 
 @section scripts{
     <script src="~/Content/scripts/lib/jquery/jquery-3.3.1.min.js"></script>
-    <script src="~/Content/scripts/lib/jquery-signalr/jquery.signalR-2.4.1.min.js"></script>
-    <script src="~/signalr/hubs"></script>
-    <script type="text/javascript" src="~/Content/scripts/js/SearchHandler.js"></script>
-    <script type="text/javascript" src="~/Content/scripts/js/EmployeeListUpdater.js"></script>
-    <script type="text/javascript" src="~/Content/scripts/js/CommonListModificationHandler.js"></script>
     <script type="text/javascript">
         $('.btn').click(function () {
             var btn = $(this)
@@ -80,17 +75,31 @@
                 cache: false,
                 async: true,
                 success: function (data) {
+                    btn.next().removeClass('d-none');
+                    var infoElement = btn.next().eq(0);
                     if (data.Status == 2) {
-                        $('#result-icon').removeClass('d-none');
-                        console.log(btn.parent());
+                        infoElement.removeAttr('class');
+                        infoElement.addClass('fas fa-exclamation-triangle');
+                        infoElement.css('color', 'orange'); 
+                        infoElement.prop('title', 'There is no contact available for this employee.');
+                    }
+                    else if (data.Status == 1) {
+                        infoElement.removeAttr('class');
+                        infoElement.addClass('fas fa-times-circle');
+                        infoElement.css('color', 'red'); 
+                        infoElement.prop('title', 'Error occured while sending your SMS');
                     }
                     else if (data.Status == 0) {
-                        $('#result-icon').removeClass('d-none');
-                        console.log(btn.parent());
+                        infoElement.removeAttr('class');
+                        infoElement.addClass('fas fa-check');
+                        infoElement.css('color', 'green'); 
+                        infoElement.prop('title', 'Your message succesfully sent');
                     }
                 },
                 error: function () {
-                    console.log("error");
+                    infoElement.removeAttr('class');
+                    infoElement.addClass('fas fa-times-circle');
+                    infoElement.css('color', 'Error occured while sending your SMS'); 
                 },
                 complete: function () {
                     btn.prop('disabled', false);

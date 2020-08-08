@@ -125,7 +125,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
 
         private Employee SetPrimaryPhone(Employee emp)
         {
-            if (emp.Phones != null)
+            if (emp.Phones != null && emp != null)
             {
                 foreach (Phone ph in emp.Phones)
                 {

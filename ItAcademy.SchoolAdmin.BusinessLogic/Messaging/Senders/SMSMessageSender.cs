@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using System;
+using Autofac;
 using ItAcademy.SchoolAdmin.BusinessLogic.Autofac;
 using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
 using ItAcademy.SchoolAdmin.BusinessLogic.Models;
@@ -13,12 +14,15 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Messaging.Senders
 
         private IPhoneService _phService;
 
+        private bool _isException;
+
         public SMSMessageSender()
         {
             var builder = new ContainerBuilder();
             builder.RegisterModule(new PhoneServiceModule());
             var container = builder.Build();
             _phService = container.Resolve<IPhoneService>();
+            _isException = new Random().Next(1, 101) > 66;
         }
 
         public bool IsProperContactAvailable(Employee emp)
@@ -47,6 +51,11 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Messaging.Senders
 
         public Result<Message> Send(Message message, Employee emp)
         {
+            if (_isException)
+            {
+                throw new Exception("Random error.");
+            }
+
             Logger.Info($"Sending SMS to employee {emp.FullName}, " +
                 $"phone number: {_phService.GetNumberById(emp.PrimaryPhoneId)}, " +
                 $"Text: {message.Text}.");
