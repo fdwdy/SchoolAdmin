@@ -15,6 +15,8 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Autofac
             builder.RegisterType<MessageManager>().AsSelf().InstancePerRequest();
             builder.RegisterType<MessageSaver>().AsSelf().InstancePerRequest();
             builder.RegisterType<MessageDbService>().As<IMessageDbService>().InstancePerRequest();
+            builder.RegisterType<ClientManager>().As<IClientManager>().InstancePerRequest();
+            builder.RegisterType<IdentityUnitOfWork>().As<IIdentityUnitOfWork>().InstancePerRequest();
             builder.RegisterType<EmployeeDbRepository>().As<IRepository<EmployeeDb>>().InstancePerRequest();
             builder.RegisterType<EmployeeDbRepository>().As<IEmployeeDbService>().InstancePerRequest();
             builder.RegisterType<SubjectDbRepository>().As<IRepository<SubjectDb>>().InstancePerRequest();

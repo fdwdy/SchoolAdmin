@@ -9,6 +9,7 @@ using ItAcademy.SchoolAdmin.Web.Models;
 
 namespace ItAcademy.SchoolAdmin.Web.Controllers
 {
+    [Authorize]
     public partial class SubjectController : Controller
     {
         private readonly IMapper _mapper;

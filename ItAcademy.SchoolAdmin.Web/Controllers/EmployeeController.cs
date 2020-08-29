@@ -11,6 +11,7 @@ using ItAcademy.SchoolAdmin.Web.Models;
 
 namespace ItAcademy.SchoolAdmin.Web.Controllers
 {
+    [Authorize]
     [HandleError]
     public partial class EmployeeController : Controller
     {

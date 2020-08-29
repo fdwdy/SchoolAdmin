@@ -11,6 +11,7 @@ namespace ItAcademy.SchoolAdmin.Web.Filters
         public override void OnException(ExceptionContext filterContext)
         {
             Logger.Error($"Exception info:", filterContext.Exception);
+            Logger.Info($"Current user: {HttpContext.Current.User.Identity.Name}");
 
             if (filterContext.ExceptionHandled || !filterContext.HttpContext.IsCustomErrorEnabled)
             {

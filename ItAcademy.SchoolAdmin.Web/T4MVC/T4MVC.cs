@@ -27,6 +27,7 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
+    public static ItAcademy.SchoolAdmin.Web.Controllers.AccountController Account = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_AccountController();
     public static ItAcademy.SchoolAdmin.Web.Controllers.EmployeeController Employee = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_EmployeeController();
     public static ItAcademy.SchoolAdmin.Web.Controllers.HomeController Home = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_HomeController();
     public static ItAcademy.SchoolAdmin.Web.Controllers.MessageController Message = new ItAcademy.SchoolAdmin.Web.Controllers.T4MVC_MessageController();

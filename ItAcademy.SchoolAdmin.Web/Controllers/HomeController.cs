@@ -3,6 +3,7 @@ using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
 
 namespace ItAcademy.SchoolAdmin.Web.Controllers
 {
+    [Authorize]
     [HandleError]
     public partial class HomeController : Controller
     {

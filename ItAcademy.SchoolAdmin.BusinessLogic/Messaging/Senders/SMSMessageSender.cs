@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 using Autofac;
 using ItAcademy.SchoolAdmin.BusinessLogic.Autofac;
 using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
@@ -56,6 +57,7 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Messaging.Senders
                 throw new Exception("Random error.");
             }
 
+            Logger.Info($"Current user: {HttpContext.Current.User.Identity.Name}");
             Logger.Info($"Sending SMS to employee {emp.FullName}, " +
                 $"phone number: {_phService.GetNumberById(emp.PrimaryPhoneId)}, " +
                 $"Text: {message.Text}.");

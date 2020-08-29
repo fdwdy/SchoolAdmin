@@ -60,6 +60,12 @@
     <PackageReference Include="FluentValidation.ValidatorAttribute" Version="8.6.1" />
     <PackageReference Include="jQuery" Version="3.3.1" />
     <PackageReference Include="jQuery.Validation" Version="1.17.0" />
+    <PackageReference Include="Microsoft.AspNet.Identity.Core">
+      <Version>2.2.3</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.Identity.Owin">
+      <Version>2.2.1</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNet.Razor" Version="3.2.7" />
     <PackageReference Include="Microsoft.AspNet.SignalR" Version="2.4.1" />
@@ -134,7 +140,9 @@
     <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
@@ -148,13 +156,18 @@
     <Compile Include="Filters\NLogExceptionHandlerAttribute.cs" />
     <Compile Include="Models\EmployeeContactsModel.cs" />
     <Compile Include="Models\EmployeeSelectViewModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\MessageViewModel.cs" />
     <Compile Include="Models\MessageWithRecipientName.cs" />
     <Compile Include="Models\PhoneViewModel.cs" />
     <Compile Include="Models\PositionViewModel.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\SubjectTeachersViewModel.cs" />
     <Compile Include="Models\SubjectViewModel.cs" />
     <Compile Include="Models\WorkerViewModel.cs" />
+    <Compile Include="T4MVC\AccountController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="T4MVC\EmployeeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -2142,6 +2155,8 @@
     <Content Include="Views\Employee\_PhoneRow.cshtml" />
     <Content Include="Views\Employee\SendMessage.cshtml" />
     <Content Include="Views\Message\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

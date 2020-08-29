@@ -7,13 +7,13 @@ namespace ItAcademy.SchoolAdmin.DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AddPrimaryPhoneForeignKey : IMigrationMetadata
+    public sealed partial class AddIdentity : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddPrimaryPhoneForeignKey));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddIdentity));
         
         string IMigrationMetadata.Id
         {
-            get { return "202008080653373_AddPrimaryPhoneForeignKey"; }
+            get { return "202008280608292_AddIdentity"; }
         }
         
         string IMigrationMetadata.Source

@@ -52,8 +52,10 @@
     <Compile Include="EntitiesConfiguration\SubjectConfiguration.cs" />
     <Compile Include="Enums\MessageStatusDb.cs" />
     <Compile Include="Enums\MessageTypeDb.cs" />
+    <Compile Include="Interfaces\IClientManager.cs" />
     <Compile Include="Interfaces\ICommonManyToManyEditService.cs" />
     <Compile Include="Interfaces\IEmployeeDbService.cs" />
+    <Compile Include="Interfaces\IIdentityUnitOfWork.cs" />
     <Compile Include="Interfaces\IMessageDbService.cs" />
     <Compile Include="Interfaces\IPhoneDbService.cs" />
     <Compile Include="Interfaces\IPositionDbService.cs" />
@@ -122,9 +124,9 @@
     <Compile Include="Migrations\202008071635367_ChangePrimaryPhoneIdDataType.designer.cs">
       <DependentUpon>202008071635367_ChangePrimaryPhoneIdDataType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008080653373_AddPrimaryPhoneForeignKey.cs" />
-    <Compile Include="Migrations\202008080653373_AddPrimaryPhoneForeignKey.designer.cs">
-      <DependentUpon>202008080653373_AddPrimaryPhoneForeignKey.cs</DependentUpon>
+    <Compile Include="Migrations\202008280608292_AddIdentity.cs" />
+    <Compile Include="Migrations\202008280608292_AddIdentity.designer.cs">
+      <DependentUpon>202008280608292_AddIdentity.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DTOs\EmployeeDbPositionStatistics.cs" />
@@ -133,12 +135,19 @@
     <Compile Include="Models\DTOs\PositionDbStatistics.cs" />
     <Compile Include="Models\DTOs\SubjectDbStatistics.cs" />
     <Compile Include="Models\EmployeeDb.cs" />
+    <Compile Include="Models\Identity\ApplicationRole.cs" />
+    <Compile Include="Models\Identity\ApplicationRoleManager.cs" />
+    <Compile Include="Models\Identity\ApplicationUser.cs" />
+    <Compile Include="Models\Identity\ApplicationUserManager.cs" />
+    <Compile Include="Models\Identity\ClientProfile.cs" />
     <Compile Include="Models\MessageDb.cs" />
     <Compile Include="Models\PhoneDb.cs" />
     <Compile Include="Models\PositionDb.cs" />
     <Compile Include="Models\SubjectDb.cs" />
     <Compile Include="Models\SubjectTeachersDb.cs" />
     <Compile Include="Models\WorkerDb.cs" />
+    <Compile Include="Services\ClientManager.cs" />
+    <Compile Include="Services\IdentityUnitOfWork.cs" />
     <Compile Include="Services\MessageDbService.cs" />
     <Compile Include="Services\OnChangesSavedArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -165,6 +174,12 @@
   <ItemGroup>
     <PackageReference Include="EntityFramework">
       <Version>6.4.4</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.Identity.Core">
+      <Version>2.2.3</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <Version>2.2.3</Version>
     </PackageReference>
     <PackageReference Include="StyleCop.Analyzers">
       <Version>1.1.118</Version>
@@ -218,8 +233,8 @@
     <EmbeddedResource Include="Migrations\202008071635367_ChangePrimaryPhoneIdDataType.resx">
       <DependentUpon>202008071635367_ChangePrimaryPhoneIdDataType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008080653373_AddPrimaryPhoneForeignKey.resx">
-      <DependentUpon>202008080653373_AddPrimaryPhoneForeignKey.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008280608292_AddIdentity.resx">
+      <DependentUpon>202008280608292_AddIdentity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

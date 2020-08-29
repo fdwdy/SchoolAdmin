@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autofac\DatabaseServicesModule.cs" />
+    <Compile Include="Autofac\IdentityServiceModule.cs" />
     <Compile Include="Autofac\PhoneServiceModule.cs" />
     <Compile Include="Enums\MessageStatus.cs" />
     <Compile Include="Enums\MessageType.cs" />
@@ -74,6 +75,8 @@
     <Compile Include="Interfaces\IPositionService.cs" />
     <Compile Include="Interfaces\ISubjectService.cs" />
     <Compile Include="Interfaces\ITeacherService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="Interfaces\IUserServiceCreator.cs" />
     <Compile Include="Interfaces\IWorkerService.cs" />
     <Compile Include="Mapping\AutoMapperBusinessModule.cs" />
     <Compile Include="Mapping\AutoMapperBusinessProfile.cs" />
@@ -92,6 +95,7 @@
     <Compile Include="Models\DTOs\MessageWithRecipientName.cs" />
     <Compile Include="Models\DTOs\PositionStatistics.cs" />
     <Compile Include="Models\DTOs\SubjectStatistics.cs" />
+    <Compile Include="Models\DTOs\UserDTO.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Phone.cs" />
@@ -105,6 +109,8 @@
     <Compile Include="Services\PositionService.cs" />
     <Compile Include="Services\SubjectService.cs" />
     <Compile Include="Services\TeacherService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Services\UserServiceCreator.cs" />
     <Compile Include="Services\WorkerService.cs" />
     <Compile Include="SignalR\CommonServiceContextModificationNotifyingDecorator.cs" />
     <Compile Include="SignalR\EmployeeContextModificationNotifyingServiceDecorator.cs" />
@@ -135,6 +141,12 @@
     </PackageReference>
     <PackageReference Include="EntityFramework">
       <Version>6.4.4</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.Identity.Core">
+      <Version>2.2.3</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <Version>2.2.3</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNet.SignalR">
       <Version>2.4.1</Version>

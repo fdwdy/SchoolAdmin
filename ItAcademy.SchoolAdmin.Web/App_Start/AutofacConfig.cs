@@ -29,6 +29,8 @@ namespace ItAcademy.SchoolAdmin.Web.App_Start
             builder.RegisterType<TeacherService>().As<ITeacherService>().InstancePerRequest();
             builder.RegisterType<PositionService>().As<IPositionService>().InstancePerRequest();
             builder.RegisterType<WorkerService>().As<IWorkerService>().InstancePerRequest();
+            builder.RegisterType<UserService>().As<IUserService>().InstancePerRequest();
+            builder.RegisterType<ClientManager>().As<IClientManager>().InstancePerRequest();
             builder.RegisterType<TeacherDbService>().As<ITeacherDbService>().InstancePerRequest();
             builder.RegisterType<WorkerDbService>().As<IWorkerDbService>().InstancePerRequest();
             builder.RegisterDecorator<EmployeeContextModificationNotifyingServiceDecorator, IEmployeeService>();
@@ -37,6 +39,7 @@ namespace ItAcademy.SchoolAdmin.Web.App_Start
             builder.RegisterType<EmployeeDbRepository>().As<IRepository<EmployeeDb>>().InstancePerRequest();
             builder.RegisterType<SubjectDbRepository>().As<IRepository<SubjectDb>>().InstancePerRequest();
             builder.RegisterType<PositionDbRepository>().As<IRepository<PositionDb>>().InstancePerRequest();
+            builder.RegisterType<IdentityUnitOfWork>().As<IIdentityUnitOfWork>().InstancePerRequest();
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
             builder.AddAutoMapper(typeof(MvcApplication).Assembly);
             builder.RegisterModule(new DatabaseServicesModule());

@@ -15,6 +15,7 @@ namespace ItAcademy.SchoolAdmin.Web
     {
         public void Configuration(IAppBuilder app)
         {
+            IdentityConfig.SetupIdentity(app);
             AutofacConfig.ConfigureContainer();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

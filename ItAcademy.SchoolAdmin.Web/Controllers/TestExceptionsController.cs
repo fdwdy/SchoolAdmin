@@ -4,6 +4,7 @@ using System.Web.Mvc;
 
 namespace ItAcademy.SchoolAdmin.Web.Controllers
 {
+    [Authorize]
     [HandleError]
     public partial class TestExceptionsController : Controller
     {

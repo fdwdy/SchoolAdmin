@@ -1,10 +1,12 @@
 ﻿using System.Data.Entity;
 using ItAcademy.SchoolAdmin.DataAccess.EntitiesConfiguration;
 using ItAcademy.SchoolAdmin.DataAccess.Models;
+using ItAcademy.SchoolAdmin.DataAccess.Models.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ItAcademy.SchoolAdmin.DataAccess
 {
-    public class SchoolContext : DbContext
+    public class SchoolContext : IdentityDbContext<ApplicationUser>
     {
         public SchoolContext()
             : base("SchoolAdmin")
@@ -26,6 +28,8 @@ namespace ItAcademy.SchoolAdmin.DataAccess
 
         public virtual DbSet<MessageDb> Messages { get; set; }
 
+        public virtual DbSet<ClientProfile> ClientProfiles { get; set; }
+
         public override int SaveChanges()
         {
             var result = base.SaveChanges();
@@ -36,6 +40,7 @@ namespace ItAcademy.SchoolAdmin.DataAccess
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Configurations.Add(new EmployeeConfiguration());
             modelBuilder.Configurations.Add(new SubjectConfiguration());
             modelBuilder.Configurations.Add(new PositionConfiguration());

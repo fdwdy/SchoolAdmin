@@ -10,6 +10,7 @@ using ItAcademy.SchoolAdmin.Web.Models;
 
 namespace ItAcademy.SchoolAdmin.Web.Controllers
 {
+    [Authorize]
     public partial class MessageController : Controller
     {
         private readonly IMapper _mapper;
