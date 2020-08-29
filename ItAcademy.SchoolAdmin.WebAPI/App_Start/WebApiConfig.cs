@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Headers;
+﻿using ItAcademy.SchoolAdmin.WebAPI.Filters;
+using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace ItAcademy.SchoolAdmin.WebAPI
@@ -18,6 +19,8 @@ namespace ItAcademy.SchoolAdmin.WebAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Filters.Add(new BasicAuthenticationAttribute());
         }
     }
 }

@@ -29,7 +29,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         [HttpPost]
         public virtual async Task<ActionResult> Login(LoginModel model)
         {
-            await SetInitialDataAsync();
+            ////await SetInitialDataAsync();
             if (ModelState.IsValid)
             {
                 UserDTO userDto = new UserDTO { Email = model.Email, Password = model.Password };
@@ -70,7 +70,7 @@ namespace ItAcademy.SchoolAdmin.Web.Controllers
         [ValidateAntiForgeryToken]
         public virtual async Task<ActionResult> Register(RegisterModel model)
         {
-            await SetInitialDataAsync();
+            ////await SetInitialDataAsync();
             if (ModelState.IsValid)
             {
                 UserDTO userDto = new UserDTO

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
 using ItAcademy.SchoolAdmin.BusinessLogic.Models.DTOs;
+using ItAcademy.SchoolAdmin.WebAPI.Filters;
 using ItAcademy.SchoolAdmin.WebAPI.Models;
 using Swashbuckle.Swagger.Annotations;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Web.Http;
 
 namespace ItAcademy.SchoolAdmin.WebAPI.Controllers
 {
+    [BasicAuthentication]
     [RoutePrefix("api/positions")]
     public class PositionController : ApiController
     {

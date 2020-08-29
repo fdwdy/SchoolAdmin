@@ -58,6 +58,12 @@
     <PackageReference Include="AutoMapper.Contrib.Autofac.DependencyInjection">
       <Version>3.2.0</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.Identity.Core">
+      <Version>2.2.3</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.Identity.Owin">
+      <Version>2.1.0</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.AspNet.WebApi">
       <Version>5.2.7</Version>
     </PackageReference>
@@ -127,11 +133,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutofacConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\PositionController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
+    <Compile Include="Filters\BasicAuthenticationAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -1,22 +1,18 @@
 ﻿using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
 using ItAcademy.SchoolAdmin.BusinessLogic.Services;
-using Microsoft.AspNet.Identity;
-using Microsoft.Owin;
-using Microsoft.Owin.Security.Cookies;
 using Owin;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-namespace ItAcademy.SchoolAdmin.Web.App_Start
+namespace ItAcademy.SchoolAdmin.WebAPI.App_Start
 {
     public class IdentityConfig
     {
         public static void SetupIdentity(IAppBuilder app)
         {
             app.CreatePerOwinContext(CreateUserService);
-            app.UseCookieAuthentication(new CookieAuthenticationOptions
-            {
-                AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Account/Login"),
-            });
         }
 
         private static IUserService CreateUserService()

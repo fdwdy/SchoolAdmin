@@ -1,4 +1,5 @@
 ﻿using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
+using ItAcademy.SchoolAdmin.WebAPI.Filters;
 using ItAcademy.SchoolAdmin.WebAPI.Models;
 using Swashbuckle.Swagger.Annotations;
 using System.Net;
@@ -7,6 +8,7 @@ using System.Web.Http;
 
 namespace ItAcademy.SchoolAdmin.WebAPI.Controllers
 {
+    [BasicAuthentication]
     [RoutePrefix("api/employees")]
     public class EmployeeController : ApiController
     {

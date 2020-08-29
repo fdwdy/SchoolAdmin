@@ -61,6 +61,17 @@ namespace ItAcademy.SchoolAdmin.BusinessLogic.Services
             return claim;
         }
 
+        public bool IsAuthenticated(UserDTO userDto)
+        {
+            ApplicationUser user = Database.UserManager.Find(userDto.Email, userDto.Password);
+            if (user != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public async Task SetInitialData(UserDTO adminDto, List<string> roles)
         {
             foreach (string roleName in roles)

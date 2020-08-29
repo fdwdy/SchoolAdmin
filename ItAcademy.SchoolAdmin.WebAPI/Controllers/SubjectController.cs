@@ -1,19 +1,17 @@
 ﻿using AutoMapper;
 using ItAcademy.SchoolAdmin.BusinessLogic.Interfaces;
-using ItAcademy.SchoolAdmin.BusinessLogic.Models;
 using ItAcademy.SchoolAdmin.BusinessLogic.Models.DTOs;
+using ItAcademy.SchoolAdmin.WebAPI.Filters;
 using ItAcademy.SchoolAdmin.WebAPI.Models;
 using Swashbuckle.Swagger.Annotations;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace ItAcademy.SchoolAdmin.WebAPI.Controllers
 {
+    [BasicAuthentication]
     [RoutePrefix("api/subjects")]
     public class SubjectController : ApiController
     {
