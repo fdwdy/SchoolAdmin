@@ -11,7 +11,6 @@
             @Html.EditorFor(model => model.Number, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Number, "", new { @class = "text-danger" })
             <div class="primaryPhone">
-                @*<input type="radio" id="IsPrimary" name="IsPrimary" value="false" data_group = "myGroup"> Primary*@
                 @Html.RadioButtonFor(m => m.IsPrimary, true, new { @data_group = "myGroup", @data_val = "false" }) Primary
             </div>
             <div class="col-md-offset-2 col-md-10">

@@ -8,8 +8,6 @@
 
 <h2 class="h2 mb-2 text-gray-800">Current Job Positions</h2>
 <br />
-@*<input type="text" name="name" id="search" />
-<input type="button" value="Поиск" id="submit" />*@
 
 <p style="display: none" class="list-updated-notification">
     Subject list updated. <a href="#" class="list-updated-notification-link">Click here</a> to refresh.
@@ -74,28 +72,6 @@
         </div>
     </div>
 </div>
-
-@*<table class="table">
-    <tr>
-        <th>Name</th>
-        <th>MaxEmployees</th>
-        <th></th>
-    </tr>
-    <tbody id="positionDataTable">
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Name</td>
-                <td>@item.MaxEmployees</td>
-                <td>
-                    <a href="@Url.Action(MVC.Position.Edit(item.Id))">Edit  |</a>
-                    <a href="@Url.Action(MVC.Worker.EditEmployee(item.Id))">Set Worker |</a>
-                    <a href="@Url.Action(MVC.Position.Delete(item.Id))">Delete </a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>*@
 
 @section scripts{
     <script src="~/Content/scripts/lib/jquery/jquery-3.3.1.min.js"></script>

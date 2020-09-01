@@ -6,38 +6,9 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Scripts.Render(Links.Bundles.Scripts.JQuery)
     @Scripts.Render(Links.Bundles.Scripts.JQueryValidation)
-    @*@Styles.Render(Links.Bundles.Content.Sitecontent)*@
     @Styles.Render(Links.Bundles.Content.ContentCss)
 </head>
 <body>
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/@MVC.Home.Name">SchoolAdmin</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="@Url.Action(MVC.Employee.Index())">Employees</a></li>
-                        <li><a href="@Url.Action(MVC.Subject.Index())">Subjects</a></li>
-                        <li><a href="@Url.Action(MVC.Position.Index())">Administration</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - SchoolApp</p>
-                <a class="navbar-link" href="@Url.Action(MVC.TestExceptions.Index())">Test 404 Exception</a>
-                <a class="navbar-link" href="@Url.Action(MVC.TestExceptions.Employees())">Test IndexOutOfRange Exception</a>
-            </footer>
-        </div>*@
 
     <body id="page-top">
 
@@ -368,8 +339,6 @@
         </div>
 
         <!-- Bootstrap core JavaScript-->
-        @*<script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>*@
         <script src="~/Content/sb-theme/vendor/jquery/jquery.min.js"></script>
         <script src="~/Content/sb-theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -378,13 +347,6 @@
 
         <!-- Custom scripts for all pages-->
         <script src="~/Content/sb-theme/js/sb-admin-2.min.js"></script>
-
-        <!-- Page level plugins -->
-        @*<script src="vendor/chart.js/Chart.min.js"></script>*@
-
-        <!-- Page level custom scripts -->
-        @*<script src="js/demo/chart-area-demo.js"></script>
-        <script src="js/demo/chart-pie-demo.js"></script>*@
 
     </body>
 
